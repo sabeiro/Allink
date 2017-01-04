@@ -1,5 +1,6 @@
 # Allink
 --------------- OVERVIEW -------------------
+
 Collection of utilities based on two basics classes: 
 Matematica and VarData.
 
@@ -24,6 +25,9 @@ DrImage) image manipulation on the Matematica filters.
 The program is intended to use as less as possible external 
 libs (optional: openGL, gsl, fftw, cgal, png, tiff, boost, 
 MPI, Qt...).
+
 --------------- INSTALL --------------------
+
 Edit the file /include/MakeInclude.mk to set the flags
+
 Type make
