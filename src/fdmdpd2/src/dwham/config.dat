@@ -1,0 +1,8 @@
+51480				# extensive number of bonds
+0.15 0.80 0.001			# binning for lambda
+16.0 18.0 0.001			# binning for rho_coex
+17.0 100.0 30.0			# reference values: rho, kN, chiN
+17.29 100.0 30.0		# reweighting target kN, chiN
+-60000. 60000. 100.		# binning for U
+1200 1400 1			# binning for A
+

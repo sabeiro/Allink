@@ -1,0 +1,287 @@
+\hypertarget{classMatrice}{\subsection{\-Matrice \-Class \-Reference}
+\label{classMatrice}\index{\-Matrice@{\-Matrice}}
+}
+
+
+\hyperlink{classMatrice}{\-Matrice} computes the algebric operations on matrices.  
+
+
+
+
+{\ttfamily \#include $<$\-Matematica\-Matrix.\-h$>$}
+
+\subsubsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMatrice_ae82949ca87c5bb80e83c4c3b5b384ccb}{\hyperlink{classMatrice_ae82949ca87c5bb80e83c4c3b5b384ccb}{\-Matrice} (int new\-N\-Size)}\label{classMatrice_ae82949ca87c5bb80e83c4c3b5b384ccb}
+
+\begin{DoxyCompactList}\small\item\em creates a square \hyperlink{classMatrice}{\-Matrice} \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_ad89ff6ea9c7c65c60696b6476c5a48fa}{\hyperlink{classMatrice_ad89ff6ea9c7c65c60696b6476c5a48fa}{\-Matrice} (int \-N\-Row, int \-N\-Col)}\label{classMatrice_ad89ff6ea9c7c65c60696b6476c5a48fa}
+
+\begin{DoxyCompactList}\small\item\em \-Creates a \-N\-Row x \-N\-Col \hyperlink{classMatrice}{\-Matrice}. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a27514cb639bd3d69242f74cee8146b25}{\hyperlink{classMatrice_a27514cb639bd3d69242f74cee8146b25}{\-Matrice} (int \-N\-Row, int \-N\-Col, int \-N\-Zed)}\label{classMatrice_a27514cb639bd3d69242f74cee8146b25}
+
+\begin{DoxyCompactList}\small\item\em \-Creates a \-N\-Row x \-N\-Col x \-N\-Zed \hyperlink{classMatrice}{\-Matrice}. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a7c59f8c564cd59391ed6198a75dfd398}{\hyperlink{classMatrice_a7c59f8c564cd59391ed6198a75dfd398}{\-Matrice} (int \-Ext\-N\-Row, int \-Ext\-N\-Col, double $\ast$pointer)}\label{classMatrice_a7c59f8c564cd59391ed6198a75dfd398}
+
+\begin{DoxyCompactList}\small\item\em \-Creates a \-N\-Row x \-N\-Col \hyperlink{classMatrice}{\-Matrice} which points to an already allocated double. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a7f7c9cd8e95dbf5128eae712964b8acb}{\hyperlink{classMatrice_a7f7c9cd8e95dbf5128eae712964b8acb}{\-Matrice} (\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \-Wg)}\label{classMatrice_a7f7c9cd8e95dbf5128eae712964b8acb}
+
+\begin{DoxyCompactList}\small\item\em \-A 3x3 \hyperlink{classMatrice}{\-Matrice} defined as discreate two dimensional derivation operator. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_aaffb4cf7d6170d962a39afb0d30ae9cf}{\hyperlink{classMatrice_aaffb4cf7d6170d962a39afb0d30ae9cf}{\-Matrice} (\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \-Wg, int \-Dim)}\label{classMatrice_aaffb4cf7d6170d962a39afb0d30ae9cf}
+
+\begin{DoxyCompactList}\small\item\em \-A 5x5 \hyperlink{classMatrice}{\-Matrice} defined as discrete two dimensional derivation operator, \-Dim defines different options. \end{DoxyCompactList}\item 
+\hyperlink{classMatrice_aeb402ee1c3e83c9b7962e8f881c5d19f}{\-Matrice} (\hyperlink{classQuadri}{\-Quadri} q, int dim)
+\begin{DoxyCompactList}\small\item\em a 4x4 or 3x3 \hyperlink{classMatrice}{\-Matrice} defined by a quaternion \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a9d38a3b33a31d20d70fa1c87fa70319d}{\hyperlink{classMatrice_a9d38a3b33a31d20d70fa1c87fa70319d}{\-Matrice} (double $\ast$\-M, int \-Nr, int \-Nc)}\label{classMatrice_a9d38a3b33a31d20d70fa1c87fa70319d}
+
+\begin{DoxyCompactList}\small\item\em \-The data array point to an alreay allocated array. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a0ef7999ffc3ba03dc67e3233b4465b85}{\hyperlink{classMatrice_a0ef7999ffc3ba03dc67e3233b4465b85}{\-Matrice} (double \-Roll, double \-Pitch, double \-Yaw, int \-N\-Dim)}\label{classMatrice_a0ef7999ffc3ba03dc67e3233b4465b85}
+
+\begin{DoxyCompactList}\small\item\em \-Define a rotation matrix from \-Euler angles. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a9acb38f7eeb5f9c61aa9f79928912e7f}{\hyperlink{classMatrice_a9acb38f7eeb5f9c61aa9f79928912e7f}{\-Matrice} (double $\ast$\-Axis, double \-Angle, int \-N\-Dim)}\label{classMatrice_a9acb38f7eeb5f9c61aa9f79928912e7f}
+
+\begin{DoxyCompactList}\small\item\em \-Define a rotation matrix from a axis and a rotation angle. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a7c102b4f9b38e5975567e561581f38de}{\hyperlink{classMatrice_a7c102b4f9b38e5975567e561581f38de}{$\sim$\-Matrice} ()}\label{classMatrice_a7c102b4f9b38e5975567e561581f38de}
+
+\begin{DoxyCompactList}\small\item\em \-Freeing. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a3caf89cd6f9ccd16fcdc6a6c57039c2f}{bool \hyperlink{classMatrice_a3caf89cd6f9ccd16fcdc6a6c57039c2f}{\-Set} (int row, int column, double \hyperlink{classMatrice_a2a233d9af97c320a1b372ededf056886}{\-Val})}\label{classMatrice_a3caf89cd6f9ccd16fcdc6a6c57039c2f}
+
+\begin{DoxyCompactList}\small\item\em \-Set a coefficient. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_aa0c2a276b9a17b75e9d689bbda62b1b5}{bool \hyperlink{classMatrice_aa0c2a276b9a17b75e9d689bbda62b1b5}{\-Add} (int row, int col, double \hyperlink{classMatrice_a2a233d9af97c320a1b372ededf056886}{\-Val})}\label{classMatrice_aa0c2a276b9a17b75e9d689bbda62b1b5}
+
+\begin{DoxyCompactList}\small\item\em \-Add the value of the coefficient to the previous one. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_af40990b9bd3d70d30e8ce7cdda1ad56f}{int \hyperlink{classMatrice_af40990b9bd3d70d30e8ce7cdda1ad56f}{\-Size} ()}\label{classMatrice_af40990b9bd3d70d30e8ce7cdda1ad56f}
+
+\begin{DoxyCompactList}\small\item\em \-Size of \hyperlink{classMatrice}{\-Matrice}. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a8ff9da924c6e0d9cd89d650869b33c39}{int \hyperlink{classMatrice_a8ff9da924c6e0d9cd89d650869b33c39}{p\-N\-Col} ()}\label{classMatrice_a8ff9da924c6e0d9cd89d650869b33c39}
+
+\begin{DoxyCompactList}\small\item\em \-Number of columns. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_afd2c17a1b2a30f474d509fb9353e2f86}{int \hyperlink{classMatrice_afd2c17a1b2a30f474d509fb9353e2f86}{p\-N\-Row} ()}\label{classMatrice_afd2c17a1b2a30f474d509fb9353e2f86}
+
+\begin{DoxyCompactList}\small\item\em \-Number of rows. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a201f7fc580e93bfd6b92301be8c82d40}{int \hyperlink{classMatrice_a201f7fc580e93bfd6b92301be8c82d40}{p\-N\-Zed} ()}\label{classMatrice_a201f7fc580e93bfd6b92301be8c82d40}
+
+\begin{DoxyCompactList}\small\item\em \-Number of zed. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a3a63b6cadfd2cd5c3010892ca1a78d6d}{void \hyperlink{classMatrice_a3a63b6cadfd2cd5c3010892ca1a78d6d}{\-Apply} (double $\ast$\-Known, double $\ast$\-Un\-Known)}\label{classMatrice_a3a63b6cadfd2cd5c3010892ca1a78d6d}
+
+\begin{DoxyCompactList}\small\item\em \-Apply \-Ax = y. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a660450c11d8e8ec196d63da73323a7cd}{int \hyperlink{classMatrice_a660450c11d8e8ec196d63da73323a7cd}{\-Solve} (double $\ast$\-Known, double $\ast$\-Un\-Known)}\label{classMatrice_a660450c11d8e8ec196d63da73323a7cd}
+
+\begin{DoxyCompactList}\small\item\em \-Solve a system \-A$|$b = y. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a239681f05803501801eb5eb6db082453}{int \hyperlink{classMatrice_a239681f05803501801eb5eb6db082453}{get\-N\-Row} ()}\label{classMatrice_a239681f05803501801eb5eb6db082453}
+
+\begin{DoxyCompactList}\small\item\em \-Return size. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_ac11429f7ec42e6eb4806e77f8aa24e7f}{void \hyperlink{classMatrice_ac11429f7ec42e6eb4806e77f8aa24e7f}{\-Shout} (const char $\ast$s,...)}\label{classMatrice_ac11429f7ec42e6eb4806e77f8aa24e7f}
+
+\begin{DoxyCompactList}\small\item\em \-Name of the last function called. \-For debugging. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a15f367c26198d2a68e87dd0881771a47}{void \hyperlink{classMatrice_a15f367c26198d2a68e87dd0881771a47}{comparetoidentity} ()}\label{classMatrice_a15f367c26198d2a68e87dd0881771a47}
+
+\begin{DoxyCompactList}\small\item\em \-Compare to identity. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a71879f4bca600c787f6509d381a18898}{void \hyperlink{classMatrice_a71879f4bca600c787f6509d381a18898}{settoproduct} (\hyperlink{classMatrice}{\-Matrice} \&left, \hyperlink{classMatrice}{\-Matrice} \&right)}\label{classMatrice_a71879f4bca600c787f6509d381a18898}
+
+\begin{DoxyCompactList}\small\item\em \-Set to product. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_acf5a1b0b528030fe0eee6182757c05de}{void \hyperlink{classMatrice_acf5a1b0b528030fe0eee6182757c05de}{copymatrix} (\hyperlink{classMatrice}{\-Matrice} \&source)}\label{classMatrice_acf5a1b0b528030fe0eee6182757c05de}
+
+\begin{DoxyCompactList}\small\item\em \-Copy matrix. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a26e611b77062b246d913c6038ea86189}{void \hyperlink{classMatrice_a26e611b77062b246d913c6038ea86189}{set\-N\-Row} (int new\-N\-Row)}\label{classMatrice_a26e611b77062b246d913c6038ea86189}
+
+\begin{DoxyCompactList}\small\item\em \-Set new size. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a2b7ffed3a15b7b2ff089b751c3588b4a}{void \hyperlink{classMatrice_a2b7ffed3a15b7b2ff089b751c3588b4a}{getvalue} (int row, int column, double \&returnvalue, bool \&success)}\label{classMatrice_a2b7ffed3a15b7b2ff089b751c3588b4a}
+
+\begin{DoxyCompactList}\small\item\em \-Return value. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_acd68476b8afc6a2dcfb8663ead8b39cd}{void \hyperlink{classMatrice_acd68476b8afc6a2dcfb8663ead8b39cd}{\-Invert} ()}\label{classMatrice_acd68476b8afc6a2dcfb8663ead8b39cd}
+
+\begin{DoxyCompactList}\small\item\em \-Invert. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_abcf6a7d18ac795ba9ae4f2d0af5fd983}{void \hyperlink{classMatrice_abcf6a7d18ac795ba9ae4f2d0af5fd983}{\-Mult} (\hyperlink{classMatrice}{\-Matrice} \&\-A, \hyperlink{classMatrice}{\-Matrice} \&\-B)}\label{classMatrice_abcf6a7d18ac795ba9ae4f2d0af5fd983}
+
+\begin{DoxyCompactList}\small\item\em \-Multiplication between two matrices. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a52a3ee1bffb7d482d9bbf526e55855ac}{void \hyperlink{classMatrice_a52a3ee1bffb7d482d9bbf526e55855ac}{\-Mult} (\hyperlink{classMatrice}{\-Matrice} \&\-A)}\label{classMatrice_a52a3ee1bffb7d482d9bbf526e55855ac}
+
+\begin{DoxyCompactList}\small\item\em \-Multiplication by matrices. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a59cbe4933e70b969b4eed6027637d08f}{\hyperlink{classVettore}{\-Vettore} \hyperlink{classMatrice_a59cbe4933e70b969b4eed6027637d08f}{\-Mult} (\hyperlink{classMatrice}{\-Matrice} \&\-A, \hyperlink{classVettore}{\-Vettore} \&v)}\label{classMatrice_a59cbe4933e70b969b4eed6027637d08f}
+
+\begin{DoxyCompactList}\small\item\em \-Multiplication by a vector. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_af36b6d3637e838ca5e695c27a598df13}{\hyperlink{classVettore}{\-Vettore} \hyperlink{classMatrice_af36b6d3637e838ca5e695c27a598df13}{\-Mult} (\hyperlink{classVettore}{\-Vettore} \&v)}\label{classMatrice_af36b6d3637e838ca5e695c27a598df13}
+
+\begin{DoxyCompactList}\small\item\em \-Multiplication by a vector. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a97ad116b8ad02f27c746c17b3bcce612}{void \hyperlink{classMatrice_a97ad116b8ad02f27c746c17b3bcce612}{\-Mult} (\hyperlink{classVettore}{\-Vettore} \&v, \hyperlink{classVettore}{\-Vettore} \&u)}\label{classMatrice_a97ad116b8ad02f27c746c17b3bcce612}
+
+\begin{DoxyCompactList}\small\item\em \-Multiplication by a vector on a vector u. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_af5aec4d0a8386473246317d8f80393b5}{void \hyperlink{classMatrice_af5aec4d0a8386473246317d8f80393b5}{\-Random\-Fill} (double \-Max)}\label{classMatrice_af5aec4d0a8386473246317d8f80393b5}
+
+\begin{DoxyCompactList}\small\item\em \-Fill the entries randomly. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a7c602135948f6cf92eb09ad149cf9e5d}{void \hyperlink{classMatrice_a7c602135948f6cf92eb09ad149cf9e5d}{\-Fill\-Diff\-Operator} (\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \-Wg, int \-N\-Dim)}\label{classMatrice_a7c602135948f6cf92eb09ad149cf9e5d}
+
+\begin{DoxyCompactList}\small\item\em \-Fill the entries of a differential operator. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a3d2595adaba8bd47736da2b21bd2fd77}{void \hyperlink{classMatrice_a3d2595adaba8bd47736da2b21bd2fd77}{\-Fill\-Canny} ()}\label{classMatrice_a3d2595adaba8bd47736da2b21bd2fd77}
+
+\begin{DoxyCompactList}\small\item\em \-Fill the entries for the \-Canny edge detector. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a5ceb29f59f80d11657e7d9cb7ab442d0}{void \hyperlink{classMatrice_a5ceb29f59f80d11657e7d9cb7ab442d0}{\-Fill\-Gaussian} (double \-Sigma, double \-Cut\-Off)}\label{classMatrice_a5ceb29f59f80d11657e7d9cb7ab442d0}
+
+\begin{DoxyCompactList}\small\item\em \-Fill the entries for the \-Gauss blur. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a0173aba64404b8145dda86796cb34231}{void \hyperlink{classMatrice_a0173aba64404b8145dda86796cb34231}{\-Fill\-Gaussian5} ()}\label{classMatrice_a0173aba64404b8145dda86796cb34231}
+
+\begin{DoxyCompactList}\small\item\em \-Fill the entries for the 5x5 \-Gauss blur. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a109318636af36bc89e9853f19e4369e2}{void \hyperlink{classMatrice_a109318636af36bc89e9853f19e4369e2}{\-Transpose} ()}\label{classMatrice_a109318636af36bc89e9853f19e4369e2}
+
+\begin{DoxyCompactList}\small\item\em \-Transpose the matrix. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_af279e0f0ff720ee54d6733674dfda50a}{void \hyperlink{classMatrice_af279e0f0ff720ee54d6733674dfda50a}{\-Normalize} ()}\label{classMatrice_af279e0f0ff720ee54d6733674dfda50a}
+
+\begin{DoxyCompactList}\small\item\em \-Normalize the matrix. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_aa71d36872f416feaa853788a7a7a7ef8}{void \hyperlink{classMatrice_aa71d36872f416feaa853788a7a7a7ef8}{\-Clear} ()}\label{classMatrice_aa71d36872f416feaa853788a7a7a7ef8}
+
+\begin{DoxyCompactList}\small\item\em \-Set all the entries to zero. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a5361e904e6972f204c5a22456e4b2160}{void \hyperlink{classMatrice_a5361e904e6972f204c5a22456e4b2160}{\-Multiply} (double \hyperlink{classMatrice_a2a233d9af97c320a1b372ededf056886}{\-Val})}\label{classMatrice_a5361e904e6972f204c5a22456e4b2160}
+
+\begin{DoxyCompactList}\small\item\em \-Multiply by a scalar. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a2639c6c871beec77d99b2a28c4b77610}{void \hyperlink{classMatrice_a2639c6c871beec77d99b2a28c4b77610}{\-Copy\-On} (\hyperlink{classMatrice}{\-Matrice} $\ast$\-B)}\label{classMatrice_a2639c6c871beec77d99b2a28c4b77610}
+
+\begin{DoxyCompactList}\small\item\em \-Copy on a matrix. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a9dcac18006ce057b8d78c847174c1362}{void \hyperlink{classMatrice_a9dcac18006ce057b8d78c847174c1362}{\-Print} ()}\label{classMatrice_a9dcac18006ce057b8d78c847174c1362}
+
+\begin{DoxyCompactList}\small\item\em \-Print the entries. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a2a233d9af97c320a1b372ededf056886}{double \hyperlink{classMatrice_a2a233d9af97c320a1b372ededf056886}{\-Val} (int row)}\label{classMatrice_a2a233d9af97c320a1b372ededf056886}
+
+\begin{DoxyCompactList}\small\item\em \-Returns a value in 1d. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a3186a2a78ed4c487f22fb21081e3909a}{double \hyperlink{classMatrice_a3186a2a78ed4c487f22fb21081e3909a}{\-Val} (int row, int col)}\label{classMatrice_a3186a2a78ed4c487f22fb21081e3909a}
+
+\begin{DoxyCompactList}\small\item\em \-Returns a value in 2d. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a73cd8ec182ae5748a462a9b724b664ff}{double \hyperlink{classMatrice_a73cd8ec182ae5748a462a9b724b664ff}{\-Val} (int row, int col, int zed)}\label{classMatrice_a73cd8ec182ae5748a462a9b724b664ff}
+
+\begin{DoxyCompactList}\small\item\em \-Returns a value in 3d. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_ae9aabce3db6cb0b00f6e79f9c6f7fd05}{double \hyperlink{classMatrice_ae9aabce3db6cb0b00f6e79f9c6f7fd05}{\-Det} ()}\label{classMatrice_ae9aabce3db6cb0b00f6e79f9c6f7fd05}
+
+\begin{DoxyCompactList}\small\item\em \-Computes the determinants. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a1f8738463e0e7eb8be57bf909bcd7ce0}{\hyperlink{classMatrice}{\-Matrice} \hyperlink{classMatrice_a1f8738463e0e7eb8be57bf909bcd7ce0}{operator+} (\hyperlink{classMatrice}{\-Matrice} \&)}\label{classMatrice_a1f8738463e0e7eb8be57bf909bcd7ce0}
+
+\begin{DoxyCompactList}\small\item\em \-Sums two matrices. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_aa448fbb42e5073bb139ec73ce86f852f}{\hyperlink{classMatrice}{\-Matrice} \hyperlink{classMatrice_aa448fbb42e5073bb139ec73ce86f852f}{operator$\ast$} (\hyperlink{classMatrice}{\-Matrice} \&\-A)}\label{classMatrice_aa448fbb42e5073bb139ec73ce86f852f}
+
+\begin{DoxyCompactList}\small\item\em \-Multiplies two matrices. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_ab0ddc1000224f226a80a9efeabec28cd}{\hyperlink{classMatrice}{\-Matrice} \hyperlink{classMatrice_ab0ddc1000224f226a80a9efeabec28cd}{operator$\ast$} (const double \&) const }\label{classMatrice_ab0ddc1000224f226a80a9efeabec28cd}
+
+\begin{DoxyCompactList}\small\item\em \-Multiplies per a scalar. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_abc91a90deb2e320dbbf546014d757631}{\hyperlink{classVettore}{\-Vettore} \hyperlink{classMatrice_abc91a90deb2e320dbbf546014d757631}{operator$\ast$} (const \hyperlink{classVettore}{\-Vettore} \&) const }\label{classMatrice_abc91a90deb2e320dbbf546014d757631}
+
+\begin{DoxyCompactList}\small\item\em \-Multiplies per a vector. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a9d7b0347594ca071c5a3048d2d3002cb}{\hyperlink{classMatrice}{\-Matrice} \hyperlink{classMatrice_a9d7b0347594ca071c5a3048d2d3002cb}{operator=} (\hyperlink{classMatrice}{\-Matrice} \&)}\label{classMatrice_a9d7b0347594ca071c5a3048d2d3002cb}
+
+\begin{DoxyCompactList}\small\item\em \-Copy two matrices. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a06abc8a7b97cb5042c6b21d0daf58619}{\hyperlink{classMatrice}{\-Matrice} \hyperlink{classMatrice_a06abc8a7b97cb5042c6b21d0daf58619}{operator$^\wedge$} (\hyperlink{classMatrice}{\-Matrice} \&) const }\label{classMatrice_a06abc8a7b97cb5042c6b21d0daf58619}
+
+\begin{DoxyCompactList}\small\item\em \-Tensor product? \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a99c8b7cc887b83243200255862b1491c}{void \hyperlink{classMatrice_a99c8b7cc887b83243200255862b1491c}{\-Convolute\-Matrix} (double $\ast$\-Plot, int \-N\-Grid, int \-N\-Dim, int \-If\-Min\-Im\-Conv)}\label{classMatrice_a99c8b7cc887b83243200255862b1491c}
+
+\begin{DoxyCompactList}\small\item\em \-Convolute with a matrix. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a529e330488932c6b5e5f68e446d6c78d}{void \hyperlink{classMatrice_a529e330488932c6b5e5f68e446d6c78d}{\-Convolute\-Matrix1} (double $\ast$\-Plot, int \-N\-Grid)}\label{classMatrice_a529e330488932c6b5e5f68e446d6c78d}
+
+\begin{DoxyCompactList}\small\item\em \-Convolute with a matrix. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a20a3494fe09c247b756a0de321386af7}{void \hyperlink{classMatrice_a20a3494fe09c247b756a0de321386af7}{\-Convolute\-Matrix1\-Min\-Im\-Conv} (double $\ast$\-Plot, int \-N\-Grid)}\label{classMatrice_a20a3494fe09c247b756a0de321386af7}
+
+\begin{DoxyCompactList}\small\item\em \-Convolute with a matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classMatrice_af0c76ea6dc869dc8a9868d200cd8585d}{\-Convolute\-Matrix2} (double $\ast$\-Plot, int \-N\-Grid)
+\begin{DoxyCompactList}\small\item\em \-Convolute with a matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classMatrice_abeb003c7b0ee7b24821ee9fedd83ab78}{\-Convolute\-Matrix2\-Min\-Im\-Conv} (double $\ast$\-Plot, int \-N\-Grid)
+\begin{DoxyCompactList}\small\item\em \-Convolute with a matrix. \end{DoxyCompactList}\item 
+\hypertarget{classMatrice_a1bbd091a9143f3e458569b5c0f6d1d4e}{void \hyperlink{classMatrice_a1bbd091a9143f3e458569b5c0f6d1d4e}{\-Convolute\-Matrix3} (double $\ast$\-Plot, int \-N\-Grid)}\label{classMatrice_a1bbd091a9143f3e458569b5c0f6d1d4e}
+
+\begin{DoxyCompactList}\small\item\em \-Convolute with a matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMatrice_a23436a7a2b44939627b59df11be7ad75}{double $\ast$ \hyperlink{classMatrice_a23436a7a2b44939627b59df11be7ad75}{data}}\label{classMatrice_a23436a7a2b44939627b59df11be7ad75}
+
+\begin{DoxyCompactList}\small\item\em \-Stored entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{\-Detailed \-Description}
+\hyperlink{classMatrice}{\-Matrice} computes the algebric operations on matrices. 
+
+\-Definition at line 10 of file \-Matematica\-Matrix.\-h.
+
+
+
+\subsubsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classMatrice_aeb402ee1c3e83c9b7962e8f881c5d19f}{\index{\-Matrice@{\-Matrice}!\-Matrice@{\-Matrice}}
+\index{\-Matrice@{\-Matrice}!Matrice@{\-Matrice}}
+\paragraph[{\-Matrice}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Matrice} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Quadri}}]{q, }
+\item[{int}]{dim}
+\end{DoxyParamCaption}
+)}}\label{classMatrice_aeb402ee1c3e83c9b7962e8f881c5d19f}
+
+
+a 4x4 or 3x3 \hyperlink{classMatrice}{\-Matrice} defined by a quaternion 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classQuadri}{\-Quadri}} & q \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 154 of file \-Matematica\-Algebra.\-cpp.
+
+
+
+\-References data, \-Quadri\-::w, \-Quadri\-::x, \-Quadri\-::y, and \-Quadri\-::z.
+
+
+
+\subsubsection{\-Member \-Function \-Documentation}
+\hypertarget{classMatrice_af0c76ea6dc869dc8a9868d200cd8585d}{\index{\-Matrice@{\-Matrice}!\-Convolute\-Matrix2@{\-Convolute\-Matrix2}}
+\index{\-Convolute\-Matrix2@{\-Convolute\-Matrix2}!Matrice@{\-Matrice}}
+\paragraph[{\-Convolute\-Matrix2}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Convolute\-Matrix2} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{\-Plot, }
+\item[{int}]{\-N\-Grid}
+\end{DoxyParamCaption}
+)}}\label{classMatrice_af0c76ea6dc869dc8a9868d200cd8585d}
+
+
+\-Convolute with a matrix. 
+
+no minimum image convention 
+
+\-Definition at line 999 of file \-Matematica\-Algebra.\-cpp.
+
+
+
+\-References p\-N\-Col(), p\-N\-Row(), and \-Val().
+
+
+
+\-Referenced by \-Convolute\-Matrix().
+
+\hypertarget{classMatrice_abeb003c7b0ee7b24821ee9fedd83ab78}{\index{\-Matrice@{\-Matrice}!\-Convolute\-Matrix2\-Min\-Im\-Conv@{\-Convolute\-Matrix2\-Min\-Im\-Conv}}
+\index{\-Convolute\-Matrix2\-Min\-Im\-Conv@{\-Convolute\-Matrix2\-Min\-Im\-Conv}!Matrice@{\-Matrice}}
+\paragraph[{\-Convolute\-Matrix2\-Min\-Im\-Conv}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Convolute\-Matrix2\-Min\-Im\-Conv} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{\-Plot, }
+\item[{int}]{\-N\-Grid}
+\end{DoxyParamCaption}
+)}}\label{classMatrice_abeb003c7b0ee7b24821ee9fedd83ab78}
+
+
+\-Convolute with a matrix. 
+
+with minimum image convention 
+
+\-Definition at line 1037 of file \-Matematica\-Algebra.\-cpp.
+
+
+
+\-References p\-N\-Col(), p\-N\-Row(), and \-Val().
+
+
+
+\-Referenced by \-Convolute\-Matrix().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/\-Matematica\-Matrix.\-h\item 
+src/\-Matematica/\-Matematica\-Algebra.\-cpp\end{DoxyCompactItemize}

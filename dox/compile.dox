@@ -1,0 +1,36 @@
+/*! \page compile_page Compilation
+
+Allink is written in ANSI standard C++, and must be compiled from source. 
+It was developed using the gnu gcc 
+compiler in both linux and Mac OS X environments.  The source code should 
+compile with any standards compliant C++ compiler. The build system, 
+however, is based on Unix makefiles, and so will work only in a unix 
+(linux or mac) environment.
+
+Source code for the class library is in the src directory.  Examples of 
+main programs and example input files are in the Examples directory. 
+
+\section compile_library_section Compile
+To compile the entire Allink package 
+<ul>
+ <li>Edit /include/MakeInclude.mk and set the user defined flags.</li>
+ <li>Run make. </li>
+ </li>
+</ul>
+
+The resulting object *.o files for each class is placed in the same 
+directory as the corresponding *.h and *.cpp source files.  To clean 
+up all of the *.o files and start over, enter "make clean" from the 
+src directory.
+
+\section enable graphics
+ElPoly has a visualisation tool if OpenGl libraries are installed. 
+\section enable CGAL
+ElPoly uses for Delaunay triangulation the CGAL libraries.
+
+<ul>
+ <li> \ref index   (Up) </li>
+ <li> \ref usage_page (Next) </li>
+</ul>
+
+*/

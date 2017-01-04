@@ -1,0 +1,2 @@
+qmake  Visualizza.pro
+/usr/lib/qt-3.3/bin/moc ElementiGrafici.h -o moc_ElementiGrafici.cpp

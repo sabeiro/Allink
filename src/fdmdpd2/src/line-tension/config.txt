@@ -1,0 +1,5 @@
+1.0				# triangulation lattice constant
+0				# dump flatted profiles?
+2.0				# rough estimate of dy binwidth	
+16				# FFT size, bins in z direction
+2				# number of lines per system

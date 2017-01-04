@@ -1,0 +1,44 @@
+NGrid
+6 6
+XBound
+0 20
+YBound
+0 13
+DigPrecX
+1 f
+DigPrecY
+1 f
+ViewportX
+0.05
+ViewportY
+0.05
+LabelX
+Distance
+LabelY
+Density 
+#Title
+Tension Profile
+ScaleX
+0.2
+OffSetX
+-9.95
+ScaleY
+3.9
+PosLegend
+.7 .8 .9 .9
+Line
+1 #number of line
+0.0 0.7  0.0 1.0 #color
+2 # 0 no line, 1 dots, 2 lines, 3 lines and dots
+Phob
+Line
+2 #number of line
+0.0 0.0  0.7 1.0 #color
+2 # 0 no line, 1 dots, 2 lines, 3 lines and dots
+Phil
+Line
+3 #number of line
+0.7 0.0  0.0 1.0 #color
+2 # 0 no line, 1 dots, 2 lines, 3 lines and dots
+Nanoparticle
+

@@ -1,0 +1,69 @@
+.TH "DomCell" 3 "Thu Mar 27 2014" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DomCell \- 
+.PP
+For every cube how many particles and which are the first and the last\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Cubo\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDomCell\fP & \fBoperator=\fP (const \fBDomCell\fP &Dc)"
+.br
+.RI "\fIReturn the cell class\&. \fP"
+.ti -1c
+.RI "\fBDomCell\fP & \fBoperator+=\fP (const int i)"
+.br
+.ti -1c
+.RI "\fBDomCell\fP & \fBoperator++\fP ()"
+.br
+.RI "\fIIncrease the iterator, deactivated\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBNPart\fP"
+.br
+.RI "\fINumber of particles in the cell\&. \fP"
+.ti -1c
+.RI "int \fBFirst\fP"
+.br
+.RI "\fIFirst particle in the cell\&. \fP"
+.ti -1c
+.RI "int \fBLast\fP"
+.br
+.RI "\fILast particle in the cell\&. \fP"
+.ti -1c
+.RI "int \fBCurr1\fP"
+.br
+.RI "\fIFirst pointed particle;\&. \fP"
+.ti -1c
+.RI "int \fBCurr2\fP"
+.br
+.RI "\fISecond pointed particle;\&. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "void \fBoperator+\fP (\fBDomCell\fP &Dc)"
+.br
+.RI "\fIIncrement the current position\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+For every cube how many particles and which are the first and the last\&. 
+.PP
+Definition at line 142 of file Cubo\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

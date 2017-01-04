@@ -1,0 +1,683 @@
+.TH "Matematica" 3 "Thu Mar 27 2014" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Matematica \- 
+.PP
+Implementation of useful algorythms\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Matematica\&.h>\fP
+.PP
+Inherited by \fBVarDatFile\fP, and \fBVariabili\fP\fC [private]\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef double(Matematica::* \fBFUNC\fP )(double x)"
+.br
+.RI "\fIA tipical f(x) function\&. \fP"
+.ti -1c
+.RI "typedef void(Matematica::* \fBELAB\fP )(double *st, double *sw, int NMass)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatematica\fP ()"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "int \fBPermuteRandomAll\fP (int *Sequence, int NMass)"
+.br
+.RI "\fIPermutes a sequence without repeating\&. \fP"
+.ti -1c
+.RI "int \fBPermuteRandomAll\fP (\fBPERMUTE\fP *Sequence, int NMass)"
+.br
+.RI "\fIPermutes a sequence without repeating\&. \fP"
+.ti -1c
+.RI "int \fBApplyFilter\fP (\fBMatrice\fP *Point, \fBMatrice\fP *Res, \fBMatrice\fP *Mask)"
+.br
+.RI "\fIApplies the filter\&. \fP"
+.ti -1c
+.RI "int \fBApplyFilter\fP (\fBMatrice\fP *Res, \fBMatrice\fP *Mask)"
+.br
+.RI "\fIApplies the filter\&. \fP"
+.ti -1c
+.RI "int \fBTransform\fP (int *Out, int *In, int NEdge, int operation)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "void \fBBackFold\fP (\fBMatrice\fP *In, \fBMatrice\fP *Out, int NShift)"
+.br
+.RI "\fIShift all the rows upwards/downwards\&. \fP"
+.ti -1c
+.RI "void \fBSmooth\fP (double *st, double *sw, int NIn, int NOut)"
+.br
+.RI "\fISmooth the line with BSplines\&. \fP"
+.ti -1c
+.RI "double \fBEvalx\fP (double x)"
+.br
+.RI "\fIPointer to a generic function\&. \fP"
+.ti -1c
+.RI "double \fBContactAngle\fP (double x)"
+.br
+.RI "\fIDefinition of the contact angle\&. \fP"
+.ti -1c
+.RI "double \fBfProva\fP (double x)"
+.br
+.RI "\fITrial function\&. \fP"
+.ti -1c
+.RI "double \fBF\fP (double TD, double T)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "double \fBDf\fP (double x, double Delta)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "void \fBElabSt\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fIPointer to a function which operates on\&. \fP"
+.ti -1c
+.RI "void \fBDerivata\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fIDerivate of\&. \fP"
+.ti -1c
+.RI "void \fBDerO4\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fIDerivate O(4) of\&. \fP"
+.ti -1c
+.RI "double \fBIntegrazione\fP (double *Punti, double *sw, int NMass)"
+.br
+.RI "\fIIntegral of\&. \fP"
+.ti -1c
+.RI "void \fBIntegraA3\fP ()"
+.br
+.RI "\fIPerform a integration of a LJ6 Potential\&. \fP"
+.ti -1c
+.RI "void \fBSquareGradient\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fISquare of the gradient\&. \fP"
+.ti -1c
+.RI "double \fBIntegrazione\fP (double a, double b)"
+.br
+.RI "\fIIntegrates the function within\&. \fP"
+.ti -1c
+.RI "double \fBIntegrazioneGauss\fP (double a, double b, double Scarto)"
+.br
+.RI "\fIItegrate a Gaussian\&. \fP"
+.ti -1c
+.RI "int \fBZeri\fP (double a, double b, double *Radici, int NRadici)"
+.br
+.RI "\fIFind the\&. \fP"
+.ti -1c
+.RI "\fBRADICE\fP \fBRegulaFalsi\fP (double a, double b)"
+.br
+.RI "\fIUse regula falsi algorithm to find the roots\&. \fP"
+.ti -1c
+.RI "\fBRADICE\fP \fBNewton\fP (double a)"
+.br
+.RI "\fIUse Newton to find the roots\&. \fP"
+.ti -1c
+.RI "double \fBEstremo\fP (double a, double b)"
+.br
+.RI "\fIOther algorithm to find the roots\&. \fP"
+.ti -1c
+.RI "double \fBFattoriale\fP (int n)"
+.br
+.RI "\fICompute the factorial\&. \fP"
+.ti -1c
+.RI "double \fBGamma\fP (int n)"
+.br
+.RI "\fIEuler's gamma\&. \fP"
+.ti -1c
+.RI "double \fBElevato\fP (double x, int Volte)"
+.br
+.RI "\fIInteger power\&. \fP"
+.ti -1c
+.RI "double \fBBessel\fP (double Val, int Ord)"
+.br
+.RI "\fIBessel function\&. \fP"
+.ti -1c
+.RI "double \fBNeumann\fP (double Val, int Ord)"
+.br
+.RI "\fINeumann function\&. \fP"
+.ti -1c
+.RI "double \fBSegno\fP (int n)"
+.br
+.RI "\fISign of -^n\&. \fP"
+.ti -1c
+.RI "double \fBQuasiBessel\fP (double Val, int Ord)"
+.br
+.RI "\fIA faster Bessel\&. \fP"
+.ti -1c
+.RI "double \fBQuasiNeumann\fP (double Val, int Ord)"
+.br
+.RI "\fIA faster Neumann\&. \fP"
+.ti -1c
+.RI "double \fBWeightFunction\fP (double x, double a)"
+.br
+.RI "\fIDefinition of a weighting function\&. \fP"
+.ti -1c
+.RI "double \fBWeightFunction2\fP (double x, double a)"
+.br
+.RI "\fIDefinition of a weighting function\&. \fP"
+.ti -1c
+.RI "double \fBLJHamaker\fP (double r, double r_np, double theta)"
+.br
+.RI "\fIIntegration of the LJ 6 term\&. \fP"
+.ti -1c
+.RI "double \fBLJHamakerCum\fP (double Rad, double RadNpMin, double RadNpMax)"
+.br
+.RI "\fIIntegrate over r_np up to RadNp\&. \fP"
+.ti -1c
+.RI "double \fBLJHamaker\fP (double Rad, double r_np)"
+.br
+.RI "\fIIntegrate over theta\&. \fP"
+.ti -1c
+.RI "double \fBLJ39\fP (double r, double r_np)"
+.br
+.RI "\fIIntegration of the LJ 6 term\&. \fP"
+.ti -1c
+.RI "void \fBExecCommand\fP (double *st, double *st1, int NMass, char *cmd)"
+.br
+.RI "\fIExecute a command defined in string\&. \fP"
+.ti -1c
+.RI "double \fBExecFormula\fP (double x, double y, char *cmd)"
+.br
+.RI "\fIExecute a formula\&. \fP"
+.ti -1c
+.RI "double \fBExecFormula\fP (double **st, int n, char *cmd)"
+.br
+.RI "\fIExecute a formula\&. \fP"
+.ti -1c
+.RI "double \fBGauss\fP (double Media, double Scarto, double x)"
+.br
+.RI "\fIGaussian\&. \fP"
+.ti -1c
+.RI "bool \fBInizializzaGaussiano\fP (double Scarto, int N)"
+.br
+.RI "\fIInitialize the Gaussian number generator\&. \fP"
+.ti -1c
+.RI "double \fBGaussiano\fP (double Media, double Scarto)"
+.br
+.RI "\fIGaussian random number\&. \fP"
+.ti -1c
+.RI "void \fBSpettro\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fICompute the spectrum\&. \fP"
+.ti -1c
+.RI "void \fBSpettro2d\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fICompute the 2d spectrum of\&. \fP"
+.ti -1c
+.RI "void \fBSpettro2d\fP (double *st, double **sw, int NMass)"
+.br
+.RI "\fICompute the 2d spectrum of\&. \fP"
+.ti -1c
+.RI "void \fBSpettroDFT\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fIDFT implementation of the spectrum, slow\&. \fP"
+.ti -1c
+.RI "void \fBRadice\fP (double *st, double *sw, int N)"
+.br
+.RI "\fICompute the root of the signal\&. \fP"
+.ti -1c
+.RI "void \fBAutocor\fP (bool *st, double *sAuto, int N)"
+.br
+.RI "\fICompute the autocorrelation of a boolean signal\&. \fP"
+.ti -1c
+.RI "void \fBAutocor\fP (double *st, double *sAuto, int NMass)"
+.br
+.RI "\fICompute the autocorrelation of the signal\&. \fP"
+.ti -1c
+.RI "double \fBNorm\fP (double *st, int NMass)"
+.br
+.RI "\fINorm of an array\&. \fP"
+.ti -1c
+.RI "int \fBNormalizeArea\fP (double *st, int NMass)"
+.br
+.RI "\fINormalize\&. \fP"
+.ti -1c
+.RI "void \fBNormalizeVect\fP (double *st, int NMass)"
+.br
+.RI "\fINormalize\&. \fP"
+.ti -1c
+.RI "int \fBNormalizza\fP (double *st, int NMass)"
+.br
+.RI "\fINormalize\&. \fP"
+.ti -1c
+.RI "int \fBNormalizza\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fINormalize\&. \fP"
+.ti -1c
+.RI "void \fBModulo\fP (double *st, double *sw, int NMass)"
+.br
+.RI "\fICompute the modulus\&. \fP"
+.ti -1c
+.RI "void \fBMediaMobile\fP (double *st, int NMass, double *sw, int Parti)"
+.br
+.RI "\fIRunning average\&. \fP"
+.ti -1c
+.RI "int \fBMediaMobile\fP (double *st, int NMass, double *sw, double *sErr, int Parti)"
+.br
+.RI "\fIRunning average\&. \fP"
+.ti -1c
+.RI "int \fBCorrelaDuePunti\fP (double *st, int NMass, double *sw, int Punti)"
+.br
+.RI "\fITwo points correlation\&. \fP"
+.ti -1c
+.RI "void \fBAutosimilarita\fP (double *st, int NMass, double *sw, int Valori)"
+.br
+.RI "\fISelf similarity\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistribuzione\fP (const double *st, int NMass)"
+.br
+.RI "\fIMoments of a signal\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistribuzione\fP (const double *st, int NMass, double *Intervalli, int Valori, int IfNorm)"
+.br
+.RI "\fIMoments and histogram of a signal\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistribuzione\fP (const double *st, int NMass, double *Intervalli, int Valori, double *Confine, int IfNorm)"
+.br
+.RI "\fIMoments and histogram of a signal between two values\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistrErr\fP (const double *st, int NMass, double *Intervalli, double *Err, int Valori, double *Confine, int IfNorm)"
+.br
+.RI "\fIMoments and histogram of a signal between two values\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistribuzioneGauss\fP (const double *st, int NMass, double *Intervalli, double *dInt, int Valori, int IfNorm)"
+.br
+.RI "\fILook for the Gaussian distribution\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistribuzioneMaxwell\fP (const double *st, int NMass, double *Intervalli, double *dInt, int Valori, int IfNorm)"
+.br
+.RI "\fILook for the Maxwellian distribution\&. \fP"
+.ti -1c
+.RI "void \fBDistrSample\fP (double *Px, double *Py, int NMax, double **Distr, int NBin, const int NSample, int IfNorm, double *xBound)"
+.br
+.RI "\fICompare the distribution of a sample of data\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBWeightAverage\fP (const double *sx, const double *sy, int NMax)"
+.br
+.RI "\fICalculate the weighted average\&. \fP"
+.ti -1c
+.RI "void \fBWeightHisto\fP (double **hist, double *Border, int NBin, int NHisto, double tolerance, double *OrPos, double *kSpring)"
+.br
+.RI "\fIWeighted histogram analysis\&. \fP"
+.ti -1c
+.RI "void \fBSort\fP (double *Sign, int NMass)"
+.br
+.RI "\fISort\&. \fP"
+.ti -1c
+.RI "void \fBSwap\fP (int i, int j, double *Sign)"
+.br
+.RI "\fISwap to indices\&. \fP"
+.ti -1c
+.RI "void \fBSwap\fP (double *s, int si, double *t, int ti, const int NDim)"
+.br
+.RI "\fISwap to arrays\&. \fP"
+.ti -1c
+.RI "void \fBSort\fP (int *Sign, int NMass)"
+.br
+.RI "\fISort\&. \fP"
+.ti -1c
+.RI "void \fBSwap\fP (int i, int j, int *Sign)"
+.br
+.RI "\fISwap to indices\&. \fP"
+.ti -1c
+.RI "void \fBFileSin1d\fP (char *FName)"
+.br
+.RI "\fICreate a file with a sign function\&. \fP"
+.ti -1c
+.RI "void \fBFileSin2d\fP (char *FName)"
+.br
+.RI "\fICreate a file with a sign function in 2d\&. \fP"
+.ti -1c
+.RI "void \fBConvWeight\fP (double *st, int NMax, double *sw, int *WIndex, int NWeight)"
+.br
+.RI "\fIConvolute with a weight\&. \fP"
+.ti -1c
+.RI "void \fBFillWeightGauss\fP (double *st, int *WIndex, int NWeight, double CutOff, double Sigma)"
+.br
+.RI "\fIFill the weight array with a gaussian fuction\&. \fP"
+.ti -1c
+.RI "double \fBLinInterp\fP (double Px1, double Px2, double Py1, double Py2, double x)"
+.br
+.RI "\fILinear interpolation between two points\&. \fP"
+.ti -1c
+.RI "\fBRETTA\fP \fBInterRett\fP (double *Px, double *Py, int NMass)"
+.br
+.RI "\fILinear interpolation\&. \fP"
+.ti -1c
+.RI "\fBRETTA\fP \fBInterExp\fP (double *Px, double *Py, int NMass)"
+.br
+.RI "\fIExponential interpolation\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBInterGauss\fP (double *Px, double *Py, int NMass)"
+.br
+.RI "\fIGaussian interpolation\&. \fP"
+.ti -1c
+.RI "\fBRETTA\fP \fBInterRett\fP (double *Px, double *Py, double *Peso, int NMass)"
+.br
+.RI "\fILinear weighted interpolation\&. \fP"
+.ti -1c
+.RI "\fBPARABOLA\fP \fBMinimoParabola\fP (double a, double b, double *Px, double *Py, int NMass)"
+.br
+.RI "\fIMinimum of the Parabola between\&. \fP"
+.ti -1c
+.RI "\fBPARABOLA\fP \fBMinimoParabola\fP (double *Px, double *Py, int NMass)"
+.br
+.RI "\fIGlobal minimum interpolating via a Parabola\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBParab\fP (double *P1, double *P2, double *P3, int x, int y)"
+.br
+.RI "\fIThree points parabolic interpolation\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBParab2\fP (double *PA, double *PB, double *PC, int x, int y)"
+.br
+.RI "\fIThree points parabolic interpolation\&. \fP"
+.ti -1c
+.RI "\fBCIRCLE\fP \fBOsculante\fP (double *PA, double *PB, double *PC, int x, int y)"
+.br
+.RI "\fIOsculant circle\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBCubica\fP (double *PA, double *PB, double *PC, double *PD, int x, int y)"
+.br
+.RI "\fIFour point cubic interpolation\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBForth\fP (double *PA, double *PB, double *PC, double *PD, double *PE, int x, int y)"
+.br
+.RI "\fIFive points four order interpolation\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBSpline3\fP (double *P1, double *P2, double *P3, int x, int y)"
+.br
+.RI "\fIThree order spline\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBSpline3Beg\fP (double *P1, double *P2, double *P3, int x, int y)"
+.br
+.RI "\fIThree order spline first boundary\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBSpline3End\fP (double *P1, double *P2, int x, int y)"
+.br
+.RI "\fIThree order spline last boundary\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBSpline4Beg\fP (double *P1, double *P2, double *P3, double *P4, int x, int y)"
+.br
+.RI "\fIFour order spline first boundary\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBSpline4\fP (double *P1, double *P2, double *P3, double *P4, int x, int y)"
+.br
+.RI "\fIFour order spline\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBSpline4\fP (double *P1, double *P2, double *P3, int x, int y)"
+.br
+.RI "\fIFour order spline\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBSpline4PreEnd\fP (double *P1, double *P2, double *P3, int x, int y)"
+.br
+.RI "\fIFour order spline just before the end\&. \fP"
+.ti -1c
+.RI "\fBSPLINE\fP \fBSpline4End\fP (double *P1, double *P2, int x, int y)"
+.br
+.RI "\fIFour order spline last boundary\&. \fP"
+.ti -1c
+.RI "int \fBPolinomio\fP (double *P1, double *P2, int NMass, \fBSpline\fP *Sp)"
+.br
+.RI "\fIPolinimial interpolation of  NMass order\&. \fP"
+.ti -1c
+.RI "int \fBDerMatrix\fP (double *Px, double *Py, int NMass, \fBSPLINE\fP Wg, \fBSpline\fP *Sp)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "double \fBCasuale\fP ()"
+.br
+.RI "\fIRandom uniform number\&. \fP"
+.ti -1c
+.RI "double \fBRandDiscrProb\fP (double *Prob, int NBin)"
+.br
+.RI "\fIRandom number following a discrete probability\&. \fP"
+.ti -1c
+.RI "double \fBQBezier\fP (double *P1, double *P2, double *P3, double x, int y)"
+.br
+.RI "\fIQBezier curve of three points\&. \fP"
+.ti -1c
+.RI "int \fBFactorial\fP (int times)"
+.br
+.RI "\fIComputes\&. \fP"
+.ti -1c
+.RI "double \fBBinomial\fP (int times, int n)"
+.br
+.RI "\fIFor the BSpline\&. \fP"
+.ti -1c
+.RI "double \fBBlend\fP (const double *dPoint, double x, int nPoint, int nOrder)"
+.br
+.RI "\fIFor the BSpline\&. \fP"
+.ti -1c
+.RI "double \fBBlend\fP (double *dPoint, size_t Incr, double x, int nPoint, int nOrder)"
+.br
+.RI "\fIFor the BSpline\&. \fP"
+.ti -1c
+.RI "int \fBInterBSpline2D\fP (\fBMatrice\fP *MaIn, \fBMatrice\fP *MaOut)"
+.br
+.RI "\fIComputes the BSpline of a given\&. \fP"
+.ti -1c
+.RI "int \fBVoronoi\fP ()"
+.br
+.RI "\fIVoronoi tassellation, in progress\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFUNC\fP \fBFunc\fP"
+.br
+.RI "\fIPointer to a function\&. \fP"
+.ti -1c
+.RI "ELAB \fBElab\fP"
+.br
+.ti -1c
+.RI "double \fBYpsilon\fP"
+.br
+.RI "\fIExternal parameter to calculate the contact angle\&. \fP"
+.ti -1c
+.RI "double \fBPreFact\fP"
+.br
+.RI "\fIExternal parameter in the definition of the contact angle\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation of useful algorythms\&. 
+.PP
+Definition at line 76 of file Matematica\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int \fBApplyFilter\fP (\fBMatrice\fP *Point, \fBMatrice\fP *Res, \fBMatrice\fP *Mask)"
+.PP
+Applies the filter\&. \fBParameters:\fP
+.RS 4
+\fIMask\fP on 
+.br
+\fIPoint\fP to 
+.br
+\fIRes\fP 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file MatematicaFilter\&.cpp\&.
+.PP
+References Matrice::Add(), Matrice::Size(), and Matrice::Val()\&.
+.PP
+Referenced by DrEffect::EffectFilter(), and VarData::SpatialDerivative()\&.
+.SS "int \fBApplyFilter\fP (\fBMatrice\fP *Res, \fBMatrice\fP *Mask)"
+.PP
+Applies the filter\&. \fBParameters:\fP
+.RS 4
+\fIMask\fP on 
+.br
+\fIRes\fP 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file MatematicaFilter\&.cpp\&.
+.PP
+References Matrice::CopyOn(), Matrice::pNCol(), Matrice::pNRow(), Matrice::Set(), and Matrice::Val()\&.
+.SS "void \fBElabSt\fP (double *st, double *sw, intNMass)\fC [inline]\fP"
+.PP
+Pointer to a function which operates on\&. \fBParameters:\fP
+.RS 4
+\fIsw\fP with the data of 
+.br
+\fIst\fP 
+.RE
+.PP
+
+.PP
+Definition at line 130 of file Matematica\&.h\&.
+.PP
+Referenced by VarDatFile::ElabSegnale()\&.
+.SS "void \fBDerivata\fP (double *st, double *sw, intNMass)"
+.PP
+Derivate of\&. \fBParameters:\fP
+.RS 4
+\fIst\fP 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file MatematicaFunc\&.cpp\&.
+.PP
+Referenced by Matematica()\&.
+.SS "void \fBDerO4\fP (double *st, double *sw, intNMass)"
+.PP
+Derivate O(4) of\&. \fBParameters:\fP
+.RS 4
+\fIst\fP 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file MatematicaFunc\&.cpp\&.
+.PP
+Referenced by VarDatFile::DerivataSegnale(), SquareGradient(), and VarDatFile::VarieSegnale()\&.
+.SS "double \fBIntegrazione\fP (double *Punti, double *sw, intNMass)"
+.PP
+Integral of\&. \fBParameters:\fP
+.RS 4
+\fIst\fP 
+.RE
+.PP
+
+.PP
+Definition at line 30 of file MatematicaFunc\&.cpp\&.
+.PP
+Referenced by F(), and VarDatFile::IntSegnale()\&.
+.SS "double \fBIntegrazione\fP (doublea, doubleb)"
+.PP
+Integrates the function within\&. \fBParameters:\fP
+.RS 4
+\fIa\fP and 
+.br
+\fIb\fP 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file MatematicaFunc\&.cpp\&.
+.PP
+References Evalx()\&.
+.SS "int \fBZeri\fP (doublea, doubleb, double *Radici, intNRadici)"
+.PP
+Find the\&. \fBParameters:\fP
+.RS 4
+\fINRadici\fP zeros of the pointed function between a
+.br
+\fIa\fP and 
+.br
+\fIb\fP using different algorithm 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file MatematicaFunc\&.cpp\&.
+.PP
+References RADICE::IfRis, RegulaFalsi(), and RADICE::Zero\&.
+.PP
+Referenced by ElPoly::Angle(), Normalizza(), and ElPoly::RadialShell()\&.
+.SS "double \fBGaussiano\fP (doubleMedia, doubleScarto)"
+.PP
+Gaussian random number\&. Mersenne Twister + Box-Muller transform\&. 
+.PP
+Definition at line 23 of file MatematicaSign\&.cpp\&.
+.PP
+Referenced by VarData::AddChains(), VarData::AddCholesterol(), VarData::AddSolvent(), Forces::AndersenTherm(), Forces::CreateElectro(), Forces::CreateMD(), Forces::CreateSetBond(), VarData::CreateSoft(), VarData::DefRest(), Forces::InsertRest(), Forces::MinimalMD(), Forces::MoveBead(), VarData::PutPart(), Forces::WeightSetBond(), and ElPoly::WidomIn()\&.
+.SS "void \fBSpettro2d\fP (double *st, double *sw, intNMass)"
+.PP
+Compute the 2d spectrum of\&. \fBParameters:\fP
+.RS 4
+\fIst,return\fP the 1d 
+.RE
+.PP
+
+.PP
+Definition at line 156 of file MatematicaSign\&.cpp\&.
+.PP
+Referenced by ElPoly::SpectrumF(), and VarData::Spettro2d()\&.
+.SS "void \fBSpettro2d\fP (double *st, double **sw, intNMass)"
+.PP
+Compute the 2d spectrum of\&. \fBParameters:\fP
+.RS 4
+\fIst,return\fP the 2d 
+.RE
+.PP
+
+.PP
+Definition at line 204 of file MatematicaSign\&.cpp\&.
+.SS "\fBPARABOLA\fP \fBMinimoParabola\fP (doublea, doubleb, double *Px, double *Py, intNMass)"
+.PP
+Minimum of the Parabola between\&. \fBParameters:\fP
+.RS 4
+\fIa\fP and 
+.br
+\fIb\fP 
+.RE
+.PP
+
+.PP
+Definition at line 496 of file MatematicaInterp\&.cpp\&.
+.PP
+References PARABOLA::a0, PARABOLA::a1, PARABOLA::a2, PARABOLA::Minimo, and PARABOLA::MinimoY\&.
+.PP
+Referenced by VarDatFile::ParabolaSegnale()\&.
+.SS "int \fBFactorial\fP (inttimes)"
+.PP
+Computes\&. \fBParameters:\fP
+.RS 4
+\fItimes!\fP 
+.RE
+.PP
+
+.PP
+Definition at line 83 of file Matematica\&.cpp\&.
+.PP
+Referenced by Binomial()\&.
+.SS "int \fBInterBSpline2D\fP (\fBMatrice\fP *MaIn, \fBMatrice\fP *MaOut)"
+.PP
+Computes the BSpline of a given\&. \fBParameters:\fP
+.RS 4
+\fIMaIn\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

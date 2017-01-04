@@ -1,0 +1,408 @@
+#include <iostream>
+#include <stdexcept>
+
+class Matrix{
+    //private member attributes
+    double **m;
+    unsigned rows;
+    unsigned cols;
+     
+    void allocate_mem(double ***ptr, unsigned r, unsigned c){
+        *ptr = new double*[r];
+        (*ptr)[0] = new double[r*c];
+        for(unsigned i = 1; i < r; ++i)
+            (*ptr)[i] = (*ptr)[0] + i*c;
+    }
+     
+public:
+Matrix(unsigned r, unsigned c, double default_val = 0):
+    rows(r), cols(c) 
+    {
+        allocate_mem(&m,rows,cols);
+        reset(default_val);
+    }
+     
+Matrix(unsigned r, unsigned c, double *v, unsigned length):
+    rows(r), cols(c){
+        allocate_mem(&m,rows, cols);
+        reset(0);
+        for(unsigned i = 0; i < length && i < r*c; ++i){
+            m[0][i] = v[i];
+        }
+    }
+     
+Matrix(unsigned n) : Matrix(n,n){
+    }
+     
+Matrix() : Matrix(1) {}
+     
+    //Copy constructor
+Matrix(const Matrix &mat):
+    rows(mat.rows), cols(mat.cols)
+    {
+        allocate_mem(&m,rows,cols);
+        for(unsigned i = 0; i < rows; ++i)
+            for(unsigned j = 0; j < cols; ++j)
+                m[i][j] = mat[i][j];
+    }
+     
+    //Copy-assignment operator
+    Matrix &operator=(const Matrix &mat){
+        //first copy right-end operand matrix
+        double **new_ptr = nullptr;
+        allocate_mem(&new_ptr, mat.rows, mat.cols);
+        for(unsigned i = 0; i < rows; ++i)
+            for(unsigned j = 0; j < cols; ++j)
+                new_ptr[i][j] = mat[i][j];
+         
+        //free old memory
+        delete[] m[0];
+        delete[] m;
+         
+        //copy data from rhs into this object
+        m = new_ptr;
+        rows = mat.rows;
+        cols = mat.cols;
+         
+        return *this;
+    }
+     
+    ~Matrix(){
+        delete[] m[0];
+        delete[] m;
+    }
+     
+    Matrix &reset(double value){
+        for(unsigned i = 0; i < rows; ++i)
+            for(unsigned j = 0; j < cols; ++j)
+                m[i][j] = value;
+        return *this;
+    }
+     
+    int rows_number(const Matrix &m) const{ return rows; }
+    int cols_number(const Matrix &m) const{ return cols; }
+     
+    double *operator[](int n){
+        if(n < 0 && n >= rows)
+            throw std::out_of_range("Subscript index greater than matrix row number");
+        return m[n]; 
+    }
+    const double *operator[](int n) const{ 
+        if(n< 0 && n >= rows)
+            throw std::out_of_range("Subscript index greater than matrix row number");
+        return m[n];
+    }
+    friend std::ostream &operator<<(std::ostream &os,const Matrix &mat){
+        for(unsigned i = 0; i < mat.rows; ++i){
+            for(unsigned j = 0; j < mat.cols-1; ++j)
+                os << mat[i][j] << "\t";
+            os << mat[i][mat.cols-1] << std::endl;
+        }
+        return os;
+    }
+     
+    friend bool operator==(const Matrix &lhs, const Matrix &rhs){
+        if(!(lhs.rows == rhs.rows && lhs.cols == rhs.cols))
+	    return false;
+	for(unsigned i = 0; i < lhs.rows; ++i)
+	    for(unsigned j = 0; j < lhs.cols; ++j)
+		if(lhs[i][j] != rhs[i][j])
+		    return false;
+	return true;
+    }
+     
+    friend bool operator!=(const Matrix &lhs, const Matrix &rhs){
+        return !(lhs == rhs);
+    }
+     
+    friend Matrix operator+(const Matrix &lhs, const Matrix &rhs){
+        if(lhs.rows == rhs.rows && lhs.cols == rhs.cols){
+            Matrix sum(lhs.rows, lhs.cols);
+            for(unsigned i = 0; i < lhs.rows; ++i)
+                for(unsigned j = 0; j < lhs.cols; ++j)
+                    sum[i][j] = lhs[i][j] + rhs[i][j];
+            return sum;
+        }else{
+            throw std::logic_error("Impossible to apply operator+(). The size of the matrices must be the same.");
+        }
+    }
+     
+ 
+    friend Matrix operator-(const Matrix &lhs, const Matrix &rhs){
+        if(lhs.rows == rhs.rows && lhs.cols == rhs.cols){
+            Matrix sum(lhs.rows, lhs.cols);
+            for(unsigned i = 0; i < lhs.rows; ++i)
+                for(unsigned j = 0; j < lhs.cols; ++j)
+                    sum[i][j] = lhs[i][j] - rhs[i][j];
+            return sum;
+        }else{
+            throw std::logic_error("Impossible to apply operator-(). The size of the matrices must be the same.");
+        }
+    }
+     
+    friend Matrix operator*(const Matrix &lhs, const Matrix &rhs){
+        if(lhs.cols == rhs.rows){
+            //row-col matrix product
+            Matrix result(lhs.rows, rhs.cols);
+            for(unsigned i = 0; i < lhs.rows; ++i){
+                for(unsigned j = 0; j < rhs.cols; ++j){
+                    for(unsigned k = 0; k < lhs.cols; ++k)
+                        result[i][j] += lhs[i][k] * rhs[k][j];
+                }
+            }
+            return result;
+        }else{
+            throw std::logic_error("Impossible to apply operator*(). The column-size of the lhs must equal to the row-size of the rhs.");
+ 
+        }
+    }
+
+    //function for evaluating cost c=d_ss'+a_s'
+    void riempi_cost(Matrix &d,std::vector <unsigned> a){
+	for(unsigned i=1; i<rows; ++i){
+	    for(unsigned j=1; j<cols; ++j){
+		m[i][j]=d[i][j]+a[j-1];
+	    }
+	}
+    }
+    //function for update the initial tour matrix
+    void riempi_tours(){
+	for(unsigned i=1;i<cols;++i){
+	    m[1][i]=i+1;
+	}
+    }
+
+
+    //trova estremi dei tours
+    Matrix trova_estremi(){
+	Matrix estremi(2,cols,0);
+	Matrix col(rows,1,0);
+
+	//elementi in prima posizione
+	for (unsigned i = 0; i < cols; ++i)
+	{
+	    estremi[0][i]=m[1][i];
+	}
+	//elementi in ultima posizione
+	for(unsigned i=0; i<cols; ++i){
+	    col=trova_colonna(i);
+	    unsigned j=trova_end(col);
+	    estremi[1][i]=j;
+	}
+
+	return estremi;
+    }
+
+    //funzione ritorna la colonna della matrice 
+    Matrix trova_colonna(unsigned k){
+	Matrix col(rows,1,0);
+	for (unsigned j = 0; j < rows; ++j)
+	{
+	    col[j][0]=m[j][k];
+	}
+		
+	return col;
+    }
+
+    //trova l'elemento finale di un tours dato dalla sola colonna del tour
+    unsigned trova_end(const Matrix &tours){
+	for (unsigned i = 1; i < rows; ++i)
+	{
+	    if(tours[i][0]==0){
+		return tours[i-1][0];
+	    }
+	}
+	return 0;
+    }
+
+    //funzione per valutare i savings che abbiamo unendo due tour
+    void riempi_savings(const Matrix &cost, Matrix &estremi){
+	for(unsigned i=0; i<rows; ++i){
+	    for(unsigned j=0; j<cols; ++j){
+		unsigned s1=estremi[0][i]; //estremo iniziale tour i
+		unsigned s2=estremi[1][j]; //estremo finale tour j
+		m[i][j]=cost[0][s1]+cost[s2][0]-cost[s2][s1]; //guadagno ottenuto eliminando gli aggangi a 0 e unendo s1 e s2
+		if(i==j){m[i][j]=0;} //vale zero se unisco tour i a tour i 
+	    }
+	}
+    }
+
+    //funzione che determina gli indici dei tour da unire 
+    unsigned cerca_index(Matrix &indici_tours, unsigned L, Matrix &costi, Matrix &indici_estremi, Matrix &savings){
+	Matrix ordinati(1,rows*cols,0); //matrice in cui metto i savings ordinati
+		
+	savings.ordina_savings(ordinati); //ordino i savings
+		
+	//dati i savings ordinati cerco se ci sono tour da unire 
+	unsigned k=0;  //per scorrere savings
+	do{
+	    for(unsigned i=0;i<rows;++i){  //for per scorrere la matrice savings
+		for(unsigned j=0;j<cols;++j){
+		    if (savings[i][j]==ordinati[0][k] && calcola_costo_tour(costi,i,j,indici_estremi)<L){ //trovo l'indice dei due tour da unire e
+			indici_tours[0][0]=i; //indice primo tour
+			indici_tours[0][1]=j; //indice secondo tour
+			return 0;
+		    } 
+		    else{k++;
+			savings[i][j]=-1;
+			i=rows;
+			j=cols;}
+		}
+	    }
+	}while(ordinati[0][k]<0);
+	return 0;
+    }
+
+    //funzione che calcola il costo di due tour uniti 
+    unsigned calcola_costo_tour(Matrix &costi, unsigned t1, unsigned t2, Matrix &indici_estremi){
+	unsigned s1=indici_estremi[1][t1]; //ultimo elemento tour 1
+	unsigned s2=indici_estremi[0][t2]; //primo elemento tour 2
+	unsigned costot1=0; //costo primo tour 
+	unsigned costot2=0; //costo secondo tour
+
+	costot1=calcola_costo(colonna(t1))-costi[s1][0]; //calcolo costo primo tour
+	costot2=calcola_costo(colonna(t2))-costi[0][s2]; //caolcolo costo secondo tour 
+	return costot1+costot2; //costo totale unendo il secondo in coda al primo 
+    }
+
+    //funzione che calcola il costo di un tour 
+    unsigned calcola_costo(Matrix tour){
+	unsigned c=0;
+	for (int i = 0; i < rows; ++i)
+	{	
+	    unsigned s1=tour[i][0];
+	    unsigned s2=tour[i+1][0];
+	    c=c+m[s1][s2];
+	}
+	return c;
+    }
+
+    //ordino gli elementi di savings
+    void ordina_savings(Matrix &ordinati){
+	unsigned k=0;
+	for(unsigned i=0;i<rows;++i){
+	    for(unsigned j=0;j<cols;++j){
+		ordinati[0][k]=m[i][j];
+		k++;
+	    }
+	}
+
+	for(unsigned i=0;i<rows*cols;++i){
+	    unsigned max=k;
+
+	    for(unsigned j=i+1;j<rows*cols;++j){
+		if(ordinati[0][j]>ordinati[0][max]){max=j;}
+	    }
+	    int temp=ordinati[0][max];
+	    ordinati[0][max]=ordinati[0][i];
+	    ordinati[0][i]=temp;
+	}
+
+    }
+
+    //matrice che lavoro sulla matrice tour e unisce il tour i e j 
+    void unione_tour(Matrix &indici_tours){
+	unsigned t1=indici_tours[0][0];
+	unsigned t2=indici_tours[0][1];
+	unsigned k=0;
+		
+	for (unsigned i = 1; i < rows; ++i)
+	{
+	    if(m[i][t1]==0 && m[i-1][t1]!=0){k=i-1; break;}
+	}
+
+	for (unsigned i = 1; i < rows; ++i)
+	{
+	    m[k][t1]=m[i][t2];
+	    if(m[i][t2]==0){break;}
+	}
+
+	elimina_col(t2);
+    }
+
+    //funzione che data una matrice elimina la colonna elim
+    void elimina_col(unsigned elim){ 
+
+	for (unsigned i=0;i<rows;i++){
+	    for (unsigned j=elim;j<cols;j++){
+		m[i][j]=m[i][j+1]; 
+	    }
+	}	
+	cols--; 
+    } 
+
+    //funzione che sposta l'estremo di t2 in t1 e elimina la colonna t2, cioè aggiorna la matrice degli estremi
+    void nuovi_estremi(Matrix &indici_tours){
+	unsigned t1=indici_tours[0][0];
+	unsigned t2=indici_tours[0][1];
+
+	m[1][t1]=m[1][t2];
+
+	elimina_col(t2);
+    }
+
+    //funzione che calcola nuovi savings
+    void calcola_nuovi_savings(Matrix &costi, Matrix &estremi){
+	Matrix new_savings(rows-1,cols-1,0);
+
+	new_savings.riempi_savings(costi,estremi);
+
+	elimina_col(0);
+
+	*this=new_savings;
+
+    }
+
+
+    //funzione che determina la soluzione iniziale 
+
+    void sol_iniziale(Matrix &costi, unsigned L){
+		
+	unsigned ns=cols_number(costi);
+		
+	//determino i tour iniziali: array di puntatori a array di un elemento che corrisponde al cliente i
+	riempi_tours();  //riempio la matrice con i tour iniziali 
+		
+	unsigned nt=ns; //numero tours iniziale 
+	std::cout << "tours!";
+
+	unsigned update=1; //vale 1 se ho trovato miglioramenti 
+
+	Matrix savings(nt,nt,0);  //matrice dei savings
+		
+	Matrix estremi=trova_estremi(); //matrice che contiene gli estremi di ogni tour
+	savings.riempi_savings(costi,estremi); //calcolo i savings tra tour considerando solo l'unione degli estremi
+
+	//inizio a unire i tours finchè non ho più miglioramenti 
+	do{
+		
+	    Matrix tour_da_unire(1,2,0); //determino gli indici dei tour da unire 
+	    cerca_index(tour_da_unire,L,costi,estremi,savings); //ottengo gli indici dei tour da unire
+		
+	    if(tour_da_unire[0][0]!=0 & tour_da_unire[0][1]!=0){
+		unione_tour(tour_da_unire); //unisco i tour e elimino la colonna
+			
+		estremi.nuovi_estremi(tour_da_unire); //modifico la matrice degli estremi
+			
+		savings.calcola_nuovi_savings(costi,estremi); //calcolo i savings tra nuovi tour 
+	    }
+	    else{update=0;}
+		
+	}while(update==0);
+
+	std::cout //<< "distanze:" << std::endl << d << std::endl
+	    //<< "tempi:" << std::endl << tempi << std::endl
+	    << "costi:" << std::endl << costi << std::endl
+	    //<< "tours:" << std::endl << tours << std::endl
+	    << "estremi:" << std::endl << estremi << std::endl;
+        //<< "savings:" << std::endl << savings << std::endl
+        //<< "ordinati:" << std::endl << ordinati << std::endl;
+
+
+    }
+
+
+
+
+ 
+};

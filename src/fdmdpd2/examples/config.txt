@@ -1,0 +1,217 @@
+#############################################################################
+##  INTEGRATION / STATISTICAL ENSEMBLE
+#############################################################################
+
+# Select which ensemble should be used for the simulation. The default value
+# is the canonical "NVT" ensemble. Possible other choices are "NPT" for the
+# standard isobaric ensemble, "NPtT" for the constant lateral pressure
+# ensemble with isotropic fluctuations of the area, and "NPtT2" for the same
+# ensemble with anisotropic area fluctuations.
+#
+integrator
+{
+	ensemble = "NVT"	# valid ensembles: NVT, NPT, NPtT, NPtT2
+	Q = 0.0001		# Mass of the artificial degree of freedom
+	gamma = 0.1		# The friction coefficient
+	P0 = 0			# The desired pressure
+}
+
+# There are two different thermostats implemented: DPD and Langevin.
+# tgamma specifies the friction constant of the thermostat.
+main
+{
+	seed = 0		# General random number generator seed for DPD
+	total_time = 500.0	# The total duration of the simulation
+	thermostat = "DPD"	# valid types: DPD, Langevin, TDPD
+	gamma = 0.5		# DPD / Langevin friction coefficient
+	gamma_p = 0.0		# Transversal DPD (TDPD) friction coefficient
+	dt = 0.005		# Integration time step
+	rs = 0.07	 	# shell radius, must be 0 if ensemble != NVT
+	bilayer_normal = 0	# direction of normal vector to the bilayer
+}	
+
+#############################################################################
+##  FINETUNING OF THE THERMOSTAT
+##  Note: the desired thermostat must be selected above!
+#############################################################################
+
+# It is possible to specify the friction coefficients of each species in each
+# direction (x/y/z) individually when using the Langevin thermostat. If the
+# following lines are uncommented, then these settings override the gamma
+# parameter specified above.
+#langevin
+#{
+#	gamma_x = { 0.5, 0.5 }	# x-direction for species A, B
+#	gamma_y = { 0.5, 0.5 }	# y-direction for species A, B
+#	gamma_z = { 0.5, 0.5 }	# z-direction for species A, B
+#}
+
+# It is also possible to specify the DPD friction coefficients for each
+# pairwise interaction individually. For two species the order is A-A,
+# A-B/B-A, and B-B. For three species it is: A-A, A-B/B-A, A-C/C-A,
+# B-B, B-C/C-B, C-C. If uncommented, these settings override the gamma
+# parameter specified above.
+#dpd
+#{
+#	gamma = {0.1, 0.2, 0.3}
+#}
+
+# Finally, the TDPD parameters can be specified as well. The only
+# difference to the DPD settings is, that there are now the longitudinal
+# (gamma) and the transverse settings (gamma_p). If uncommented, these
+# settings override the gamma and the gamma_p parameters specified above.
+#tdpd
+#{
+#	gamma = {0.1, 0.2, 0.3}
+#	gamma_p = {0.1, 0.2, 0.3}
+#}
+
+#############################################################################
+##  REGULAR TASKS
+#############################################################################
+
+# measurements of pressure, etc.
+task measure
+{
+	dt = 2.0
+}
+
+# Dump VTF file for visualization with VMD
+#task vmd
+#{
+#	dt = 5.0
+#	filename = "dump.vtf"
+#}
+
+# Save the current state of the system
+task save_beads
+{
+	dt = 50.0
+	filename = "output%09lu.dat"
+	snapshots = 1000
+	bufsize = 16777216
+}
+
+# measure intermediate structure function (isf)
+#task measure_isf
+#{
+#	dt = 0.02
+#	filename = "resume-isf.dat"
+#	bufsize = 16777216
+#}
+
+# save backup copy of isf data
+#task save_isf
+#{
+#	dt = 50.0
+#	filename = "output%09lu-isf.dat"
+#}
+
+# measurement of the stress tensor's autocorrelation function
+#task stress_autocorr
+#{
+#	dt = 0.005
+#	filename = "stress_autocorr.dat"	
+#}
+
+# Apply shear stress with the Müller-Plathe method
+#task rnemd
+#{
+#        dt = 5.0
+#}
+
+# overwrite the Tension*.dat files
+#task TensSave
+#{
+#	dt = 5
+#}
+
+#task TensMeasure
+#{
+#	dt = 0.5
+#}
+
+# perform SGCMC move
+#task mdpd_sg_move
+#{
+#	dt = 0.02
+#}
+
+#############################################################################
+##  HEINZ/HUENENBERGER PAIR LIST CREATOR
+#############################################################################
+
+nblist
+{
+	dx = 0.45	# Size of the microscopic boxes of HH-algorithm
+	K = 20		# max number of beads per microscopic box
+}	
+
+#############################################################################
+##  OTHER QUANTITIES
+#############################################################################
+
+# in-situ calculation of dynamical quantities
+#isf
+#{
+#	n = 4		# degree of cardinal b-splines
+#	com = 1		# enable com dynamics
+#	dump_current = 0 # write all data to disk (heavy I/O!)
+#}	
+
+#############################################################################
+##  MUELLER-PLATHE METHOD TO CALCULATE SHEAR VISCOSITY
+#############################################################################
+
+#rnemd
+#{
+#        slabs = 20      # number of slabs
+#        swaps = 1       # number of swaps per sweep
+#        gradient = 1    # dimension of velocity gradient
+#        velocity = 2    # dimension of velocity direction
+#}
+
+##############################################################################
+##  Definition for the stress tensor profile 
+##############################################################################
+
+#Tens
+#{
+#	NSlab = 200	# binning
+#	NSlab3d = 30    # binning 3d
+#	NComp = 6	# number of components
+#	NAverage = 60   # number of separated time step to average
+#	CalcMode = no   # type of summation [line,tilt,3d,2d,2dloop]
+#}
+
+
+#############################################################################
+##  Widom insertion of lipids
+##############################################################################
+#Widom
+#{
+#        NStep = 10
+#        CalcMode = no
+#        ChemPot = -40.
+#}
+
+#############################################################################
+###  Calculation of the radial slab diffusivity
+###############################################################################
+
+#Diff
+#{
+#       NBin = 10
+#       NStep = 100
+#       
+#}
+
+##############################################################################
+##  SGCMC Moves
+##############################################################################
+
+#mdpd_sg
+#{
+#        str = {"0000000000001111", "0000000011111111"}	# architecture
+#        fugacity = {1, 1}				# fugacity
+#}

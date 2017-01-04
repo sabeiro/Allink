@@ -1,0 +1,70 @@
+.TH "MatInt" 3 "Thu Mar 27 2014" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MatInt \- 
+.PP
+Energy contribution from the density functional hamiltonian\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VarData\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatInt\fP (int NType, int NOrd)"
+.br
+.RI "\fICreates and fill the matrix\&. \fP"
+.ti -1c
+.RI "void \fBFillEntries\fP (double *Matr, int Ord)"
+.br
+.RI "\fIFill all the entries\&. \fP"
+.ti -1c
+.RI "int \fBIntType\fP (int t1, int t2)"
+.br
+.RI "\fIMatrix element of the two type interaction\&. \fP"
+.ti -1c
+.RI "int \fBIntType\fP (int t1, int t2, int t3)"
+.br
+.RI "\fIMatrix element of the two type interaction\&. \fP"
+.ti -1c
+.RI "double \fBCoeff\fP (int t1, int t2)"
+.br
+.RI "\fIPrefactor of the force\&. \fP"
+.ti -1c
+.RI "double \fBCoeff\fP (int t1, int t2, int t3)"
+.br
+.RI "\fIPrefactor of the force\&. \fP"
+.ti -1c
+.RI "void \fBSetCoeff\fP (double Co, int t1, int t2)"
+.br
+.RI "\fISet the prefactor\&. \fP"
+.ti -1c
+.RI "void \fBSetCoeff\fP (double Co, int t1, int t2, int t3)"
+.br
+.RI "\fISet the prefactor\&. \fP"
+.ti -1c
+.RI "void \fBPrint\fP ()"
+.br
+.RI "\fIPrint the entries\&. \fP"
+.ti -1c
+.RI "int \fBpNType\fP ()"
+.br
+.RI "\fIPrint n type\&. \fP"
+.ti -1c
+.RI "void \fBRescale\fP (double SFactor, int Order)"
+.br
+.RI "\fIRescale entries\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Energy contribution from the density functional hamiltonian\&. 
+.PP
+Definition at line 388 of file VarData\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

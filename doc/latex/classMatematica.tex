@@ -1,0 +1,756 @@
+\hypertarget{classMatematica}{\subsection{\-Matematica \-Class \-Reference}
+\label{classMatematica}\index{\-Matematica@{\-Matematica}}
+}
+
+
+\-Implementation of useful algorythms.  
+
+
+
+
+{\ttfamily \#include $<$\-Matematica.\-h$>$}
+
+\-Inheritance diagram for \-Matematica\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMatematica}
+\end{center}
+\end{figure}
+\subsubsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMatematica_af3e0600f7cea754ca1ebefb85de3526b}{typedef double(\-Matematica\-::$\ast$ \hyperlink{classMatematica_af3e0600f7cea754ca1ebefb85de3526b}{\-F\-U\-N\-C} )(double x)}\label{classMatematica_af3e0600f7cea754ca1ebefb85de3526b}
+
+\begin{DoxyCompactList}\small\item\em \-A tipical f(x) function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a71f04c72c044751a72c3e605301a8b9d}{typedef void(\-Matematica\-::$\ast$ {\bfseries \-E\-L\-A\-B} )(double $\ast$st, double $\ast$sw, int \-N\-Mass)}\label{classMatematica_a71f04c72c044751a72c3e605301a8b9d}
+
+\end{DoxyCompactItemize}
+\subsubsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMatematica_ad7fef8b66845538830977c8db143e9ae}{\hyperlink{classMatematica_ad7fef8b66845538830977c8db143e9ae}{\-Matematica} ()}\label{classMatematica_ad7fef8b66845538830977c8db143e9ae}
+
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ab5122ddcd9bce12ff5049a5ad2b5cb6d}{int \hyperlink{classMatematica_ab5122ddcd9bce12ff5049a5ad2b5cb6d}{\-Permute\-Random\-All} (int $\ast$\-Sequence, int \-N\-Mass)}\label{classMatematica_ab5122ddcd9bce12ff5049a5ad2b5cb6d}
+
+\begin{DoxyCompactList}\small\item\em \-Permutes a sequence without repeating. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a5ee47a0f414d52f4d97c5266677cc952}{int \hyperlink{classMatematica_a5ee47a0f414d52f4d97c5266677cc952}{\-Permute\-Random\-All} (\hyperlink{structPERMUTE}{\-P\-E\-R\-M\-U\-T\-E} $\ast$\-Sequence, int \-N\-Mass)}\label{classMatematica_a5ee47a0f414d52f4d97c5266677cc952}
+
+\begin{DoxyCompactList}\small\item\em \-Permutes a sequence without repeating. \end{DoxyCompactList}\item 
+int \hyperlink{classMatematica_a486baea1c22d2accfe267ef415b3abaf}{\-Apply\-Filter} (\hyperlink{classMatrice}{\-Matrice} $\ast$\-Point, \hyperlink{classMatrice}{\-Matrice} $\ast$\-Res, \hyperlink{classMatrice}{\-Matrice} $\ast$\-Mask)
+\begin{DoxyCompactList}\small\item\em \-Applies the filter. \end{DoxyCompactList}\item 
+int \hyperlink{classMatematica_a4b258fe1b33ec22774aa535d1390c746}{\-Apply\-Filter} (\hyperlink{classMatrice}{\-Matrice} $\ast$\-Res, \hyperlink{classMatrice}{\-Matrice} $\ast$\-Mask)
+\begin{DoxyCompactList}\small\item\em \-Applies the filter. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a3c54bdff136c7c0107e035f80232c00f}{int \hyperlink{classMatematica_a3c54bdff136c7c0107e035f80232c00f}{\-Transform} (int $\ast$\-Out, int $\ast$\-In, int \-N\-Edge, int operation)}\label{classMatematica_a3c54bdff136c7c0107e035f80232c00f}
+
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_abfaf13060e1740268d65e5a38a410cd6}{void \hyperlink{classMatematica_abfaf13060e1740268d65e5a38a410cd6}{\-Back\-Fold} (\hyperlink{classMatrice}{\-Matrice} $\ast$\-In, \hyperlink{classMatrice}{\-Matrice} $\ast$\-Out, int \-N\-Shift)}\label{classMatematica_abfaf13060e1740268d65e5a38a410cd6}
+
+\begin{DoxyCompactList}\small\item\em \-Shift all the rows upwards/downwards. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a2cd25ce574ac8496d0228106f1acb7e6}{void \hyperlink{classMatematica_a2cd25ce574ac8496d0228106f1acb7e6}{\-Smooth} (double $\ast$st, double $\ast$sw, int \-N\-In, int \-N\-Out)}\label{classMatematica_a2cd25ce574ac8496d0228106f1acb7e6}
+
+\begin{DoxyCompactList}\small\item\em \-Smooth the line with \-B\-Splines. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a628ac1d3c644d78362e0ec3aff1d2448}{double \hyperlink{classMatematica_a628ac1d3c644d78362e0ec3aff1d2448}{\-Evalx} (double x)}\label{classMatematica_a628ac1d3c644d78362e0ec3aff1d2448}
+
+\begin{DoxyCompactList}\small\item\em \-Pointer to a generic function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a2dd3ba2334c4444c4ef406347618c170}{double \hyperlink{classMatematica_a2dd3ba2334c4444c4ef406347618c170}{\-Contact\-Angle} (double x)}\label{classMatematica_a2dd3ba2334c4444c4ef406347618c170}
+
+\begin{DoxyCompactList}\small\item\em \-Definition of the contact angle. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a4f67dd8ca48e4eccf15e32c736db6621}{double \hyperlink{classMatematica_a4f67dd8ca48e4eccf15e32c736db6621}{f\-Prova} (double x)}\label{classMatematica_a4f67dd8ca48e4eccf15e32c736db6621}
+
+\begin{DoxyCompactList}\small\item\em \-Trial function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a033b6eb7c18cac84239173ca4f210fed}{double \hyperlink{classMatematica_a033b6eb7c18cac84239173ca4f210fed}{\-F} (double \-T\-D, double \-T)}\label{classMatematica_a033b6eb7c18cac84239173ca4f210fed}
+
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ad572ab06bc7d7c29e3f1043541f69da8}{double \hyperlink{classMatematica_ad572ab06bc7d7c29e3f1043541f69da8}{\-Df} (double x, double \-Delta)}\label{classMatematica_ad572ab06bc7d7c29e3f1043541f69da8}
+
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+void \hyperlink{classMatematica_aef286a585b6e7d30107ba8f36032e3ad}{\-Elab\-St} (double $\ast$st, double $\ast$sw, int \-N\-Mass)
+\begin{DoxyCompactList}\small\item\em \-Pointer to a function which operates on. \end{DoxyCompactList}\item 
+void \hyperlink{classMatematica_a6393bbfadafe6c13c2e94b79c7764d4b}{\-Derivata} (double $\ast$st, double $\ast$sw, int \-N\-Mass)
+\begin{DoxyCompactList}\small\item\em \-Derivate of. \end{DoxyCompactList}\item 
+void \hyperlink{classMatematica_a0ffa5ec4ebf021c7e8b2e79bed9524e1}{\-Der\-O4} (double $\ast$st, double $\ast$sw, int \-N\-Mass)
+\begin{DoxyCompactList}\small\item\em \-Derivate \-O(4) of. \end{DoxyCompactList}\item 
+double \hyperlink{classMatematica_a7f6e9a0a72348c10d08e388e75978d25}{\-Integrazione} (double $\ast$\-Punti, double $\ast$sw, int \-N\-Mass)
+\begin{DoxyCompactList}\small\item\em \-Integral of. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aa6998b41af5fad626bb70cc6fac6410e}{void \hyperlink{classMatematica_aa6998b41af5fad626bb70cc6fac6410e}{\-Integra\-A3} ()}\label{classMatematica_aa6998b41af5fad626bb70cc6fac6410e}
+
+\begin{DoxyCompactList}\small\item\em \-Perform a integration of a \-L\-J6 \-Potential. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a150471024129f85823beffb064c4df19}{void \hyperlink{classMatematica_a150471024129f85823beffb064c4df19}{\-Square\-Gradient} (double $\ast$st, double $\ast$sw, int \-N\-Mass)}\label{classMatematica_a150471024129f85823beffb064c4df19}
+
+\begin{DoxyCompactList}\small\item\em \-Square of the gradient. \end{DoxyCompactList}\item 
+double \hyperlink{classMatematica_ac1a876ecf4d7f14cc38a7add8f6ba984}{\-Integrazione} (double a, double b)
+\begin{DoxyCompactList}\small\item\em \-Integrates the function within. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a5382dfb3aa67420d9fbd6619c1aa7796}{double \hyperlink{classMatematica_a5382dfb3aa67420d9fbd6619c1aa7796}{\-Integrazione\-Gauss} (double a, double b, double \-Scarto)}\label{classMatematica_a5382dfb3aa67420d9fbd6619c1aa7796}
+
+\begin{DoxyCompactList}\small\item\em \-Itegrate a \-Gaussian. \end{DoxyCompactList}\item 
+int \hyperlink{classMatematica_af1e1e5332753626f39db69dca411ecfc}{\-Zeri} (double a, double b, double $\ast$\-Radici, int \-N\-Radici)
+\begin{DoxyCompactList}\small\item\em \-Find the. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a5b8fbf8c761f9756710aeed5caed4c5e}{\hyperlink{structRADICE}{\-R\-A\-D\-I\-C\-E} \hyperlink{classMatematica_a5b8fbf8c761f9756710aeed5caed4c5e}{\-Regula\-Falsi} (double a, double b)}\label{classMatematica_a5b8fbf8c761f9756710aeed5caed4c5e}
+
+\begin{DoxyCompactList}\small\item\em \-Use regula falsi algorithm to find the roots. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a721bd6eae0ff0aa70b8b37327b084e78}{\hyperlink{structRADICE}{\-R\-A\-D\-I\-C\-E} \hyperlink{classMatematica_a721bd6eae0ff0aa70b8b37327b084e78}{\-Newton} (double a)}\label{classMatematica_a721bd6eae0ff0aa70b8b37327b084e78}
+
+\begin{DoxyCompactList}\small\item\em \-Use \-Newton to find the roots. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a72c0cbce789095808b5c49d3f7f8fee8}{double \hyperlink{classMatematica_a72c0cbce789095808b5c49d3f7f8fee8}{\-Estremo} (double a, double b)}\label{classMatematica_a72c0cbce789095808b5c49d3f7f8fee8}
+
+\begin{DoxyCompactList}\small\item\em \-Other algorithm to find the roots. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a28deb4e354f861587181caac4a5b9857}{double \hyperlink{classMatematica_a28deb4e354f861587181caac4a5b9857}{\-Fattoriale} (int n)}\label{classMatematica_a28deb4e354f861587181caac4a5b9857}
+
+\begin{DoxyCompactList}\small\item\em \-Compute the factorial. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a0a9c482dfadf895f3b52888b33121c43}{double \hyperlink{classMatematica_a0a9c482dfadf895f3b52888b33121c43}{\-Gamma} (int n)}\label{classMatematica_a0a9c482dfadf895f3b52888b33121c43}
+
+\begin{DoxyCompactList}\small\item\em \-Euler's gamma. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a81f44d652f61225a2725c0cb3cbc9524}{double \hyperlink{classMatematica_a81f44d652f61225a2725c0cb3cbc9524}{\-Elevato} (double x, int \-Volte)}\label{classMatematica_a81f44d652f61225a2725c0cb3cbc9524}
+
+\begin{DoxyCompactList}\small\item\em \-Integer power. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_af0a86b99b1cdbff64505cdef059e6d15}{double \hyperlink{classMatematica_af0a86b99b1cdbff64505cdef059e6d15}{\-Bessel} (double \-Val, int \-Ord)}\label{classMatematica_af0a86b99b1cdbff64505cdef059e6d15}
+
+\begin{DoxyCompactList}\small\item\em \-Bessel function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a9dce8aab3f083e3071a47fa4d2b1b582}{double \hyperlink{classMatematica_a9dce8aab3f083e3071a47fa4d2b1b582}{\-Neumann} (double \-Val, int \-Ord)}\label{classMatematica_a9dce8aab3f083e3071a47fa4d2b1b582}
+
+\begin{DoxyCompactList}\small\item\em \-Neumann function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a3ea54c21e1dfc6cb0108483eca97f7cd}{double \hyperlink{classMatematica_a3ea54c21e1dfc6cb0108483eca97f7cd}{\-Segno} (int n)}\label{classMatematica_a3ea54c21e1dfc6cb0108483eca97f7cd}
+
+\begin{DoxyCompactList}\small\item\em \-Sign of -\/$^\wedge$n. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_af5ab240211f6f0aeada6022a32585acb}{double \hyperlink{classMatematica_af5ab240211f6f0aeada6022a32585acb}{\-Quasi\-Bessel} (double \-Val, int \-Ord)}\label{classMatematica_af5ab240211f6f0aeada6022a32585acb}
+
+\begin{DoxyCompactList}\small\item\em \-A faster \-Bessel. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_abee4e33f52ba1babbe9d2422e835ece5}{double \hyperlink{classMatematica_abee4e33f52ba1babbe9d2422e835ece5}{\-Quasi\-Neumann} (double \-Val, int \-Ord)}\label{classMatematica_abee4e33f52ba1babbe9d2422e835ece5}
+
+\begin{DoxyCompactList}\small\item\em \-A faster \-Neumann. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a8ffbe3b65717720f6a91536c9be08c12}{double \hyperlink{classMatematica_a8ffbe3b65717720f6a91536c9be08c12}{\-Weight\-Function} (double x, double a)}\label{classMatematica_a8ffbe3b65717720f6a91536c9be08c12}
+
+\begin{DoxyCompactList}\small\item\em \-Definition of a weighting function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a3381e7982dc433288e7ddac251a8e995}{double \hyperlink{classMatematica_a3381e7982dc433288e7ddac251a8e995}{\-Weight\-Function2} (double x, double a)}\label{classMatematica_a3381e7982dc433288e7ddac251a8e995}
+
+\begin{DoxyCompactList}\small\item\em \-Definition of a weighting function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aac48860fd7ddec8063e83f2a401d964e}{double \hyperlink{classMatematica_aac48860fd7ddec8063e83f2a401d964e}{\-L\-J\-Hamaker} (double r, double r\-\_\-np, double theta)}\label{classMatematica_aac48860fd7ddec8063e83f2a401d964e}
+
+\begin{DoxyCompactList}\small\item\em \-Integration of the \-L\-J 6 term. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a51d698727558e19853a9b5b57d408cce}{double \hyperlink{classMatematica_a51d698727558e19853a9b5b57d408cce}{\-L\-J\-Hamaker\-Cum} (double \-Rad, double \-Rad\-Np\-Min, double \-Rad\-Np\-Max)}\label{classMatematica_a51d698727558e19853a9b5b57d408cce}
+
+\begin{DoxyCompactList}\small\item\em \-Integrate over r\-\_\-np up to \-Rad\-Np. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a1a96fd9eb322682d6239edae5786df00}{double \hyperlink{classMatematica_a1a96fd9eb322682d6239edae5786df00}{\-L\-J\-Hamaker} (double \-Rad, double r\-\_\-np)}\label{classMatematica_a1a96fd9eb322682d6239edae5786df00}
+
+\begin{DoxyCompactList}\small\item\em \-Integrate over theta. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a1dad46d7d3646dfe812d20dd22e06513}{double \hyperlink{classMatematica_a1dad46d7d3646dfe812d20dd22e06513}{\-L\-J39} (double r, double r\-\_\-np)}\label{classMatematica_a1dad46d7d3646dfe812d20dd22e06513}
+
+\begin{DoxyCompactList}\small\item\em \-Integration of the \-L\-J 6 term. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ad9ec0b6378fe8077c460449a16404ca7}{void \hyperlink{classMatematica_ad9ec0b6378fe8077c460449a16404ca7}{\-Exec\-Command} (double $\ast$st, double $\ast$st1, int \-N\-Mass, char $\ast$cmd)}\label{classMatematica_ad9ec0b6378fe8077c460449a16404ca7}
+
+\begin{DoxyCompactList}\small\item\em \-Execute a command defined in string. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aa8b3417ffb15a1c67df01163d9d2fc35}{double \hyperlink{classMatematica_aa8b3417ffb15a1c67df01163d9d2fc35}{\-Exec\-Formula} (double x, double y, char $\ast$cmd)}\label{classMatematica_aa8b3417ffb15a1c67df01163d9d2fc35}
+
+\begin{DoxyCompactList}\small\item\em \-Execute a formula. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a2d18b53fcf726b2a08d6c737033bde80}{double \hyperlink{classMatematica_a2d18b53fcf726b2a08d6c737033bde80}{\-Exec\-Formula} (double $\ast$$\ast$st, int n, char $\ast$cmd)}\label{classMatematica_a2d18b53fcf726b2a08d6c737033bde80}
+
+\begin{DoxyCompactList}\small\item\em \-Execute a formula. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a21b0d93a1241a634ee8719c941619e4b}{double \hyperlink{classMatematica_a21b0d93a1241a634ee8719c941619e4b}{\-Gauss} (double \-Media, double \-Scarto, double x)}\label{classMatematica_a21b0d93a1241a634ee8719c941619e4b}
+
+\begin{DoxyCompactList}\small\item\em \-Gaussian. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_af622f5a2f12722fd5ed7f8840fa730bd}{bool \hyperlink{classMatematica_af622f5a2f12722fd5ed7f8840fa730bd}{\-Inizializza\-Gaussiano} (double \-Scarto, int \-N)}\label{classMatematica_af622f5a2f12722fd5ed7f8840fa730bd}
+
+\begin{DoxyCompactList}\small\item\em \-Initialize the \-Gaussian number generator. \end{DoxyCompactList}\item 
+double \hyperlink{classMatematica_ad14013038c5963ed49ca1236e681db10}{\-Gaussiano} (double \-Media, double \-Scarto)
+\begin{DoxyCompactList}\small\item\em \-Gaussian random number. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_abe4888052d3a0b30d84f2b4c7a523328}{void \hyperlink{classMatematica_abe4888052d3a0b30d84f2b4c7a523328}{\-Spettro} (double $\ast$st, double $\ast$sw, int \-N\-Mass)}\label{classMatematica_abe4888052d3a0b30d84f2b4c7a523328}
+
+\begin{DoxyCompactList}\small\item\em \-Compute the spectrum. \end{DoxyCompactList}\item 
+void \hyperlink{classMatematica_a817fad189f184396efc334a2429fdf7a}{\-Spettro2d} (double $\ast$st, double $\ast$sw, int \-N\-Mass)
+\begin{DoxyCompactList}\small\item\em \-Compute the 2d spectrum of. \end{DoxyCompactList}\item 
+void \hyperlink{classMatematica_a4529a3aade5c9592905c7febebac662a}{\-Spettro2d} (double $\ast$st, double $\ast$$\ast$sw, int \-N\-Mass)
+\begin{DoxyCompactList}\small\item\em \-Compute the 2d spectrum of. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a8244ce9b83c8b38d0004086377ec137c}{void \hyperlink{classMatematica_a8244ce9b83c8b38d0004086377ec137c}{\-Spettro\-D\-F\-T} (double $\ast$st, double $\ast$sw, int \-N\-Mass)}\label{classMatematica_a8244ce9b83c8b38d0004086377ec137c}
+
+\begin{DoxyCompactList}\small\item\em \-D\-F\-T implementation of the spectrum, slow. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aeac3632a9ced53cee7f0bda92208dd07}{void \hyperlink{classMatematica_aeac3632a9ced53cee7f0bda92208dd07}{\-Radice} (double $\ast$st, double $\ast$sw, int \-N)}\label{classMatematica_aeac3632a9ced53cee7f0bda92208dd07}
+
+\begin{DoxyCompactList}\small\item\em \-Compute the root of the signal. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a6410e1f3b747f1e313e9d3bcffe004ce}{void \hyperlink{classMatematica_a6410e1f3b747f1e313e9d3bcffe004ce}{\-Autocor} (bool $\ast$st, double $\ast$s\-Auto, int \-N)}\label{classMatematica_a6410e1f3b747f1e313e9d3bcffe004ce}
+
+\begin{DoxyCompactList}\small\item\em \-Compute the autocorrelation of a boolean signal. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_af0661121d63e1dddda156d2e46b4c39d}{void \hyperlink{classMatematica_af0661121d63e1dddda156d2e46b4c39d}{\-Autocor} (double $\ast$st, double $\ast$s\-Auto, int \-N\-Mass)}\label{classMatematica_af0661121d63e1dddda156d2e46b4c39d}
+
+\begin{DoxyCompactList}\small\item\em \-Compute the autocorrelation of the signal. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a842d80157ade9075dce41b8b9f4bb4f3}{double \hyperlink{classMatematica_a842d80157ade9075dce41b8b9f4bb4f3}{\-Norm} (double $\ast$st, int \-N\-Mass)}\label{classMatematica_a842d80157ade9075dce41b8b9f4bb4f3}
+
+\begin{DoxyCompactList}\small\item\em \-Norm of an array. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ac3425ea4b3f1bc9999c7b6442b106ebe}{int \hyperlink{classMatematica_ac3425ea4b3f1bc9999c7b6442b106ebe}{\-Normalize\-Area} (double $\ast$st, int \-N\-Mass)}\label{classMatematica_ac3425ea4b3f1bc9999c7b6442b106ebe}
+
+\begin{DoxyCompactList}\small\item\em \-Normalize. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a30066e752b4f5504770d8d8c5687972a}{void \hyperlink{classMatematica_a30066e752b4f5504770d8d8c5687972a}{\-Normalize\-Vect} (double $\ast$st, int \-N\-Mass)}\label{classMatematica_a30066e752b4f5504770d8d8c5687972a}
+
+\begin{DoxyCompactList}\small\item\em \-Normalize. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aa51fbe747c2dcd8d72980b9624be93a1}{int \hyperlink{classMatematica_aa51fbe747c2dcd8d72980b9624be93a1}{\-Normalizza} (double $\ast$st, int \-N\-Mass)}\label{classMatematica_aa51fbe747c2dcd8d72980b9624be93a1}
+
+\begin{DoxyCompactList}\small\item\em \-Normalize. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a3221d7079785ecb693e84532d784c302}{int \hyperlink{classMatematica_a3221d7079785ecb693e84532d784c302}{\-Normalizza} (double $\ast$st, double $\ast$sw, int \-N\-Mass)}\label{classMatematica_a3221d7079785ecb693e84532d784c302}
+
+\begin{DoxyCompactList}\small\item\em \-Normalize. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a4e641eb6229cee6b8fb5674433fc2da5}{void \hyperlink{classMatematica_a4e641eb6229cee6b8fb5674433fc2da5}{\-Modulo} (double $\ast$st, double $\ast$sw, int \-N\-Mass)}\label{classMatematica_a4e641eb6229cee6b8fb5674433fc2da5}
+
+\begin{DoxyCompactList}\small\item\em \-Compute the modulus. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a99d5aa828752a12f2c5bc2033e00d0ad}{void \hyperlink{classMatematica_a99d5aa828752a12f2c5bc2033e00d0ad}{\-Media\-Mobile} (double $\ast$st, int \-N\-Mass, double $\ast$sw, int \-Parti)}\label{classMatematica_a99d5aa828752a12f2c5bc2033e00d0ad}
+
+\begin{DoxyCompactList}\small\item\em \-Running average. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a0529a1c2450d94429ff81273ce35cd42}{int \hyperlink{classMatematica_a0529a1c2450d94429ff81273ce35cd42}{\-Media\-Mobile} (double $\ast$st, int \-N\-Mass, double $\ast$sw, double $\ast$s\-Err, int \-Parti)}\label{classMatematica_a0529a1c2450d94429ff81273ce35cd42}
+
+\begin{DoxyCompactList}\small\item\em \-Running average. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_acc472956dae6f7628bad8d4ca7f7ed68}{int \hyperlink{classMatematica_acc472956dae6f7628bad8d4ca7f7ed68}{\-Correla\-Due\-Punti} (double $\ast$st, int \-N\-Mass, double $\ast$sw, int \-Punti)}\label{classMatematica_acc472956dae6f7628bad8d4ca7f7ed68}
+
+\begin{DoxyCompactList}\small\item\em \-Two points correlation. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ac6fad3beb60e7a8d3b35e40a1eb98fb3}{void \hyperlink{classMatematica_ac6fad3beb60e7a8d3b35e40a1eb98fb3}{\-Autosimilarita} (double $\ast$st, int \-N\-Mass, double $\ast$sw, int \-Valori)}\label{classMatematica_ac6fad3beb60e7a8d3b35e40a1eb98fb3}
+
+\begin{DoxyCompactList}\small\item\em \-Self similarity. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a39b05b88f4b8ec478bd4da89c0e469d0}{\hyperlink{structMOMENTI}{\-M\-O\-M\-E\-N\-T\-I} \hyperlink{classMatematica_a39b05b88f4b8ec478bd4da89c0e469d0}{\-Distribuzione} (const double $\ast$st, int \-N\-Mass)}\label{classMatematica_a39b05b88f4b8ec478bd4da89c0e469d0}
+
+\begin{DoxyCompactList}\small\item\em \-Moments of a signal. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a1ab633f13d7ee483931d6b17f9fb0164}{\hyperlink{structMOMENTI}{\-M\-O\-M\-E\-N\-T\-I} \hyperlink{classMatematica_a1ab633f13d7ee483931d6b17f9fb0164}{\-Distribuzione} (const double $\ast$st, int \-N\-Mass, double $\ast$\-Intervalli, int \-Valori, int \-If\-Norm)}\label{classMatematica_a1ab633f13d7ee483931d6b17f9fb0164}
+
+\begin{DoxyCompactList}\small\item\em \-Moments and histogram of a signal. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a45b9e8e40b9d8107cbfdb92cec130ea3}{\hyperlink{structMOMENTI}{\-M\-O\-M\-E\-N\-T\-I} \hyperlink{classMatematica_a45b9e8e40b9d8107cbfdb92cec130ea3}{\-Distribuzione} (const double $\ast$st, int \-N\-Mass, double $\ast$\-Intervalli, int \-Valori, double $\ast$\-Confine, int \-If\-Norm)}\label{classMatematica_a45b9e8e40b9d8107cbfdb92cec130ea3}
+
+\begin{DoxyCompactList}\small\item\em \-Moments and histogram of a signal between two values. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a5e8fb8fff251f8594af3f6ec809bdd46}{\hyperlink{structMOMENTI}{\-M\-O\-M\-E\-N\-T\-I} \hyperlink{classMatematica_a5e8fb8fff251f8594af3f6ec809bdd46}{\-Distr\-Err} (const double $\ast$st, int \-N\-Mass, double $\ast$\-Intervalli, double $\ast$\-Err, int \-Valori, double $\ast$\-Confine, int \-If\-Norm)}\label{classMatematica_a5e8fb8fff251f8594af3f6ec809bdd46}
+
+\begin{DoxyCompactList}\small\item\em \-Moments and histogram of a signal between two values. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a558ecd17e8fec096693541f1d83545ae}{\hyperlink{structMOMENTI}{\-M\-O\-M\-E\-N\-T\-I} \hyperlink{classMatematica_a558ecd17e8fec096693541f1d83545ae}{\-Distribuzione\-Gauss} (const double $\ast$st, int \-N\-Mass, double $\ast$\-Intervalli, double $\ast$d\-Int, int \-Valori, int \-If\-Norm)}\label{classMatematica_a558ecd17e8fec096693541f1d83545ae}
+
+\begin{DoxyCompactList}\small\item\em \-Look for the \-Gaussian distribution. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_afbd5fb94779d51392400156cd2210035}{\hyperlink{structMOMENTI}{\-M\-O\-M\-E\-N\-T\-I} \hyperlink{classMatematica_afbd5fb94779d51392400156cd2210035}{\-Distribuzione\-Maxwell} (const double $\ast$st, int \-N\-Mass, double $\ast$\-Intervalli, double $\ast$d\-Int, int \-Valori, int \-If\-Norm)}\label{classMatematica_afbd5fb94779d51392400156cd2210035}
+
+\begin{DoxyCompactList}\small\item\em \-Look for the \-Maxwellian distribution. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ab160279d67e4266427d7de4983249bd4}{void \hyperlink{classMatematica_ab160279d67e4266427d7de4983249bd4}{\-Distr\-Sample} (double $\ast$\-Px, double $\ast$\-Py, int \-N\-Max, double $\ast$$\ast$\-Distr, int \-N\-Bin, const int \-N\-Sample, int \-If\-Norm, double $\ast$x\-Bound)}\label{classMatematica_ab160279d67e4266427d7de4983249bd4}
+
+\begin{DoxyCompactList}\small\item\em \-Compare the distribution of a sample of data. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a54768724636e1877a0f515037f9c1dfd}{\hyperlink{structMOMENTI}{\-M\-O\-M\-E\-N\-T\-I} \hyperlink{classMatematica_a54768724636e1877a0f515037f9c1dfd}{\-Weight\-Average} (const double $\ast$sx, const double $\ast$sy, int \-N\-Max)}\label{classMatematica_a54768724636e1877a0f515037f9c1dfd}
+
+\begin{DoxyCompactList}\small\item\em \-Calculate the weighted average. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_abfe1241dc3eb4896ae7e45cf740aebde}{void \hyperlink{classMatematica_abfe1241dc3eb4896ae7e45cf740aebde}{\-Weight\-Histo} (double $\ast$$\ast$hist, double $\ast$\-Border, int \-N\-Bin, int \-N\-Histo, double tolerance, double $\ast$\-Or\-Pos, double $\ast$k\-Spring)}\label{classMatematica_abfe1241dc3eb4896ae7e45cf740aebde}
+
+\begin{DoxyCompactList}\small\item\em \-Weighted histogram analysis. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_af650953b36f8898866541e0a18436487}{void \hyperlink{classMatematica_af650953b36f8898866541e0a18436487}{\-Sort} (double $\ast$\-Sign, int \-N\-Mass)}\label{classMatematica_af650953b36f8898866541e0a18436487}
+
+\begin{DoxyCompactList}\small\item\em \-Sort. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a73416c2f40f207ac8a0ee0c620094c8f}{void \hyperlink{classMatematica_a73416c2f40f207ac8a0ee0c620094c8f}{\-Swap} (int i, int j, double $\ast$\-Sign)}\label{classMatematica_a73416c2f40f207ac8a0ee0c620094c8f}
+
+\begin{DoxyCompactList}\small\item\em \-Swap to indices. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a48768f457142f01ca2980874f5546578}{void \hyperlink{classMatematica_a48768f457142f01ca2980874f5546578}{\-Swap} (double $\ast$s, int si, double $\ast$t, int ti, const int \-N\-Dim)}\label{classMatematica_a48768f457142f01ca2980874f5546578}
+
+\begin{DoxyCompactList}\small\item\em \-Swap to arrays. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aab3ee9e44dd1ed078ca31182b4cd6ed2}{void \hyperlink{classMatematica_aab3ee9e44dd1ed078ca31182b4cd6ed2}{\-Sort} (int $\ast$\-Sign, int \-N\-Mass)}\label{classMatematica_aab3ee9e44dd1ed078ca31182b4cd6ed2}
+
+\begin{DoxyCompactList}\small\item\em \-Sort. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ae664740009706537716b87e623af73de}{void \hyperlink{classMatematica_ae664740009706537716b87e623af73de}{\-Swap} (int i, int j, int $\ast$\-Sign)}\label{classMatematica_ae664740009706537716b87e623af73de}
+
+\begin{DoxyCompactList}\small\item\em \-Swap to indices. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a71ea784216a17ac3a6ac15a949cefe0c}{void \hyperlink{classMatematica_a71ea784216a17ac3a6ac15a949cefe0c}{\-File\-Sin1d} (char $\ast$\-F\-Name)}\label{classMatematica_a71ea784216a17ac3a6ac15a949cefe0c}
+
+\begin{DoxyCompactList}\small\item\em \-Create a file with a sign function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ab9ebc463654207b4cccb506e91b7f0ee}{void \hyperlink{classMatematica_ab9ebc463654207b4cccb506e91b7f0ee}{\-File\-Sin2d} (char $\ast$\-F\-Name)}\label{classMatematica_ab9ebc463654207b4cccb506e91b7f0ee}
+
+\begin{DoxyCompactList}\small\item\em \-Create a file with a sign function in 2d. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aeb09a568715afc74c567fe165fe2580d}{void \hyperlink{classMatematica_aeb09a568715afc74c567fe165fe2580d}{\-Conv\-Weight} (double $\ast$st, int \-N\-Max, double $\ast$sw, int $\ast$\-W\-Index, int \-N\-Weight)}\label{classMatematica_aeb09a568715afc74c567fe165fe2580d}
+
+\begin{DoxyCompactList}\small\item\em \-Convolute with a weight. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a38e3b43d1950bf097523b3b9e5bfb69b}{void \hyperlink{classMatematica_a38e3b43d1950bf097523b3b9e5bfb69b}{\-Fill\-Weight\-Gauss} (double $\ast$st, int $\ast$\-W\-Index, int \-N\-Weight, double \-Cut\-Off, double \-Sigma)}\label{classMatematica_a38e3b43d1950bf097523b3b9e5bfb69b}
+
+\begin{DoxyCompactList}\small\item\em \-Fill the weight array with a gaussian fuction. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aa0b83812f24967b127cbd0b508d8ed95}{double \hyperlink{classMatematica_aa0b83812f24967b127cbd0b508d8ed95}{\-Lin\-Interp} (double \-Px1, double \-Px2, double \-Py1, double \-Py2, double x)}\label{classMatematica_aa0b83812f24967b127cbd0b508d8ed95}
+
+\begin{DoxyCompactList}\small\item\em \-Linear interpolation between two points. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a704c5213772cd3d9fd7dd77d74461bf2}{\hyperlink{structRETTA}{\-R\-E\-T\-T\-A} \hyperlink{classMatematica_a704c5213772cd3d9fd7dd77d74461bf2}{\-Inter\-Rett} (double $\ast$\-Px, double $\ast$\-Py, int \-N\-Mass)}\label{classMatematica_a704c5213772cd3d9fd7dd77d74461bf2}
+
+\begin{DoxyCompactList}\small\item\em \-Linear interpolation. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a54633464985cd9a4864e2d0245fa231c}{\hyperlink{structRETTA}{\-R\-E\-T\-T\-A} \hyperlink{classMatematica_a54633464985cd9a4864e2d0245fa231c}{\-Inter\-Exp} (double $\ast$\-Px, double $\ast$\-Py, int \-N\-Mass)}\label{classMatematica_a54633464985cd9a4864e2d0245fa231c}
+
+\begin{DoxyCompactList}\small\item\em \-Exponential interpolation. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ae9688b8f498233bf332032c7dafc1982}{\hyperlink{structMOMENTI}{\-M\-O\-M\-E\-N\-T\-I} \hyperlink{classMatematica_ae9688b8f498233bf332032c7dafc1982}{\-Inter\-Gauss} (double $\ast$\-Px, double $\ast$\-Py, int \-N\-Mass)}\label{classMatematica_ae9688b8f498233bf332032c7dafc1982}
+
+\begin{DoxyCompactList}\small\item\em \-Gaussian interpolation. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ad5a7658737a31da4e856a760a9beed80}{\hyperlink{structRETTA}{\-R\-E\-T\-T\-A} \hyperlink{classMatematica_ad5a7658737a31da4e856a760a9beed80}{\-Inter\-Rett} (double $\ast$\-Px, double $\ast$\-Py, double $\ast$\-Peso, int \-N\-Mass)}\label{classMatematica_ad5a7658737a31da4e856a760a9beed80}
+
+\begin{DoxyCompactList}\small\item\em \-Linear weighted interpolation. \end{DoxyCompactList}\item 
+\hyperlink{structPARABOLA}{\-P\-A\-R\-A\-B\-O\-L\-A} \hyperlink{classMatematica_a90a6e30254a3d26a422a173cdc46a823}{\-Minimo\-Parabola} (double a, double b, double $\ast$\-Px, double $\ast$\-Py, int \-N\-Mass)
+\begin{DoxyCompactList}\small\item\em \-Minimum of the \-Parabola between. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a0e0bcc6fadb562dde7298fa8119e7c4d}{\hyperlink{structPARABOLA}{\-P\-A\-R\-A\-B\-O\-L\-A} \hyperlink{classMatematica_a0e0bcc6fadb562dde7298fa8119e7c4d}{\-Minimo\-Parabola} (double $\ast$\-Px, double $\ast$\-Py, int \-N\-Mass)}\label{classMatematica_a0e0bcc6fadb562dde7298fa8119e7c4d}
+
+\begin{DoxyCompactList}\small\item\em \-Global minimum interpolating via a \-Parabola. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a0bf66137177a5078071d2da064fa3a72}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a0bf66137177a5078071d2da064fa3a72}{\-Parab} (double $\ast$\-P1, double $\ast$\-P2, double $\ast$\-P3, int x, int y)}\label{classMatematica_a0bf66137177a5078071d2da064fa3a72}
+
+\begin{DoxyCompactList}\small\item\em \-Three points parabolic interpolation. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a000dcbdd9b1b4f62dd4c4b2fc19ff300}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a000dcbdd9b1b4f62dd4c4b2fc19ff300}{\-Parab2} (double $\ast$\-P\-A, double $\ast$\-P\-B, double $\ast$\-P\-C, int x, int y)}\label{classMatematica_a000dcbdd9b1b4f62dd4c4b2fc19ff300}
+
+\begin{DoxyCompactList}\small\item\em \-Three points parabolic interpolation. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a40a33aaca86667162b5772e49e969d56}{\hyperlink{structCIRCLE}{\-C\-I\-R\-C\-L\-E} \hyperlink{classMatematica_a40a33aaca86667162b5772e49e969d56}{\-Osculante} (double $\ast$\-P\-A, double $\ast$\-P\-B, double $\ast$\-P\-C, int x, int y)}\label{classMatematica_a40a33aaca86667162b5772e49e969d56}
+
+\begin{DoxyCompactList}\small\item\em \-Osculant circle. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_acc21ee420953fcc9d0587f56324631cb}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_acc21ee420953fcc9d0587f56324631cb}{\-Cubica} (double $\ast$\-P\-A, double $\ast$\-P\-B, double $\ast$\-P\-C, double $\ast$\-P\-D, int x, int y)}\label{classMatematica_acc21ee420953fcc9d0587f56324631cb}
+
+\begin{DoxyCompactList}\small\item\em \-Four point cubic interpolation. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a7eb694853e69b9cbd2020788e9665424}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a7eb694853e69b9cbd2020788e9665424}{\-Forth} (double $\ast$\-P\-A, double $\ast$\-P\-B, double $\ast$\-P\-C, double $\ast$\-P\-D, double $\ast$\-P\-E, int x, int y)}\label{classMatematica_a7eb694853e69b9cbd2020788e9665424}
+
+\begin{DoxyCompactList}\small\item\em \-Five points four order interpolation. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a69f1211856d5b0cd58178a21156d0492}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a69f1211856d5b0cd58178a21156d0492}{\-Spline3} (double $\ast$\-P1, double $\ast$\-P2, double $\ast$\-P3, int x, int y)}\label{classMatematica_a69f1211856d5b0cd58178a21156d0492}
+
+\begin{DoxyCompactList}\small\item\em \-Three order spline. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aa2836a8f43d770c560eb34c3cafa4ceb}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_aa2836a8f43d770c560eb34c3cafa4ceb}{\-Spline3\-Beg} (double $\ast$\-P1, double $\ast$\-P2, double $\ast$\-P3, int x, int y)}\label{classMatematica_aa2836a8f43d770c560eb34c3cafa4ceb}
+
+\begin{DoxyCompactList}\small\item\em \-Three order spline first boundary. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a9f4d9bbeaf65d0ee820dc906aaee0128}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a9f4d9bbeaf65d0ee820dc906aaee0128}{\-Spline3\-End} (double $\ast$\-P1, double $\ast$\-P2, int x, int y)}\label{classMatematica_a9f4d9bbeaf65d0ee820dc906aaee0128}
+
+\begin{DoxyCompactList}\small\item\em \-Three order spline last boundary. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a4166dfd1c333203677c8caf040ead05b}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a4166dfd1c333203677c8caf040ead05b}{\-Spline4\-Beg} (double $\ast$\-P1, double $\ast$\-P2, double $\ast$\-P3, double $\ast$\-P4, int x, int y)}\label{classMatematica_a4166dfd1c333203677c8caf040ead05b}
+
+\begin{DoxyCompactList}\small\item\em \-Four order spline first boundary. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a6b6c8217f2c75492c48cd60e4d9c17cf}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a6b6c8217f2c75492c48cd60e4d9c17cf}{\-Spline4} (double $\ast$\-P1, double $\ast$\-P2, double $\ast$\-P3, double $\ast$\-P4, int x, int y)}\label{classMatematica_a6b6c8217f2c75492c48cd60e4d9c17cf}
+
+\begin{DoxyCompactList}\small\item\em \-Four order spline. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_aacb11b0728e0fbaaa3597c7e03b562c7}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_aacb11b0728e0fbaaa3597c7e03b562c7}{\-Spline4} (double $\ast$\-P1, double $\ast$\-P2, double $\ast$\-P3, int x, int y)}\label{classMatematica_aacb11b0728e0fbaaa3597c7e03b562c7}
+
+\begin{DoxyCompactList}\small\item\em \-Four order spline. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a0b3e535c3c50459ad85fbb27d8ab0ca3}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a0b3e535c3c50459ad85fbb27d8ab0ca3}{\-Spline4\-Pre\-End} (double $\ast$\-P1, double $\ast$\-P2, double $\ast$\-P3, int x, int y)}\label{classMatematica_a0b3e535c3c50459ad85fbb27d8ab0ca3}
+
+\begin{DoxyCompactList}\small\item\em \-Four order spline just before the end. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a13fad8c692fb52f3ccd8a5f47b7db2cb}{\hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \hyperlink{classMatematica_a13fad8c692fb52f3ccd8a5f47b7db2cb}{\-Spline4\-End} (double $\ast$\-P1, double $\ast$\-P2, int x, int y)}\label{classMatematica_a13fad8c692fb52f3ccd8a5f47b7db2cb}
+
+\begin{DoxyCompactList}\small\item\em \-Four order spline last boundary. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a4811dba3bc03279d94c49e2a480dae4f}{int \hyperlink{classMatematica_a4811dba3bc03279d94c49e2a480dae4f}{\-Polinomio} (double $\ast$\-P1, double $\ast$\-P2, int \-N\-Mass, \hyperlink{classSpline}{\-Spline} $\ast$\-Sp)}\label{classMatematica_a4811dba3bc03279d94c49e2a480dae4f}
+
+\begin{DoxyCompactList}\small\item\em \-Polinimial interpolation of  \-N\-Mass order. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a27b793e32b1410383bacb44d0233ee86}{int \hyperlink{classMatematica_a27b793e32b1410383bacb44d0233ee86}{\-Der\-Matrix} (double $\ast$\-Px, double $\ast$\-Py, int \-N\-Mass, \hyperlink{structSPLINE}{\-S\-P\-L\-I\-N\-E} \-Wg, \hyperlink{classSpline}{\-Spline} $\ast$\-Sp)}\label{classMatematica_a27b793e32b1410383bacb44d0233ee86}
+
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a953e8be14f6a9c259f192683f3a5a970}{double \hyperlink{classMatematica_a953e8be14f6a9c259f192683f3a5a970}{\-Casuale} ()}\label{classMatematica_a953e8be14f6a9c259f192683f3a5a970}
+
+\begin{DoxyCompactList}\small\item\em \-Random uniform number. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ad3a801671ce900a848167e341ee1a64f}{double \hyperlink{classMatematica_ad3a801671ce900a848167e341ee1a64f}{\-Rand\-Discr\-Prob} (double $\ast$\-Prob, int \-N\-Bin)}\label{classMatematica_ad3a801671ce900a848167e341ee1a64f}
+
+\begin{DoxyCompactList}\small\item\em \-Random number following a discrete probability. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a2cd9afb9e7613f99ea679738094c5c82}{double \hyperlink{classMatematica_a2cd9afb9e7613f99ea679738094c5c82}{\-Q\-Bezier} (double $\ast$\-P1, double $\ast$\-P2, double $\ast$\-P3, double x, int y)}\label{classMatematica_a2cd9afb9e7613f99ea679738094c5c82}
+
+\begin{DoxyCompactList}\small\item\em \-Q\-Bezier curve of three points. \end{DoxyCompactList}\item 
+int \hyperlink{classMatematica_ad2b38169a207719ef452a9c7f5bd7dc1}{\-Factorial} (int times)
+\begin{DoxyCompactList}\small\item\em \-Computes. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a4824376b80f3c23bd55989b1a6f80ffc}{double \hyperlink{classMatematica_a4824376b80f3c23bd55989b1a6f80ffc}{\-Binomial} (int times, int n)}\label{classMatematica_a4824376b80f3c23bd55989b1a6f80ffc}
+
+\begin{DoxyCompactList}\small\item\em \-For the \-B\-Spline. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a9dbb46c7af9cbcd87568e0dace30d10e}{double \hyperlink{classMatematica_a9dbb46c7af9cbcd87568e0dace30d10e}{\-Blend} (const double $\ast$d\-Point, double x, int n\-Point, int n\-Order)}\label{classMatematica_a9dbb46c7af9cbcd87568e0dace30d10e}
+
+\begin{DoxyCompactList}\small\item\em \-For the \-B\-Spline. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a078a6c2222921c85f87f62b4d61b4553}{double \hyperlink{classMatematica_a078a6c2222921c85f87f62b4d61b4553}{\-Blend} (double $\ast$d\-Point, size\-\_\-t \-Incr, double x, int n\-Point, int n\-Order)}\label{classMatematica_a078a6c2222921c85f87f62b4d61b4553}
+
+\begin{DoxyCompactList}\small\item\em \-For the \-B\-Spline. \end{DoxyCompactList}\item 
+int \hyperlink{classMatematica_a9566503fbc9720a56e0439302fcc10ce}{\-Inter\-B\-Spline2\-D} (\hyperlink{classMatrice}{\-Matrice} $\ast$\-Ma\-In, \hyperlink{classMatrice}{\-Matrice} $\ast$\-Ma\-Out)
+\begin{DoxyCompactList}\small\item\em \-Computes the \-B\-Spline of a given. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a74028c96f1da61fd4bb0b0df6c720bc0}{int \hyperlink{classMatematica_a74028c96f1da61fd4bb0b0df6c720bc0}{\-Voronoi} ()}\label{classMatematica_a74028c96f1da61fd4bb0b0df6c720bc0}
+
+\begin{DoxyCompactList}\small\item\em \-Voronoi tassellation, in progress. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMatematica_aba8f98cb34b78863b26b00d33aabdc1d}{\hyperlink{classMatematica_af3e0600f7cea754ca1ebefb85de3526b}{\-F\-U\-N\-C} \hyperlink{classMatematica_aba8f98cb34b78863b26b00d33aabdc1d}{\-Func}}\label{classMatematica_aba8f98cb34b78863b26b00d33aabdc1d}
+
+\begin{DoxyCompactList}\small\item\em \-Pointer to a function. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_ab450221750ec28195ca862278004e64f}{\-E\-L\-A\-B {\bfseries \-Elab}}\label{classMatematica_ab450221750ec28195ca862278004e64f}
+
+\item 
+\hypertarget{classMatematica_aa06af2f751c2d30f883911088239686e}{double \hyperlink{classMatematica_aa06af2f751c2d30f883911088239686e}{\-Ypsilon}}\label{classMatematica_aa06af2f751c2d30f883911088239686e}
+
+\begin{DoxyCompactList}\small\item\em \-External parameter to calculate the contact angle. \end{DoxyCompactList}\item 
+\hypertarget{classMatematica_a4eff9d128336501e44aac2b9524eb6b0}{double \hyperlink{classMatematica_a4eff9d128336501e44aac2b9524eb6b0}{\-Pre\-Fact}}\label{classMatematica_a4eff9d128336501e44aac2b9524eb6b0}
+
+\begin{DoxyCompactList}\small\item\em \-External parameter in the definition of the contact angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{\-Detailed \-Description}
+\-Implementation of useful algorythms. 
+
+\-Definition at line 76 of file \-Matematica.\-h.
+
+
+
+\subsubsection{\-Member \-Function \-Documentation}
+\hypertarget{classMatematica_a486baea1c22d2accfe267ef415b3abaf}{\index{\-Matematica@{\-Matematica}!\-Apply\-Filter@{\-Apply\-Filter}}
+\index{\-Apply\-Filter@{\-Apply\-Filter}!Matematica@{\-Matematica}}
+\paragraph[{\-Apply\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Apply\-Filter} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice} $\ast$}]{\-Point, }
+\item[{{\bf \-Matrice} $\ast$}]{\-Res, }
+\item[{{\bf \-Matrice} $\ast$}]{\-Mask}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a486baea1c22d2accfe267ef415b3abaf}
+
+
+\-Applies the filter. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Mask} & on \\
+\hline
+{\em \-Point} & to \\
+\hline
+{\em \-Res} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 82 of file \-Matematica\-Filter.\-cpp.
+
+
+
+\-References \-Matrice\-::\-Add(), \-Matrice\-::\-Size(), and \-Matrice\-::\-Val().
+
+
+
+\-Referenced by \-Dr\-Effect\-::\-Effect\-Filter(), and \-Var\-Data\-::\-Spatial\-Derivative().
+
+\hypertarget{classMatematica_a4b258fe1b33ec22774aa535d1390c746}{\index{\-Matematica@{\-Matematica}!\-Apply\-Filter@{\-Apply\-Filter}}
+\index{\-Apply\-Filter@{\-Apply\-Filter}!Matematica@{\-Matematica}}
+\paragraph[{\-Apply\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Apply\-Filter} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice} $\ast$}]{\-Res, }
+\item[{{\bf \-Matrice} $\ast$}]{\-Mask}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a4b258fe1b33ec22774aa535d1390c746}
+
+
+\-Applies the filter. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Mask} & on \\
+\hline
+{\em \-Res} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 108 of file \-Matematica\-Filter.\-cpp.
+
+
+
+\-References \-Matrice\-::\-Copy\-On(), \-Matrice\-::p\-N\-Col(), \-Matrice\-::p\-N\-Row(), \-Matrice\-::\-Set(), and \-Matrice\-::\-Val().
+
+\hypertarget{classMatematica_aef286a585b6e7d30107ba8f36032e3ad}{\index{\-Matematica@{\-Matematica}!\-Elab\-St@{\-Elab\-St}}
+\index{\-Elab\-St@{\-Elab\-St}!Matematica@{\-Matematica}}
+\paragraph[{\-Elab\-St}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Elab\-St} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{st, }
+\item[{double $\ast$}]{sw, }
+\item[{int}]{\-N\-Mass}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classMatematica_aef286a585b6e7d30107ba8f36032e3ad}
+
+
+\-Pointer to a function which operates on. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em sw} & with the data of \\
+\hline
+{\em st} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 130 of file \-Matematica.\-h.
+
+
+
+\-Referenced by \-Var\-Dat\-File\-::\-Elab\-Segnale().
+
+\hypertarget{classMatematica_a6393bbfadafe6c13c2e94b79c7764d4b}{\index{\-Matematica@{\-Matematica}!\-Derivata@{\-Derivata}}
+\index{\-Derivata@{\-Derivata}!Matematica@{\-Matematica}}
+\paragraph[{\-Derivata}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Derivata} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{st, }
+\item[{double $\ast$}]{sw, }
+\item[{int}]{\-N\-Mass}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a6393bbfadafe6c13c2e94b79c7764d4b}
+
+
+\-Derivate of. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em st} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 41 of file \-Matematica\-Func.\-cpp.
+
+
+
+\-Referenced by \-Matematica().
+
+\hypertarget{classMatematica_a0ffa5ec4ebf021c7e8b2e79bed9524e1}{\index{\-Matematica@{\-Matematica}!\-Der\-O4@{\-Der\-O4}}
+\index{\-Der\-O4@{\-Der\-O4}!Matematica@{\-Matematica}}
+\paragraph[{\-Der\-O4}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Der\-O4} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{st, }
+\item[{double $\ast$}]{sw, }
+\item[{int}]{\-N\-Mass}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a0ffa5ec4ebf021c7e8b2e79bed9524e1}
+
+
+\-Derivate \-O(4) of. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em st} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 46 of file \-Matematica\-Func.\-cpp.
+
+
+
+\-Referenced by \-Var\-Dat\-File\-::\-Derivata\-Segnale(), \-Square\-Gradient(), and \-Var\-Dat\-File\-::\-Varie\-Segnale().
+
+\hypertarget{classMatematica_a7f6e9a0a72348c10d08e388e75978d25}{\index{\-Matematica@{\-Matematica}!\-Integrazione@{\-Integrazione}}
+\index{\-Integrazione@{\-Integrazione}!Matematica@{\-Matematica}}
+\paragraph[{\-Integrazione}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Integrazione} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{\-Punti, }
+\item[{double $\ast$}]{sw, }
+\item[{int}]{\-N\-Mass}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a7f6e9a0a72348c10d08e388e75978d25}
+
+
+\-Integral of. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em st} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 30 of file \-Matematica\-Func.\-cpp.
+
+
+
+\-Referenced by \-F(), and \-Var\-Dat\-File\-::\-Int\-Segnale().
+
+\hypertarget{classMatematica_ac1a876ecf4d7f14cc38a7add8f6ba984}{\index{\-Matematica@{\-Matematica}!\-Integrazione@{\-Integrazione}}
+\index{\-Integrazione@{\-Integrazione}!Matematica@{\-Matematica}}
+\paragraph[{\-Integrazione}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Integrazione} (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{double}]{b}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_ac1a876ecf4d7f14cc38a7add8f6ba984}
+
+
+\-Integrates the function within. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em a} & and \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 22 of file \-Matematica\-Func.\-cpp.
+
+
+
+\-References \-Evalx().
+
+\hypertarget{classMatematica_af1e1e5332753626f39db69dca411ecfc}{\index{\-Matematica@{\-Matematica}!\-Zeri@{\-Zeri}}
+\index{\-Zeri@{\-Zeri}!Matematica@{\-Matematica}}
+\paragraph[{\-Zeri}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Zeri} (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double $\ast$}]{\-Radici, }
+\item[{int}]{\-N\-Radici}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_af1e1e5332753626f39db69dca411ecfc}
+
+
+\-Find the. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-N\-Radici} & zeros of the pointed function between a\\
+\hline
+{\em a} & and \\
+\hline
+{\em b} & using different algorithm \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 58 of file \-Matematica\-Func.\-cpp.
+
+
+
+\-References \-R\-A\-D\-I\-C\-E\-::\-If\-Ris, \-Regula\-Falsi(), and \-R\-A\-D\-I\-C\-E\-::\-Zero.
+
+
+
+\-Referenced by \-El\-Poly\-::\-Angle(), \-Normalizza(), and \-El\-Poly\-::\-Radial\-Shell().
+
+\hypertarget{classMatematica_ad14013038c5963ed49ca1236e681db10}{\index{\-Matematica@{\-Matematica}!\-Gaussiano@{\-Gaussiano}}
+\index{\-Gaussiano@{\-Gaussiano}!Matematica@{\-Matematica}}
+\paragraph[{\-Gaussiano}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Gaussiano} (
+\begin{DoxyParamCaption}
+\item[{double}]{\-Media, }
+\item[{double}]{\-Scarto}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_ad14013038c5963ed49ca1236e681db10}
+
+
+\-Gaussian random number. 
+
+\-Mersenne \-Twister + \-Box-\/\-Muller transform. 
+
+\-Definition at line 23 of file \-Matematica\-Sign.\-cpp.
+
+
+
+\-Referenced by \-Var\-Data\-::\-Add\-Chains(), \-Var\-Data\-::\-Add\-Cholesterol(), \-Var\-Data\-::\-Add\-Solvent(), \-Forces\-::\-Andersen\-Therm(), \-Forces\-::\-Create\-Electro(), \-Forces\-::\-Create\-M\-D(), \-Forces\-::\-Create\-Set\-Bond(), \-Var\-Data\-::\-Create\-Soft(), \-Var\-Data\-::\-Def\-Rest(), \-Forces\-::\-Insert\-Rest(), \-Forces\-::\-Minimal\-M\-D(), \-Forces\-::\-Move\-Bead(), \-Var\-Data\-::\-Put\-Part(), \-Forces\-::\-Weight\-Set\-Bond(), and \-El\-Poly\-::\-Widom\-In().
+
+\hypertarget{classMatematica_a817fad189f184396efc334a2429fdf7a}{\index{\-Matematica@{\-Matematica}!\-Spettro2d@{\-Spettro2d}}
+\index{\-Spettro2d@{\-Spettro2d}!Matematica@{\-Matematica}}
+\paragraph[{\-Spettro2d}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Spettro2d} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{st, }
+\item[{double $\ast$}]{sw, }
+\item[{int}]{\-N\-Mass}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a817fad189f184396efc334a2429fdf7a}
+
+
+\-Compute the 2d spectrum of. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em st,return} & the 1d \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 156 of file \-Matematica\-Sign.\-cpp.
+
+
+
+\-Referenced by \-El\-Poly\-::\-Spectrum\-F(), and \-Var\-Data\-::\-Spettro2d().
+
+\hypertarget{classMatematica_a4529a3aade5c9592905c7febebac662a}{\index{\-Matematica@{\-Matematica}!\-Spettro2d@{\-Spettro2d}}
+\index{\-Spettro2d@{\-Spettro2d}!Matematica@{\-Matematica}}
+\paragraph[{\-Spettro2d}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Spettro2d} (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{st, }
+\item[{double $\ast$$\ast$}]{sw, }
+\item[{int}]{\-N\-Mass}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a4529a3aade5c9592905c7febebac662a}
+
+
+\-Compute the 2d spectrum of. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em st,return} & the 2d \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 204 of file \-Matematica\-Sign.\-cpp.
+
+\hypertarget{classMatematica_a90a6e30254a3d26a422a173cdc46a823}{\index{\-Matematica@{\-Matematica}!\-Minimo\-Parabola@{\-Minimo\-Parabola}}
+\index{\-Minimo\-Parabola@{\-Minimo\-Parabola}!Matematica@{\-Matematica}}
+\paragraph[{\-Minimo\-Parabola}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-P\-A\-R\-A\-B\-O\-L\-A} {\bf \-Minimo\-Parabola} (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double $\ast$}]{\-Px, }
+\item[{double $\ast$}]{\-Py, }
+\item[{int}]{\-N\-Mass}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a90a6e30254a3d26a422a173cdc46a823}
+
+
+\-Minimum of the \-Parabola between. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em a} & and \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 496 of file \-Matematica\-Interp.\-cpp.
+
+
+
+\-References \-P\-A\-R\-A\-B\-O\-L\-A\-::a0, \-P\-A\-R\-A\-B\-O\-L\-A\-::a1, \-P\-A\-R\-A\-B\-O\-L\-A\-::a2, \-P\-A\-R\-A\-B\-O\-L\-A\-::\-Minimo, and \-P\-A\-R\-A\-B\-O\-L\-A\-::\-Minimo\-Y.
+
+
+
+\-Referenced by \-Var\-Dat\-File\-::\-Parabola\-Segnale().
+
+\hypertarget{classMatematica_ad2b38169a207719ef452a9c7f5bd7dc1}{\index{\-Matematica@{\-Matematica}!\-Factorial@{\-Factorial}}
+\index{\-Factorial@{\-Factorial}!Matematica@{\-Matematica}}
+\paragraph[{\-Factorial}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Factorial} (
+\begin{DoxyParamCaption}
+\item[{int}]{times}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_ad2b38169a207719ef452a9c7f5bd7dc1}
+
+
+\-Computes. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em times!} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 83 of file \-Matematica.\-cpp.
+
+
+
+\-Referenced by \-Binomial().
+
+\hypertarget{classMatematica_a9566503fbc9720a56e0439302fcc10ce}{\index{\-Matematica@{\-Matematica}!\-Inter\-B\-Spline2\-D@{\-Inter\-B\-Spline2\-D}}
+\index{\-Inter\-B\-Spline2\-D@{\-Inter\-B\-Spline2\-D}!Matematica@{\-Matematica}}
+\paragraph[{\-Inter\-B\-Spline2\-D}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Inter\-B\-Spline2\-D} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice} $\ast$}]{\-Ma\-In, }
+\item[{{\bf \-Matrice} $\ast$}]{\-Ma\-Out}
+\end{DoxyParamCaption}
+)}}\label{classMatematica_a9566503fbc9720a56e0439302fcc10ce}
+
+
+\-Computes the \-B\-Spline of a given. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Ma\-In} & \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/\-Matematica.\-h\item 
+src/\-Matematica/\-Matematica.\-cpp\item 
+src/\-Matematica/\-Matematica\-Filter.\-cpp\item 
+src/\-Matematica/\-Matematica\-Func.\-cpp\item 
+src/\-Matematica/\-Matematica\-Interp.\-cpp\item 
+src/\-Matematica/\-Matematica\-Sign.\-cpp\end{DoxyCompactItemize}

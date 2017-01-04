@@ -1,0 +1,149 @@
+.TH "Animation" 3 "Thu Mar 27 2014" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Animation \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetXRotation\fP (int angle)"
+.br
+.ti -1c
+.RI "void \fBsetYRotation\fP (int angle)"
+.br
+.ti -1c
+.RI "void \fBsetZRotation\fP (int angle)"
+.br
+.ti -1c
+.RI "void \fBNomeFile\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBNomeFile\fP (char *ExtName)"
+.br
+.ti -1c
+.RI "void \fBOpen\fP ()"
+.br
+.ti -1c
+.RI "void \fBFilter\fP ()"
+.br
+.ti -1c
+.RI "void \fBMotion\fP ()"
+.br
+.ti -1c
+.RI "void \fBRun\fP ()"
+.br
+.ti -1c
+.RI "void \fBFilterMC\fP ()"
+.br
+.ti -1c
+.RI "void \fBImpGrana\fP (int Grana)"
+.br
+.ti -1c
+.RI "void \fBFilterCoarseGrain\fP ()"
+.br
+.ti -1c
+.RI "void \fBFilterIncrease\fP ()"
+.br
+.ti -1c
+.RI "void \fBFilterContrast\fP ()"
+.br
+.ti -1c
+.RI "void \fBHisto\fP ()"
+.br
+.ti -1c
+.RI "void \fBNablaPhi\fP ()"
+.br
+.ti -1c
+.RI "void \fBBlackWhite\fP ()"
+.br
+.ti -1c
+.RI "void \fBBinary\fP ()"
+.br
+.ti -1c
+.RI "void \fBPunta\fP ()"
+.br
+.ti -1c
+.RI "void \fBIncrSlide\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBxRotationChanged\fP (int angle)"
+.br
+.ti -1c
+.RI "void \fByRotationChanged\fP (int angle)"
+.br
+.ti -1c
+.RI "void \fBzRotationChanged\fP (int angle)"
+.br
+.ti -1c
+.RI "void \fBPuntaCoord\fP (\fBVarDatFile\fP *v1)"
+.br
+.ti -1c
+.RI "void \fBPuntaCoord\fP (double **, int, int, int)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnimation\fP (QWidget *parent)"
+.br
+.ti -1c
+.RI "void \fBInitConstant\fP ()"
+.br
+.ti -1c
+.RI "void \fBMenu\fP ()"
+.br
+.ti -1c
+.RI "void \fBParticle\fP ()"
+.br
+.ti -1c
+.RI "void \fBkeyboard\fP (unsigned char key, int x, int y)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVarDatFile\fP * \fBv1\fP"
+.br
+.ti -1c
+.RI "double ** \fBst\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinitializeGL\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBpaintEvent\fP (QPaintEvent(event))"
+.br
+.ti -1c
+.RI "virtual void \fBpaintGL\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBresizeGL\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBmousePressEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "void \fBmouseMoveEvent\fP (QMouseEvent *event)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 76 of file DrEffect\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

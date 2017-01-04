@@ -1,0 +1,980 @@
+.TH "ElPoly" 3 "Thu Mar 27 2014" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ElPoly \- 
+.PP
+Operates and visualizes the information in the \fBVarData\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ElPoly\&.h>\fP
+.PP
+Inherits \fBVarData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef void(ElPoly::* \fBDRAW_PART\fP )(int p)"
+.br
+.RI "\fIData type for distance/field functions\&. \fP"
+.ti -1c
+.RI "typedef void(ElPoly::* \fBDRAW_BOND\fP )(double *Pos1, double *Pos2, float *Color)"
+.br
+.RI "\fIData type for distance/field functions\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBElPoly\fP (int argc, char **argv, int *FilePos)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "\fB~ElPoly\fP ()"
+.br
+.RI "\fIDesctructor\&. \fP"
+.ti -1c
+.RI "int \fBDensProf\fP (int NBin, int NSample, int Coord)"
+.br
+.RI "\fICalculate the density profile  dens\&. \fP"
+.ti -1c
+.RI "void \fBDensProfNormalSlab\fP (int NBin, int NSample, int Coord)"
+.br
+.RI "\fICalculate the density profile projecting the particles on the normal density\&. \fP"
+.ti -1c
+.RI "int \fBDiff2Files\fP (int NBin, int How)"
+.br
+.RI "\fIDensity and thickness profile arond the nanoparticle\&. \fP"
+.ti -1c
+.RI "void \fBRestPress\fP (int NBin)"
+.br
+.RI "\fIPressure difference between the virial and the ideal gas term\&. \fP"
+.ti -1c
+.RI "void \fBSlabProf\fP (int NBin, int nNano, int Coord1)"
+.br
+.RI "\fIThickness and density profile along Coord1\&. \fP"
+.ti -1c
+.RI "void \fBPrintDens\fP (FILE *FileToWrite, double **Plot, double *LatDim, int NBin)"
+.br
+.RI "\fIPrint the density profile in the surfaces representation\&. \fP"
+.ti -1c
+.RI "void \fBRadDens2Thick\fP (int NBin)"
+.br
+.RI "\fICalculate the thickness from the radial density profile\&. \fP"
+.ti -1c
+.RI "void \fBRadDens2Thick2d\fP (int NBin)"
+.br
+.RI "\fICalculate the thickness from the radial density profile\&. \fP"
+.ti -1c
+.RI "int \fBTemperature\fP (int NBin, int Coord)"
+.br
+.RI "\fISpatial distribution of the temperature\&. \fP"
+.ti -1c
+.RI "void \fBCartDens\fP (int NBin, int nNano)"
+.br
+.RI "\fI3d (rad,norma,dens) density profile in cartesian coordinates \fP"
+.ti -1c
+.RI "void \fBRadDistrF\fP (int NBin, int How, int nNano)"
+.br
+.RI "\fI3d (rad,norma,dens) density profile with respect to a initial position  radNano radCm radCmN \fP"
+.ti -1c
+.RI "void \fBBondDistr\fP (int NSample)"
+.br
+.RI "\fIDistribution of the bond lengths\&. \fP"
+.ti -1c
+.RI "void \fBE2EDistr\fP (int NSample)"
+.br
+.RI "\fIDistribution of end to end distances\&. \fP"
+.ti -1c
+.RI "void \fBSplayDistr\fP (int NSample)"
+.br
+.RI "\fIDistribution of end to end distances\&. \fP"
+.ti -1c
+.RI "int \fBRadialShell\fP (int NBin)"
+.br
+.RI "\fIOuter shell of a projected (rad,normal) graph\&. \fP"
+.ti -1c
+.RI "int \fBNanoParticle\fP (int NBin)"
+.br
+.RI "\fIDiffusion and density profile around the nanoparticle  nano\&. \fP"
+.ti -1c
+.RI "int \fBWormF\fP (int Partition, int NBin)"
+.br
+.RI "\fIDensity profile of a non straight worm shape membrane  worm\&. \fP"
+.ti -1c
+.RI "void \fBStalkF\fP (int NSample)"
+.br
+.RI "\fISeparate the leaflets\&. \fP"
+.ti -1c
+.RI "void \fBThickFromDens\fP (int NBin)"
+.br
+.RI "\fICalculate the thickness profile from the density plot\&. \fP"
+.ti -1c
+.RI "void \fBAreaDistrF\fP (int NBin)"
+.br
+.RI "\fIDistribution of the areas around the protein\&. \fP"
+.ti -1c
+.RI "void \fBRadNormPos\fP (int NBin, int NGrid)"
+.br
+.RI "\fIRadial profile of the normal position of the particles\&. \fP"
+.ti -1c
+.RI "int \fBSurfTens\fP (int NBin)"
+.br
+.RI "\fIRadial summation of the 3d tension profile\&. \fP"
+.ti -1c
+.RI "void \fBSumTens\fP ()"
+.br
+.RI "\fISum more tension profile files\&. \fP"
+.ti -1c
+.RI "int \fBPressTrace\fP ()"
+.br
+.RI "\fITrace of the pressure profile\&. \fP"
+.ti -1c
+.RI "int \fBPressRadial\fP ()"
+.br
+.RI "\fIContour plot around the inclusion\&. \fP"
+.ti -1c
+.RI "int \fBTens2dCartRad\fP ()"
+.br
+.RI "\fIChange the pressure profile from cartesian to radial\&. \fP"
+.ti -1c
+.RI "void \fBStalkLineProfF\fP (int NBin)"
+.br
+.RI "\fIWrite the line describing a linear stalk\&. \fP"
+.ti -1c
+.RI "void \fBProva\fP ()"
+.br
+.RI "\fIDummy function to operate on a sequence of files\&. \fP"
+.ti -1c
+.RI "void \fBPairCorr\fP (int NBin, int NDim)"
+.br
+.RI "\fI1d pair correlation \fP"
+.ti -1c
+.RI "int \fBPairCorrelationF\fP (int NBin, int How)"
+.br
+.RI "\fI1d, 2d pair correlation of the chains  pairRound pairSquare (obsolete) \fP"
+.ti -1c
+.RI "int \fBDiffusivity\fP ()"
+.br
+.RI "\fIDiffusivity coefficient of the chains  diff\&. \fP"
+.ti -1c
+.RI "void \fBDiffSlab\fP (int NSlab)"
+.br
+.RI "\fIDiffusivity of particles starting from an initial slab\&. \fP"
+.ti -1c
+.RI "int \fBScatteringF\fP (int NBin, int How)"
+.br
+.RI "\fI2d Scattering  scatt scatt2 \fP"
+.ti -1c
+.RI "int \fBNChainPSquareF\fP ()"
+.br
+.RI "\fICalculates the number of chain per area  area\&. \fP"
+.ti -1c
+.RI "void \fBAreaCompr\fP (int NSample)"
+.br
+.RI "\fICalculates the number of chain per area  area\&. \fP"
+.ti -1c
+.RI "int \fBSpectrumF\fP (int NBin)"
+.br
+.RI "\fICalculates the 1d, 2d spectrum  spe\&. \fP"
+.ti -1c
+.RI "void \fBMidplane\fP (int NBin)"
+.br
+.RI "\fIMidplanes for a sequence of snapshots\&. \fP"
+.ti -1c
+.RI "void \fBSpectrumMidplane\fP (int NBin)"
+.br
+.RI "\fICalculates the 1d, 2d spectrum  spe\&. \fP"
+.ti -1c
+.RI "void \fBHeaderAverage\fP (int nNano)"
+.br
+.RI "\fIRead the header and average the information\&. \fP"
+.ti -1c
+.RI "void \fBWidomOut\fP (char *InFile, int NBin)"
+.br
+.RI "\fICreate a system file with a chain less and the information about the missing chain\&. \fP"
+.ti -1c
+.RI "void \fBWidomOut\fP ()"
+.br
+.RI "\fICreate NCh systems with a chain less\&. \fP"
+.ti -1c
+.RI "void \fBWidomIn\fP (char *InFile, int NBin)"
+.br
+.RI "\fICreate the histogram of the energy of adding lipids\&. \fP"
+.ti -1c
+.RI "void \fBWidomIn\fP ()"
+.br
+.RI "\fICreate a set of files with a chain more\&. \fP"
+.ti -1c
+.RI "void \fBEnd2EndDistr\fP (char *OutFile)"
+.br
+.RI "\fIWrite the end to end distance of the chains\&. \fP"
+.ti -1c
+.RI "void \fBBondDistr\fP (char *OutFile, int NBin)"
+.br
+.RI "\fIWrite the bond distance between the monomers\&. \fP"
+.ti -1c
+.RI "void \fBDecoupling\fP (int What)"
+.br
+.RI "\fIDecoupling of the direction/end to end distance of the chains\&. \fP"
+.ti -1c
+.RI "void \fBElasticCoupling\fP (int NSample)"
+.br
+.RI "\fIMeasure the elastic coupling between the two sheets\&. \fP"
+.ti -1c
+.RI "void \fBElasticCouplingNVT\fP ()"
+.br
+.RI "\fIMeasure the elastic coupling between the two sheets\&. \fP"
+.ti -1c
+.RI "void \fBBilayerDistance\fP (char *OutFile, int NBin)"
+.br
+.RI "\fIMeasure the elastic coupling between the two sheets\&. \fP"
+.ti -1c
+.RI "void \fBEndToEndDist\fP ()"
+.br
+.RI "\fIDistribution of the end to end distances\&. \fP"
+.ti -1c
+.RI "int \fBProjectionF\fP (int NBin, int Coord)"
+.br
+.RI "\fIProjection of the system against one direction  pro\&. \fP"
+.ti -1c
+.RI "int \fBCoreF\fP (int NBin, int How)"
+.br
+.RI "\fISampling of the three dimentional space\&. \fP"
+.ti -1c
+.RI "int \fBSurface\fP (int NBin, int Coord)"
+.br
+.RI "\fIArea of a surfuce projected on the coordinate Coord  surf\&. \fP"
+.ti -1c
+.RI "int \fBFrom3To2d\fP (int Coord, double Param)"
+.br
+.RI "\fIProject the velocities of a 3d system on a 2d system wrt a coordinate\&. \fP"
+.ti -1c
+.RI "int \fBFrom2To1d\fP (int Coord)"
+.br
+.RI "\fIProjet a 2d system on one of the two coordinates\&. \fP"
+.ti -1c
+.RI "int \fBFrom3To1d\fP (int Coord)"
+.br
+.RI "\fIProject a 3d system on one coordinate\&. \fP"
+.ti -1c
+.RI "void \fBIsoSurf\fP (int NSample, double *IsoValue, int NIso)"
+.br
+.RI "\fIDensity plot all over different snapshots and calculation of the isolevel surface\&. \fP"
+.ti -1c
+.RI "void \fBIsoLine\fP (int NSample, double *IsoValue, int NIso, int How)"
+.br
+.RI "\fICalculate the discrete density of the system and the correspondent isolines\&. \fP"
+.ti -1c
+.RI "void \fBIsoLine\fP (FILE *F2Write, double *Plot, int NSample, double *IsoLevel, int NIso)"
+.br
+.RI "\fIPerform the marching cubes on a density plot and print the isolines\&. \fP"
+.ti -1c
+.RI "void \fBFetchStalk\fP ()"
+.br
+.RI "\fIWrite the position of the stalk for every snapshot\&. \fP"
+.ti -1c
+.RI "void \fBFetchPore\fP ()"
+.br
+.RI "\fIWrite the position of the pore for every snapshot\&. \fP"
+.ti -1c
+.RI "void \fBStalkArea\fP ()"
+.br
+.RI "\fIArea of hydrophobic in the torus\&. \fP"
+.ti -1c
+.RI "void \fBAvSnap\fP ()"
+.br
+.RI "\fIAverage the postion of the lipids over many snapshots\&. \fP"
+.ti -1c
+.RI "void \fBSlabAngleProfs\fP (int NBin, int NAngle, int Coord)"
+.br
+.RI "\fIRadial profiles of the slab density between 0⁰ and 90⁰ subdivided in NAngle angles\&. \fP"
+.ti -1c
+.RI "void \fBSample\fP (int NSample)"
+.br
+.RI "\fISample the space in NSample lattice points\&. \fP"
+.ti -1c
+.RI "void \fBConv2Tecplot\fP (int NBin, int How)"
+.br
+.RI "\fIPrepare a countor plot for tecplot\&. \fP"
+.ti -1c
+.RI "void \fBConv2Vmd\fP ()"
+.br
+.RI "\fIesport the data in vmd file format \fP"
+.ti -1c
+.RI "void \fBConv2Povray\fP ()"
+.br
+.RI "\fIesport the data in pov file format for rendering \fP"
+.ti -1c
+.RI "void \fBConv2rzd\fP (int NSample)"
+.br
+.RI "\fIesport the data in radius depth density file format \fP"
+.ti -1c
+.RI "void \fBConv2xyzd\fP (int NSample)"
+.br
+.RI "\fIesport the data in radius depth density file format \fP"
+.ti -1c
+.RI "void \fBDrField\fP (int NGrid, double IsoLevel, int nNano, FILE *FWrite)"
+.br
+.RI "\fI\fBDraw\fP a scalar field\&. \fP"
+.ti -1c
+.RI "void \fBDrBondPovRay\fP (double *Pos1, double *Pos2, float *Color)"
+.br
+.RI "\fI\fBDraw\fP the bonds\&. \fP"
+.ti -1c
+.RI "void \fBHeaderPovRay\fP ()"
+.br
+.RI "\fIPrint the header for povray\&. \fP"
+.ti -1c
+.RI "void \fBDrNanoPovRay\fP (int n)"
+.br
+.RI "\fIPovRay draw function\&. \fP"
+.ti -1c
+.RI "void \fBDrPartPovRay\fP (int p)"
+.br
+.RI "\fIPovRay draw function\&. \fP"
+.ti -1c
+.RI "void \fBConvLattice\fP (int NSample, char *FName)"
+.br
+.RI "\fIConvert into a square lattice\&. \fP"
+.ti -1c
+.RI "void \fBRemoveChains\fP ()"
+.br
+.RI "\fIRemove chains satisfying a condition\&. \fP"
+.ti -1c
+.RI "int \fBAngle\fP (int NBin)"
+.br
+.RI "\fICalculation of the contact angle  angle Boh? \fP"
+.ti -1c
+.RI "double \fBContactAngle\fP (double x)"
+.br
+.RI "\fIDefinition of the contact angle function Boh\&. \fP"
+.ti -1c
+.RI "int \fBCenterOfMass\fP (int Coord)"
+.br
+.RI "\fIAveraged center of mass Boh\&. \fP"
+.ti -1c
+.RI "int \fBChangeFile\fP ()"
+.br
+.RI "\fIDefines the first and the last file to be elaborated  file\&. \fP"
+.ti -1c
+.RI "int \fBSpecifyCoord\fP ()"
+.br
+.RI "\fIDefines the normal coordinate  coord\&. \fP"
+.ti -1c
+.RI "int \fBOpenFile\fP (int f)"
+.br
+.RI "\fIOpens the f file of the list  open\&. \fP"
+.ti -1c
+.RI "int \fBOpenFile\fP (char *FileName)"
+.br
+.RI "\fIOpens a file\&. \fP"
+.ti -1c
+.RI "int \fBPropertiesF\fP ()"
+.br
+.RI "\fICalculates some properties of the system  prop\&. \fP"
+.ti -1c
+.RI "char * \fBChooseDraw\fP (int ExtWhat2Draw)"
+.br
+.RI "\fIConvert the internal definition for the menu of \fBElPoly\fP in string\&. \fP"
+.ti -1c
+.RI "void \fBChooseDraw\fP (char *String)"
+.br
+.RI "\fIAssing the correct value of What2Draw from\&. \fP"
+.ti -1c
+.RI "void \fBDivideLayers\fP (int How)"
+.br
+.RI "\fIReorder the LIPID block in four different layers\&. \fP"
+.ti -1c
+.RI "void \fBSetBoundFile\fP (int InitFile, int EndFile)"
+.br
+.RI "\fISet the initial and final number of files\&. \fP"
+.ti -1c
+.RI "void \fBProcessing\fP (int f)"
+.br
+.RI "\fIInformation on the current file elaborated\&. \fP"
+.ti -1c
+.RI "void \fBShift2Center\fP ()"
+.br
+.RI "\fIShift the system to the center\&. \fP"
+.ti -1c
+.RI "void \fBSetBackFold\fP (int Bf)"
+.br
+.RI "\fISet backfold type\&. \fP"
+.ti -1c
+.RI "void \fBSetNVisSkip\fP (int NSkip)"
+.br
+.RI "\fISet backfold type\&. \fP"
+.ti -1c
+.RI "void \fBRenderPart\fP (void)"
+.br
+.RI "\fIChoose the visualisation (obsolete) \fP"
+.ti -1c
+.RI "void \fBDrRunTime\fP ()"
+.br
+.RI "\fIDraws in run time (expensive) \fP"
+.ti -1c
+.RI "void \fBDrColor\fP ()"
+.br
+.RI "\fIVisualisation of the particle system with velocity color scheme\&. \fP"
+.ti -1c
+.RI "void \fBDrPartList\fP ()"
+.br
+.RI "\fICreate a list of all the particles\&. \fP"
+.ti -1c
+.RI "void \fBDrVector\fP (\fBVettore\fP v, \fBVettore\fP Origin)"
+.br
+.RI "\fI\fBDraw\fP a vector\&. \fP"
+.ti -1c
+.RI "void \fBDrVectors\fP ()"
+.br
+.RI "\fI\fBDraw\fP the chains as vectors\&. \fP"
+.ti -1c
+.RI "int \fBDrIntorno\fP (int p, double Blue)"
+.br
+.RI "\fIVisualize only particles within a certain distance\&. \fP"
+.ti -1c
+.RI "void \fBDrCrossLinks\fP ()"
+.br
+.RI "\fIVisualize the cross links\&. \fP"
+.ti -1c
+.RI "int \fBGraphics\fP (int argc, char **argv)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "void \fBESlide\fP ()"
+.br
+.RI "\fISequence of pictures\&. \fP"
+.ti -1c
+.RI "void \fBESlide1\fP ()"
+.br
+.RI "\fISequence of pictures\&. \fP"
+.ti -1c
+.RI "void \fBDrProtein\fP (const char *FileName, int nBlock)"
+.br
+.RI "\fILoad and draw the linking of a protein\&. \fP"
+.ti -1c
+.RI "void \fBDrNano\fP ()"
+.br
+.RI "\fI\fBDraw\fP the nanoparticle structure\&. \fP"
+.ti -1c
+.RI "void \fBDrCrossLinks\fP (char *FileName)"
+.br
+.RI "\fI\fBDraw\fP the cross linked particles\&. \fP"
+.ti -1c
+.RI "void \fBDrawPart\fP (int p)"
+.br
+.RI "\fIPointer to a generic function\&. \fP"
+.ti -1c
+.RI "void \fBDrPartOpenGl\fP (int p)"
+.br
+.RI "\fIOpenGl draw function\&. \fP"
+.ti -1c
+.RI "void \fBDrawNano\fP (int n)"
+.br
+.RI "\fIPointer to a generic function\&. \fP"
+.ti -1c
+.RI "void \fBDrNanoOpenGl\fP (int n)"
+.br
+.RI "\fIOpenGl draw function\&. \fP"
+.ti -1c
+.RI "void \fBDrawFuncHeader\fP ()"
+.br
+.RI "\fIAssign the pointer to the corrispondent draw function, intilize the visualization\&. \fP"
+.ti -1c
+.RI "void \fBDrawFuncFooter\fP ()"
+.br
+.RI "\fIDnd the visualization\&. \fP"
+.ti -1c
+.RI "void \fBDrBond\fP (int p)"
+.br
+.RI "\fIFinde the neighbour of the particle p and draw the bond\&. \fP"
+.ti -1c
+.RI "void \fBDrawBond\fP (double *Pos1, double *Pos2, float *Color)"
+.br
+.RI "\fIPointer to a generic function\&. \fP"
+.ti -1c
+.RI "void \fBDrBondNo\fP (double *Pos1, double *Pos2, float *Color)"
+.br
+.RI "\fINull function\&. \fP"
+.ti -1c
+.RI "void \fBDrBondOpenGl\fP (double *Pos1, double *Pos2, float *Color)"
+.br
+.RI "\fI\fBDraw\fP the bonds\&. \fP"
+.ti -1c
+.RI "void \fBkeyboard\fP (unsigned char key, int x, int y)"
+.br
+.RI "\fIDraws all the particles and bonds\&. \fP"
+.ti -1c
+.RI "void \fBElDrawMouse\fP (int button, int state, int x, int y)"
+.br
+.RI "\fIScaling\&. \fP"
+.ti -1c
+.RI "void \fBCompileList\fP ()"
+.br
+.RI "\fICompile the list with some useful primitives\&. \fP"
+.ti -1c
+.RI "void \fBDrPosCol\fP ()"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "void \fBMenu\fP ()"
+.br
+.RI "\fICreates the menu\&. \fP"
+.ti -1c
+.RI "void \fBElMenuChoise\fP (int option)"
+.br
+.RI "\fIChoose what to visualize\&. \fP"
+.ti -1c
+.RI "void \fBElMenuVisual\fP (int option)"
+.br
+.RI "\fIChoose what to visualize\&. \fP"
+.ti -1c
+.RI "void \fBCreateMenu\fP ()"
+.br
+.RI "\fICreates the menu\&. \fP"
+.ti -1c
+.RI "void \fBDrIsoipse\fP (int NBin, int NIsoipse, int CoordN)"
+.br
+.RI "\fIDraws all the same quotes surfaces\&. \fP"
+.ti -1c
+.RI "void \fBDrSurface\fP ()"
+.br
+.RI "\fIDraws the surface like a sheet using the chains position\&. \fP"
+.ti -1c
+.RI "void \fBDrSmooth\fP (double *Plot, int NSample, double Min, double Max)"
+.br
+.RI "\fI\fBDraw\fP the surface in triangles\&. \fP"
+.ti -1c
+.RI "void \fBDrSample\fP (int NSample)"
+.br
+.RI "\fISamples the surface and draws it in triangles\&. \fP"
+.ti -1c
+.RI "void \fBDrSpectrum\fP ()"
+.br
+.RI "\fICalculate the spectrum of the surface and draws it in triangles\&. \fP"
+.ti -1c
+.RI "void \fBDrDerivative\fP ()"
+.br
+.RI "\fISamples the surface, applies a 2d matrix derivative and draws the surface in triangles\&. \fP"
+.ti -1c
+.RI "void \fBDrChains\fP ()"
+.br
+.RI "\fIPosition of every chain in hexagons\&. \fP"
+.ti -1c
+.RI "void \fBDrPolygon\fP ()"
+.br
+.RI "\fIEvery particle is traeted as a vertex\&. \fP"
+.ti -1c
+.RI "void \fBDrQuad\fP ()"
+.br
+.RI "\fICall a square in every particle position\&. \fP"
+.ti -1c
+.RI "void \fBDrDensity\fP ()"
+.br
+.RI "\fI(rad,norm,dens) visualisation \fP"
+.ti -1c
+.RI "void \fBDrQuad1\fP ()"
+.br
+.RI "\fIIntensity scheme\&. \fP"
+.ti -1c
+.RI "void \fBDrPotential\fP ()"
+.br
+.RI "\fIPotential function\&. \fP"
+.ti -1c
+.RI "void \fBDrShell\fP ()"
+.br
+.RI "\fI\fBDraw\fP the outer shell\&. \fP"
+.ti -1c
+.RI "void \fBDrVoronoi\fP ()"
+.br
+.RI "\fIVoronoi tassellation\&. \fP"
+.ti -1c
+.RI "void \fBDrInterpSurface\fP ()"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "void \fBDrIsolevel\fP (int NSample, double IsoLevel)"
+.br
+.RI "\fIDefines the triangles at the boundaries of the density close to the IsoLevel value\&. \fP"
+.ti -1c
+.RI "void \fBDrField\fP (int NGrid, double IsoLevel, int nNano)"
+.br
+.RI "\fI\fBDraw\fP a scalar field\&. \fP"
+.ti -1c
+.RI "void \fBDrSquareMesh\fP ()"
+.br
+.RI "\fI\fBDraw\fP the polygons for a square mesh\&. \fP"
+.ti -1c
+.RI "void \fBDrNormalPoint\fP (int p, int \fBNEdge\fP)"
+.br
+.RI "\fI\fBDraw\fP the normal to a point\&. \fP"
+.ti -1c
+.RI "void \fBDrTria\fP (\fBVettore\fP *v00, \fBVettore\fP *v01, \fBVettore\fP *v11, \fBVettore\fP *vN)"
+.br
+.RI "\fIsingle triangle defined by three vectors \fP"
+.ti -1c
+.RI "void \fBDrTriaContour\fP (\fBVettore\fP *v00, \fBVettore\fP *v01, \fBVettore\fP *v11)"
+.br
+.RI "\fI\fBDraw\fP the contour of three vectors\&. \fP"
+.ti -1c
+.RI "void \fBDrDoubleTria\fP (\fBVettore\fP *v00, \fBVettore\fP *v01, \fBVettore\fP *v11, \fBVettore\fP *v10, \fBVettore\fP *vN)"
+.br
+.RI "\fIDouble triangle defined by four vectors\&. \fP"
+.ti -1c
+.RI "void \fBDrCreateStalk\fP ()"
+.br
+.RI "\fIVisualize the surface calculated in \fBStalk()\fP \fP"
+.ti -1c
+.RI "void \fBDrStalk\fP ()"
+.br
+.RI "\fIVisualize the surface from Stalk\&.xvl\&. \fP"
+.ti -1c
+.RI "void \fBTile\fP ()"
+.br
+.RI "\fICover a regular square grid of points with tiles\&. \fP"
+.ti -1c
+.RI "void \fBDrTriangulate\fP ()"
+.br
+.RI "\fITriangulate a surface\&. \fP"
+.ti -1c
+.RI "void \fBDrMesh\fP ()"
+.br
+.RI "\fIBuild a mesh from the lipid positions\&. \fP"
+.ti -1c
+.RI "void \fBDrGenMesh\fP ()"
+.br
+.RI "\fIGenerate a mesh from a function\&. \fP"
+.ti -1c
+.RI "void \fBDrCells\fP ()"
+.br
+.RI "\fIConstruct cells from the lipid positions\&. \fP"
+.ti -1c
+.RI "void \fBDefineSkin\fP (int NSample)"
+.br
+.RI "\fIFind the covering surface for given points\&. \fP"
+.ti -1c
+.RI "void \fBDefineSurf\fP ()"
+.br
+.RI "\fIFind the covering surface for given points\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDRAW_PART\fP \fBDraw_Part\fP"
+.br
+.RI "\fIPointer to a distance/field function\&. \fP"
+.ti -1c
+.RI "\fBDRAW_PART\fP \fBDraw_Nano\fP"
+.br
+.RI "\fIPointer to a distance\&. \fP"
+.ti -1c
+.RI "\fBDRAW_BOND\fP \fBDraw_Bond\fP"
+.br
+.RI "\fIPointer to a distance/field function\&. \fP"
+.ti -1c
+.RI "GLuint \fBQuad\fP"
+.br
+.ti -1c
+.RI "GLuint \fBPoint\fP"
+.br
+.ti -1c
+.RI "GLuint * \fBCylinder\fP"
+.br
+.ti -1c
+.RI "GLuint \fBMetalCylinder\fP"
+.br
+.ti -1c
+.RI "GLuint \fBHexagon\fP"
+.br
+.ti -1c
+.RI "GLuint \fBCube\fP"
+.br
+.ti -1c
+.RI "GLuint \fBArrow\fP"
+.br
+.ti -1c
+.RI "GLuint \fBGlWall\fP"
+.br
+.ti -1c
+.RI "double \fBSaturation\fP"
+.br
+.RI "\fISaturation of the color (increase intensity) \fP"
+.ti -1c
+.RI "char \fBBlock2Draw\fP [20]"
+.br
+.RI "\fIName of the block to draw\&. \fP"
+.ti -1c
+.RI "int \fBNFile\fP [2]"
+.br
+.RI "\fIFirst and last file of the list\&. \fP"
+.ti -1c
+.RI "int \fBNFileTot\fP"
+.br
+.RI "\fITotal number of file\&. \fP"
+.ti -1c
+.RI "int \fBNPro\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBquando\fP"
+.br
+.RI "\fICurrent number of the file list\&. \fP"
+.ti -1c
+.RI "int \fBLineSize\fP"
+.br
+.RI "\fILine size of the gl\&. \fP"
+.ti -1c
+.RI "int \fBIfIntorno\fP"
+.br
+.RI "\fIIf it visualizes only the particles/chains within a certain distance\&. \fP"
+.ti -1c
+.RI "int \fBIfLine\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBIfChType\fP"
+.br
+.RI "\fIType of the chains to be visualized\&. \fP"
+.ti -1c
+.RI "int \fBNBackFold\fP"
+.br
+.RI "\fIType of backfold\&. \fP"
+.ti -1c
+.RI "int \fBWhat2Draw\fP"
+.br
+.RI "\fI\fBDraw\fP the content in the appropriate visulization\&. \fP"
+.ti -1c
+.RI "int \fBNVisSkip\fP"
+.br
+.RI "\fIHow many lipids are skipped in the visualization\&. \fP"
+.ti -1c
+.RI "int \fBDrawOutput\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "double \fBVicinanze\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "double \fBInvScaleUn\fP"
+.br
+.RI "\fIDefine the shrink factor between the box edges\&. \fP"
+.ti -1c
+.RI "double \fBExtParam\fP"
+.br
+.RI "\fIExternal parameter (e\&.g\&. for MarchingCubes) \fP"
+.ti -1c
+.RI "double \fBScaleFact\fP"
+.br
+.RI "\fINormal scaling factor (z zooming) \fP"
+.ti -1c
+.RI "FILE * \fBDrawOutFile\fP"
+.br
+.RI "\fIOutput file for drawing\&. \fP"
+.ti -1c
+.RI "\fBSingProc\fP * \fBProc\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Operates and visualizes the information in the \fBVarData\fP class\&. 
+.PP
+Definition at line 61 of file ElPoly\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int \fBDensProf\fP (intNBin, intNSample, intCoord)"
+.PP
+Calculate the density profile  dens\&. a sum on small patches and shift wrt the weighted average 
+.PP
+Definition at line 24 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::BfDefChain(), VarData::Block, VarData::Ch, VarData::CLat1, VarData::CLat2, VarData::CNorm, BLOCK::EndIdx, VarData::Nano, NFile, VarData::OpenRisk(), VarData::pChain(), VarData::pchiN(), VarData::pCm(), VarData::pEdge(), Vettore::PerpTo3(), VarData::pInvEdge(), VarData::pkappaN(), VarData::pNanoPos(), VarData::pNBlock(), VarData::pNChain(), VarData::pNNano(), VarData::pNPart(), VarData::pPos(), VarData::prho(), Processing(), VarData::pType(), Vettore::Set(), VarData::SetEdge(), VarData::SysDef(), CHAIN::Type, and VarData::VolumeCircSlab()\&.
+.SS "void \fBDensProfNormalSlab\fP (intNBin, intNSample, intCoord)"
+.PP
+Calculate the density profile projecting the particles on the normal density\&. a to be completed sum on small patches and shift wrt the weighted average 
+.PP
+Definition at line 157 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::BfDefChain(), VarData::Block, VarData::Ch, VarData::CLat1, VarData::CLat2, VarData::CNorm, BLOCK::EndIdx, VarData::Nano, NFile, VarData::OpenRisk(), VarData::pChain(), VarData::pchiN(), VarData::pCm(), VarData::pEdge(), Vettore::PerpTo3(), VarData::pInvEdge(), VarData::pkappaN(), VarData::pNanoPos(), VarData::pNBlock(), VarData::pNChain(), VarData::pNNano(), VarData::pNPart(), VarData::pPos(), VarData::prho(), Processing(), VarData::pType(), Vettore::Set(), VarData::SetEdge(), VarData::SysDef(), CHAIN::Type, and VarData::VolumeCircSlab()\&.
+.SS "void \fBSlabProf\fP (intNBin, intnNano, intCoord1)"
+.PP
+Thickness and density profile along Coord1\&. a 
+.PP
+Definition at line 292 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::Block, VarData::CLat1, VarData::CLat2, VarData::CNorm, Matrice::ConvoluteMatrix(), BLOCK::EndIdx, Matrice::FillGaussian(), VarData::Nano, NFile, Vettore::Normalize(), VarData::OpenRisk(), VarData::pCm(), VarData::pEdge(), Vettore::PerpTo(), VarData::pInvEdge(), VarData::Pm, VarData::pNanoPos(), VarData::pNBlock(), VarData::pNNano(), PART::Pos, NANO::Pos, VarData::pPos(), Matrice::Print(), PrintDens(), Processing(), Vettore::ProjOnAxis(), VarData::pType(), Vettore::Set(), VarData::SetNNano(), and Vettore::Val()\&.
+.SS "void \fBPrintDens\fP (FILE *FileToWrite, double **Plot, double *LatDim, intNBin)"
+.PP
+Print the density profile in the surfaces representation\&. a 
+.PP
+Definition at line 414 of file ElPolyProfDens\&.cpp\&.
+.PP
+References ChooseDraw()\&.
+.PP
+Referenced by BondDistr(), CartDens(), Diff2Files(), RadDistrF(), SlabProf(), and SplayDistr()\&.
+.SS "void \fBRadDens2Thick\fP (intNBin)"
+.PP
+Calculate the thickness from the radial density profile\&. a 
+.PP
+Definition at line 1031 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::LoadDensFile(), NFile, and VarData::pEdge()\&.
+.SS "void \fBRadDens2Thick2d\fP (intNBin)"
+.PP
+Calculate the thickness from the radial density profile\&. a 
+.PP
+Definition at line 1090 of file ElPolyProfDens\&.cpp\&.
+.PP
+References NFile, VarData::pEdge(), VarData::pInvEdge(), VarData::pNPart(), VarData::pPos(), and VarData::pType()\&.
+.SS "void \fBCartDens\fP (intNBin, intnNano)"
+.PP
+3d (rad,norma,dens) density profile in cartesian coordinates a 
+.PP
+Definition at line 456 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::CLat1, VarData::CLat2, VarData::CNorm, Matrice::ConvoluteMatrix(), Matrice::FillGaussian(), NBackFold, NFile, VarData::OpenRisk(), VarData::pCm(), VarData::pEdge(), VarData::pInvEdge(), VarData::pNPart(), VarData::pPos(), Matrice::Print(), PrintDens(), Processing(), and VarData::pType()\&.
+.SS "void \fBRadDistrF\fP (intNBin, intHow, intnNano)"
+.PP
+3d (rad,norma,dens) density profile with respect to a initial position  radNano radCm radCmN a 
+.PP
+Definition at line 557 of file ElPolyProfDens\&.cpp\&.
+.PP
+References Vettore::Angle(), Angle(), NANO::Axis, VarData::BfDefChain(), VarData::Block, VarData::CLat1, VarData::CLat2, VarData::CNorm, Matrice::ConvoluteMatrix(), BLOCK::EndIdx, Matrice::FillGaussian(), Matrice::Mult(), VarData::Nano, NBackFold, NFile, VarData::OpenRisk(), VarData::pChain(), VarData::pCm(), VarData::pEdge(), Vettore::PerpTo3(), VarData::pInvEdge(), VarData::Pm, VarData::pNanoPos(), VarData::pNBlock(), VarData::pNNano(), VarData::pNPCh(), VarData::PorePos(), VarData::pPos(), Matrice::Print(), PrintDens(), Processing(), Vettore::ProjOnAxis(), VarData::pType(), Vettore::Set(), VarData::SetEdge(), Vettore::Val(), Vettore::VetV(), VarData::VolumeCircSlab(), and Vettore::x\&.
+.SS "void \fBBondDistr\fP (intNSample)"
+.PP
+Distribution of the bond lengths\&. Calculate the (r,z) profile of the bond length distribution\&. 
+.PP
+Definition at line 783 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::Block, VarData::CLat1, VarData::CLat2, VarData::CNorm, Matrice::ConvoluteMatrix(), BLOCK::EndIdx, Matrice::FillGaussian(), VarData::Nano, NFile, VarData::OpenRisk(), VarData::pChain(), VarData::pEdge(), VarData::pInvEdge(), VarData::Pm, VarData::pNBlock(), PART::Pos, NANO::Pos, VarData::pPos(), Matrice::Print(), PrintDens(), Processing(), VarData::pType(), VarData::SetEdge(), and VarData::VolumeCircSlab()\&.
+.SS "void \fBSplayDistr\fP (intNSample)"
+.PP
+Distribution of end to end distances\&. Calculate the (r,z) profile of the splay angle distribution\&. 
+.PP
+Definition at line 870 of file ElPolyProfDens\&.cpp\&.
+.PP
+References Vettore::Angle(), Angle(), VarData::Block, VarData::CLat1, VarData::CLat2, VarData::CNorm, Matrice::ConvoluteMatrix(), Matrice::FillGaussian(), BLOCK::InitIdx, Matematica::InterRett(), RETTA::m, VarData::Mat, VarData::Nano, BLOCK::NChain, NFile, BLOCK::NPCh, VarData::OpenRisk(), VarData::pEdge(), VarData::pInvEdge(), VarData::Pm, VarData::pNBlock(), VarData::pNPCh(), PART::Pos, NANO::Pos, Matrice::Print(), PrintDens(), Processing(), RETTA::q, VarData::SetEdge(), and VarData::VolumeCircSlab()\&.
+.SS "void \fBThickFromDens\fP (intNBin)"
+.PP
+Calculate the thickness profile from the density plot\&. a 
+.PP
+Definition at line 1128 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::CLat1, VarData::CLat2, VarData::pCm(), VarData::pEdge(), VarData::pInvEdge(), VarData::pNPart(), VarData::pPos(), and VarData::pVel()\&.
+.SS "void \fBStalkLineProfF\fP (intNBin)"
+.PP
+Write the line describing a linear stalk\&. Call the function StalkLineProf to reconstruct the linear shape of the stalk and calculate the power spectrum\&. 
+.PP
+Definition at line 388 of file ElPolyProfile\&.cpp\&.
+.PP
+References VarData::CLat1, VarData::CLat2, NFile, VarData::Open(), VarData::pEdge(), VarData::pInvEdge(), Processing(), and VarData::StalkLineProf()\&.
+.SS "void \fBAreaCompr\fP (intNSample)"
+.PP
+Calculates the number of chain per area  area\&. Subdivide the simulation box in SubDiv[CLat1]xSubDiv[CLat2] squares and calculate the average number of chains and its stadard deviation\&.
+.PP
+The compressibility is in the limit lim_l = l^2<N_c^2>/<N_c>^2 where l is the dimension of the patch and NTimes different patches size are taken in account\&. It works in NVT\&. 
+.PP
+Definition at line 1146 of file ElPolyMeasure\&.cpp\&.
+.PP
+References VarData::CLat1, VarData::CLat2, VarData::NEdge, NFile, VarData::OpenRisk(), VarData::pchiN(), VarData::pChPos(), VarData::pEdge(), VarData::pInvEdge(), VarData::pkappaN(), VarData::pNChain(), VarData::prho(), Processing(), and VarData::SysDef()\&.
+.SS "void \fBElasticCoupling\fP (intNSample)"
+.PP
+Measure the elastic coupling between the two sheets\&. Divides the box size in small patches and calculate the thinning for every patch\&.
+.PP
+For every patch size are stored the mean values and variance of the thickness\&. As output it is printed the area per patch, the correspondent thickness, the standard deviation and the elastic coupling modulus\&. 
+.PP
+Definition at line 1248 of file ElPolyMeasure\&.cpp\&.
+.PP
+References VarData::Ch, VarData::CLat1, VarData::CLat2, VarData::CNorm, NFile, VarData::OpenRisk(), VarData::pChain(), VarData::pchiN(), VarData::pEdge(), VarData::pInvEdge(), VarData::pkappaN(), VarData::pNPart(), VarData::pPos(), VarData::prho(), Processing(), VarData::pType(), VarData::SysDef(), and CHAIN::Type\&.
+.SS "void \fBElasticCouplingNVT\fP ()"
+.PP
+Measure the elastic coupling between the two sheets\&. Elastic coupling modulus calculation for a fixed box size simulation\&. 
+.PP
+Definition at line 1377 of file ElPolyMeasure\&.cpp\&.
+.PP
+References VarData::Ch, VarData::CLat1, VarData::CLat2, VarData::CNorm, NFile, VarData::OpenRisk(), VarData::pChain(), VarData::pchiN(), VarData::pEdge(), VarData::pkappaN(), VarData::pNPart(), VarData::pPos(), VarData::prho(), Processing(), VarData::pType(), and VarData::SysDef()\&.
+.SS "int \fBCoreF\fP (intNBin, intHow)"
+.PP
+Sampling of the three dimentional space\&. a 
+.PP
+Definition at line 1213 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::BfDefChain(), VarData::Block, VarData::Ch, ChooseDraw(), BLOCK::EndIdx, NFile, VarData::OpenRisk(), VarData::pChain(), VarData::pCm(), VarData::pEdge(), VarData::pNBlock(), VarData::pPos(), Processing(), and VarData::pType()\&.
+.SS "void \fBFetchStalk\fP ()"
+.PP
+Write the position of the stalk for every snapshot\&. Simple Monte Carlo to find the best position and radius of the osculating torus\&. 
+.PP
+Definition at line 596 of file ElPolyRepr\&.cpp\&.
+.PP
+References NANO::Area, NANO::Height, VarData::Nano, NFile, VarData::OpenRisk(), VarData::pNanoPos(), Processing(), VarData::pTime(), NANO::Rad, VarData::SetNNano(), StalkArea(), VarData::StalkPos(), and VarData::StringNano()\&.
+.SS "void \fBStalkArea\fP ()"
+.PP
+Area of hydrophobic in the torus\&. Simple Monte Carlo to find the best position and radius of the osculating torus\&.
+.PP
+The area and position of the torus are hence redifined counting how many hydrophilic beads are inside the torus\&. 
+.PP
+Definition at line 624 of file ElPolyRepr\&.cpp\&.
+.PP
+References NANO::Area, VarData::CLat1, VarData::CLat2, VarData::CNorm, VarData::HeaderNano(), NANO::Height, VarData::Nano, NFile, VarData::OpenRisk(), VarData::pCm(), VarData::pEdge(), VarData::pInvEdge(), VarData::pNanoPos(), VarData::pNPart(), NANO::Pos, VarData::pPos(), Processing(), VarData::pTime(), VarData::pType(), NANO::Rad, VarData::SetNanoBkf(), VarData::SetNNano(), VarData::StalkPos(), and VarData::StringNano()\&.
+.PP
+Referenced by FetchPore(), and FetchStalk()\&.
+.SS "void \fBSlabAngleProfs\fP (intNBin, intNAngle, intCoord)"
+.PP
+Radial profiles of the slab density between 0⁰ and 90⁰ subdivided in NAngle angles\&. a 
+.PP
+Definition at line 1170 of file ElPolyProfDens\&.cpp\&.
+.PP
+References VarData::CLat1, VarData::CLat2, VarData::CNorm, VarData::pEdge(), VarData::pNPart(), and VarData::pPos()\&.
+.SS "void \fBChooseDraw\fP (char *String)"
+.PP
+Assing the correct value of What2Draw from\&. \fBParameters:\fP
+.RS 4
+\fIString\fP 
+.RE
+.PP
+
+.PP
+Definition at line 315 of file ElPolyEl\&.cpp\&.
+.PP
+References What2Draw\&.
+.SS "void \fBDrIsolevel\fP (intNSample, doubleIsoLevel)"
+.PP
+Defines the triangles at the boundaries of the density close to the IsoLevel value\&. NormalWeight(Tri,WeightL,NSample,NTri); 
+.PP
+Definition at line 1104 of file ElPolyDrawSurf\&.cpp\&.
+.PP
+References VAR_TRIANGLE::c, Matematica::Casuale(), DrawNano(), IfLine, InvScaleUn, VarData::MarchingCubes(), VarData::Mat, VAR_TRIANGLE::n, Draw::Particles, VarData::pEdge(), VarData::pInvEdge(), VarData::pNNano(), VarData::pNPart(), VarData::pPos(), VarData::pVol(), ScaleFact, VAR_TRIANGLE::v, and XYZ::x\&.
+.PP
+Referenced by ElMenuVisual()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBIfLine\fP"
+.PP
+Boh\&. Boh If it draws the bonds 
+.PP
+Definition at line 435 of file ElPoly\&.h\&.
+.PP
+Referenced by DrawFuncHeader(), DrCrossLinks(), DrIsolevel(), DrPolygon(), DrVectors(), ElMenuChoise(), ElPoly(), and keyboard()\&.
+.SS "int \fBDrawOutput\fP"
+.PP
+Boh\&. \fBDraw\fP output flag 
+.PP
+Definition at line 447 of file ElPoly\&.h\&.
+.PP
+Referenced by DrawFuncFooter(), DrawFuncHeader(), ElMenuChoise(), and Graphics()\&.
+.SS "double \fBVicinanze\fP"
+.PP
+Boh\&. Boh Boh Distance from the nanoparticle 
+.PP
+Definition at line 455 of file ElPoly\&.h\&.
+.PP
+Referenced by DrIntorno(), and Graphics()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

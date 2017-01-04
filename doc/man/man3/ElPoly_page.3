@@ -1,0 +1,228 @@
+.TH "ElPoly_page" 3 "Thu Mar 27 2014" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ElPoly_page \- \fBElPoly\fP 
+Mechanical properties calculation for a system of particles bounded in chains\&. 
+.br
+ Perform a calculation of the characteristic properties of lipid chains in bilayer membrane (diffusivity, pressure profile, radial density plot\&.\&.\&.)\&.
+.br
+ Required:OpenGl, optional CGAL\&.
+.SH "Command list:"
+.PP
+All the commands that can be typed in the command line can be written in the argument list with a single dash '-' for single characters or with double dash '--' for words\&. 
+.PD 0
+
+.IP "\(bu" 2
+'dens' \fBElPoly::DensProf\fP 
+.IP "\(bu" 2
+'3to2' \fBElPoly::From3To2d\fP 
+.IP "\(bu" 2
+'3to1' \fBElPoly::From3To1d\fP 
+.IP "\(bu" 2
+'2to1' \fBElPoly::From2To1d\fP 
+.IP "\(bu" 2
+'pro' \fBElPoly::ProjectionF\fP 
+.IP "\(bu" 2
+'core' \fBElPoly::CoreF\fP 
+.IP "\(bu" 2
+'coreNano' \fBElPoly::CoreF\fP 
+.IP "\(bu" 2
+'RadShell' \fBElPoly::RadialShell\fP 
+.IP "\(bu" 2
+'angle' \fBElPoly::Angle\fP 
+.IP "\(bu" 2
+'SlabProf' \fBElPoly::SlabProf\fP 
+.IP "\(bu" 2
+'SlabAngleProfs' \fBElPoly::SlabAngleProfs\fP 
+.IP "\(bu" 2
+'CartDens' \fBElPoly::CartDens\fP 
+.IP "\(bu" 2
+'radNano' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'radCm' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'radCmN' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'radStalk' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'radPore' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'cartNano' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'cm' \fBElPoly::CenterOfMass\fP 
+.IP "\(bu" 2
+'Dens2Thick' \fBElPoly::RadDens2Thick\fP 
+.IP "\(bu" 2
+'Dens2Thick2d' \fBElPoly::RadDens2Thick2d\fP 
+.IP "\(bu" 2
+'ThickFromDens' \fBElPoly::ThickFromDens\fP 
+.IP "\(bu" 2
+'temp' \fBElPoly::Temperature\fP 
+.IP "\(bu" 2
+'nano' \fBElPoly::NanoParticle\fP 
+.IP "\(bu" 2
+'surf' \fBElPoly::Surface\fP 
+.IP "\(bu" 2
+'diff' \fBElPoly::Diffusivity\fP 
+.IP "\(bu" 2
+'DiffSlab' \fBElPoly::DiffSlab\fP 
+.IP "\(bu" 2
+'PairCorr' \fBElPoly::PairCorr\fP 
+.IP "\(bu" 2
+'pairMon' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'pairChain' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'pairRound' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'pairSquare' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'pairPep' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'AvSnap' \fBElPoly::AvSnap\fP 
+.IP "\(bu" 2
+'scatt' \fBElPoly::ScatteringF\fP 
+.IP "\(bu" 2
+'scatt2' \fBElPoly::ScatteringF\fP 
+.IP "\(bu" 2
+'worm' \fBElPoly::WormF\fP 
+.IP "\(bu" 2
+'header' \fBElPoly::HeaderAverage\fP 
+.IP "\(bu" 2
+'spe' \fBElPoly::SpectrumF\fP 
+.IP "\(bu" 2
+'RadNormPos' \fBElPoly::RadNormPos\fP 
+.IP "\(bu" 2
+'AreaDistr' \fBElPoly::AreaDistrF\fP 
+.IP "\(bu" 2
+'mid' \fBElPoly::Midplane\fP 
+.IP "\(bu" 2
+'midSpe' \fBElPoly::SpectrumMidplane\fP 
+.IP "\(bu" 2
+'prop' \fBElPoly::PropertiesF\fP 
+.IP "\(bu" 2
+'divOpp' \fBElPoly::DivideLayers\fP 
+.IP "\(bu" 2
+'divTube' \fBElPoly::DivideLayers\fP 
+.IP "\(bu" 2
+'divVes' \fBElPoly::DivideLayers\fP 
+.IP "\(bu" 2
+'AreaCompr' \fBElPoly::AreaCompr\fP 
+.IP "\(bu" 2
+'PTrace' \fBElPoly::PressTrace\fP 
+.IP "\(bu" 2
+'PRadial' \fBElPoly::PressRadial\fP 
+.IP "\(bu" 2
+'Tens' \fBElPoly::SurfTens\fP 
+.IP "\(bu" 2
+'TensCartRad' \fBElPoly::Tens2dCartRad\fP 
+.IP "\(bu" 2
+'SumTens' \fBElPoly::SumTens\fP 
+.IP "\(bu" 2
+'stalk' \fBElPoly::StalkF\fP 
+.IP "\(bu" 2
+'StalkLine' \fBElPoly::StalkLineProfF\fP 
+.IP "\(bu" 2
+'BackBone' \fBElPoly::BackBone\fP 
+.IP "\(bu" 2
+'rem' \fBElPoly::RemoveChains\fP 
+.IP "\(bu" 2
+'ChPos' 
+.IP "\(bu" 2
+'tra' \fBElPoly::Transform\fP 
+.IP "\(bu" 2
+'ConvLattice' \fBElPoly::ConvLattice\fP 
+.IP "\(bu" 2
+'write' \fBElPoly::Write\fP 
+.IP "\(bu" 2
+'WidomOut' \fBElPoly::WidomOut\fP 
+.IP "\(bu" 2
+'WidomIn' \fBElPoly::WidomIn\fP 
+.IP "\(bu" 2
+'End2End' \fBElPoly::End2EndDistr\fP 
+.IP "\(bu" 2
+'ElCoup' \fBElPoly::ElasticCoupling\fP 
+.IP "\(bu" 2
+'ElCoupNVT' \fBElPoly::ElasticCouplingNVT\fP 
+.IP "\(bu" 2
+'E2EDec' \fBElPoly::Decoupling\fP 
+.IP "\(bu" 2
+'SmoothGrid' \fBElPoly::SmoothGrid\fP 
+.IP "\(bu" 2
+'IsoSurf' \fBElPoly::IsoSurf\fP 
+.IP "\(bu" 2
+'IsoLine' \fBElPoly::IsoLine\fP 
+.IP "\(bu" 2
+'IsoLineDens' \fBElPoly::IsoLine\fP 
+.IP "\(bu" 2
+'FPore' \fBElPoly::FetchPore\fP 
+.IP "\(bu" 2
+'FStalk' \fBElPoly::FetchStalk\fP 
+.IP "\(bu" 2
+'AStalk' \fBElPoly::StalkArea\fP 
+.IP "\(bu" 2
+'Shift2Center' \fBElPoly::Shift2Center\fP 
+.IP "\(bu" 2
+'AvSnap' \fBElPoly::AvSnap\fP 
+.IP "\(bu" 2
+'DirDec' \fBElPoly::Decoupling\fP 
+.IP "\(bu" 2
+'BilDist' \fBElPoly::BilayerDistance\fP 
+.IP "\(bu" 2
+'Bond' \fBElPoly::BondDistr\fP 
+.IP "\(bu" 2
+'Diff2Dens' \fBElPoly::Diff2Files\fP 
+.IP "\(bu" 2
+'Diff2Pre' \fBElPoly::Diff2Files\fP 
+.IP "\(bu" 2
+'RestPre' \fBElPoly::RestPress\fP 
+.IP "\(bu" 2
+'tecplotDens' \fBElPoly::Conv2Tecplot\fP 
+.IP "\(bu" 2
+'tecplotPre' \fBElPoly::Conv2Tecplot\fP 
+.IP "\(bu" 2
+'tecplotHei' \fBElPoly::Conv2Tecplot\fP 
+.IP "\(bu" 2
+'rzd' \fBElPoly::Conv2rzd\fP 
+.IP "\(bu" 2
+'xyzd' \fBElPoly::Conv2xyzd\fP 
+.IP "\(bu" 2
+'vmd' \fBElPoly::Conv2Vmd\fP 
+.IP "\(bu" 2
+'povray' \fBElPoly::Conv2Povray\fP 
+.IP "\(bu" 2
+'coord' 
+.IP "\(bu" 2
+'norm' 
+.IP "\(bu" 2
+'type' 
+.IP "\(bu" 2
+'file' \fBElPoly::ChangeFile\fP 
+.IP "\(bu" 2
+'val' 
+.IP "\(bu" 2
+'Nei' \fBElPoly::FindNeighbours\fP 
+.IP "\(bu" 2
+'sample' 
+.IP "\(bu" 2
+'open' \fBElPoly::OpenFile\fP 
+.IP "\(bu" 2
+'>' \fBElPoly::OpenFile\fP 
+.IP "\(bu" 2
+'<' \fBElPoly::OpenFile\fP 
+.IP "\(bu" 2
+'f' \fBElPoly::OpenFile\fP 
+.IP "\(bu" 2
+'info' \fBElPoly::SysInfo\fP \fBElPoly::SysDef\fP 
+.IP "\(bu" 2
+'q'
+.PP
+
+.PP
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBAllink\fP (Up)  
+.PP
+

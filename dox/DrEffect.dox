@@ -1,0 +1,10 @@
+/*! \page DrEffect_page DrEffect
+The programs perfom analysis on the loaded image and apply different user defined filters (convolution with Gaussian blur or discrete derivative, edge recognition and iterative construction...).<br>
+Required:OpenGl Qt4. 
+
+<ul>
+ <li> \ref index   (Up) </li>
+</ul>
+
+*/
+

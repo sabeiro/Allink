@@ -1,0 +1,107 @@
+
+-----------------------------Scopo--------------------------------
+
+Il programma calcola il moto di difetti e impurit`a in un reticolo
+cubico tridimensionale. Il calcolo si avvale del Metodo Monte Carlo
+Cinetico per cui un generatore di numeri casuali [ran1()] sceglie-
+r`a a seconda delle probabilit`a associate, un evento tra i possi-
+bili. Nel volume di partenza ci sono due specie di particelle, le
+prime sono i difetti generati dall'impianto di ioni ad alta energia
+in un reticolo di silicio, le seconde rappresentano le lacune crea-
+te dallo spostamento dei difetti dai siti reticolari di partenza.
+Entro una certa distanza di ricombinazione [DisRic] i due tipi di 
+particelle scompariranno dal sistema, ovvero un difetto verr`a ri-
+assorbito dalla vicina lacuna libera. Il sistema presenta condizio-
+ni periodiche sul piano (x,y) e una superficie per z=0. Nel verso 
+crescente di z il sistema ha una lunghezza indefinita. In prossi-
+mit`a del piano le particelle possono rimbalzare, fermarsi o usci-
+re dal sistema. La simulazione `e volta a identificare il tempo di
+ricombinazione, la posizione e la diffusivit`a dei difetti.
+
+-------------------------Implementazione--------------------------
+
+Il programma `e stato scritto in C++ e presenta due classi princi-
+pali che nominano i rispettivi sorgenti. 
+
+[Particella] `e la classe che definisce tutte le propriet`a delle 
+particelle in esame. Viene inizializzata tramite un file che defi-
+nisce
+-Le probabilit`a legate ai sei spostamenti concessi (+x,-x,+y,-y,
+   +z,-z)
+-Le probabilit`a legate alla superficie (rimbalza, si ferma, esce)
+-La probabilit`a iniziale [Pr0] l'energia iniziale [E0] e il tipo
+[Tipo] (inteso come etichetta %d).
+Viene inoltre richiesto un file di una singola colonna che mostri
+il profilo iniziale in profondit`a dei difetti. In questo caso il
+profilo `e stato ottenuto dal programma srim (www.srim.org) consi-
+derando l'impianto di ioni di Si di 100KeV su un reticolo di Si.
+La classe contiene una struttura [PART] che contiene le informa-
+zioni sull'etichetta e la posizione delle particelle.
+
+La classe [Cubo] rappresenta invece le dimensioni del sistema.
+Viene inizializzata fornendo le dimensioni del volume di parten-
+za e il numero di [Partizioni] per [Lato]. Il [Cubo] verr`a in-
+fatti suddiviso in strutture del tipo [CELLA]. Ogni cella con-
+terr`a la struttura [OCCUP] che contiene l'informazione sul 
+[Tipo] ed etichetta [Tocc] delle particelle presenti nella cel-
+la. La suddivisione in celle permette di abbreviare il tempo di
+calcolo delle interazioni a corto raggio delle particelle. Le 
+particelle avranno inoltre un numero [Ret] che stabilisce la vi-
+cinanza con altre celle che coninvolger`a nel calcolo di ricombi-
+nazione. 
+
+Il programma scriver`a dei file nella cartella [Posizioni/] con-
+tententi la posizione delle particelle rimaste per potenze log-
+aritmiche del tempo. 
+Il programma [Elabora] legger`a infine i file generati dal pro-
+gramma [Rinato] per calcolare informazioni sulla dinamica del sis-
+tema.
+Le convenzioni nel nome delle variabili utilizzate in [Rinato] 
+sono rappresentabili in:
+Cella
+ |-[1]
+ |-[2]
+ |-[3]
+...
+ |-[dove]----OCCUP
+...          |-[1]
+ |-[nMass]   |-[2]
+            ...           |.Tocc
+             |-[questa]---|.Tipo
+            ...           |.Ret
+             |-[.size()]
+e
+Particella
+ |-[1]
+ |-[2]
+...           |.Pos[0]
+ |-[Quale]----|.Pos[1]
+...           |.Pos[2]
+ |-[nEffet]   |.Tocc
+
+---------------------------Compilazione-----------------------
+
+$make
+In caso non funzionasse (le librerie usate sono molto comuni)
+cambiare le opzioni al Makefile o togliere l'uso di librerie
+inessenziali come <time.h>.
+
+---------------------------OpenGl-----------------------------
+
+Il programmma originario, perso, prevedeva una visualizzazione
+tramite le librerie Mesa5.0. Parte del sorgente `e rimasto ma
+non avendo nemmeno pi`u un computer non sono riuscito a riu-
+tilizzare quelle librerie. Ad ogni modo, se servisse, conservo 
+tutto quello che serve per riscrivere un programma che visua-
+lizzi la posizione delle particelle. Anche una visualizzazione
+GUI con le Qt 4 `e in fase di studio.
+
+--------------------------Errori-----------------------------
+
+Per errori, incomprensioni o suggerimenti
+       sabeiro@virgilio.it
+Spero che questi sorgenti possano servire all'implementazione
+di altri programmi e spero altres`i di contattare chiunque ab-
+bia bisogno di capire questo codice.
+
+Giovanni Marelli

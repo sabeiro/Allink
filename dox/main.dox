@@ -1,0 +1,40 @@
+/*! \mainpage Allink 
+\section Overview_section Overview
+Allink is a collection of analysis, visualisation and image processing tools to study the physical properties of the following systems:
+<ul>
+	<li>"Bilayer membrane": mechanical properties (bending, stretching and coupling energies, diffusivity, pressure tensor...).</li>
+	<li>"Signals": statistical properties (power spectrum, autocorrelation, distribution...).</li>
+	<li>"Images": statistical properties, filters, reconstruction of lines.</li>
+</ul>
+Allink is as well an integrator of equation of motion, Monte Carlo simulator and differential equation solver for the following systems:
+<ul>
+	<li>"Integrator": molecular dynamics for polymers, rotating rigid cylinders.</li>
+	<li>"Simulator": Monte Carlo with configurational bias for lipid systems.</li>
+	<li>"Solver": for a forth order differential equation in 1 or 2d lattices.</li>
+</ul>
+Each tools needs a configuration file inside the directory they are run to change the default options. 
+This solution is preferred to the extensive use of menus which slows down the development of the software but makes the program less user friendly.<br>
+Some tools are still under development if they are not properly documented. <br>
+The programming style is modular, ojected oriented but not abstract (no use of friend classes, templates...).
+This might cause inefficiency in the program and in the source writing but is meant to furnish a clear understanding of the algorithms.<br>
+The program is still under clean up of obsolete function and conversion of some original italian variable names.
+<h3> Table of contents: </h3>
+<ul>
+ <li> \subpage Avvis_page  "Avvis" </li>
+ <li> \subpage ElPoly_page      "ElPoly" </li>
+ <li> \subpage DrEffect_page    "DrEffect" </li>
+ <li> \subpage Addyn_page    "Addyn" </li>
+</ul>
+ <li> Using Allink
+ <ul>
+ <li> \subpage compile_page   "Compilation" </li>
+ <li> \subpage usage_page     "Getting Started" </li>
+ <li> \subpage param_page     "Parameter File"</li>
+ <li> \subpage design_page    "Design Overview" </li>
+ </ul>
+ </li>
+ <li> \subpage data_page      "Data Organization" </li>
+</ul>
+ 
+*/
+

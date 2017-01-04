@@ -1,0 +1,1092 @@
+\hypertarget{classElPoly}{\subsection{\-El\-Poly \-Class \-Reference}
+\label{classElPoly}\index{\-El\-Poly@{\-El\-Poly}}
+}
+
+
+\-Operates and visualizes the information in the \hyperlink{classVarData}{\-Var\-Data} class.  
+
+
+
+
+{\ttfamily \#include $<$\-El\-Poly.\-h$>$}
+
+\-Inheritance diagram for \-El\-Poly\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classElPoly}
+\end{center}
+\end{figure}
+\subsubsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classElPoly_a2f2db005a652b5d1c28066be4b285fef}{typedef void(\-El\-Poly\-::$\ast$ \hyperlink{classElPoly_a2f2db005a652b5d1c28066be4b285fef}{\-D\-R\-A\-W\-\_\-\-P\-A\-R\-T} )(int p)}\label{classElPoly_a2f2db005a652b5d1c28066be4b285fef}
+
+\begin{DoxyCompactList}\small\item\em \-Data type for distance/field functions. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_af49a42208f561b94e3d8cfef0e61e021}{typedef void(\-El\-Poly\-::$\ast$ \hyperlink{classElPoly_af49a42208f561b94e3d8cfef0e61e021}{\-D\-R\-A\-W\-\_\-\-B\-O\-N\-D} )(double $\ast$\-Pos1, double $\ast$\-Pos2, float $\ast$\-Color)}\label{classElPoly_af49a42208f561b94e3d8cfef0e61e021}
+
+\begin{DoxyCompactList}\small\item\em \-Data type for distance/field functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classElPoly_a98503475eca11a72b69cb62879d41183}{\hyperlink{classElPoly_a98503475eca11a72b69cb62879d41183}{\-El\-Poly} (int argc, char $\ast$$\ast$argv, int $\ast$\-File\-Pos)}\label{classElPoly_a98503475eca11a72b69cb62879d41183}
+
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_afdf47e94336886931e93e716f32bb1ee}{\hyperlink{classElPoly_afdf47e94336886931e93e716f32bb1ee}{$\sim$\-El\-Poly} ()}\label{classElPoly_afdf47e94336886931e93e716f32bb1ee}
+
+\begin{DoxyCompactList}\small\item\em \-Desctructor. \end{DoxyCompactList}\item 
+int \hyperlink{classElPoly_a70302b7bbfa248d2963323bc63a4a292}{\-Dens\-Prof} (int \-N\-Bin, int \-N\-Sample, int \-Coord)
+\begin{DoxyCompactList}\small\item\em \-Calculate the density profile  dens. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_aff1645802bd67fc1b5bfb3bb1884933a}{\-Dens\-Prof\-Normal\-Slab} (int \-N\-Bin, int \-N\-Sample, int \-Coord)
+\begin{DoxyCompactList}\small\item\em \-Calculate the density profile projecting the particles on the normal density. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a1c3688dd2704504d159802de5815643d}{int \hyperlink{classElPoly_a1c3688dd2704504d159802de5815643d}{\-Diff2\-Files} (int \-N\-Bin, int \-How)}\label{classElPoly_a1c3688dd2704504d159802de5815643d}
+
+\begin{DoxyCompactList}\small\item\em \-Density and thickness profile arond the nanoparticle. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a019d255b1ff857ccd34550c7409a595b}{void \hyperlink{classElPoly_a019d255b1ff857ccd34550c7409a595b}{\-Rest\-Press} (int \-N\-Bin)}\label{classElPoly_a019d255b1ff857ccd34550c7409a595b}
+
+\begin{DoxyCompactList}\small\item\em \-Pressure difference between the virial and the ideal gas term. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_a3db31f8490f0ea101281679a270e72fe}{\-Slab\-Prof} (int \-N\-Bin, int n\-Nano, int \-Coord1)
+\begin{DoxyCompactList}\small\item\em \-Thickness and density profile along \-Coord1. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_a6591e29bd7876dc9dc255808d04499f9}{\-Print\-Dens} (\-F\-I\-L\-E $\ast$\-File\-To\-Write, double $\ast$$\ast$\-Plot, double $\ast$\-Lat\-Dim, int \-N\-Bin)
+\begin{DoxyCompactList}\small\item\em \-Print the density profile in the surfaces representation. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_a7c40fb501bdadab09ee7cf8d99259299}{\-Rad\-Dens2\-Thick} (int \-N\-Bin)
+\begin{DoxyCompactList}\small\item\em \-Calculate the thickness from the radial density profile. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_ad5ab39cdaa856caea3463819b436e7b9}{\-Rad\-Dens2\-Thick2d} (int \-N\-Bin)
+\begin{DoxyCompactList}\small\item\em \-Calculate the thickness from the radial density profile. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ad0651bcc7574507f16c1998b57822bdd}{int \hyperlink{classElPoly_ad0651bcc7574507f16c1998b57822bdd}{\-Temperature} (int \-N\-Bin, int \-Coord)}\label{classElPoly_ad0651bcc7574507f16c1998b57822bdd}
+
+\begin{DoxyCompactList}\small\item\em \-Spatial distribution of the temperature. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_ac946a8b29f4eec0816699ce0c0cac23c}{\-Cart\-Dens} (int \-N\-Bin, int n\-Nano)
+\begin{DoxyCompactList}\small\item\em 3d (rad,norma,dens) density profile in cartesian coordinates \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_aff852b942203d47f2e21e2616537cbdd}{\-Rad\-Distr\-F} (int \-N\-Bin, int \-How, int n\-Nano)
+\begin{DoxyCompactList}\small\item\em 3d (rad,norma,dens) density profile with respect to a initial position  rad\-Nano rad\-Cm rad\-Cm\-N \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_a932a57ab32bd20f60bce8b498ca3095d}{\-Bond\-Distr} (int \-N\-Sample)
+\begin{DoxyCompactList}\small\item\em \-Distribution of the bond lengths. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_adac974d49c2d38f45c0227afe7c8fec9}{void \hyperlink{classElPoly_adac974d49c2d38f45c0227afe7c8fec9}{\-E2\-E\-Distr} (int \-N\-Sample)}\label{classElPoly_adac974d49c2d38f45c0227afe7c8fec9}
+
+\begin{DoxyCompactList}\small\item\em \-Distribution of end to end distances. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_aab448d2a574f63977ddcacb58db616e1}{\-Splay\-Distr} (int \-N\-Sample)
+\begin{DoxyCompactList}\small\item\em \-Distribution of end to end distances. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a64e019ffaa4437477ea433f7b5113341}{int \hyperlink{classElPoly_a64e019ffaa4437477ea433f7b5113341}{\-Radial\-Shell} (int \-N\-Bin)}\label{classElPoly_a64e019ffaa4437477ea433f7b5113341}
+
+\begin{DoxyCompactList}\small\item\em \-Outer shell of a projected (rad,normal) graph. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_af9a89c5f8dc4c7274ec5e00ff4db78bb}{int \hyperlink{classElPoly_af9a89c5f8dc4c7274ec5e00ff4db78bb}{\-Nano\-Particle} (int \-N\-Bin)}\label{classElPoly_af9a89c5f8dc4c7274ec5e00ff4db78bb}
+
+\begin{DoxyCompactList}\small\item\em \-Diffusion and density profile around the nanoparticle  nano. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ad6fa03abf69921d9a0759689569e35e9}{int \hyperlink{classElPoly_ad6fa03abf69921d9a0759689569e35e9}{\-Worm\-F} (int \-Partition, int \-N\-Bin)}\label{classElPoly_ad6fa03abf69921d9a0759689569e35e9}
+
+\begin{DoxyCompactList}\small\item\em \-Density profile of a non straight worm shape membrane  worm. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aba321cce3649252deca41a462b0e3d38}{void \hyperlink{classElPoly_aba321cce3649252deca41a462b0e3d38}{\-Stalk\-F} (int \-N\-Sample)}\label{classElPoly_aba321cce3649252deca41a462b0e3d38}
+
+\begin{DoxyCompactList}\small\item\em \-Separate the leaflets. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_abcf175509352ac9dd90cb8ad96494219}{\-Thick\-From\-Dens} (int \-N\-Bin)
+\begin{DoxyCompactList}\small\item\em \-Calculate the thickness profile from the density plot. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a16d58960eae98f1ad67971068f12a22c}{void \hyperlink{classElPoly_a16d58960eae98f1ad67971068f12a22c}{\-Area\-Distr\-F} (int \-N\-Bin)}\label{classElPoly_a16d58960eae98f1ad67971068f12a22c}
+
+\begin{DoxyCompactList}\small\item\em \-Distribution of the areas around the protein. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ad3a244bc00c2c8216b1f5cbd36699cdc}{void \hyperlink{classElPoly_ad3a244bc00c2c8216b1f5cbd36699cdc}{\-Rad\-Norm\-Pos} (int \-N\-Bin, int \-N\-Grid)}\label{classElPoly_ad3a244bc00c2c8216b1f5cbd36699cdc}
+
+\begin{DoxyCompactList}\small\item\em \-Radial profile of the normal position of the particles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_af9a44196e456df096e96d914e19d85c9}{int \hyperlink{classElPoly_af9a44196e456df096e96d914e19d85c9}{\-Surf\-Tens} (int \-N\-Bin)}\label{classElPoly_af9a44196e456df096e96d914e19d85c9}
+
+\begin{DoxyCompactList}\small\item\em \-Radial summation of the 3d tension profile. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a35c812e3cfa8e0031dc2b521e075c1c9}{void \hyperlink{classElPoly_a35c812e3cfa8e0031dc2b521e075c1c9}{\-Sum\-Tens} ()}\label{classElPoly_a35c812e3cfa8e0031dc2b521e075c1c9}
+
+\begin{DoxyCompactList}\small\item\em \-Sum more tension profile files. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a534f27d79203f0b018acaedf41bbdb13}{int \hyperlink{classElPoly_a534f27d79203f0b018acaedf41bbdb13}{\-Press\-Trace} ()}\label{classElPoly_a534f27d79203f0b018acaedf41bbdb13}
+
+\begin{DoxyCompactList}\small\item\em \-Trace of the pressure profile. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a17a99c936b16e1880291e6c3c5957e44}{int \hyperlink{classElPoly_a17a99c936b16e1880291e6c3c5957e44}{\-Press\-Radial} ()}\label{classElPoly_a17a99c936b16e1880291e6c3c5957e44}
+
+\begin{DoxyCompactList}\small\item\em \-Contour plot around the inclusion. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a7282d2e3fe0a3ee0caa631363913cc0a}{int \hyperlink{classElPoly_a7282d2e3fe0a3ee0caa631363913cc0a}{\-Tens2d\-Cart\-Rad} ()}\label{classElPoly_a7282d2e3fe0a3ee0caa631363913cc0a}
+
+\begin{DoxyCompactList}\small\item\em \-Change the pressure profile from cartesian to radial. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_adbfe7fc41363f770eee9c2a9e0e1ed57}{\-Stalk\-Line\-Prof\-F} (int \-N\-Bin)
+\begin{DoxyCompactList}\small\item\em \-Write the line describing a linear stalk. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a47cedfc639fa29b9812167b4fb5d1360}{void \hyperlink{classElPoly_a47cedfc639fa29b9812167b4fb5d1360}{\-Prova} ()}\label{classElPoly_a47cedfc639fa29b9812167b4fb5d1360}
+
+\begin{DoxyCompactList}\small\item\em \-Dummy function to operate on a sequence of files. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a56b4b9780b4f84eb1713ca48b49fbbb2}{void \hyperlink{classElPoly_a56b4b9780b4f84eb1713ca48b49fbbb2}{\-Pair\-Corr} (int \-N\-Bin, int \-N\-Dim)}\label{classElPoly_a56b4b9780b4f84eb1713ca48b49fbbb2}
+
+\begin{DoxyCompactList}\small\item\em 1d pair correlation \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a7a3305d9ff38757faf367ced9abf89f0}{int \hyperlink{classElPoly_a7a3305d9ff38757faf367ced9abf89f0}{\-Pair\-Correlation\-F} (int \-N\-Bin, int \-How)}\label{classElPoly_a7a3305d9ff38757faf367ced9abf89f0}
+
+\begin{DoxyCompactList}\small\item\em 1d, 2d pair correlation of the chains  pair\-Round pair\-Square (obsolete) \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a2f4aa8dc1e4dce0dc8fcb1d4b161757b}{int \hyperlink{classElPoly_a2f4aa8dc1e4dce0dc8fcb1d4b161757b}{\-Diffusivity} ()}\label{classElPoly_a2f4aa8dc1e4dce0dc8fcb1d4b161757b}
+
+\begin{DoxyCompactList}\small\item\em \-Diffusivity coefficient of the chains  diff. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_abf879a7d0b86a5eed8a5be87dc741200}{void \hyperlink{classElPoly_abf879a7d0b86a5eed8a5be87dc741200}{\-Diff\-Slab} (int \-N\-Slab)}\label{classElPoly_abf879a7d0b86a5eed8a5be87dc741200}
+
+\begin{DoxyCompactList}\small\item\em \-Diffusivity of particles starting from an initial slab. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a1aa4889418bf8c589875e1c77b5262d2}{int \hyperlink{classElPoly_a1aa4889418bf8c589875e1c77b5262d2}{\-Scattering\-F} (int \-N\-Bin, int \-How)}\label{classElPoly_a1aa4889418bf8c589875e1c77b5262d2}
+
+\begin{DoxyCompactList}\small\item\em 2d \-Scattering  scatt scatt2 \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_afe2c794cc4f62f2e547526f63e82acfe}{int \hyperlink{classElPoly_afe2c794cc4f62f2e547526f63e82acfe}{\-N\-Chain\-P\-Square\-F} ()}\label{classElPoly_afe2c794cc4f62f2e547526f63e82acfe}
+
+\begin{DoxyCompactList}\small\item\em \-Calculates the number of chain per area  area. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_afbe805e551084aebeee2c673c9b3937a}{\-Area\-Compr} (int \-N\-Sample)
+\begin{DoxyCompactList}\small\item\em \-Calculates the number of chain per area  area. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ada953db0b772595339ef925b5dbd8c62}{int \hyperlink{classElPoly_ada953db0b772595339ef925b5dbd8c62}{\-Spectrum\-F} (int \-N\-Bin)}\label{classElPoly_ada953db0b772595339ef925b5dbd8c62}
+
+\begin{DoxyCompactList}\small\item\em \-Calculates the 1d, 2d spectrum  spe. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a16156b6e530ecc6df93b6ffd3c229f1b}{void \hyperlink{classElPoly_a16156b6e530ecc6df93b6ffd3c229f1b}{\-Midplane} (int \-N\-Bin)}\label{classElPoly_a16156b6e530ecc6df93b6ffd3c229f1b}
+
+\begin{DoxyCompactList}\small\item\em \-Midplanes for a sequence of snapshots. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a669491e5e5c66f665694c9d8908d3109}{void \hyperlink{classElPoly_a669491e5e5c66f665694c9d8908d3109}{\-Spectrum\-Midplane} (int \-N\-Bin)}\label{classElPoly_a669491e5e5c66f665694c9d8908d3109}
+
+\begin{DoxyCompactList}\small\item\em \-Calculates the 1d, 2d spectrum  spe. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a2eab2da94941b822d51d4e21bfe64aef}{void \hyperlink{classElPoly_a2eab2da94941b822d51d4e21bfe64aef}{\-Header\-Average} (int n\-Nano)}\label{classElPoly_a2eab2da94941b822d51d4e21bfe64aef}
+
+\begin{DoxyCompactList}\small\item\em \-Read the header and average the information. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aa7a92147aff6a466398908e0f92ca139}{void \hyperlink{classElPoly_aa7a92147aff6a466398908e0f92ca139}{\-Widom\-Out} (char $\ast$\-In\-File, int \-N\-Bin)}\label{classElPoly_aa7a92147aff6a466398908e0f92ca139}
+
+\begin{DoxyCompactList}\small\item\em \-Create a system file with a chain less and the information about the missing chain. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ab6f6a1fc647dcd4684fcaa667d612099}{void \hyperlink{classElPoly_ab6f6a1fc647dcd4684fcaa667d612099}{\-Widom\-Out} ()}\label{classElPoly_ab6f6a1fc647dcd4684fcaa667d612099}
+
+\begin{DoxyCompactList}\small\item\em \-Create \-N\-Ch systems with a chain less. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a3e5c7ada1f6d5a2d37b23a9fb12771f9}{void \hyperlink{classElPoly_a3e5c7ada1f6d5a2d37b23a9fb12771f9}{\-Widom\-In} (char $\ast$\-In\-File, int \-N\-Bin)}\label{classElPoly_a3e5c7ada1f6d5a2d37b23a9fb12771f9}
+
+\begin{DoxyCompactList}\small\item\em \-Create the histogram of the energy of adding lipids. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a2fbe8fbc91f83f0ac7a947965a3c38b8}{void \hyperlink{classElPoly_a2fbe8fbc91f83f0ac7a947965a3c38b8}{\-Widom\-In} ()}\label{classElPoly_a2fbe8fbc91f83f0ac7a947965a3c38b8}
+
+\begin{DoxyCompactList}\small\item\em \-Create a set of files with a chain more. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a15ee2b235143aabc133fe974aa3258a2}{void \hyperlink{classElPoly_a15ee2b235143aabc133fe974aa3258a2}{\-End2\-End\-Distr} (char $\ast$\-Out\-File)}\label{classElPoly_a15ee2b235143aabc133fe974aa3258a2}
+
+\begin{DoxyCompactList}\small\item\em \-Write the end to end distance of the chains. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_af5a6c502bd65553e3f5e98577081ec66}{void \hyperlink{classElPoly_af5a6c502bd65553e3f5e98577081ec66}{\-Bond\-Distr} (char $\ast$\-Out\-File, int \-N\-Bin)}\label{classElPoly_af5a6c502bd65553e3f5e98577081ec66}
+
+\begin{DoxyCompactList}\small\item\em \-Write the bond distance between the monomers. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a44e20767e332d941b94906f1a8e60e24}{void \hyperlink{classElPoly_a44e20767e332d941b94906f1a8e60e24}{\-Decoupling} (int \-What)}\label{classElPoly_a44e20767e332d941b94906f1a8e60e24}
+
+\begin{DoxyCompactList}\small\item\em \-Decoupling of the direction/end to end distance of the chains. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_a48968ddc44376e55852e9720b3827ebe}{\-Elastic\-Coupling} (int \-N\-Sample)
+\begin{DoxyCompactList}\small\item\em \-Measure the elastic coupling between the two sheets. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_ab88192e9e4e0f11b68ad828d73ff8957}{\-Elastic\-Coupling\-N\-V\-T} ()
+\begin{DoxyCompactList}\small\item\em \-Measure the elastic coupling between the two sheets. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a6f1477b110e5ee0e7e027466dac51b69}{void \hyperlink{classElPoly_a6f1477b110e5ee0e7e027466dac51b69}{\-Bilayer\-Distance} (char $\ast$\-Out\-File, int \-N\-Bin)}\label{classElPoly_a6f1477b110e5ee0e7e027466dac51b69}
+
+\begin{DoxyCompactList}\small\item\em \-Measure the elastic coupling between the two sheets. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a9152ea7044fdfac4a1def898c1c21a9d}{void \hyperlink{classElPoly_a9152ea7044fdfac4a1def898c1c21a9d}{\-End\-To\-End\-Dist} ()}\label{classElPoly_a9152ea7044fdfac4a1def898c1c21a9d}
+
+\begin{DoxyCompactList}\small\item\em \-Distribution of the end to end distances. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aa2dbcd635807df0929968ec8932631ab}{int \hyperlink{classElPoly_aa2dbcd635807df0929968ec8932631ab}{\-Projection\-F} (int \-N\-Bin, int \-Coord)}\label{classElPoly_aa2dbcd635807df0929968ec8932631ab}
+
+\begin{DoxyCompactList}\small\item\em \-Projection of the system against one direction  pro. \end{DoxyCompactList}\item 
+int \hyperlink{classElPoly_a04dd79cb2f5e46ae301b6dc1d57db28a}{\-Core\-F} (int \-N\-Bin, int \-How)
+\begin{DoxyCompactList}\small\item\em \-Sampling of the three dimentional space. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a52844d3cee2d60eb47889fb021e10fc8}{int \hyperlink{classElPoly_a52844d3cee2d60eb47889fb021e10fc8}{\-Surface} (int \-N\-Bin, int \-Coord)}\label{classElPoly_a52844d3cee2d60eb47889fb021e10fc8}
+
+\begin{DoxyCompactList}\small\item\em \-Area of a surfuce projected on the coordinate \-Coord  surf. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a4e71c4abd7c3ed37f29a8fcae064fd32}{int \hyperlink{classElPoly_a4e71c4abd7c3ed37f29a8fcae064fd32}{\-From3\-To2d} (int \-Coord, double \-Param)}\label{classElPoly_a4e71c4abd7c3ed37f29a8fcae064fd32}
+
+\begin{DoxyCompactList}\small\item\em \-Project the velocities of a 3d system on a 2d system wrt a coordinate. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a30e6658740047a2fdd996e2b843e91b9}{int \hyperlink{classElPoly_a30e6658740047a2fdd996e2b843e91b9}{\-From2\-To1d} (int \-Coord)}\label{classElPoly_a30e6658740047a2fdd996e2b843e91b9}
+
+\begin{DoxyCompactList}\small\item\em \-Projet a 2d system on one of the two coordinates. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a0b9109dcecbeec17c94472b5e638580a}{int \hyperlink{classElPoly_a0b9109dcecbeec17c94472b5e638580a}{\-From3\-To1d} (int \-Coord)}\label{classElPoly_a0b9109dcecbeec17c94472b5e638580a}
+
+\begin{DoxyCompactList}\small\item\em \-Project a 3d system on one coordinate. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a23b08e53b2acd3090051d2034632c20f}{void \hyperlink{classElPoly_a23b08e53b2acd3090051d2034632c20f}{\-Iso\-Surf} (int \-N\-Sample, double $\ast$\-Iso\-Value, int \-N\-Iso)}\label{classElPoly_a23b08e53b2acd3090051d2034632c20f}
+
+\begin{DoxyCompactList}\small\item\em \-Density plot all over different snapshots and calculation of the isolevel surface. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a7af346569b401863e3d5f4541e85e0c4}{void \hyperlink{classElPoly_a7af346569b401863e3d5f4541e85e0c4}{\-Iso\-Line} (int \-N\-Sample, double $\ast$\-Iso\-Value, int \-N\-Iso, int \-How)}\label{classElPoly_a7af346569b401863e3d5f4541e85e0c4}
+
+\begin{DoxyCompactList}\small\item\em \-Calculate the discrete density of the system and the correspondent isolines. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a87faf7a81fea58a62dd97ee88b5b1b84}{void \hyperlink{classElPoly_a87faf7a81fea58a62dd97ee88b5b1b84}{\-Iso\-Line} (\-F\-I\-L\-E $\ast$\-F2\-Write, double $\ast$\-Plot, int \-N\-Sample, double $\ast$\-Iso\-Level, int \-N\-Iso)}\label{classElPoly_a87faf7a81fea58a62dd97ee88b5b1b84}
+
+\begin{DoxyCompactList}\small\item\em \-Perform the marching cubes on a density plot and print the isolines. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_a21a28de0471580af1978c3a48ae0ba0e}{\-Fetch\-Stalk} ()
+\begin{DoxyCompactList}\small\item\em \-Write the position of the stalk for every snapshot. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aecd33584d71ae498798338253cbf83f0}{void \hyperlink{classElPoly_aecd33584d71ae498798338253cbf83f0}{\-Fetch\-Pore} ()}\label{classElPoly_aecd33584d71ae498798338253cbf83f0}
+
+\begin{DoxyCompactList}\small\item\em \-Write the position of the pore for every snapshot. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_a099625012512857cb5524bf15b397e5e}{\-Stalk\-Area} ()
+\begin{DoxyCompactList}\small\item\em \-Area of hydrophobic in the torus. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aafe33ef0f28995ba7c1a778196decf9b}{void \hyperlink{classElPoly_aafe33ef0f28995ba7c1a778196decf9b}{\-Av\-Snap} ()}\label{classElPoly_aafe33ef0f28995ba7c1a778196decf9b}
+
+\begin{DoxyCompactList}\small\item\em \-Average the postion of the lipids over many snapshots. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_a4192d526e79a4c1e0b4910a4f35720c4}{\-Slab\-Angle\-Profs} (int \-N\-Bin, int \-N\-Angle, int \-Coord)
+\begin{DoxyCompactList}\small\item\em \-Radial profiles of the slab density between 0⁰ and 90⁰ subdivided in \-N\-Angle angles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ada9b9ef0fea961264425fae43e3a4391}{void \hyperlink{classElPoly_ada9b9ef0fea961264425fae43e3a4391}{\-Sample} (int \-N\-Sample)}\label{classElPoly_ada9b9ef0fea961264425fae43e3a4391}
+
+\begin{DoxyCompactList}\small\item\em \-Sample the space in \-N\-Sample lattice points. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ab03f8f580a4b45968aedcaa0d088c469}{void \hyperlink{classElPoly_ab03f8f580a4b45968aedcaa0d088c469}{\-Conv2\-Tecplot} (int \-N\-Bin, int \-How)}\label{classElPoly_ab03f8f580a4b45968aedcaa0d088c469}
+
+\begin{DoxyCompactList}\small\item\em \-Prepare a countor plot for tecplot. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a552193e7b9dea6d667fc1cd2ecab1482}{void \hyperlink{classElPoly_a552193e7b9dea6d667fc1cd2ecab1482}{\-Conv2\-Vmd} ()}\label{classElPoly_a552193e7b9dea6d667fc1cd2ecab1482}
+
+\begin{DoxyCompactList}\small\item\em esport the data in vmd file format \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ac2e836951a966bd69b21705cad363b95}{void \hyperlink{classElPoly_ac2e836951a966bd69b21705cad363b95}{\-Conv2\-Povray} ()}\label{classElPoly_ac2e836951a966bd69b21705cad363b95}
+
+\begin{DoxyCompactList}\small\item\em esport the data in pov file format for rendering \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a538747fd3f643c9d171a00a5ec371ccc}{void \hyperlink{classElPoly_a538747fd3f643c9d171a00a5ec371ccc}{\-Conv2rzd} (int \-N\-Sample)}\label{classElPoly_a538747fd3f643c9d171a00a5ec371ccc}
+
+\begin{DoxyCompactList}\small\item\em esport the data in radius depth density file format \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ad9aa947dfbb4fd8d4f2eb314efc17730}{void \hyperlink{classElPoly_ad9aa947dfbb4fd8d4f2eb314efc17730}{\-Conv2xyzd} (int \-N\-Sample)}\label{classElPoly_ad9aa947dfbb4fd8d4f2eb314efc17730}
+
+\begin{DoxyCompactList}\small\item\em esport the data in radius depth density file format \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aee301bfab80a5bff74d1929e63cdbf0f}{void \hyperlink{classElPoly_aee301bfab80a5bff74d1929e63cdbf0f}{\-Dr\-Field} (int \-N\-Grid, double \-Iso\-Level, int n\-Nano, \-F\-I\-L\-E $\ast$\-F\-Write)}\label{classElPoly_aee301bfab80a5bff74d1929e63cdbf0f}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} a scalar field. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a1d6d8bfcdb851627bb183cb803353270}{void \hyperlink{classElPoly_a1d6d8bfcdb851627bb183cb803353270}{\-Dr\-Bond\-Pov\-Ray} (double $\ast$\-Pos1, double $\ast$\-Pos2, float $\ast$\-Color)}\label{classElPoly_a1d6d8bfcdb851627bb183cb803353270}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the bonds. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a79715be09324f2b58cc98385a5f62e7b}{void \hyperlink{classElPoly_a79715be09324f2b58cc98385a5f62e7b}{\-Header\-Pov\-Ray} ()}\label{classElPoly_a79715be09324f2b58cc98385a5f62e7b}
+
+\begin{DoxyCompactList}\small\item\em \-Print the header for povray. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a760f4fa1edbecc53d532140617dbf8ab}{void \hyperlink{classElPoly_a760f4fa1edbecc53d532140617dbf8ab}{\-Dr\-Nano\-Pov\-Ray} (int n)}\label{classElPoly_a760f4fa1edbecc53d532140617dbf8ab}
+
+\begin{DoxyCompactList}\small\item\em \-Pov\-Ray draw function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aedbaa04884ac62d32f3cce78fdfd92b8}{void \hyperlink{classElPoly_aedbaa04884ac62d32f3cce78fdfd92b8}{\-Dr\-Part\-Pov\-Ray} (int p)}\label{classElPoly_aedbaa04884ac62d32f3cce78fdfd92b8}
+
+\begin{DoxyCompactList}\small\item\em \-Pov\-Ray draw function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a3e03070150b93328661ff2c857eebbf4}{void \hyperlink{classElPoly_a3e03070150b93328661ff2c857eebbf4}{\-Conv\-Lattice} (int \-N\-Sample, char $\ast$\-F\-Name)}\label{classElPoly_a3e03070150b93328661ff2c857eebbf4}
+
+\begin{DoxyCompactList}\small\item\em \-Convert into a square lattice. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_abfd537703af91a0dceb86c6bba5bd213}{void \hyperlink{classElPoly_abfd537703af91a0dceb86c6bba5bd213}{\-Remove\-Chains} ()}\label{classElPoly_abfd537703af91a0dceb86c6bba5bd213}
+
+\begin{DoxyCompactList}\small\item\em \-Remove chains satisfying a condition. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae3aab8086f988eecdd12b8f29f45a56a}{int \hyperlink{classElPoly_ae3aab8086f988eecdd12b8f29f45a56a}{\-Angle} (int \-N\-Bin)}\label{classElPoly_ae3aab8086f988eecdd12b8f29f45a56a}
+
+\begin{DoxyCompactList}\small\item\em \-Calculation of the contact angle  angle \-Boh? \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a2dd3ba2334c4444c4ef406347618c170}{double \hyperlink{classElPoly_a2dd3ba2334c4444c4ef406347618c170}{\-Contact\-Angle} (double x)}\label{classElPoly_a2dd3ba2334c4444c4ef406347618c170}
+
+\begin{DoxyCompactList}\small\item\em \-Definition of the contact angle function \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a59529de9a660df4734a218130963ae25}{int \hyperlink{classElPoly_a59529de9a660df4734a218130963ae25}{\-Center\-Of\-Mass} (int \-Coord)}\label{classElPoly_a59529de9a660df4734a218130963ae25}
+
+\begin{DoxyCompactList}\small\item\em \-Averaged center of mass \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a5fa485410c0b7e02f523f96f33504435}{int \hyperlink{classElPoly_a5fa485410c0b7e02f523f96f33504435}{\-Change\-File} ()}\label{classElPoly_a5fa485410c0b7e02f523f96f33504435}
+
+\begin{DoxyCompactList}\small\item\em \-Defines the first and the last file to be elaborated  file. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_af3b99b4a504ae35256dfa33c9f1bfd31}{int \hyperlink{classElPoly_af3b99b4a504ae35256dfa33c9f1bfd31}{\-Specify\-Coord} ()}\label{classElPoly_af3b99b4a504ae35256dfa33c9f1bfd31}
+
+\begin{DoxyCompactList}\small\item\em \-Defines the normal coordinate  coord. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a3432306726a27b310ec27b3900894b11}{int \hyperlink{classElPoly_a3432306726a27b310ec27b3900894b11}{\-Open\-File} (int f)}\label{classElPoly_a3432306726a27b310ec27b3900894b11}
+
+\begin{DoxyCompactList}\small\item\em \-Opens the f file of the list  open. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a5ddc1cdb4d65932381030dba86448813}{int \hyperlink{classElPoly_a5ddc1cdb4d65932381030dba86448813}{\-Open\-File} (char $\ast$\-File\-Name)}\label{classElPoly_a5ddc1cdb4d65932381030dba86448813}
+
+\begin{DoxyCompactList}\small\item\em \-Opens a file. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae41ade7fbfd977babf42a7e2e6b33f07}{int \hyperlink{classElPoly_ae41ade7fbfd977babf42a7e2e6b33f07}{\-Properties\-F} ()}\label{classElPoly_ae41ade7fbfd977babf42a7e2e6b33f07}
+
+\begin{DoxyCompactList}\small\item\em \-Calculates some properties of the system  prop. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a86e52eb42d4ead5eb6b800ab1fd3a4d2}{char $\ast$ \hyperlink{classElPoly_a86e52eb42d4ead5eb6b800ab1fd3a4d2}{\-Choose\-Draw} (int \-Ext\-What2\-Draw)}\label{classElPoly_a86e52eb42d4ead5eb6b800ab1fd3a4d2}
+
+\begin{DoxyCompactList}\small\item\em \-Convert the internal definition for the menu of \hyperlink{classElPoly}{\-El\-Poly} in string. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_aba70049e8fa7f7b845f9ccd8ad700015}{\-Choose\-Draw} (char $\ast$\-String)
+\begin{DoxyCompactList}\small\item\em \-Assing the correct value of \-What2\-Draw from. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_acffadf1cdc641927dfd8af49eebc2069}{void \hyperlink{classElPoly_acffadf1cdc641927dfd8af49eebc2069}{\-Divide\-Layers} (int \-How)}\label{classElPoly_acffadf1cdc641927dfd8af49eebc2069}
+
+\begin{DoxyCompactList}\small\item\em \-Reorder the \-L\-I\-P\-I\-D block in four different layers. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a464eca35e2fcc5f03f9f8be8702f36cc}{void \hyperlink{classElPoly_a464eca35e2fcc5f03f9f8be8702f36cc}{\-Set\-Bound\-File} (int \-Init\-File, int \-End\-File)}\label{classElPoly_a464eca35e2fcc5f03f9f8be8702f36cc}
+
+\begin{DoxyCompactList}\small\item\em \-Set the initial and final number of files. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a02045f98c00a6ef6af607bc27fc3e82a}{void \hyperlink{classElPoly_a02045f98c00a6ef6af607bc27fc3e82a}{\-Processing} (int f)}\label{classElPoly_a02045f98c00a6ef6af607bc27fc3e82a}
+
+\begin{DoxyCompactList}\small\item\em \-Information on the current file elaborated. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a2d5b51a7f120a4104f6e5070ca6c55f5}{void \hyperlink{classElPoly_a2d5b51a7f120a4104f6e5070ca6c55f5}{\-Shift2\-Center} ()}\label{classElPoly_a2d5b51a7f120a4104f6e5070ca6c55f5}
+
+\begin{DoxyCompactList}\small\item\em \-Shift the system to the center. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_adf3c4c944496227c17ceebc8d42d5ea5}{void \hyperlink{classElPoly_adf3c4c944496227c17ceebc8d42d5ea5}{\-Set\-Back\-Fold} (int \-Bf)}\label{classElPoly_adf3c4c944496227c17ceebc8d42d5ea5}
+
+\begin{DoxyCompactList}\small\item\em \-Set backfold type. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a0312cac4bd3e684fef174d0147607a1c}{void \hyperlink{classElPoly_a0312cac4bd3e684fef174d0147607a1c}{\-Set\-N\-Vis\-Skip} (int \-N\-Skip)}\label{classElPoly_a0312cac4bd3e684fef174d0147607a1c}
+
+\begin{DoxyCompactList}\small\item\em \-Set backfold type. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a6387005443a530d1a66a0833c72b23fd}{void \hyperlink{classElPoly_a6387005443a530d1a66a0833c72b23fd}{\-Render\-Part} (void)}\label{classElPoly_a6387005443a530d1a66a0833c72b23fd}
+
+\begin{DoxyCompactList}\small\item\em \-Choose the visualisation (obsolete) \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a28d17ecbad071d90ae8b571f068d865a}{void \hyperlink{classElPoly_a28d17ecbad071d90ae8b571f068d865a}{\-Dr\-Run\-Time} ()}\label{classElPoly_a28d17ecbad071d90ae8b571f068d865a}
+
+\begin{DoxyCompactList}\small\item\em \-Draws in run time (expensive) \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aef35a22a4138fad89d7329d9fd49d97e}{void \hyperlink{classElPoly_aef35a22a4138fad89d7329d9fd49d97e}{\-Dr\-Color} ()}\label{classElPoly_aef35a22a4138fad89d7329d9fd49d97e}
+
+\begin{DoxyCompactList}\small\item\em \-Visualisation of the particle system with velocity color scheme. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae89cedb0e996d10ec5f96e14f1f867cf}{void \hyperlink{classElPoly_ae89cedb0e996d10ec5f96e14f1f867cf}{\-Dr\-Part\-List} ()}\label{classElPoly_ae89cedb0e996d10ec5f96e14f1f867cf}
+
+\begin{DoxyCompactList}\small\item\em \-Create a list of all the particles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a3eef417e007c18f604455cfb38a948cb}{void \hyperlink{classElPoly_a3eef417e007c18f604455cfb38a948cb}{\-Dr\-Vector} (\hyperlink{classVettore}{\-Vettore} v, \hyperlink{classVettore}{\-Vettore} \-Origin)}\label{classElPoly_a3eef417e007c18f604455cfb38a948cb}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} a vector. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a9968be2f08ada4e898c92c7e8552ac63}{void \hyperlink{classElPoly_a9968be2f08ada4e898c92c7e8552ac63}{\-Dr\-Vectors} ()}\label{classElPoly_a9968be2f08ada4e898c92c7e8552ac63}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the chains as vectors. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a21b11a8a49dc2686cd23c41f24a3ec86}{int \hyperlink{classElPoly_a21b11a8a49dc2686cd23c41f24a3ec86}{\-Dr\-Intorno} (int p, double \-Blue)}\label{classElPoly_a21b11a8a49dc2686cd23c41f24a3ec86}
+
+\begin{DoxyCompactList}\small\item\em \-Visualize only particles within a certain distance. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ad36be1f2ea9bef2742992bfb62023fb8}{void \hyperlink{classElPoly_ad36be1f2ea9bef2742992bfb62023fb8}{\-Dr\-Cross\-Links} ()}\label{classElPoly_ad36be1f2ea9bef2742992bfb62023fb8}
+
+\begin{DoxyCompactList}\small\item\em \-Visualize the cross links. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a7411c318f14258f65a45ba2572697aa2}{int \hyperlink{classElPoly_a7411c318f14258f65a45ba2572697aa2}{\-Graphics} (int argc, char $\ast$$\ast$argv)}\label{classElPoly_a7411c318f14258f65a45ba2572697aa2}
+
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aefdc3015aefee9868dcb006c9e0832a7}{void \hyperlink{classElPoly_aefdc3015aefee9868dcb006c9e0832a7}{\-E\-Slide} ()}\label{classElPoly_aefdc3015aefee9868dcb006c9e0832a7}
+
+\begin{DoxyCompactList}\small\item\em \-Sequence of pictures. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a6a2fcfb542bf2fb11d876bf91caa4625}{void \hyperlink{classElPoly_a6a2fcfb542bf2fb11d876bf91caa4625}{\-E\-Slide1} ()}\label{classElPoly_a6a2fcfb542bf2fb11d876bf91caa4625}
+
+\begin{DoxyCompactList}\small\item\em \-Sequence of pictures. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aebd566fd1ad758de2396c7fbae4b9513}{void \hyperlink{classElPoly_aebd566fd1ad758de2396c7fbae4b9513}{\-Dr\-Protein} (const char $\ast$\-File\-Name, int n\-Block)}\label{classElPoly_aebd566fd1ad758de2396c7fbae4b9513}
+
+\begin{DoxyCompactList}\small\item\em \-Load and draw the linking of a protein. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae275d0b38624e312933078176e3af3dc}{void \hyperlink{classElPoly_ae275d0b38624e312933078176e3af3dc}{\-Dr\-Nano} ()}\label{classElPoly_ae275d0b38624e312933078176e3af3dc}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the nanoparticle structure. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aa295400ea854251339f20cdb30dd9ac0}{void \hyperlink{classElPoly_aa295400ea854251339f20cdb30dd9ac0}{\-Dr\-Cross\-Links} (char $\ast$\-File\-Name)}\label{classElPoly_aa295400ea854251339f20cdb30dd9ac0}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the cross linked particles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aefa30992af110f1b0e1b60ee028b9f38}{void \hyperlink{classElPoly_aefa30992af110f1b0e1b60ee028b9f38}{\-Draw\-Part} (int p)}\label{classElPoly_aefa30992af110f1b0e1b60ee028b9f38}
+
+\begin{DoxyCompactList}\small\item\em \-Pointer to a generic function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a65249b90a9125f72098eee0fde2a2155}{void \hyperlink{classElPoly_a65249b90a9125f72098eee0fde2a2155}{\-Dr\-Part\-Open\-Gl} (int p)}\label{classElPoly_a65249b90a9125f72098eee0fde2a2155}
+
+\begin{DoxyCompactList}\small\item\em \-Open\-Gl draw function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a15254dc837a01412ec79ec26e9019095}{void \hyperlink{classElPoly_a15254dc837a01412ec79ec26e9019095}{\-Draw\-Nano} (int n)}\label{classElPoly_a15254dc837a01412ec79ec26e9019095}
+
+\begin{DoxyCompactList}\small\item\em \-Pointer to a generic function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a7bfac52311cca966565486c45b0b2097}{void \hyperlink{classElPoly_a7bfac52311cca966565486c45b0b2097}{\-Dr\-Nano\-Open\-Gl} (int n)}\label{classElPoly_a7bfac52311cca966565486c45b0b2097}
+
+\begin{DoxyCompactList}\small\item\em \-Open\-Gl draw function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a878c5cd187a779112e98485c1fd4fa7a}{void \hyperlink{classElPoly_a878c5cd187a779112e98485c1fd4fa7a}{\-Draw\-Func\-Header} ()}\label{classElPoly_a878c5cd187a779112e98485c1fd4fa7a}
+
+\begin{DoxyCompactList}\small\item\em \-Assign the pointer to the corrispondent draw function, intilize the visualization. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae201022731c9c081b2c8575bb4d80929}{void \hyperlink{classElPoly_ae201022731c9c081b2c8575bb4d80929}{\-Draw\-Func\-Footer} ()}\label{classElPoly_ae201022731c9c081b2c8575bb4d80929}
+
+\begin{DoxyCompactList}\small\item\em \-Dnd the visualization. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_abe58ec64ad127f7a85a62feefbfac4b6}{void \hyperlink{classElPoly_abe58ec64ad127f7a85a62feefbfac4b6}{\-Dr\-Bond} (int p)}\label{classElPoly_abe58ec64ad127f7a85a62feefbfac4b6}
+
+\begin{DoxyCompactList}\small\item\em \-Finde the neighbour of the particle p and draw the bond. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ab8aa99cf5632c9a9183e7881d25b1cf7}{void \hyperlink{classElPoly_ab8aa99cf5632c9a9183e7881d25b1cf7}{\-Draw\-Bond} (double $\ast$\-Pos1, double $\ast$\-Pos2, float $\ast$\-Color)}\label{classElPoly_ab8aa99cf5632c9a9183e7881d25b1cf7}
+
+\begin{DoxyCompactList}\small\item\em \-Pointer to a generic function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a6a54cbe2df971f838e96bef0ffb100d4}{void \hyperlink{classElPoly_a6a54cbe2df971f838e96bef0ffb100d4}{\-Dr\-Bond\-No} (double $\ast$\-Pos1, double $\ast$\-Pos2, float $\ast$\-Color)}\label{classElPoly_a6a54cbe2df971f838e96bef0ffb100d4}
+
+\begin{DoxyCompactList}\small\item\em \-Null function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a008a495b2076738e496001e0ba8a8ea4}{void \hyperlink{classElPoly_a008a495b2076738e496001e0ba8a8ea4}{\-Dr\-Bond\-Open\-Gl} (double $\ast$\-Pos1, double $\ast$\-Pos2, float $\ast$\-Color)}\label{classElPoly_a008a495b2076738e496001e0ba8a8ea4}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the bonds. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aef7ba2f69afb2d954545f64c7fe24b14}{void \hyperlink{classElPoly_aef7ba2f69afb2d954545f64c7fe24b14}{keyboard} (unsigned char key, int x, int y)}\label{classElPoly_aef7ba2f69afb2d954545f64c7fe24b14}
+
+\begin{DoxyCompactList}\small\item\em \-Draws all the particles and bonds. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a3e0a298765b939458531a9590e84c275}{void \hyperlink{classElPoly_a3e0a298765b939458531a9590e84c275}{\-El\-Draw\-Mouse} (int button, int state, int x, int y)}\label{classElPoly_a3e0a298765b939458531a9590e84c275}
+
+\begin{DoxyCompactList}\small\item\em \-Scaling. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aae73eb2f2ced8322a9ce2aeb361cd483}{void \hyperlink{classElPoly_aae73eb2f2ced8322a9ce2aeb361cd483}{\-Compile\-List} ()}\label{classElPoly_aae73eb2f2ced8322a9ce2aeb361cd483}
+
+\begin{DoxyCompactList}\small\item\em \-Compile the list with some useful primitives. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a6793bf2cb18afd12d89c95d402a80ca9}{void \hyperlink{classElPoly_a6793bf2cb18afd12d89c95d402a80ca9}{\-Dr\-Pos\-Col} ()}\label{classElPoly_a6793bf2cb18afd12d89c95d402a80ca9}
+
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_afdf1ca9e7afc3e7ec41b47fea4b3d80d}{void \hyperlink{classElPoly_afdf1ca9e7afc3e7ec41b47fea4b3d80d}{\-Menu} ()}\label{classElPoly_afdf1ca9e7afc3e7ec41b47fea4b3d80d}
+
+\begin{DoxyCompactList}\small\item\em \-Creates the menu. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a5c117667fbf63957d9f36808b5b4c942}{void \hyperlink{classElPoly_a5c117667fbf63957d9f36808b5b4c942}{\-El\-Menu\-Choise} (int option)}\label{classElPoly_a5c117667fbf63957d9f36808b5b4c942}
+
+\begin{DoxyCompactList}\small\item\em \-Choose what to visualize. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_af63d4f8105b2cc36e7de437e9321f8f9}{void \hyperlink{classElPoly_af63d4f8105b2cc36e7de437e9321f8f9}{\-El\-Menu\-Visual} (int option)}\label{classElPoly_af63d4f8105b2cc36e7de437e9321f8f9}
+
+\begin{DoxyCompactList}\small\item\em \-Choose what to visualize. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a8b0db33648473b19696bb19c6282dc81}{void \hyperlink{classElPoly_a8b0db33648473b19696bb19c6282dc81}{\-Create\-Menu} ()}\label{classElPoly_a8b0db33648473b19696bb19c6282dc81}
+
+\begin{DoxyCompactList}\small\item\em \-Creates the menu. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a145b3b6aa1385444c9ea75dd93b94111}{void \hyperlink{classElPoly_a145b3b6aa1385444c9ea75dd93b94111}{\-Dr\-Isoipse} (int \-N\-Bin, int \-N\-Isoipse, int \-Coord\-N)}\label{classElPoly_a145b3b6aa1385444c9ea75dd93b94111}
+
+\begin{DoxyCompactList}\small\item\em \-Draws all the same quotes surfaces. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a892423f6e9f004d290645c0aefa7caee}{void \hyperlink{classElPoly_a892423f6e9f004d290645c0aefa7caee}{\-Dr\-Surface} ()}\label{classElPoly_a892423f6e9f004d290645c0aefa7caee}
+
+\begin{DoxyCompactList}\small\item\em \-Draws the surface like a sheet using the chains position. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a7681bc74a114ac4d7c4503a9dc39e957}{void \hyperlink{classElPoly_a7681bc74a114ac4d7c4503a9dc39e957}{\-Dr\-Smooth} (double $\ast$\-Plot, int \-N\-Sample, double \-Min, double \-Max)}\label{classElPoly_a7681bc74a114ac4d7c4503a9dc39e957}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the surface in triangles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a8a67d62cbd0dd7489e799e2f7871fb74}{void \hyperlink{classElPoly_a8a67d62cbd0dd7489e799e2f7871fb74}{\-Dr\-Sample} (int \-N\-Sample)}\label{classElPoly_a8a67d62cbd0dd7489e799e2f7871fb74}
+
+\begin{DoxyCompactList}\small\item\em \-Samples the surface and draws it in triangles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a487c5fd53a9d6527b47cfd003422be58}{void \hyperlink{classElPoly_a487c5fd53a9d6527b47cfd003422be58}{\-Dr\-Spectrum} ()}\label{classElPoly_a487c5fd53a9d6527b47cfd003422be58}
+
+\begin{DoxyCompactList}\small\item\em \-Calculate the spectrum of the surface and draws it in triangles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aaafb3fae855c37686197d2d1f66cea4c}{void \hyperlink{classElPoly_aaafb3fae855c37686197d2d1f66cea4c}{\-Dr\-Derivative} ()}\label{classElPoly_aaafb3fae855c37686197d2d1f66cea4c}
+
+\begin{DoxyCompactList}\small\item\em \-Samples the surface, applies a 2d matrix derivative and draws the surface in triangles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aee4f14af2142abdfefdb0b0cd7ac6db3}{void \hyperlink{classElPoly_aee4f14af2142abdfefdb0b0cd7ac6db3}{\-Dr\-Chains} ()}\label{classElPoly_aee4f14af2142abdfefdb0b0cd7ac6db3}
+
+\begin{DoxyCompactList}\small\item\em \-Position of every chain in hexagons. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a214894e61823ee214875334b23fa69c2}{void \hyperlink{classElPoly_a214894e61823ee214875334b23fa69c2}{\-Dr\-Polygon} ()}\label{classElPoly_a214894e61823ee214875334b23fa69c2}
+
+\begin{DoxyCompactList}\small\item\em \-Every particle is traeted as a vertex. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a626c51b506cf13c725c26652f9a25926}{void \hyperlink{classElPoly_a626c51b506cf13c725c26652f9a25926}{\-Dr\-Quad} ()}\label{classElPoly_a626c51b506cf13c725c26652f9a25926}
+
+\begin{DoxyCompactList}\small\item\em \-Call a square in every particle position. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a04dd5a15e1151a49baece8c9196ca614}{void \hyperlink{classElPoly_a04dd5a15e1151a49baece8c9196ca614}{\-Dr\-Density} ()}\label{classElPoly_a04dd5a15e1151a49baece8c9196ca614}
+
+\begin{DoxyCompactList}\small\item\em (rad,norm,dens) visualisation \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a725549fe7e1a9fbb5e6710bfc17ce007}{void \hyperlink{classElPoly_a725549fe7e1a9fbb5e6710bfc17ce007}{\-Dr\-Quad1} ()}\label{classElPoly_a725549fe7e1a9fbb5e6710bfc17ce007}
+
+\begin{DoxyCompactList}\small\item\em \-Intensity scheme. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ab1a8c31a875c7270e5e4ed06aa0490f8}{void \hyperlink{classElPoly_ab1a8c31a875c7270e5e4ed06aa0490f8}{\-Dr\-Potential} ()}\label{classElPoly_ab1a8c31a875c7270e5e4ed06aa0490f8}
+
+\begin{DoxyCompactList}\small\item\em \-Potential function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_af1718b93c06170aa9002bdbd0dc15bdd}{void \hyperlink{classElPoly_af1718b93c06170aa9002bdbd0dc15bdd}{\-Dr\-Shell} ()}\label{classElPoly_af1718b93c06170aa9002bdbd0dc15bdd}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the outer shell. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a5214a3da3e41c63d5c0d36e020ed295c}{void \hyperlink{classElPoly_a5214a3da3e41c63d5c0d36e020ed295c}{\-Dr\-Voronoi} ()}\label{classElPoly_a5214a3da3e41c63d5c0d36e020ed295c}
+
+\begin{DoxyCompactList}\small\item\em \-Voronoi tassellation. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a6f21a42e28c3633aa1f57be5ff26e3aa}{void \hyperlink{classElPoly_a6f21a42e28c3633aa1f57be5ff26e3aa}{\-Dr\-Interp\-Surface} ()}\label{classElPoly_a6f21a42e28c3633aa1f57be5ff26e3aa}
+
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+void \hyperlink{classElPoly_ac33065bd12bc1315d48c4fc60acf3e99}{\-Dr\-Isolevel} (int \-N\-Sample, double \-Iso\-Level)
+\begin{DoxyCompactList}\small\item\em \-Defines the triangles at the boundaries of the density close to the \-Iso\-Level value. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae5093f79e99758c116e6957ce8bd5bce}{void \hyperlink{classElPoly_ae5093f79e99758c116e6957ce8bd5bce}{\-Dr\-Field} (int \-N\-Grid, double \-Iso\-Level, int n\-Nano)}\label{classElPoly_ae5093f79e99758c116e6957ce8bd5bce}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} a scalar field. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a7ee6e038b2bc5f4d9440118b807e115e}{void \hyperlink{classElPoly_a7ee6e038b2bc5f4d9440118b807e115e}{\-Dr\-Square\-Mesh} ()}\label{classElPoly_a7ee6e038b2bc5f4d9440118b807e115e}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the polygons for a square mesh. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a6caa02ea64327736aab6533720461acc}{void \hyperlink{classElPoly_a6caa02ea64327736aab6533720461acc}{\-Dr\-Normal\-Point} (int p, int \hyperlink{classVarData_ae2e67b49132b33a026b19c647cbf4f3c}{\-N\-Edge})}\label{classElPoly_a6caa02ea64327736aab6533720461acc}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the normal to a point. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_adcc85b143b5bbcb89aa5eabeb33b9ed6}{void \hyperlink{classElPoly_adcc85b143b5bbcb89aa5eabeb33b9ed6}{\-Dr\-Tria} (\hyperlink{classVettore}{\-Vettore} $\ast$v00, \hyperlink{classVettore}{\-Vettore} $\ast$v01, \hyperlink{classVettore}{\-Vettore} $\ast$v11, \hyperlink{classVettore}{\-Vettore} $\ast$v\-N)}\label{classElPoly_adcc85b143b5bbcb89aa5eabeb33b9ed6}
+
+\begin{DoxyCompactList}\small\item\em single triangle defined by three vectors \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ad7b11c55a050b47140f4063d6ad80756}{void \hyperlink{classElPoly_ad7b11c55a050b47140f4063d6ad80756}{\-Dr\-Tria\-Contour} (\hyperlink{classVettore}{\-Vettore} $\ast$v00, \hyperlink{classVettore}{\-Vettore} $\ast$v01, \hyperlink{classVettore}{\-Vettore} $\ast$v11)}\label{classElPoly_ad7b11c55a050b47140f4063d6ad80756}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the contour of three vectors. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a4f733cc712ac229489bff59b4b4f8c58}{void \hyperlink{classElPoly_a4f733cc712ac229489bff59b4b4f8c58}{\-Dr\-Double\-Tria} (\hyperlink{classVettore}{\-Vettore} $\ast$v00, \hyperlink{classVettore}{\-Vettore} $\ast$v01, \hyperlink{classVettore}{\-Vettore} $\ast$v11, \hyperlink{classVettore}{\-Vettore} $\ast$v10, \hyperlink{classVettore}{\-Vettore} $\ast$v\-N)}\label{classElPoly_a4f733cc712ac229489bff59b4b4f8c58}
+
+\begin{DoxyCompactList}\small\item\em \-Double triangle defined by four vectors. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a62e3f72464b15b655d7c683ad3c1393f}{void \hyperlink{classElPoly_a62e3f72464b15b655d7c683ad3c1393f}{\-Dr\-Create\-Stalk} ()}\label{classElPoly_a62e3f72464b15b655d7c683ad3c1393f}
+
+\begin{DoxyCompactList}\small\item\em \-Visualize the surface calculated in \hyperlink{classVarData_a7521c027e75a7b726b1afb9f800301f6}{\-Stalk()} \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a1003dbb97e1d997e641cc0b8c4d82ba2}{void \hyperlink{classElPoly_a1003dbb97e1d997e641cc0b8c4d82ba2}{\-Dr\-Stalk} ()}\label{classElPoly_a1003dbb97e1d997e641cc0b8c4d82ba2}
+
+\begin{DoxyCompactList}\small\item\em \-Visualize the surface from \-Stalk.\-xvl. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a936b5ae489361c88bca90698f6316f27}{void \hyperlink{classElPoly_a936b5ae489361c88bca90698f6316f27}{\-Tile} ()}\label{classElPoly_a936b5ae489361c88bca90698f6316f27}
+
+\begin{DoxyCompactList}\small\item\em \-Cover a regular square grid of points with tiles. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a064da013f0a35aeb162a8f11e847117b}{void \hyperlink{classElPoly_a064da013f0a35aeb162a8f11e847117b}{\-Dr\-Triangulate} ()}\label{classElPoly_a064da013f0a35aeb162a8f11e847117b}
+
+\begin{DoxyCompactList}\small\item\em \-Triangulate a surface. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a2c774ae632488cd2f9fe00fece284d00}{void \hyperlink{classElPoly_a2c774ae632488cd2f9fe00fece284d00}{\-Dr\-Mesh} ()}\label{classElPoly_a2c774ae632488cd2f9fe00fece284d00}
+
+\begin{DoxyCompactList}\small\item\em \-Build a mesh from the lipid positions. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a8ff8e8575c77b1ae89dfb13d609a67cf}{void \hyperlink{classElPoly_a8ff8e8575c77b1ae89dfb13d609a67cf}{\-Dr\-Gen\-Mesh} ()}\label{classElPoly_a8ff8e8575c77b1ae89dfb13d609a67cf}
+
+\begin{DoxyCompactList}\small\item\em \-Generate a mesh from a function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a17706f0576f3b5d93c03ac3a5dd3dcef}{void \hyperlink{classElPoly_a17706f0576f3b5d93c03ac3a5dd3dcef}{\-Dr\-Cells} ()}\label{classElPoly_a17706f0576f3b5d93c03ac3a5dd3dcef}
+
+\begin{DoxyCompactList}\small\item\em \-Construct cells from the lipid positions. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a6b5e62f460bcb738295e940da6ddf784}{void \hyperlink{classElPoly_a6b5e62f460bcb738295e940da6ddf784}{\-Define\-Skin} (int \-N\-Sample)}\label{classElPoly_a6b5e62f460bcb738295e940da6ddf784}
+
+\begin{DoxyCompactList}\small\item\em \-Find the covering surface for given points. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a7c082f4da2c0b68b41f525df0173519c}{void \hyperlink{classElPoly_a7c082f4da2c0b68b41f525df0173519c}{\-Define\-Surf} ()}\label{classElPoly_a7c082f4da2c0b68b41f525df0173519c}
+
+\begin{DoxyCompactList}\small\item\em \-Find the covering surface for given points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classElPoly_a314a67afcac24f3f5d8b1e7cda4f9cf3}{\hyperlink{classElPoly_a2f2db005a652b5d1c28066be4b285fef}{\-D\-R\-A\-W\-\_\-\-P\-A\-R\-T} \hyperlink{classElPoly_a314a67afcac24f3f5d8b1e7cda4f9cf3}{\-Draw\-\_\-\-Part}}\label{classElPoly_a314a67afcac24f3f5d8b1e7cda4f9cf3}
+
+\begin{DoxyCompactList}\small\item\em \-Pointer to a distance/field function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a59a87cfe4936eaafac9d4101a4cc4539}{\hyperlink{classElPoly_a2f2db005a652b5d1c28066be4b285fef}{\-D\-R\-A\-W\-\_\-\-P\-A\-R\-T} \hyperlink{classElPoly_a59a87cfe4936eaafac9d4101a4cc4539}{\-Draw\-\_\-\-Nano}}\label{classElPoly_a59a87cfe4936eaafac9d4101a4cc4539}
+
+\begin{DoxyCompactList}\small\item\em \-Pointer to a distance. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a26c155813b6b8c503374eac31af31a34}{\hyperlink{classElPoly_af49a42208f561b94e3d8cfef0e61e021}{\-D\-R\-A\-W\-\_\-\-B\-O\-N\-D} \hyperlink{classElPoly_a26c155813b6b8c503374eac31af31a34}{\-Draw\-\_\-\-Bond}}\label{classElPoly_a26c155813b6b8c503374eac31af31a34}
+
+\begin{DoxyCompactList}\small\item\em \-Pointer to a distance/field function. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a075d5ecc7d5e24fede4773d630ee0065}{\-G\-Luint {\bfseries \-Quad}}\label{classElPoly_a075d5ecc7d5e24fede4773d630ee0065}
+
+\item 
+\hypertarget{classElPoly_a6292fadc971cb5194d5d35a18223ca2c}{\-G\-Luint {\bfseries \-Point}}\label{classElPoly_a6292fadc971cb5194d5d35a18223ca2c}
+
+\item 
+\hypertarget{classElPoly_abc320730d1168a213818994bc1652892}{\-G\-Luint $\ast$ {\bfseries \-Cylinder}}\label{classElPoly_abc320730d1168a213818994bc1652892}
+
+\item 
+\hypertarget{classElPoly_ab55c93c4e818081ea7b8d1e2d41851f4}{\-G\-Luint {\bfseries \-Metal\-Cylinder}}\label{classElPoly_ab55c93c4e818081ea7b8d1e2d41851f4}
+
+\item 
+\hypertarget{classElPoly_ab3a3a889149c8b1ff7e39ca3c032f16c}{\-G\-Luint {\bfseries \-Hexagon}}\label{classElPoly_ab3a3a889149c8b1ff7e39ca3c032f16c}
+
+\item 
+\hypertarget{classElPoly_a79fa212e7dfcc2876d337a3635ecdc6f}{\-G\-Luint {\bfseries \-Cube}}\label{classElPoly_a79fa212e7dfcc2876d337a3635ecdc6f}
+
+\item 
+\hypertarget{classElPoly_ae374e4cd54f633606db3098af179b138}{\-G\-Luint {\bfseries \-Arrow}}\label{classElPoly_ae374e4cd54f633606db3098af179b138}
+
+\item 
+\hypertarget{classElPoly_ab6e9ec77599bfe76cdbe67e70d1b2ce8}{\-G\-Luint {\bfseries \-Gl\-Wall}}\label{classElPoly_ab6e9ec77599bfe76cdbe67e70d1b2ce8}
+
+\item 
+\hypertarget{classElPoly_a8f3e2abcdf9991d97b9fb04b77c1f308}{double \hyperlink{classElPoly_a8f3e2abcdf9991d97b9fb04b77c1f308}{\-Saturation}}\label{classElPoly_a8f3e2abcdf9991d97b9fb04b77c1f308}
+
+\begin{DoxyCompactList}\small\item\em \-Saturation of the color (increase intensity) \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a3ea47501772e8717e5d6fb04cc1999b2}{char \hyperlink{classElPoly_a3ea47501772e8717e5d6fb04cc1999b2}{\-Block2\-Draw} \mbox{[}20\mbox{]}}\label{classElPoly_a3ea47501772e8717e5d6fb04cc1999b2}
+
+\begin{DoxyCompactList}\small\item\em \-Name of the block to draw. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_afc36f5ebb0ee5c1be5fc2161e1fa3959}{int \hyperlink{classElPoly_afc36f5ebb0ee5c1be5fc2161e1fa3959}{\-N\-File} \mbox{[}2\mbox{]}}\label{classElPoly_afc36f5ebb0ee5c1be5fc2161e1fa3959}
+
+\begin{DoxyCompactList}\small\item\em \-First and last file of the list. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ad7dff49d260c06459abb507a09fa932d}{int \hyperlink{classElPoly_ad7dff49d260c06459abb507a09fa932d}{\-N\-File\-Tot}}\label{classElPoly_ad7dff49d260c06459abb507a09fa932d}
+
+\begin{DoxyCompactList}\small\item\em \-Total number of file. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a1ec5265fae2a3e11f0ee82db6a536ec5}{int \hyperlink{classElPoly_a1ec5265fae2a3e11f0ee82db6a536ec5}{\-N\-Pro}}\label{classElPoly_a1ec5265fae2a3e11f0ee82db6a536ec5}
+
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_af67f045188086b91309e231e77a86076}{int \hyperlink{classElPoly_af67f045188086b91309e231e77a86076}{quando}}\label{classElPoly_af67f045188086b91309e231e77a86076}
+
+\begin{DoxyCompactList}\small\item\em \-Current number of the file list. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a676418848d4d134fdefd0bda050ddea1}{int \hyperlink{classElPoly_a676418848d4d134fdefd0bda050ddea1}{\-Line\-Size}}\label{classElPoly_a676418848d4d134fdefd0bda050ddea1}
+
+\begin{DoxyCompactList}\small\item\em \-Line size of the gl. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_aa08916cc778623ef039a8c2062b0e545}{int \hyperlink{classElPoly_aa08916cc778623ef039a8c2062b0e545}{\-If\-Intorno}}\label{classElPoly_aa08916cc778623ef039a8c2062b0e545}
+
+\begin{DoxyCompactList}\small\item\em \-If it visualizes only the particles/chains within a certain distance. \end{DoxyCompactList}\item 
+int \hyperlink{classElPoly_ac3e70209b515c8a6293fcdb019a2fb29}{\-If\-Line}
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ac79c99da0d26e5f99e97572f425482ec}{int \hyperlink{classElPoly_ac79c99da0d26e5f99e97572f425482ec}{\-If\-Ch\-Type}}\label{classElPoly_ac79c99da0d26e5f99e97572f425482ec}
+
+\begin{DoxyCompactList}\small\item\em \-Type of the chains to be visualized. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a051cdcf73b2b4af010122eed5c23c59d}{int \hyperlink{classElPoly_a051cdcf73b2b4af010122eed5c23c59d}{\-N\-Back\-Fold}}\label{classElPoly_a051cdcf73b2b4af010122eed5c23c59d}
+
+\begin{DoxyCompactList}\small\item\em \-Type of backfold. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a247a6410f4f46763810a706af08a1c70}{int \hyperlink{classElPoly_a247a6410f4f46763810a706af08a1c70}{\-What2\-Draw}}\label{classElPoly_a247a6410f4f46763810a706af08a1c70}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{\-Draw} the content in the appropriate visulization. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae1c44ad3d54bfd33bcd7be4a5d1e9a8c}{int \hyperlink{classElPoly_ae1c44ad3d54bfd33bcd7be4a5d1e9a8c}{\-N\-Vis\-Skip}}\label{classElPoly_ae1c44ad3d54bfd33bcd7be4a5d1e9a8c}
+
+\begin{DoxyCompactList}\small\item\em \-How many lipids are skipped in the visualization. \end{DoxyCompactList}\item 
+int \hyperlink{classElPoly_af2d26fec9f7faeae1c79eb64268776c0}{\-Draw\-Output}
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+double \hyperlink{classElPoly_ae8d6419041af331f07d9992abef3a867}{\-Vicinanze}
+\begin{DoxyCompactList}\small\item\em \-Boh. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae460da3c47449cbbd76b22e9c2501a69}{double \hyperlink{classElPoly_ae460da3c47449cbbd76b22e9c2501a69}{\-Inv\-Scale\-Un}}\label{classElPoly_ae460da3c47449cbbd76b22e9c2501a69}
+
+\begin{DoxyCompactList}\small\item\em \-Define the shrink factor between the box edges. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a669c83da48812050d13a2c63fff0fef9}{double \hyperlink{classElPoly_a669c83da48812050d13a2c63fff0fef9}{\-Ext\-Param}}\label{classElPoly_a669c83da48812050d13a2c63fff0fef9}
+
+\begin{DoxyCompactList}\small\item\em \-External parameter (e.\-g. for \-Marching\-Cubes) \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_ae8a6916dd0cb066c7e911f973caf504a}{double \hyperlink{classElPoly_ae8a6916dd0cb066c7e911f973caf504a}{\-Scale\-Fact}}\label{classElPoly_ae8a6916dd0cb066c7e911f973caf504a}
+
+\begin{DoxyCompactList}\small\item\em \-Normal scaling factor (z zooming) \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_a034d945a96ab42d2a57ac4e12c8aab9e}{\-F\-I\-L\-E $\ast$ \hyperlink{classElPoly_a034d945a96ab42d2a57ac4e12c8aab9e}{\-Draw\-Out\-File}}\label{classElPoly_a034d945a96ab42d2a57ac4e12c8aab9e}
+
+\begin{DoxyCompactList}\small\item\em \-Output file for drawing. \end{DoxyCompactList}\item 
+\hypertarget{classElPoly_adde8a4e5814f247c722934064b0f68b9}{\hyperlink{classSingProc}{\-Sing\-Proc} $\ast$ {\bfseries \-Proc}}\label{classElPoly_adde8a4e5814f247c722934064b0f68b9}
+
+\end{DoxyCompactItemize}
+
+
+\subsubsection{\-Detailed \-Description}
+\-Operates and visualizes the information in the \hyperlink{classVarData}{\-Var\-Data} class. 
+
+\-Definition at line 61 of file \-El\-Poly.\-h.
+
+
+
+\subsubsection{\-Member \-Function \-Documentation}
+\hypertarget{classElPoly_a70302b7bbfa248d2963323bc63a4a292}{\index{\-El\-Poly@{\-El\-Poly}!\-Dens\-Prof@{\-Dens\-Prof}}
+\index{\-Dens\-Prof@{\-Dens\-Prof}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Dens\-Prof}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Dens\-Prof} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin, }
+\item[{int}]{\-N\-Sample, }
+\item[{int}]{\-Coord}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a70302b7bbfa248d2963323bc63a4a292}
+
+
+\-Calculate the density profile  dens. 
+
+a sum on small patches and shift wrt the weighted average 
+
+\-Definition at line 24 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-Bf\-Def\-Chain(), \-Var\-Data\-::\-Block, \-Var\-Data\-::\-Ch, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-B\-L\-O\-C\-K\-::\-End\-Idx, \-Var\-Data\-::\-Nano, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Chain(), \-Var\-Data\-::pchi\-N(), \-Var\-Data\-::p\-Cm(), \-Var\-Data\-::p\-Edge(), \-Vettore\-::\-Perp\-To3(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::pkappa\-N(), \-Var\-Data\-::p\-Nano\-Pos(), \-Var\-Data\-::p\-N\-Block(), \-Var\-Data\-::p\-N\-Chain(), \-Var\-Data\-::p\-N\-Nano(), \-Var\-Data\-::p\-N\-Part(), \-Var\-Data\-::p\-Pos(), \-Var\-Data\-::prho(), \-Processing(), \-Var\-Data\-::p\-Type(), \-Vettore\-::\-Set(), \-Var\-Data\-::\-Set\-Edge(), \-Var\-Data\-::\-Sys\-Def(), \-C\-H\-A\-I\-N\-::\-Type, and \-Var\-Data\-::\-Volume\-Circ\-Slab().
+
+\hypertarget{classElPoly_aff1645802bd67fc1b5bfb3bb1884933a}{\index{\-El\-Poly@{\-El\-Poly}!\-Dens\-Prof\-Normal\-Slab@{\-Dens\-Prof\-Normal\-Slab}}
+\index{\-Dens\-Prof\-Normal\-Slab@{\-Dens\-Prof\-Normal\-Slab}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Dens\-Prof\-Normal\-Slab}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dens\-Prof\-Normal\-Slab} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin, }
+\item[{int}]{\-N\-Sample, }
+\item[{int}]{\-Coord}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_aff1645802bd67fc1b5bfb3bb1884933a}
+
+
+\-Calculate the density profile projecting the particles on the normal density. 
+
+a to be completed sum on small patches and shift wrt the weighted average 
+
+\-Definition at line 157 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-Bf\-Def\-Chain(), \-Var\-Data\-::\-Block, \-Var\-Data\-::\-Ch, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-B\-L\-O\-C\-K\-::\-End\-Idx, \-Var\-Data\-::\-Nano, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Chain(), \-Var\-Data\-::pchi\-N(), \-Var\-Data\-::p\-Cm(), \-Var\-Data\-::p\-Edge(), \-Vettore\-::\-Perp\-To3(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::pkappa\-N(), \-Var\-Data\-::p\-Nano\-Pos(), \-Var\-Data\-::p\-N\-Block(), \-Var\-Data\-::p\-N\-Chain(), \-Var\-Data\-::p\-N\-Nano(), \-Var\-Data\-::p\-N\-Part(), \-Var\-Data\-::p\-Pos(), \-Var\-Data\-::prho(), \-Processing(), \-Var\-Data\-::p\-Type(), \-Vettore\-::\-Set(), \-Var\-Data\-::\-Set\-Edge(), \-Var\-Data\-::\-Sys\-Def(), \-C\-H\-A\-I\-N\-::\-Type, and \-Var\-Data\-::\-Volume\-Circ\-Slab().
+
+\hypertarget{classElPoly_a3db31f8490f0ea101281679a270e72fe}{\index{\-El\-Poly@{\-El\-Poly}!\-Slab\-Prof@{\-Slab\-Prof}}
+\index{\-Slab\-Prof@{\-Slab\-Prof}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Slab\-Prof}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Slab\-Prof} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin, }
+\item[{int}]{n\-Nano, }
+\item[{int}]{\-Coord1}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a3db31f8490f0ea101281679a270e72fe}
+
+
+\-Thickness and density profile along \-Coord1. 
+
+a 
+
+\-Definition at line 292 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-Block, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-Matrice\-::\-Convolute\-Matrix(), \-B\-L\-O\-C\-K\-::\-End\-Idx, \-Matrice\-::\-Fill\-Gaussian(), \-Var\-Data\-::\-Nano, \-N\-File, \-Vettore\-::\-Normalize(), \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Cm(), \-Var\-Data\-::p\-Edge(), \-Vettore\-::\-Perp\-To(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::\-Pm, \-Var\-Data\-::p\-Nano\-Pos(), \-Var\-Data\-::p\-N\-Block(), \-Var\-Data\-::p\-N\-Nano(), \-P\-A\-R\-T\-::\-Pos, \-N\-A\-N\-O\-::\-Pos, \-Var\-Data\-::p\-Pos(), \-Matrice\-::\-Print(), \-Print\-Dens(), \-Processing(), \-Vettore\-::\-Proj\-On\-Axis(), \-Var\-Data\-::p\-Type(), \-Vettore\-::\-Set(), \-Var\-Data\-::\-Set\-N\-Nano(), and \-Vettore\-::\-Val().
+
+\hypertarget{classElPoly_a6591e29bd7876dc9dc255808d04499f9}{\index{\-El\-Poly@{\-El\-Poly}!\-Print\-Dens@{\-Print\-Dens}}
+\index{\-Print\-Dens@{\-Print\-Dens}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Print\-Dens}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Print\-Dens} (
+\begin{DoxyParamCaption}
+\item[{\-F\-I\-L\-E $\ast$}]{\-File\-To\-Write, }
+\item[{double $\ast$$\ast$}]{\-Plot, }
+\item[{double $\ast$}]{\-Lat\-Dim, }
+\item[{int}]{\-N\-Bin}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a6591e29bd7876dc9dc255808d04499f9}
+
+
+\-Print the density profile in the surfaces representation. 
+
+a 
+
+\-Definition at line 414 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Choose\-Draw().
+
+
+
+\-Referenced by \-Bond\-Distr(), \-Cart\-Dens(), \-Diff2\-Files(), \-Rad\-Distr\-F(), \-Slab\-Prof(), and \-Splay\-Distr().
+
+\hypertarget{classElPoly_a7c40fb501bdadab09ee7cf8d99259299}{\index{\-El\-Poly@{\-El\-Poly}!\-Rad\-Dens2\-Thick@{\-Rad\-Dens2\-Thick}}
+\index{\-Rad\-Dens2\-Thick@{\-Rad\-Dens2\-Thick}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Rad\-Dens2\-Thick}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rad\-Dens2\-Thick} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a7c40fb501bdadab09ee7cf8d99259299}
+
+
+\-Calculate the thickness from the radial density profile. 
+
+a 
+
+\-Definition at line 1031 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-Load\-Dens\-File(), \-N\-File, and \-Var\-Data\-::p\-Edge().
+
+\hypertarget{classElPoly_ad5ab39cdaa856caea3463819b436e7b9}{\index{\-El\-Poly@{\-El\-Poly}!\-Rad\-Dens2\-Thick2d@{\-Rad\-Dens2\-Thick2d}}
+\index{\-Rad\-Dens2\-Thick2d@{\-Rad\-Dens2\-Thick2d}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Rad\-Dens2\-Thick2d}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rad\-Dens2\-Thick2d} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_ad5ab39cdaa856caea3463819b436e7b9}
+
+
+\-Calculate the thickness from the radial density profile. 
+
+a 
+
+\-Definition at line 1090 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-N\-File, \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::p\-N\-Part(), \-Var\-Data\-::p\-Pos(), and \-Var\-Data\-::p\-Type().
+
+\hypertarget{classElPoly_ac946a8b29f4eec0816699ce0c0cac23c}{\index{\-El\-Poly@{\-El\-Poly}!\-Cart\-Dens@{\-Cart\-Dens}}
+\index{\-Cart\-Dens@{\-Cart\-Dens}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Cart\-Dens}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cart\-Dens} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin, }
+\item[{int}]{n\-Nano}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_ac946a8b29f4eec0816699ce0c0cac23c}
+
+
+3d (rad,norma,dens) density profile in cartesian coordinates 
+
+a 
+
+\-Definition at line 456 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-Matrice\-::\-Convolute\-Matrix(), \-Matrice\-::\-Fill\-Gaussian(), \-N\-Back\-Fold, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Cm(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::p\-N\-Part(), \-Var\-Data\-::p\-Pos(), \-Matrice\-::\-Print(), \-Print\-Dens(), \-Processing(), and \-Var\-Data\-::p\-Type().
+
+\hypertarget{classElPoly_aff852b942203d47f2e21e2616537cbdd}{\index{\-El\-Poly@{\-El\-Poly}!\-Rad\-Distr\-F@{\-Rad\-Distr\-F}}
+\index{\-Rad\-Distr\-F@{\-Rad\-Distr\-F}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Rad\-Distr\-F}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rad\-Distr\-F} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin, }
+\item[{int}]{\-How, }
+\item[{int}]{n\-Nano}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_aff852b942203d47f2e21e2616537cbdd}
+
+
+3d (rad,norma,dens) density profile with respect to a initial position  rad\-Nano rad\-Cm rad\-Cm\-N 
+
+a 
+
+\-Definition at line 557 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Vettore\-::\-Angle(), \-Angle(), \-N\-A\-N\-O\-::\-Axis, \-Var\-Data\-::\-Bf\-Def\-Chain(), \-Var\-Data\-::\-Block, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-Matrice\-::\-Convolute\-Matrix(), \-B\-L\-O\-C\-K\-::\-End\-Idx, \-Matrice\-::\-Fill\-Gaussian(), \-Matrice\-::\-Mult(), \-Var\-Data\-::\-Nano, \-N\-Back\-Fold, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Chain(), \-Var\-Data\-::p\-Cm(), \-Var\-Data\-::p\-Edge(), \-Vettore\-::\-Perp\-To3(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::\-Pm, \-Var\-Data\-::p\-Nano\-Pos(), \-Var\-Data\-::p\-N\-Block(), \-Var\-Data\-::p\-N\-Nano(), \-Var\-Data\-::p\-N\-P\-Ch(), \-Var\-Data\-::\-Pore\-Pos(), \-Var\-Data\-::p\-Pos(), \-Matrice\-::\-Print(), \-Print\-Dens(), \-Processing(), \-Vettore\-::\-Proj\-On\-Axis(), \-Var\-Data\-::p\-Type(), \-Vettore\-::\-Set(), \-Var\-Data\-::\-Set\-Edge(), \-Vettore\-::\-Val(), \-Vettore\-::\-Vet\-V(), \-Var\-Data\-::\-Volume\-Circ\-Slab(), and \-Vettore\-::x.
+
+\hypertarget{classElPoly_a932a57ab32bd20f60bce8b498ca3095d}{\index{\-El\-Poly@{\-El\-Poly}!\-Bond\-Distr@{\-Bond\-Distr}}
+\index{\-Bond\-Distr@{\-Bond\-Distr}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Bond\-Distr}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Bond\-Distr} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Sample}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a932a57ab32bd20f60bce8b498ca3095d}
+
+
+\-Distribution of the bond lengths. 
+
+\-Calculate the (r,z) profile of the bond length distribution. 
+
+\-Definition at line 783 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-Block, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-Matrice\-::\-Convolute\-Matrix(), \-B\-L\-O\-C\-K\-::\-End\-Idx, \-Matrice\-::\-Fill\-Gaussian(), \-Var\-Data\-::\-Nano, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Chain(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::\-Pm, \-Var\-Data\-::p\-N\-Block(), \-P\-A\-R\-T\-::\-Pos, \-N\-A\-N\-O\-::\-Pos, \-Var\-Data\-::p\-Pos(), \-Matrice\-::\-Print(), \-Print\-Dens(), \-Processing(), \-Var\-Data\-::p\-Type(), \-Var\-Data\-::\-Set\-Edge(), and \-Var\-Data\-::\-Volume\-Circ\-Slab().
+
+\hypertarget{classElPoly_aab448d2a574f63977ddcacb58db616e1}{\index{\-El\-Poly@{\-El\-Poly}!\-Splay\-Distr@{\-Splay\-Distr}}
+\index{\-Splay\-Distr@{\-Splay\-Distr}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Splay\-Distr}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Splay\-Distr} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Sample}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_aab448d2a574f63977ddcacb58db616e1}
+
+
+\-Distribution of end to end distances. 
+
+\-Calculate the (r,z) profile of the splay angle distribution. 
+
+\-Definition at line 870 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Vettore\-::\-Angle(), \-Angle(), \-Var\-Data\-::\-Block, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-Matrice\-::\-Convolute\-Matrix(), \-Matrice\-::\-Fill\-Gaussian(), \-B\-L\-O\-C\-K\-::\-Init\-Idx, \-Matematica\-::\-Inter\-Rett(), \-R\-E\-T\-T\-A\-::m, \-Var\-Data\-::\-Mat, \-Var\-Data\-::\-Nano, \-B\-L\-O\-C\-K\-::\-N\-Chain, \-N\-File, \-B\-L\-O\-C\-K\-::\-N\-P\-Ch, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::\-Pm, \-Var\-Data\-::p\-N\-Block(), \-Var\-Data\-::p\-N\-P\-Ch(), \-P\-A\-R\-T\-::\-Pos, \-N\-A\-N\-O\-::\-Pos, \-Matrice\-::\-Print(), \-Print\-Dens(), \-Processing(), \-R\-E\-T\-T\-A\-::q, \-Var\-Data\-::\-Set\-Edge(), and \-Var\-Data\-::\-Volume\-Circ\-Slab().
+
+\hypertarget{classElPoly_abcf175509352ac9dd90cb8ad96494219}{\index{\-El\-Poly@{\-El\-Poly}!\-Thick\-From\-Dens@{\-Thick\-From\-Dens}}
+\index{\-Thick\-From\-Dens@{\-Thick\-From\-Dens}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Thick\-From\-Dens}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Thick\-From\-Dens} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_abcf175509352ac9dd90cb8ad96494219}
+
+
+\-Calculate the thickness profile from the density plot. 
+
+a 
+
+\-Definition at line 1128 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::p\-Cm(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::p\-N\-Part(), \-Var\-Data\-::p\-Pos(), and \-Var\-Data\-::p\-Vel().
+
+\hypertarget{classElPoly_adbfe7fc41363f770eee9c2a9e0e1ed57}{\index{\-El\-Poly@{\-El\-Poly}!\-Stalk\-Line\-Prof\-F@{\-Stalk\-Line\-Prof\-F}}
+\index{\-Stalk\-Line\-Prof\-F@{\-Stalk\-Line\-Prof\-F}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Stalk\-Line\-Prof\-F}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Stalk\-Line\-Prof\-F} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_adbfe7fc41363f770eee9c2a9e0e1ed57}
+
+
+\-Write the line describing a linear stalk. 
+
+\-Call the function \-Stalk\-Line\-Prof to reconstruct the linear shape of the stalk and calculate the power spectrum. 
+
+\-Definition at line 388 of file \-El\-Poly\-Profile.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-N\-File, \-Var\-Data\-::\-Open(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Processing(), and \-Var\-Data\-::\-Stalk\-Line\-Prof().
+
+\hypertarget{classElPoly_afbe805e551084aebeee2c673c9b3937a}{\index{\-El\-Poly@{\-El\-Poly}!\-Area\-Compr@{\-Area\-Compr}}
+\index{\-Area\-Compr@{\-Area\-Compr}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Area\-Compr}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Area\-Compr} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Sample}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_afbe805e551084aebeee2c673c9b3937a}
+
+
+\-Calculates the number of chain per area  area. 
+
+\-Subdivide the simulation box in \-Sub\-Div\mbox{[}\-C\-Lat1\mbox{]}x\-Sub\-Div\mbox{[}\-C\-Lat2\mbox{]} squares and calculate the average number of chains and its stadard deviation.
+
+\-The compressibility is in the limit lim\-\_\-l = l$^\wedge$2$<$\-N\-\_\-c$^\wedge$2$>$/$<$\-N\-\_\-c$>$$^\wedge$2 where l is the dimension of the patch and \-N\-Times different patches size are taken in account. \-It works in \-N\-V\-T. 
+
+\-Definition at line 1146 of file \-El\-Poly\-Measure.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-N\-Edge, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::pchi\-N(), \-Var\-Data\-::p\-Ch\-Pos(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::pkappa\-N(), \-Var\-Data\-::p\-N\-Chain(), \-Var\-Data\-::prho(), \-Processing(), and \-Var\-Data\-::\-Sys\-Def().
+
+\hypertarget{classElPoly_a48968ddc44376e55852e9720b3827ebe}{\index{\-El\-Poly@{\-El\-Poly}!\-Elastic\-Coupling@{\-Elastic\-Coupling}}
+\index{\-Elastic\-Coupling@{\-Elastic\-Coupling}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Elastic\-Coupling}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Elastic\-Coupling} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Sample}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a48968ddc44376e55852e9720b3827ebe}
+
+
+\-Measure the elastic coupling between the two sheets. 
+
+\-Divides the box size in small patches and calculate the thinning for every patch.
+
+\-For every patch size are stored the mean values and variance of the thickness. \-As output it is printed the area per patch, the correspondent thickness, the standard deviation and the elastic coupling modulus. 
+
+\-Definition at line 1248 of file \-El\-Poly\-Measure.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-Ch, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Chain(), \-Var\-Data\-::pchi\-N(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::pkappa\-N(), \-Var\-Data\-::p\-N\-Part(), \-Var\-Data\-::p\-Pos(), \-Var\-Data\-::prho(), \-Processing(), \-Var\-Data\-::p\-Type(), \-Var\-Data\-::\-Sys\-Def(), and \-C\-H\-A\-I\-N\-::\-Type.
+
+\hypertarget{classElPoly_ab88192e9e4e0f11b68ad828d73ff8957}{\index{\-El\-Poly@{\-El\-Poly}!\-Elastic\-Coupling\-N\-V\-T@{\-Elastic\-Coupling\-N\-V\-T}}
+\index{\-Elastic\-Coupling\-N\-V\-T@{\-Elastic\-Coupling\-N\-V\-T}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Elastic\-Coupling\-N\-V\-T}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Elastic\-Coupling\-N\-V\-T} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_ab88192e9e4e0f11b68ad828d73ff8957}
+
+
+\-Measure the elastic coupling between the two sheets. 
+
+\-Elastic coupling modulus calculation for a fixed box size simulation. 
+
+\-Definition at line 1377 of file \-El\-Poly\-Measure.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-Ch, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Chain(), \-Var\-Data\-::pchi\-N(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::pkappa\-N(), \-Var\-Data\-::p\-N\-Part(), \-Var\-Data\-::p\-Pos(), \-Var\-Data\-::prho(), \-Processing(), \-Var\-Data\-::p\-Type(), and \-Var\-Data\-::\-Sys\-Def().
+
+\hypertarget{classElPoly_a04dd79cb2f5e46ae301b6dc1d57db28a}{\index{\-El\-Poly@{\-El\-Poly}!\-Core\-F@{\-Core\-F}}
+\index{\-Core\-F@{\-Core\-F}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Core\-F}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Core\-F} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin, }
+\item[{int}]{\-How}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a04dd79cb2f5e46ae301b6dc1d57db28a}
+
+
+\-Sampling of the three dimentional space. 
+
+a 
+
+\-Definition at line 1213 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-Bf\-Def\-Chain(), \-Var\-Data\-::\-Block, \-Var\-Data\-::\-Ch, \-Choose\-Draw(), \-B\-L\-O\-C\-K\-::\-End\-Idx, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Chain(), \-Var\-Data\-::p\-Cm(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-N\-Block(), \-Var\-Data\-::p\-Pos(), \-Processing(), and \-Var\-Data\-::p\-Type().
+
+\hypertarget{classElPoly_a21a28de0471580af1978c3a48ae0ba0e}{\index{\-El\-Poly@{\-El\-Poly}!\-Fetch\-Stalk@{\-Fetch\-Stalk}}
+\index{\-Fetch\-Stalk@{\-Fetch\-Stalk}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Fetch\-Stalk}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Fetch\-Stalk} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a21a28de0471580af1978c3a48ae0ba0e}
+
+
+\-Write the position of the stalk for every snapshot. 
+
+\-Simple \-Monte \-Carlo to find the best position and radius of the osculating torus. 
+
+\-Definition at line 596 of file \-El\-Poly\-Repr.\-cpp.
+
+
+
+\-References \-N\-A\-N\-O\-::\-Area, \-N\-A\-N\-O\-::\-Height, \-Var\-Data\-::\-Nano, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Nano\-Pos(), \-Processing(), \-Var\-Data\-::p\-Time(), \-N\-A\-N\-O\-::\-Rad, \-Var\-Data\-::\-Set\-N\-Nano(), \-Stalk\-Area(), \-Var\-Data\-::\-Stalk\-Pos(), and \-Var\-Data\-::\-String\-Nano().
+
+\hypertarget{classElPoly_a099625012512857cb5524bf15b397e5e}{\index{\-El\-Poly@{\-El\-Poly}!\-Stalk\-Area@{\-Stalk\-Area}}
+\index{\-Stalk\-Area@{\-Stalk\-Area}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Stalk\-Area}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Stalk\-Area} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a099625012512857cb5524bf15b397e5e}
+
+
+\-Area of hydrophobic in the torus. 
+
+\-Simple \-Monte \-Carlo to find the best position and radius of the osculating torus.
+
+\-The area and position of the torus are hence redifined counting how many hydrophilic beads are inside the torus. 
+
+\-Definition at line 624 of file \-El\-Poly\-Repr.\-cpp.
+
+
+
+\-References \-N\-A\-N\-O\-::\-Area, \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-Var\-Data\-::\-Header\-Nano(), \-N\-A\-N\-O\-::\-Height, \-Var\-Data\-::\-Nano, \-N\-File, \-Var\-Data\-::\-Open\-Risk(), \-Var\-Data\-::p\-Cm(), \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::p\-Nano\-Pos(), \-Var\-Data\-::p\-N\-Part(), \-N\-A\-N\-O\-::\-Pos, \-Var\-Data\-::p\-Pos(), \-Processing(), \-Var\-Data\-::p\-Time(), \-Var\-Data\-::p\-Type(), \-N\-A\-N\-O\-::\-Rad, \-Var\-Data\-::\-Set\-Nano\-Bkf(), \-Var\-Data\-::\-Set\-N\-Nano(), \-Var\-Data\-::\-Stalk\-Pos(), and \-Var\-Data\-::\-String\-Nano().
+
+
+
+\-Referenced by \-Fetch\-Pore(), and \-Fetch\-Stalk().
+
+\hypertarget{classElPoly_a4192d526e79a4c1e0b4910a4f35720c4}{\index{\-El\-Poly@{\-El\-Poly}!\-Slab\-Angle\-Profs@{\-Slab\-Angle\-Profs}}
+\index{\-Slab\-Angle\-Profs@{\-Slab\-Angle\-Profs}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Slab\-Angle\-Profs}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Slab\-Angle\-Profs} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Bin, }
+\item[{int}]{\-N\-Angle, }
+\item[{int}]{\-Coord}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_a4192d526e79a4c1e0b4910a4f35720c4}
+
+
+\-Radial profiles of the slab density between 0⁰ and 90⁰ subdivided in \-N\-Angle angles. 
+
+a 
+
+\-Definition at line 1170 of file \-El\-Poly\-Prof\-Dens.\-cpp.
+
+
+
+\-References \-Var\-Data\-::\-C\-Lat1, \-Var\-Data\-::\-C\-Lat2, \-Var\-Data\-::\-C\-Norm, \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-N\-Part(), and \-Var\-Data\-::p\-Pos().
+
+\hypertarget{classElPoly_aba70049e8fa7f7b845f9ccd8ad700015}{\index{\-El\-Poly@{\-El\-Poly}!\-Choose\-Draw@{\-Choose\-Draw}}
+\index{\-Choose\-Draw@{\-Choose\-Draw}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Choose\-Draw}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Choose\-Draw} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{\-String}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_aba70049e8fa7f7b845f9ccd8ad700015}
+
+
+\-Assing the correct value of \-What2\-Draw from. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-String} & \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 315 of file \-El\-Poly\-El.\-cpp.
+
+
+
+\-References \-What2\-Draw.
+
+\hypertarget{classElPoly_ac33065bd12bc1315d48c4fc60acf3e99}{\index{\-El\-Poly@{\-El\-Poly}!\-Dr\-Isolevel@{\-Dr\-Isolevel}}
+\index{\-Dr\-Isolevel@{\-Dr\-Isolevel}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Dr\-Isolevel}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dr\-Isolevel} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-N\-Sample, }
+\item[{double}]{\-Iso\-Level}
+\end{DoxyParamCaption}
+)}}\label{classElPoly_ac33065bd12bc1315d48c4fc60acf3e99}
+
+
+\-Defines the triangles at the boundaries of the density close to the \-Iso\-Level value. 
+
+\-Normal\-Weight(\-Tri,\-Weight\-L,\-N\-Sample,\-N\-Tri); 
+
+\-Definition at line 1104 of file \-El\-Poly\-Draw\-Surf.\-cpp.
+
+
+
+\-References \-V\-A\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-::c, \-Matematica\-::\-Casuale(), \-Draw\-Nano(), \-If\-Line, \-Inv\-Scale\-Un, \-Var\-Data\-::\-Marching\-Cubes(), \-Var\-Data\-::\-Mat, \-V\-A\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-::n, \-Draw\-::\-Particles, \-Var\-Data\-::p\-Edge(), \-Var\-Data\-::p\-Inv\-Edge(), \-Var\-Data\-::p\-N\-Nano(), \-Var\-Data\-::p\-N\-Part(), \-Var\-Data\-::p\-Pos(), \-Var\-Data\-::p\-Vol(), \-Scale\-Fact, \-V\-A\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-::v, and \-X\-Y\-Z\-::x.
+
+
+
+\-Referenced by \-El\-Menu\-Visual().
+
+
+
+\subsubsection{\-Member \-Data \-Documentation}
+\hypertarget{classElPoly_ac3e70209b515c8a6293fcdb019a2fb29}{\index{\-El\-Poly@{\-El\-Poly}!\-If\-Line@{\-If\-Line}}
+\index{\-If\-Line@{\-If\-Line}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-If\-Line}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-If\-Line}}}\label{classElPoly_ac3e70209b515c8a6293fcdb019a2fb29}
+
+
+\-Boh. 
+
+\-Boh \-If it draws the bonds 
+
+\-Definition at line 435 of file \-El\-Poly.\-h.
+
+
+
+\-Referenced by \-Draw\-Func\-Header(), \-Dr\-Cross\-Links(), \-Dr\-Isolevel(), \-Dr\-Polygon(), \-Dr\-Vectors(), \-El\-Menu\-Choise(), \-El\-Poly(), and keyboard().
+
+\hypertarget{classElPoly_af2d26fec9f7faeae1c79eb64268776c0}{\index{\-El\-Poly@{\-El\-Poly}!\-Draw\-Output@{\-Draw\-Output}}
+\index{\-Draw\-Output@{\-Draw\-Output}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Draw\-Output}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Draw\-Output}}}\label{classElPoly_af2d26fec9f7faeae1c79eb64268776c0}
+
+
+\-Boh. 
+
+\hyperlink{classDraw}{\-Draw} output flag 
+
+\-Definition at line 447 of file \-El\-Poly.\-h.
+
+
+
+\-Referenced by \-Draw\-Func\-Footer(), \-Draw\-Func\-Header(), \-El\-Menu\-Choise(), and \-Graphics().
+
+\hypertarget{classElPoly_ae8d6419041af331f07d9992abef3a867}{\index{\-El\-Poly@{\-El\-Poly}!\-Vicinanze@{\-Vicinanze}}
+\index{\-Vicinanze@{\-Vicinanze}!ElPoly@{\-El\-Poly}}
+\paragraph[{\-Vicinanze}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Vicinanze}}}\label{classElPoly_ae8d6419041af331f07d9992abef3a867}
+
+
+\-Boh. 
+
+\-Boh \-Boh \-Distance from the nanoparticle 
+
+\-Definition at line 455 of file \-El\-Poly.\-h.
+
+
+
+\-Referenced by \-Dr\-Intorno(), and \-Graphics().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\-El\-Poly/\-El\-Poly.\-h\item 
+src/\-El\-Poly/\-El\-Poly\-Draw.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Draw\-C\-G\-A\-L.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Draw\-Control.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Draw\-Def.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Draw\-Skin\-C\-G\-A\-L.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Draw\-Surf.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Draw\-Surf\-C\-G\-A\-L.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Draw\-Triang\-C\-G\-A\-L.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-El.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Measure.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Output.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Prof\-Dens.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Profile.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Prof\-Pre.\-cpp\item 
+src/\-El\-Poly/\-El\-Poly\-Repr.\-cpp\end{DoxyCompactItemize}

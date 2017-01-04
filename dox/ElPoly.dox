@@ -1,0 +1,220 @@
+namespace ElPoly {
+/*! \page ElPoly_page ElPoly
+Mechanical properties calculation for a system of particles bounded in chains. <br>
+Perform a calculation of the characteristic properties of lipid chains in bilayer membrane (diffusivity, pressure profile, radial density plot...).<br>
+Required:OpenGl, optional CGAL.
+
+\section CommandList_section Command list:
+All the commands that can be typed in the command line can be written in the argument list with a single dash "-" for single characters or with double dash "--" for words.
+<ul>
+
+<li>"dens" 
+      ElPoly::DensProf
+<li>"3to2" 
+      ElPoly::From3To2d
+<li>"3to1" 
+      ElPoly::From3To1d
+<li>"2to1" 
+      ElPoly::From2To1d
+<li>"pro" 
+      ElPoly::ProjectionF
+<li>"core" 
+      ElPoly::CoreF
+<li>"coreNano" 
+      ElPoly::CoreF
+<li>"RadShell" 
+      ElPoly::RadialShell
+<li>"angle" 
+      ElPoly::Angle
+<li>"SlabProf" 
+      ElPoly::SlabProf
+<li>"SlabAngleProfs" 
+      ElPoly::SlabAngleProfs
+<li>"CartDens" 
+      ElPoly::CartDens
+<li>"radNano" 
+      ElPoly::RadDistrF
+<li>"radCm" 
+      ElPoly::RadDistrF
+<li>"radCmN" 
+      ElPoly::RadDistrF
+<li>"radStalk" 
+      ElPoly::RadDistrF
+<li>"radPore" 
+      ElPoly::RadDistrF
+<li>"cartNano" 
+      ElPoly::RadDistrF
+<li>"cm" 
+      ElPoly::CenterOfMass
+<li>"Dens2Thick" 
+      ElPoly::RadDens2Thick
+<li>"Dens2Thick2d" 
+      ElPoly::RadDens2Thick2d
+<li>"ThickFromDens" 
+      ElPoly::ThickFromDens
+<li>"temp" 
+      ElPoly::Temperature
+<li>"nano" 
+      ElPoly::NanoParticle
+<li>"surf" 
+      ElPoly::Surface
+<li>"diff" 
+      ElPoly::Diffusivity
+<li>"DiffSlab" 
+      ElPoly::DiffSlab
+<li>"PairCorr" 
+      ElPoly::PairCorr
+<li>"pairMon" 
+      ElPoly::PairCorrelationF
+<li>"pairChain" 
+      ElPoly::PairCorrelationF
+<li>"pairRound" 
+      ElPoly::PairCorrelationF
+<li>"pairSquare" 
+      ElPoly::PairCorrelationF
+<li>"pairPep" 
+      ElPoly::PairCorrelationF
+<li>"AvSnap" 
+      ElPoly::AvSnap
+<li>"scatt" 
+      ElPoly::ScatteringF
+<li>"scatt2" 
+      ElPoly::ScatteringF
+<li>"worm" 
+      ElPoly::WormF
+<li>"header" 
+      ElPoly::HeaderAverage
+<li>"spe" 
+      ElPoly::SpectrumF
+<li>"RadNormPos" 
+      ElPoly::RadNormPos
+<li>"AreaDistr" 
+      ElPoly::AreaDistrF
+<li>"mid" 
+      ElPoly::Midplane
+<li>"midSpe" 
+      ElPoly::SpectrumMidplane
+<li>"prop" 
+      ElPoly::PropertiesF
+<li>"divOpp" 
+      ElPoly::DivideLayers
+<li>"divTube" 
+      ElPoly::DivideLayers
+<li>"divVes" 
+      ElPoly::DivideLayers
+<li>"AreaCompr" 
+      ElPoly::AreaCompr
+<li>"PTrace" 
+      ElPoly::PressTrace
+<li>"PRadial" 
+      ElPoly::PressRadial
+<li>"Tens" 
+      ElPoly::SurfTens
+<li>"TensCartRad" 
+      ElPoly::Tens2dCartRad
+<li>"SumTens" 
+      ElPoly::SumTens
+<li>"stalk" 
+      ElPoly::StalkF
+<li>"StalkLine" 
+      ElPoly::StalkLineProfF
+<li>"BackBone" 
+      ElPoly::BackBone
+<li>"rem" 
+      ElPoly::RemoveChains
+<li>"ChPos" 
+<li>"tra" 
+      ElPoly::Transform
+<li>"ConvLattice" 
+      ElPoly::ConvLattice
+<li>"write" 
+      ElPoly::Write
+<li>"WidomOut" 
+      ElPoly::WidomOut
+<li>"WidomIn" 
+      ElPoly::WidomIn
+<li>"End2End" 
+      ElPoly::End2EndDistr
+<li>"ElCoup" 
+      ElPoly::ElasticCoupling
+<li>"ElCoupNVT" 
+      ElPoly::ElasticCouplingNVT
+<li>"E2EDec" 
+      ElPoly::Decoupling
+<li>"SmoothGrid" 
+      ElPoly::SmoothGrid
+<li>"IsoSurf" 
+      ElPoly::IsoSurf
+<li>"IsoLine" 
+      ElPoly::IsoLine
+<li>"IsoLineDens" 
+      ElPoly::IsoLine
+<li>"FPore" 
+      ElPoly::FetchPore
+<li>"FStalk" 
+      ElPoly::FetchStalk
+<li>"AStalk" 
+      ElPoly::StalkArea
+<li>"Shift2Center" 
+      ElPoly::Shift2Center
+<li>"AvSnap" 
+      ElPoly::AvSnap
+<li>"DirDec" 
+      ElPoly::Decoupling
+<li>"BilDist" 
+      ElPoly::BilayerDistance
+<li>"Bond" 
+      ElPoly::BondDistr
+<li>"Diff2Dens" 
+      ElPoly::Diff2Files
+<li>"Diff2Pre" 
+      ElPoly::Diff2Files
+<li>"RestPre" 
+      ElPoly::RestPress
+<li>"tecplotDens" 
+      ElPoly::Conv2Tecplot
+<li>"tecplotPre" 
+      ElPoly::Conv2Tecplot
+<li>"tecplotHei" 
+      ElPoly::Conv2Tecplot
+<li>"rzd" 
+      ElPoly::Conv2rzd
+<li>"xyzd" 
+      ElPoly::Conv2xyzd
+<li>"vmd" 
+      ElPoly::Conv2Vmd
+<li>"povray" 
+      ElPoly::Conv2Povray
+<li>"coord" 
+<li>"norm" 
+<li>"type" 
+<li>"file" 
+      ElPoly::ChangeFile
+<li>"val" 
+<li>"Nei" 
+      ElPoly::FindNeighbours
+<li>"sample" 
+<li>"open" 
+      ElPoly::OpenFile
+<li>">" 
+	ElPoly::OpenFile
+<li>"<" 
+	ElPoly::OpenFile
+<li>"f" 
+	ElPoly::OpenFile
+<li>"info" 
+      ElPoly::SysInfo
+      ElPoly::SysDef
+<li>"q" 
+ 
+
+</ul>
+
+
+<ul>
+ <li> \ref index   (Up) </li>
+</ul>
+
+
+*/
+}
