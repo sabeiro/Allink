@@ -12,7 +12,6 @@
 //to look up!
 //#include <boost/math/special_functions/fpclassify.hpp>
 #include <assert.h>
-#ifndef __GSL__
 #include "randomlib.h"
 #include "MatematicaVect.h"
 #include "MatematicaQuadri.h"
@@ -20,6 +19,7 @@
 #include "MatematicaStruct.h"
 #include "MatematicaPlane.h"
 #include <mt19937ar.h>
+#ifndef __GSL__
 #else
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_rng.h>

@@ -10,18 +10,18 @@ LIB_STD = -lm
 FLAG_BOOST = #-DUSE_BOOST
 LIB_BOOST = #-lboost_iostreams
 #graphic libraries
-FLAG_PNG = -DUSE_PNG `freetype-config --cflags`
-LIB_PNG = -lpng -lpngwriter -lz -lfreetype
-FLAG_TIFF = -DUSE_TIFF
-LIB_TIFF = -ltiff
+FLAG_PNG = #-DUSE_PNG `freetype-config --cflags`
+LIB_PNG = #-lpng -lpngwriter -lz -lfreetype
+FLAG_TIFF = #-DUSE_TIFF
+LIB_TIFF = #-ltiff
 FLAG_GL = -DUSE_GL $(FLAG_PNG) $(FLAG_TIFF) -D__glut_h__
 LIB_GL = -lDraw -lglut -lX11 -lGL -lGLU $(LIB_TIFF) $(LIB_PNG) 
 #CGAL libraries
-FLAG_CGAL = -DUSE_CGAL
-LIB_CGAL = -lCGAL
+FLAG_CGAL = #-DUSE_CGAL
+LIB_CGAL = #-lCGAL
 #Gnu scientific libraries
-FLAG_GSL = -D__GSL__
-LIB_GSL = -lgsl #-lgslcblas
+FLAG_GSL = #-D__GSL__
+LIB_GSL = #-lgsl #-lgslcblas
 #the fastest Fourier transform in the west
 LIB_FFTW = -lfftw3
 FLAG_FFTW = -DUSE_FFTW
