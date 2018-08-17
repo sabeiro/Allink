@@ -6,213 +6,493 @@ Required:OpenGl, optional CGAL.
 
 \section CommandList_section Command list:
 All the commands that can be typed in the command line can be written in the argument list with a single dash "-" for single characters or with double dash "--" for words.
+
+"d"	 
+Graphics(argc,argv);
+"?"
+Legenda();
+"!"
+printf("Insert a shell command: ");
+"dens"
+DensProf(NBin,NSample,Coord);
+"3to2"
+From3To2d(NSample,Param[0]);
+"3to1"
+From3To1d(Coord);
+"2to1"
+From2To1d(Coord);
+"pro"
+ProjectionF(NBin,Coord);
+"core"
+CoreF(NSample,0);
+"coreNano"
+CoreF(NSample,1);
+"RadShell"
+RadialShell(NBin);
+"angle"
+Angle(NBin);
+"SlabProf"
+SlabProf(NBin,nNano,CoordProfile);
+"SlabAngleProfs"
+SlabAngleProfs(NBin,10,CoordProfile);
+"CartDens"
+CartDens(NBin,nNano);
+"radNano"
+RadDistrF(NBin,1,nNano);
+"radCm"
+RadDistrF(NBin,0,nNano);
+"radCmN"
+RadDistrF(NBin,2,nNano);
+"radStalk"
+RadDistrF(NBin,4,nNano);
+"radPore"
+RadDistrF(NBin,5,nNano);
+"cartNano"
+RadDistrF(NBin,6,nNano);
+"BondDistr"
+BondDistr(NSample);
+"SplayDistr"
+SplayDistr(NSample);
+"cm"
+CenterOfMass(Coord);
+"Dens2Thick"
+RadDens2Thick(NBin);
+"Dens2Thick2d"
+RadDens2Thick2d(NBin);
+"ThickFromDens"
+ThickFromDens(NBin);
+"temp"
+Temperature(NBin,Coord);
+"nano"
+NanoParticle(NBin);
+"surf"
+Surface(NBin,1);
+"diff"
+Diffusivity();
+"DiffSlab"
+DiffSlab(NSample);
+"PairCorr"
+PairCorr(NBin,1);
+"pairMon"
+PairCorrelationF(NBin,0);
+"pairChain"
+PairCorrelationF(NBin,1);
+"pairRound"
+PairCorrelationF(NBin,2);
+"pairSquare"
+PairCorrelationF(NBin,3);
+"pairPep"
+PairCorrelationF(NBin,4);
+"AvSnap"
+AvSnap();
+"scatt"
+ScatteringF(NBin,0);
+"scatt2"
+ScatteringF(NBin,1);
+"worm"
+WormF(20,NBin);
+"header"
+HeaderAverage(nNano);
+"spe"
+SpectrumF(NSample);
+"RadNormPos"
+RadNormPos(NBin,NSample);
+"AreaDistr"
+AreaDistrF(NBin);
+"mid"
+Midplane(NSample);
+"midSpe"
+SpectrumMidplane(NSample);
+"prop"
+PropertiesF();
+"divOpp"
+DivideLayers(VAR_OPPOSED);
+"divTube"
+DivideLayers(VAR_TUBE);
+"divVes"
+DivideLayers(VAR_VESICLE);
+"AreaCompr"
+AreaCompr(NSample);
+"PTrace"
+PressTrace();
+"PRadial"
+PressRadial();
+"Tens"
+SurfTens(NBin);
+"TensCartRad"
+Tens2dCartRad();
+"SumTens"
+SumTens();
+"Prova"
+Prova();
+"stalk"
+StalkF(32);
+"StalkLine"
+StalkLineProfF(NBin);
+"BackBone"
+BackBone(Line,NBin);
+"rem"
+RemoveChains();
+"ChPos"
+FILE *FWrite = fopen("ChainPos.dat","w");
+for(int c=0;c<pNChain();c++){
+fprintf(FWrite,"%lf %lf %lf\n",Ch[c].Pos[0],Ch[c].Pos[1],Ch[c].Pos[2]);
+}
+fclose(FWrite);
+"tra"
+Transform(nBlock);
+Write("transformed.dat");
+"xyz"
+WriteXyz("resume.dat");
+"ConvLattice"
+ConvLattice(NSample,"LatticePoints.dat");
+"write"
+Write("resume.dat");
+"WidomOut"
+//WidomOut("NrgLipid.dat",NBin);
+WidomOut();
+"WidomIn"
+//WidomIn("NrgLipid.dat",NBin);
+WidomIn();
+"End2End"
+End2EndDistr("End2EndDistr");
+"ElCoup"
+ElasticCoupling(NSample);
+"ElCoupNVT"
+ElasticCouplingNVT();
+"E2EDec"
+Decoupling(1);
+"SmoothGrid"
+SmoothGrid(NBin,"GridSmoothed.dat");
+"IsoSurf"
+IsoSurf(NSample,Param,NParam);
+"IsoLine"
+NParam = 10;
+double OldParam = Param[0];
+for(int p=0;p<NParam;p++){
+Param[p] = OldParam*p/(double)(NParam);
+}
+IsoLine(NSample,Param,NParam,0);
+"IsoLineDens"
+IsoLine(NSample,Param,NParam,1);
+"FPore"
+FetchPore();
+"FStalk"
+FetchStalk();
+"AStalk"
+StalkArea();
+"Shift2Center"
+Shift2Center();
+"AvSnap"
+AvSnap();
+"DirDec"
+Decoupling(0);
+"BilDist"
+BilayerDistance("BilayerDistance.dat",NSample);
+"Bond"
+BondDistr("BondDistr.dat",NBin);
+"Diff2Dens"
+Diff2Files(NSample,1);
+"Diff2Pre"
+Diff2Files(NSample,0);
+"RestPre"
+RestPress(NBin);
+"tecplotDens"
+Conv2Tecplot(NBin,0);
+"tecplotPre"
+Conv2Tecplot(NBin,1);
+"tecplotHei"
+Conv2Tecplot(NBin,2);
+"rzd"
+Conv2rzd(NBin);
+"xyzd"
+Conv2xyzd(NBin);
+"vmd"
+Conv2Vmd();
+"povray"
+Conv2Povray();
+"coord"
+printf("Enter coordinate number [0 2] or radius [3]: ");
+scanf("%d",&Coord);
+if(Coord < 0 || Coord > 3){
+printf("Value not valid, coord set to 0\n");
+Coord = 0;
+}
+"norm"
+printf("Enter the direction of the normal: ");
+int Temp = 0;
+scanf("%d",&Temp);
+if(Temp >= 0 && Temp < 3){
+CNorm = Temp;
+CLat1 = (CNorm+1)%3;
+CLat2 = (CNorm+2)%3;
+printf("n %d c1 %d c2 %d\n",CNorm,CLat1,CLat2);
+}
+"type"
+int NChType = CHAIN_EVERY;
+printf("up %d down %d flabby %d stretch %d added %d every %d: ",CHAIN_UP,CHAIN_DOWN,CHAIN_FLABBY,CHAIN_STRETCH,CHAIN_ADDED,CHAIN_EVERY);
+scanf("%d",&NChType);
+if(NChType != CHAIN_UP && NChType != CHAIN_DOWN && NChType != CHAIN_FLABBY && NChType !=  CHAIN_STRETCH && NChType != CHAIN_ADDED && NChType != CHAIN_EVERY){
+printf("Value not valid, type set to %d\n",CHAIN_EVERY);
+NChType = CHAIN_EVERY;
+}
+NChType = NChType;
+"file"
+ChangeFile();
+"val"
+printf("Number bins (NBin) :");
+scanf("%d",&NBin);
+"Nei"
+FindNeighbours("CrossLinks.dat");
+"sample"
+Sample(NSample);
+"open"
+char InFile[256];
+printf("New file name: ");
+scanf("%s",Comando);
+sprintf(InFile,Comando);
+OpenFile(InFile);
+">"
+quando++;
+if(quando >= NFile){
+quando = 0;
+}
+if(quando >=0 && quando < NFile){
+OpenFile(quando);
+printf("Opening: %s\n",argv[FilePos[quando]]);
+}
+"<"
+quando--;
+if(quando < 0){
+quando = NFile-1;
+}
+if(quando >=0 && quando < NFile){
+OpenFile(quando);
+printf("Opening: %s\n",argv[FilePos[quando]]);
+}
+"f"
+printf("Open file num 0-%d: ",NFile);
+scanf("%d",&quando);
+if( quando >= 0 && quando < NFile){
+OpenFile(quando);
+}
+"info"
+printf("------------------------------------------------------\n");
+char cSystem[STRSIZE];
+SysInfo(cSystem);
+printf("%s\n",cSystem);
+SysDef(cSystem);
+printf("%s\n",cSystem);
+
+
+
 <ul>
 
 <li>"dens" 
-      ElPoly::DensProf
+ElPoly::DensProf
 <li>"3to2" 
-      ElPoly::From3To2d
+ElPoly::From3To2d
 <li>"3to1" 
-      ElPoly::From3To1d
+ElPoly::From3To1d
 <li>"2to1" 
-      ElPoly::From2To1d
+ElPoly::From2To1d
 <li>"pro" 
-      ElPoly::ProjectionF
+ElPoly::ProjectionF
 <li>"core" 
-      ElPoly::CoreF
+ElPoly::CoreF
 <li>"coreNano" 
-      ElPoly::CoreF
+ElPoly::CoreF
 <li>"RadShell" 
-      ElPoly::RadialShell
+ElPoly::RadialShell
 <li>"angle" 
-      ElPoly::Angle
+ElPoly::Angle
 <li>"SlabProf" 
-      ElPoly::SlabProf
+ElPoly::SlabProf
 <li>"SlabAngleProfs" 
-      ElPoly::SlabAngleProfs
+ElPoly::SlabAngleProfs
 <li>"CartDens" 
-      ElPoly::CartDens
+ElPoly::CartDens
 <li>"radNano" 
-      ElPoly::RadDistrF
+ElPoly::RadDistrF
 <li>"radCm" 
-      ElPoly::RadDistrF
+ElPoly::RadDistrF
 <li>"radCmN" 
-      ElPoly::RadDistrF
+ElPoly::RadDistrF
 <li>"radStalk" 
-      ElPoly::RadDistrF
+ElPoly::RadDistrF
 <li>"radPore" 
-      ElPoly::RadDistrF
+ElPoly::RadDistrF
 <li>"cartNano" 
-      ElPoly::RadDistrF
+ElPoly::RadDistrF
 <li>"cm" 
-      ElPoly::CenterOfMass
+ElPoly::CenterOfMass
 <li>"Dens2Thick" 
-      ElPoly::RadDens2Thick
+ElPoly::RadDens2Thick
 <li>"Dens2Thick2d" 
-      ElPoly::RadDens2Thick2d
+ElPoly::RadDens2Thick2d
 <li>"ThickFromDens" 
-      ElPoly::ThickFromDens
+ElPoly::ThickFromDens
 <li>"temp" 
-      ElPoly::Temperature
+ElPoly::Temperature
 <li>"nano" 
-      ElPoly::NanoParticle
+ElPoly::NanoParticle
 <li>"surf" 
-      ElPoly::Surface
+ElPoly::Surface
 <li>"diff" 
-      ElPoly::Diffusivity
+ElPoly::Diffusivity
 <li>"DiffSlab" 
-      ElPoly::DiffSlab
+ElPoly::DiffSlab
 <li>"PairCorr" 
-      ElPoly::PairCorr
+ElPoly::PairCorr
 <li>"pairMon" 
-      ElPoly::PairCorrelationF
+ElPoly::PairCorrelationF
 <li>"pairChain" 
-      ElPoly::PairCorrelationF
+ElPoly::PairCorrelationF
 <li>"pairRound" 
-      ElPoly::PairCorrelationF
+ElPoly::PairCorrelationF
 <li>"pairSquare" 
-      ElPoly::PairCorrelationF
+ElPoly::PairCorrelationF
 <li>"pairPep" 
-      ElPoly::PairCorrelationF
+ElPoly::PairCorrelationF
 <li>"AvSnap" 
-      ElPoly::AvSnap
+ElPoly::AvSnap
 <li>"scatt" 
-      ElPoly::ScatteringF
+ElPoly::ScatteringF
 <li>"scatt2" 
-      ElPoly::ScatteringF
+ElPoly::ScatteringF
 <li>"worm" 
-      ElPoly::WormF
+ElPoly::WormF
 <li>"header" 
-      ElPoly::HeaderAverage
+ElPoly::HeaderAverage
 <li>"spe" 
-      ElPoly::SpectrumF
+ElPoly::SpectrumF
 <li>"RadNormPos" 
-      ElPoly::RadNormPos
+ElPoly::RadNormPos
 <li>"AreaDistr" 
-      ElPoly::AreaDistrF
+ElPoly::AreaDistrF
 <li>"mid" 
-      ElPoly::Midplane
+ElPoly::Midplane
 <li>"midSpe" 
-      ElPoly::SpectrumMidplane
+ElPoly::SpectrumMidplane
 <li>"prop" 
-      ElPoly::PropertiesF
+ElPoly::PropertiesF
 <li>"divOpp" 
-      ElPoly::DivideLayers
+ElPoly::DivideLayers
 <li>"divTube" 
-      ElPoly::DivideLayers
+ElPoly::DivideLayers
 <li>"divVes" 
-      ElPoly::DivideLayers
+ElPoly::DivideLayers
 <li>"AreaCompr" 
-      ElPoly::AreaCompr
+ElPoly::AreaCompr
 <li>"PTrace" 
-      ElPoly::PressTrace
+ElPoly::PressTrace
 <li>"PRadial" 
-      ElPoly::PressRadial
+ElPoly::PressRadial
 <li>"Tens" 
-      ElPoly::SurfTens
+ElPoly::SurfTens
 <li>"TensCartRad" 
-      ElPoly::Tens2dCartRad
+ElPoly::Tens2dCartRad
 <li>"SumTens" 
-      ElPoly::SumTens
+ElPoly::SumTens
 <li>"stalk" 
-      ElPoly::StalkF
+ElPoly::StalkF
 <li>"StalkLine" 
-      ElPoly::StalkLineProfF
+ElPoly::StalkLineProfF
 <li>"BackBone" 
-      ElPoly::BackBone
+ElPoly::BackBone
 <li>"rem" 
-      ElPoly::RemoveChains
+ElPoly::RemoveChains
 <li>"ChPos" 
 <li>"tra" 
-      ElPoly::Transform
+ElPoly::Transform
 <li>"ConvLattice" 
-      ElPoly::ConvLattice
+ElPoly::ConvLattice
 <li>"write" 
-      ElPoly::Write
+ElPoly::Write
 <li>"WidomOut" 
-      ElPoly::WidomOut
+ElPoly::WidomOut
 <li>"WidomIn" 
-      ElPoly::WidomIn
+ElPoly::WidomIn
 <li>"End2End" 
-      ElPoly::End2EndDistr
+ElPoly::End2EndDistr
 <li>"ElCoup" 
-      ElPoly::ElasticCoupling
+ElPoly::ElasticCoupling
 <li>"ElCoupNVT" 
-      ElPoly::ElasticCouplingNVT
+ElPoly::ElasticCouplingNVT
 <li>"E2EDec" 
-      ElPoly::Decoupling
+ElPoly::Decoupling
 <li>"SmoothGrid" 
-      ElPoly::SmoothGrid
+ElPoly::SmoothGrid
 <li>"IsoSurf" 
-      ElPoly::IsoSurf
+ElPoly::IsoSurf
 <li>"IsoLine" 
-      ElPoly::IsoLine
+ElPoly::IsoLine
 <li>"IsoLineDens" 
-      ElPoly::IsoLine
+ElPoly::IsoLine
 <li>"FPore" 
-      ElPoly::FetchPore
+ElPoly::FetchPore
 <li>"FStalk" 
-      ElPoly::FetchStalk
+ElPoly::FetchStalk
 <li>"AStalk" 
-      ElPoly::StalkArea
+ElPoly::StalkArea
 <li>"Shift2Center" 
-      ElPoly::Shift2Center
+ElPoly::Shift2Center
 <li>"AvSnap" 
-      ElPoly::AvSnap
+ElPoly::AvSnap
 <li>"DirDec" 
-      ElPoly::Decoupling
+ElPoly::Decoupling
 <li>"BilDist" 
-      ElPoly::BilayerDistance
+ElPoly::BilayerDistance
 <li>"Bond" 
-      ElPoly::BondDistr
+ElPoly::BondDistr
 <li>"Diff2Dens" 
-      ElPoly::Diff2Files
+ElPoly::Diff2Files
 <li>"Diff2Pre" 
-      ElPoly::Diff2Files
+ElPoly::Diff2Files
 <li>"RestPre" 
-      ElPoly::RestPress
+ElPoly::RestPress
 <li>"tecplotDens" 
-      ElPoly::Conv2Tecplot
+ElPoly::Conv2Tecplot
 <li>"tecplotPre" 
-      ElPoly::Conv2Tecplot
+ElPoly::Conv2Tecplot
 <li>"tecplotHei" 
-      ElPoly::Conv2Tecplot
+ElPoly::Conv2Tecplot
 <li>"rzd" 
-      ElPoly::Conv2rzd
+ElPoly::Conv2rzd
 <li>"xyzd" 
-      ElPoly::Conv2xyzd
+ElPoly::Conv2xyzd
 <li>"vmd" 
-      ElPoly::Conv2Vmd
+ElPoly::Conv2Vmd
 <li>"povray" 
-      ElPoly::Conv2Povray
+ElPoly::Conv2Povray
 <li>"coord" 
 <li>"norm" 
 <li>"type" 
 <li>"file" 
-      ElPoly::ChangeFile
+ElPoly::ChangeFile
 <li>"val" 
 <li>"Nei" 
-      ElPoly::FindNeighbours
+ElPoly::FindNeighbours
 <li>"sample" 
 <li>"open" 
-      ElPoly::OpenFile
+ElPoly::OpenFile
 <li>">" 
-	ElPoly::OpenFile
+ElPoly::OpenFile
 <li>"<" 
-	ElPoly::OpenFile
+ElPoly::OpenFile
 <li>"f" 
-	ElPoly::OpenFile
+ElPoly::OpenFile
 <li>"info" 
-      ElPoly::SysInfo
-      ElPoly::SysDef
+ElPoly::SysInfo
+ElPoly::SysDef
 <li>"q" 
- 
+
 
 </ul>
 
 
 <ul>
- <li> \ref index   (Up) </li>
+<li> \ref index   (Up) </li>
 </ul>
 
 

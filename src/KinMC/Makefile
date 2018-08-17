@@ -1,8 +1,8 @@
-Scrive = ../bin/Rinato
-Legge = ../bin/Elabora
-Disegna = ../bin/Disegna
+Scrive = ../../bin/Rinato
+Legge = ../../bin/Elabora
+Disegna = ../../bin/Disegna
 LIB = -lm
-LIBGL = -lglut
+LIBGL = -lglut -lX11 -lGL -lGLU
 CC = g++
 OGG = Rinato.o ran1.o Cubo.o Particella.o
 HEADER = Variabili.h Cubo.h Particella.h Rinato.h
@@ -18,7 +18,7 @@ $(Legge): Elabora.o Elabora.h
 	$(CC) $(FLAG) $(LIB) Elabora.o -o $(Legge)
 
 $(Disegna): Disegna.o Disegna.h
-	$(CC) $(FLAG) $(LIB) $(LIBGL) Disegna.o -o $(Disegna)
+	$(CC) Disegna.o $(FLAG) $(LIB) $(LIBGL) -o $(Disegna)
 
 .c.o:
 	$(CC) -c $<

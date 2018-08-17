@@ -1,0 +1,71 @@
+commands:
+'A':
+glutPostRedisplay();
+'B': toggle
+glEnable(GL_BLEND); 
+glDisable(GL_BLEND); 
+'C':
+printf("Coordinate (%.2f,%.2f,%.2f) Angolo (%.2f,%.2f,%.2f) Luce  (%.2f,%.2f,%.2f) Ruota %lf)\n"
+,xp,yp,zp,xa,ya,za,xf,yf,zf,zw);
+'f':
+glutFullScreen();
+glutPostRedisplay();
+'g':
+sprintf(info,"Grid visualized every %d system unit",GridStep);
+'G':
+sprintf(info,"Grid visualized every %d system unit",GridStep);
+'h':
+glutIdleFunc(NULL);
+'l':
+la = !la;
+glutPostRedisplay();
+'L':
+IfMaterial = !IfMaterial;
+glutPostRedisplay();
+'k':
+Step++;
+IfInfo = 0;
+glutPostRedisplay();
+Picture();
+IfInfo = 1;
+WritePngwriter();
+'m':
+OpenImage("SplineAngolose.tif");
+Menu();
+break;
+'M':
+glutDestroyMenu(menu);
+break;
+'p':
+IfPoint++;
+if(IfPoint == 2) IfPoint =0;
+glutPostRedisplay();
+'P':
+sprintf(info,"Prospective view");
+sprintf(info,"Orthogonal view");
+break;
+'q':
+glutDestroyWindow(MainWindow);
+exit(0);
+'s':
+IfScript = !IfScript;
+ReadScript();
+'x':
+xp += .1;
+'X':
+xp -= .1;
+'y':
+yp += .1;
+'Y':
+yp -= .1;
+'w':
+Rback = 1.0 - Rback;
+Gback = 1.0 - Gback;
+Bback = 1.0 - Bback;
+Aback = 0.0;
+'z':
+zp += .1;
+glutPostRedisplay();
+'Z':
+zp -= .1;
+glutPostRedisplay();

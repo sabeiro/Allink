@@ -9,7 +9,7 @@ void Forces::ChooseSimMode(){
 void Forces::Solve(){
   if(VAR_IF_TYPE(SysShape,SYS_2D))
     SolveLinksIterative();
-  //SolveLinks();
+    //SolveLinks();
   else if(VAR_IF_TYPE(SysShape,SYS_LEAVES))
     SolveLeaves();
   else if(VAR_IF_TYPE(SysShape,SYS_PORE))

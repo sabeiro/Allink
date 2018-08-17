@@ -21,7 +21,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ***********************************************************************/
 #include "ElPoly.h"
-				 //#include "../include/Draw.h"
+//#include "../include/Draw.h"
 
 ElPoly *Pol;
 void Legenda();
@@ -103,7 +103,7 @@ int main(int argc,char **argv){
     else if(!strcmp(*(argv+i),"-f")){
       if(argc < i+1){printf("Which files?\n");return 1;}
       i+=2;
-   }
+    }
     else if(!strcmp(*(argv+i),"-n")){
       if(argc < i){printf("Which nanoparticle?\n");return 1;}
       sscanf(argv[i+1],"%d",&nNano);
@@ -160,17 +160,17 @@ int main(int argc,char **argv){
       if(argc < i){printf("Which backfold?\n");return 1;}
       sscanf(argv[i+1],"%s",sBf);
       if(!strcmp(sBf,"part"))
-	 BackFold = BF_PART;
+	BackFold = BF_PART;
       else if(!strcmp(sBf,"no"))
-	 BackFold = BF_NO;
+	BackFold = BF_NO;
       else if(!strcmp(sBf,"chain"))
-	 BackFold = BF_CHAIN;
+	BackFold = BF_CHAIN;
       else if(!strcmp(sBf,"skip"))
-	 BackFold = BF_SKIP;
+	BackFold = BF_SKIP;
       else if(!strcmp(sBf,"nano"))
-	 BackFold = BF_NANO;
+	BackFold = BF_NANO;
       else if(!strcmp(sBf,"tilt"))
-	 BackFold = BF_TILT;
+	BackFold = BF_TILT;
       else{
 	printf("Backfold not recognized set to chain\n");
 	BackFold = BF_CHAIN;
@@ -258,11 +258,11 @@ int main(int argc,char **argv){
       if(argc < i){printf("Which shift?\n");return 1;}
       sscanf(argv[i+1],"%s",sBf);
       if(!strcmp(sBf,"cm"))
-	 Shift = BF_PART;
+	Shift = BF_PART;
       else if(!strcmp(sBf,"nano"))
-	 Shift = BF_NO;
+	Shift = BF_NO;
       else if(!strcmp(sBf,"cm_nano"))
-	 Shift = BF_CHAIN;
+	Shift = BF_CHAIN;
       else{
 	printf("shift not recognized set to no\n");
 	Shift = SHIFT_NO;
@@ -764,8 +764,8 @@ int main(int argc,char **argv){
 	Pol->OpenFile(quando);
 	printf("Opening: %s\n",argv[FilePos[quando]]);
       }
-       if(!IfUser) return 0;
-   }//----------------Open-f-File-----------------
+      if(!IfUser) return 0;
+    }//----------------Open-f-File-----------------
     else if(!strcmp(Comando,"f")){
       printf("Open file num 0-%d: ",NFile);
       scanf("%d",&quando);
@@ -861,36 +861,36 @@ void Legenda(){
 (                                                               )\n\
 *****************************************************************\n");
 }
-   //  else if(!strcmp(Comando,"coreNano")){
-   //  else if(!strcmp(Comando,"radShell")){
-   //  else if(!strcmp(Comando,"angle")){
-   //  else if(!strcmp(Comando,"radNano")){
-   // else if(!strcmp(Comando,"radCm")){
-   //  else if(!strcmp(Comando,"radCmN")){
-   //  else if(!strcmp(Comando,"cm")){
-   //  else if(!strcmp(Comando,"temp")){
-   //  else if(!strcmp(Comando,"nano")){
-   //  else if(!strcmp(Comando,"surf")){
-   //  else if(!strcmp(Comando,"diff")){
-   //  else if(!strcmp(Comando,"pairMon")){
-   //  else if(!strcmp(Comando,"pairChain")){
-   //  else if(!strcmp(Comando,"pairRound")){
-   //  else if(!strcmp(Comando,"pairSquare")){
-   //  else if(!strcmp(Comando,"scatt")){
-   //  else if(!strcmp(Comando,"scatt2")){
-   //  else if(!strcmp(Comando,"worm")){
-   //  else if(!strcmp(Comando,"header")){
-   //  else if(!strcmp(Comando,"spe")){
-   //  else if(!strcmp(Comando,"mid")){
-   //  else if(!strcmp(Comando,"prop")){
-   //   else if(!strcmp(Comando,"Area")){
-   //  else if(!strcmp(Comando,"coord")){
-   //  else if(!strcmp(Comando,"norm")){
-   //  else if(!strcmp(Comando,"type")){
-   //  else if(!strcmp(Comando,"file")){
-   //  else if(!strcmp(Comando,"val")){
-   //  else if(!strcmp(Comando,"sample")){
-   //  else if(!strcmp(Comando,"open")){
-   //  else if(!strcmp(Comando,">")){
-   //  else if(!strcmp(Comando,"<")){
-   // else if(!strcmp(Comando,"f")){
+//  else if(!strcmp(Comando,"coreNano")){
+//  else if(!strcmp(Comando,"radShell")){
+//  else if(!strcmp(Comando,"angle")){
+//  else if(!strcmp(Comando,"radNano")){
+// else if(!strcmp(Comando,"radCm")){
+//  else if(!strcmp(Comando,"radCmN")){
+//  else if(!strcmp(Comando,"cm")){
+//  else if(!strcmp(Comando,"temp")){
+//  else if(!strcmp(Comando,"nano")){
+//  else if(!strcmp(Comando,"surf")){
+//  else if(!strcmp(Comando,"diff")){
+//  else if(!strcmp(Comando,"pairMon")){
+//  else if(!strcmp(Comando,"pairChain")){
+//  else if(!strcmp(Comando,"pairRound")){
+//  else if(!strcmp(Comando,"pairSquare")){
+//  else if(!strcmp(Comando,"scatt")){
+//  else if(!strcmp(Comando,"scatt2")){
+//  else if(!strcmp(Comando,"worm")){
+//  else if(!strcmp(Comando,"header")){
+//  else if(!strcmp(Comando,"spe")){
+//  else if(!strcmp(Comando,"mid")){
+//  else if(!strcmp(Comando,"prop")){
+//   else if(!strcmp(Comando,"Area")){
+//  else if(!strcmp(Comando,"coord")){
+//  else if(!strcmp(Comando,"norm")){
+//  else if(!strcmp(Comando,"type")){
+//  else if(!strcmp(Comando,"file")){
+//  else if(!strcmp(Comando,"val")){
+//  else if(!strcmp(Comando,"sample")){
+//  else if(!strcmp(Comando,"open")){
+//  else if(!strcmp(Comando,">")){
+//  else if(!strcmp(Comando,"<")){
+// else if(!strcmp(Comando,"f")){

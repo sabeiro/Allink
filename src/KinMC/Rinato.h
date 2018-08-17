@@ -3,6 +3,7 @@
 #include "Variabili.h"
 #include "Particella.h"
 #include "Cubo.h"
+#include <string.h> 
 #define quad(a) ((a)*(a))//Quadrato
 #define DisRet 2//DistanzaReticolo
 #define Min(a,b) a<b?a:b

@@ -3,8 +3,195 @@ Solution of a forth order differential equation on a lattice (solution of the He
 The boundary condition are represented by the blue and red points, the minimum image convection can be applied or not in every direction.<br>
 Optional:OpenGl. 
 <ul>
- <li> \ref index   (Up) </li>
+<li> \ref index   (Up) </li>
 </ul>
 
 
 */
+'a':
+CreateInitial();
+DrawScene();
+'b':
+IfLine += 1;
+if(IfLine == 2) IfLine =0;
+sprintf(Dr->info,"Bonding visualisation");
+DrawScene();
+'c':
+IfExt++;
+if(IfExt==0)
+sprintf(Dr->info,"Increasing radius");
+else if(IfExt==1)
+sprintf(Dr->info,"Increasing height");
+else if(IfExt==2)
+sprintf(Dr->info,"Increasing angle");
+else if(IfExt==3)
+sprintf(Dr->info,"D^4 term");
+else if(IfExt==4)
+sprintf(Dr->info,"D^2 term");
+else if(IfExt==5)
+sprintf(Dr->info,"Elastic term");
+else if(IfExt==6)
+sprintf(Dr->info,"Moving center ->x");
+else if(IfExt==7)
+sprintf(Dr->info,"Moving center ->z");
+else 
+IfExt = -1;
+'d':
+if(IfExt == 0){
+for(int n=0;n<pNNano();n++)
+Nano[n].Rad += StepDiameter;
+sprintf(Dr->info,"Nano->Rad %lf",Nano->Rad);
+}
+else if(IfExt == 1){
+for(int n=0;n<pNNano();n++)
+Nano[n].Height += StepDiameter;
+sprintf(Dr->info,"Nano->Height %lf",Nano->Height);
+}
+else if(IfExt == 2){
+for(int n=0;n<pNNano();n++)
+Nano[n].Hamaker += 5.;
+if(Nano->Hamaker >= 90.) Nano->Hamaker = 0.;
+sprintf(Dr->info,"ExtAngle %lf",Nano->Hamaker);
+}
+else if(IfExt == 3){
+Kf.SLap *= 10.;
+sprintf(Dr->info,"D^4 %lf ratio %lf",Kf.SLap,pow(Kf.SLap/Kf.El[2],.25));
+}
+else if(IfExt == 4){
+Kf.Lap += 1.;
+sprintf(Dr->info,"D^2 %lf",Kf.Lap);
+}
+else if(IfExt == 5){
+Kf.El[2] += 10.;
+sprintf(Dr->info,"elastic %lf ratio %lf",Kf.El[2],pow(Kf.SLap/Kf.El[2],.25));
+}
+else if(IfExt == 6){
+//for(int n=0;n<pNNano();n++)
+Nano[0].Pos[0] += StepDiameter;
+sprintf(Dr->info,"Nano->Pos x %lf",Nano->Pos[0]);
+}
+else if(IfExt == 7){
+for(int n=0;n<pNNano();n++)
+Nano[n].Pos[2] += StepDiameter;
+sprintf(Dr->info,"Nano->Pos z %lf",Nano->Pos[2]);
+}
+for(int n=0;n<pNNano();n++)
+Cylinder[n] = Dr->DefCylinder(Nano[n].Rad,Nano[n].Height);
+AddRigid();
+IfFillMatrix = 1;
+glutPostRedisplay();
+'D':
+if(IfExt == 0){
+for(int n=0;n<pNNano();n++)
+Nano[n].Rad -= StepDiameter;
+sprintf(Dr->info,"Rad %lf",Nano->Rad);
+}
+else if(IfExt == 1){
+for(int n=0;n<pNNano();n++)
+Nano[n].Height -= StepDiameter;
+sprintf(Dr->info,"Height %lf",Nano->Height);
+}
+else if(IfExt == 2){
+if(Nano->Hamaker < 0.) Nano->Hamaker = 0.;
+Nano->Hamaker -= 5.;
+sprintf(Dr->info,"ExtAngle %lf",Nano->Hamaker);
+}
+else if(IfExt == 3){
+Kf.SLap /= 10.;
+sprintf(Dr->info,"D^4 %lf ratio %lf",Kf.SLap,pow(Kf.SLap/Kf.El[2],.25));
+}
+else if(IfExt == 4){
+Kf.Lap -= 1.;
+sprintf(Dr->info,"D^2 %lf",Kf.Lap);
+}
+else if(IfExt == 5){
+Kf.El[2] -= 10.;
+sprintf(Dr->info,"elastic %lf ratio %lf",Kf.El[2],pow(Kf.SLap/Kf.El[2],.25));
+}
+else if(IfExt == 6){
+//for(int n=0;n<pNNano();n++)
+Nano[0].Pos[0] -= StepDiameter;
+sprintf(Dr->info,"Nano->Pos x %lf",Nano->Pos[0]);
+}
+else if(IfExt == 7){
+for(int n=0;n<pNNano();n++)
+Nano[n].Pos[2] -= StepDiameter;
+sprintf(Dr->info,"Nano->Pos z %lf",Nano->Pos[2]);
+}
+for(int n=0;n<pNNano();n++)
+Cylinder[n] = Dr->DefCylinder(Nano[n].Rad,Nano[n].Height);
+AddRigid();
+IfFillMatrix = 1;
+glutPostRedisplay();
+'e':
+IfSpline=1;
+IfInterp++;
+if(IfInterp == 7)
+IfInterp = 0;
+Interp();
+//Dynamics();
+//printf("IfInterp %d\n",IfInterp);
+glutPostRedisplay();    
+'I':
+Info();
+'m':
+//Menu();
+Bead2Move++;
+if(Bead2Move > pNPart()) Bead2Move = 0;
+SelectBead(Bead2Move);
+sprintf(Dr->info,"Part2Move %d",Bead2Move);
+DrawScene();
+'M':
+Bead2Move--;
+if(Bead2Move < 0) Bead2Move = pNPart();
+SelectBead(Bead2Move);
+sprintf(Dr->info,"Part2Move %d",Bead2Move);
+DrawScene();
+'o':
+Dynamics();
+DrawScene();
+'O':
+InitTime = time(NULL);
+glutIdleFunc(DynamicsMotion);
+'r':
+glutIdleFunc(NULL);
+Dr->InitConstant();
+sprintf(Dr->info,"initial configuration");
+'R':
+ReadConfDinamica(ConfFile);
+IfFillMatrix = 1;
+FillMatrix();
+sprintf(Dr->info,"reload configuration");
+'S':
+Solve();
+DrawScene();
+'t':
+PullBead();
+DrawScene();
+'T':
+PushBead();
+//sprintf(info,"Perspective view");
+DrawScene();
+'u':
+Dynamics();
+DrawScene();
+'v':
+BeadType++;
+Pm[Bead2Move].Typ = BeadType;
+if(BeadType >= 4)
+BeadType = 0;
+'V':
+Pm[Bead2Move].Typ = 0;
+'w':
+VAR_REM_TYPE(SysType,VAR_SYS_TXVL);
+VAR_ADD_TYPE(SysType,VAR_SYS_XVT);
+SysFormat = VAR_SYS_TXVL;
+SetNBlock(1);
+Block[0].NChain = pNChain();
+Block[0].InitIdx = 0;
+Block[0].NPCh = pNPCh();
+Block[0].EndIdx = pNPart();
+sprintf(Block[0].Name,"GAS");
+char FileName[60];
+sprintf(FileName,"Trajectory%09d.dat",pStep());
+Write(FileName);

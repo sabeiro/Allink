@@ -3,7 +3,7 @@ Particella::Particella(char *cDis,char *cVal,int NPart){
   float N=0;
   nPart = NPart;
   nEffet = nPart;
-  Part = new PART1[nPart];
+  Part = new PART[nPart];
   Pr0=0;Pr=0;E0=0;nDis=0;Norm=0;
   FDis = fopen(cDis,"r");
   if(FDis==NULL)printf("Non s'apre %s\n",cDis);
@@ -76,7 +76,7 @@ void Particella::Elimina(int Tocc){
     delete Part;
   }
   else{
-    PART1 *p1 = new PART[nEffet];
+    PART *p1 = new PART[nEffet];
     for(int i=0,j=0;i<nEffet;i++){
       if(Part[i].Tocc==Tocc){
 	j=1;
@@ -89,7 +89,7 @@ void Particella::Elimina(int Tocc){
     }
     delete Part;
     nEffet--;
-    Part = new PART1[nEffet];
+    Part = new PART[nEffet];
     for(int i=0;i<nEffet;i++){
       Part[i].Tocc=p1[i].Tocc;
     //    printf("%d) Part[%d]",i,Part[i].Tocc);

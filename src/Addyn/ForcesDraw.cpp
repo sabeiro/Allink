@@ -10,7 +10,7 @@ int Forces::Graphics(int argc,char **argv){
   Dr->Window(argc,argv);
   // Dr->xp = 0.;Dr->zp = 0.;
   Dr->xa = -60.;Dr->ya = -00.;Dr->za = -38.;
-  Dr->xf = -30.;Dr->yf = 5.;Dr->yf = 0.;
+  Dr->xf = 160.;Dr->yf = -25.;Dr->zf = 0.;
   Dr->xi = -.4;Dr->yi = -.4;Dr->zi = 0.;
   for(int n=0;n<pNNano();n++){
     Cylinder[n] = Dr->DefCylinder(Nano[n].Rad,Nano[n].Height);
