@@ -1,0 +1,150 @@
+.TH "GENERAL" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GENERAL \- General information of the system\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VarData\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBTime\fP"
+.br
+.RI "\fITotal time\&. \fP"
+.ti -1c
+.RI "double \fBTemp\fP"
+.br
+.RI "\fITemperature\&. \fP"
+.ti -1c
+.RI "double \fBBeta\fP"
+.br
+.RI "\fITemperature\&. \fP"
+.ti -1c
+.RI "double \fBEnergy\fP [3]"
+.br
+.RI "\fIPot, kinetik, free\&. \fP"
+.ti -1c
+.RI "double \fBEdge\fP [4]"
+.br
+.RI "\fIxyzr edges of the simulation box \fP"
+.ti -1c
+.RI "double \fBInvEdge\fP [4]"
+.br
+.RI "\fIInverted xyzr edges of the simulation box\&. \fP"
+.ti -1c
+.RI "double \fBCm\fP [3]"
+.br
+.RI "\fICenter of mass of the system\&. \fP"
+.ti -1c
+.RI "double \fBVel\fP [4]"
+.br
+.RI "\fIVelocity of the system\&. \fP"
+.ti -1c
+.RI "double \fBPre\fP [3]"
+.br
+.RI "\fIThree components of the pressure\&. \fP"
+.ti -1c
+.RI "double \fBvBB\fP"
+.br
+.RI "\fIChemical potential of the water\&. \fP"
+.ti -1c
+.RI "double \fBSurfTens\fP"
+.br
+.RI "\fISurface tension\&. \fP"
+.ti -1c
+.RI "double \fBchiN\fP"
+.br
+.RI "\fIIncompatibility\&. \fP"
+.ti -1c
+.RI "double \fBkappaN\fP"
+.br
+.RI "\fIIncompressibility\&. \fP"
+.ti -1c
+.RI "double \fBrho\fP"
+.br
+.RI "\fIDensity coexistence\&. \fP"
+.ti -1c
+.RI "double \fBkappaBend\fP"
+.br
+.RI "\fIPrefactor of the bending potential\&. \fP"
+.ti -1c
+.RI "double \fBkappaSpring\fP"
+.br
+.RI "\fIPrefactor of the bond spring\&. \fP"
+.ti -1c
+.RI "double \fBSpringRest\fP"
+.br
+.RI "\fIRest length of the harmonic potential\&. \fP"
+.ti -1c
+.RI "double \fBReOverCutOff\fP"
+.br
+.RI "\fIConvertion unit R_e over CutOff\&. \fP"
+.ti -1c
+.RI "double \fBDeltat\fP"
+.br
+.RI "\fITimestep\&. \fP"
+.ti -1c
+.RI "double \fBWFuncStraight2\fP"
+.br
+.RI "\fIWeighting function straight length\&. \fP"
+.ti -1c
+.RI "double \fBWFuncStraight3\fP"
+.br
+.RI "\fIWeighting function straight length\&. \fP"
+.ti -1c
+.RI "unsigned long \fBStep\fP"
+.br
+.RI "\fICourrent step\&. \fP"
+.ti -1c
+.RI "int \fBNPart\fP"
+.br
+.RI "\fINumber of particle\&. \fP"
+.ti -1c
+.RI "int \fBNChain\fP"
+.br
+.RI "\fINumber of chain\&. \fP"
+.ti -1c
+.RI "int \fBNPCh\fP"
+.br
+.RI "\fINumber of particle per chain\&. \fP"
+.ti -1c
+.RI "int \fBNAllocP\fP"
+.br
+.RI "\fINumber of allocated particles\&. \fP"
+.ti -1c
+.RI "int \fBNAllocC\fP"
+.br
+.RI "\fINumber of allocated chains\&. \fP"
+.ti -1c
+.RI "int \fBNType\fP"
+.br
+.RI "\fI
+.SH "of types of the particle"
+.PP
+\fP"
+.ti -1c
+.RI "int \fBNLink\fP"
+.br
+.RI "\fIMaximum number of bonds\&. \fP"
+.ti -1c
+.RI "int \fBNBlock\fP"
+.br
+.RI "\fINumber of blocks\&. \fP"
+.ti -1c
+.RI "int \fBNNano\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+General information of the system\&. 
+.PP
+Definition at line 299 of file VarData\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

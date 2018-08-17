@@ -1,0 +1,376 @@
+.TH "param_page" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+param_page \- Parameter File 
+
+.SH "ElPoly"
+.PP
+Parameter file for the initialisation of a lipid system (used by \fBElPoly\fP): 
+.PP
+.nf
+#System:
+IfSystem 0          #(0) \&.dat or (1) \&.xvl format files
+#Soft: planar tube di6\&.0ibuted vesicle
+NSoft 1             #number of soft bodies
+#    Pos            Vel            Rad Hei Tens   type      name
+#Soft x(0\&.5 0\&.5 0\&.5) v(0\&.0 0\&.0 0\&.0) c(3\&.0 0\&.0 1\&.0) s{vesicle} n{LIPID}
+Soft x(0\&.5 0\&.5 0\&.5) v(0\&.0 0\&.0 0\&.0) c(6\&.0 0\&.0 1\&.0) s{planar} n{LIPID}
+#Soft x(0\&.5 0\&.5 0\&.5) v(0\&.0 0\&.0 0\&.0) c(6\&.0 0\&.0 0\&.04) s{obstacle} n{LIPID}
+#Soft x(0\&.5 0\&.5 0\&.7) v(0\&.0 0\&.0 0\&.0) c(6\&.0 0\&.0 1\&.0) s{planar} n{LIPID2}
+#Soft x(0\&.5 0\&.5 0\&.3) v(0\&.0 0\&.0 0\&.0) c(6\&.0 0\&.0 1\&.0) s{planar} n{LIPID2}
+Soft x(0\&.5 0\&.5 0\&.5) v(0\&.0 0\&.0 0\&.0) c(5\&.0 0\&.0 1\&.0) s{distributed} n{DISTR}
+Soft x(0\&.5 0\&.5 0\&.5) v(0\&.0 0\&.0 0\&.0) c(5\&.0 0\&.0 1\&.5) s{coating} n{VESICLE}
+Soft x(0\&.5 0\&.5 0\&.5) v(0\&.0 0\&.0 0\&.0) c(5\&.0 6\&.0 1\&.0) s{tube} n{LIPID}
+#Geometry
+Lx 12 Ly 12 Lz 14   #box size
+CNorm  2            #normal direction
+#Additional
+NAddChain 0       #number of added chains
+NStuffing 0         #number of phil monomers in the peptide
+NSolvent  0000      #number of ghost solvent atoms
+#Inclusion:
+NNano 2            #number of nanoparticles
+#     RelPos         Axis                rad  str  hei  coat [no,sph,cyl,wall,cluster,tilt,pore,dip]
+#Rigid x(0\&.5 0\&.5 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.00 1\&.00 4\&.00 2\&.20) s{wall}
+Rigid x(0\&.2 0\&.5 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.00 2\&.00 5\&.00 2\&.20) s{cluster}
+Rigid x(0\&.7 0\&.5 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.00 2\&.00 5\&.00 2\&.20) s{cluster}
+#Rigid x(0\&.5 0\&.5 0\&.57) a(1\&.00 0\&.00 0\&.00) c(\&.50 3\&.00 12\&.00 2\&.20) s{clinks}
+#Rigid x(0\&.5 0\&.5 0\&.5) a(1\&.00 0\&.00 0\&.00) c(1\&.00 2\&.0 14\&.00 2\&.20) s{janus}
+Rigid x(0\&.5 0\&.5 0\&.5) a(0\&.00 0\&.00 1\&.00) c(2\&.00 2000\&.00 6\&.00 2\&.20) s{cluster}
+Rigid x(0\&.6 0\&.4 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.00 2000\&.00 6\&.00 2\&.20) s{cluster}
+Rigid x(0\&.4 0\&.6 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.00 2000\&.00 6\&.00 2\&.20) s{cluster}
+Rigid x(0\&.2 0\&.8 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.00 2000\&.00 6\&.00 2\&.20) s{cluster}
+
+Rigid x(0\&.5 0\&.5 \&.9) a(0\&.00 0\&.00 1\&.00) c(1\&.0 0\&.5 2\&.00 0\&.0002) s{tip}
+#Rigid x(0\&.5 0\&.5 \&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.0 6\&.0 12\&.00 1\&.00) s{pore}
+Rigid x(0\&.5 0\&.5 0\&.25) a(0\&.00 0\&.00 1\&.00) c(\&.5 1\&.0 4\&.00 1\&.00) s{wall}
+Rigid x(0\&.5 0\&.5 0\&.5) a(0\&.00 0\&.00 1\&.00) c(2\&.0 2\&.0 6\&.00 2\&.20) s{cluster}
+#Rigid x(0\&.5 0\&.5 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.0 6\&.0 14\&.00 1\&.00) s{sph}
+Rigid x(0\&.5 0\&.5 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.00 6\&.00 10\&.00 2\&.20) s{tilt}
+Rigid x(0\&.5 0\&.5 0\&.5) a(0\&.00 0\&.00 1\&.00) c(1\&.00 6\&.00 10\&.00 2\&.20) s{cyl}
+NCircle 40        #number of monomer per 0\&.1ius unity
+NHeight 5       #number of monomer per side unity
+#Interactions:
+chiN 30             #incompatibilty between the species
+rho 10 6               #density coexistance
+kappaN 70           #rigidity
+kappaBend    3\&.     #bending coefficient
+kappaSpring 20\&.537  #spring coefficient
+ReOverCutOff 2      #Re/CutOff
+vBB 0\&.1            #Chemical potential of the water
+IfTwoTails 0        #construct the lipid with two tails
+DiblockLim   8     #number of hydrophilic
+NPartPChain  10   #number of beads per chain
+WFuncStraight2 \&.9   #weighting function straight length
+WFuncStraight3 1\&.   #weighting function straight length
+
+.fi
+.PP
+ Example of a system file: 
+.PP
+.nf
+# L=12\&.000000 12\&.000000 18\&.000000 t=0\&.000000 blocks=2
+# v=-24\&.33 -7\&.17 -24\&.33 0\&.10 -7\&.17 0\&.00 w=3\&.00 3\&.00 3\&.00 3\&.00 3\&.00 3\&.00 0\&.00 3\&.00 3\&.00 0\&.00
+# a2=0\&.9 a3=1\&.0 Re=2\&.0 N=10 ks=20\&.537 kb=3\&.000 l0=0
+# Rigid x(6\&.00 6\&.00 9\&.00) a(0\&.00 0\&.00 1\&.00) c(1\&.00 1\&.00 4\&.00 2\&.2000) s{wall}
+# Rigid x(2\&.40 2\&.40 3\&.60) a(0\&.00 0\&.00 1\&.00) c(1\&.00 1\&.00 4\&.00 2\&.2000) s{cyl}
+# Pep x(6\&.00 6\&.00 9\&.00) a(0\&.00 0\&.00 1\&.00) g(2\&.00 6\&.00 2000\&.00) i[2] d[80 30] fn{Architecture2\&.dat}
+# n=510 N=10 name=LIPID0
+11\&.601412 10\&.858886 7\&.173472 0\&.158991 0\&.248636 -0\&.262377  0 
+11\&.640605 11\&.011927 7\&.639597 0\&.171554 0\&.508449 0\&.081183  0 
+11\&.558340 11\&.027104 7\&.401688 0\&.074257 0\&.331909 -0\&.188259  0 
+11\&.366910 11\&.415070 7\&.646884 -0\&.261508 0\&.044753 0\&.115262  0 
+11\&.287795 10\&.646103 7\&.537098 0\&.232126 0\&.155637 0\&.120164  0 
+10\&.660425 10\&.121575 7\&.553806 -0\&.321680 0\&.239232 0\&.111970  0 
+11\&.034412 10\&.219047 7\&.355556 -0\&.065595 0\&.134239 0\&.304619  0 
+10\&.496886 9\&.737709 7\&.116385 -0\&.054618 0\&.079027 0\&.161831  0 
+10\&.134289 9\&.152025 7\&.000000 -0\&.007443 0\&.177523 -0\&.165724  1 
+10\&.234959 9\&.188418 6\&.805128 -0\&.101392 -0\&.369108 0\&.386933  1 
+\&.\&.\&.
+
+.fi
+.PP
+ The same system in an alternative file format: 
+.PP
+.nf
+# l( 12 12 18) c[511] s[0] n[7500] L[6] v[200] d[part] D(0\&.010000) i(6\&.00 30\&.00 70\&.00) 
+# Rigid x(6\&.00 6\&.00 9\&.00) a(0\&.00 0\&.00 1\&.00) c(1\&.00 1\&.00 4\&.00 2\&.2000) s{wall}
+# Rigid x(2\&.40 2\&.40 3\&.60) a(0\&.00 0\&.00 1\&.00) c(1\&.00 1\&.00 4\&.00 2\&.2000) s{cyl}
+# Pep x(6\&.00 6\&.00 9\&.00) a(0\&.00 0\&.00 1\&.00) g(2\&.00 6\&.00 2000\&.00) i[2] d[80 30] fn{Architecture2\&.dat}
+{ t[0 0 0] x(1\&.189071 6\&.622403 7\&.549680) v(-0\&.176953 -0\&.431976 -0\&.035858) l[1] }
+{ t[1 0 0] x(1\&.139056 7\&.032122 7\&.560085) v(0\&.081602 0\&.258855 -0\&.281085) l[0] l[2] }
+{ t[2 0 0] x(1\&.308140 6\&.519256 7\&.442227) v(-0\&.091691 -0\&.026668 -0\&.192819) l[1] l[3] }
+{ t[3 0 0] x(1\&.950485 6\&.142468 7\&.036736) v(-0\&.305010 0\&.196748 -0\&.057231) l[2] l[4] }
+{ t[4 0 0] x(2\&.769803 5\&.534333 7\&.507009) v(-0\&.095458 -0\&.132241 0\&.174891) l[3] l[5] }
+{ t[5 0 0] x(3\&.094308 5\&.454964 7\&.893810) v(0\&.301184 -0\&.342642 0\&.262871) l[4] l[6] }
+{ t[6 0 0] x(2\&.911270 5\&.487582 7\&.605564) v(0\&.021949 0\&.001945 -0\&.102675) l[5] l[7] }
+{ t[7 0 0] x(2\&.908146 5\&.974122 7\&.503403) v(0\&.095940 -0\&.258329 -0\&.459624) l[6] l[8] }
+{ t[8 0 1] x(3\&.164008 6\&.124001 7\&.000000) v(-0\&.070202 -0\&.203646 0\&.363292) l[7] l[9] }
+{ t[9 0 1] x(3\&.663501 5\&.760973 6\&.877247) v(-0\&.163645 0\&.152836 -0\&.317551) l[8] }
+\&.\&.\&.
+
+.fi
+.PP
+.SH "Draw"
+.PP
+Parameter file for the visualisation parameters (used by \fBDraw\fP): 
+.PP
+.nf
+Pre           1                    #perspective
+Passo         10                   #number of grid lines
+Box           1                    #enable the box lines
+OffSet        0\&. 0\&. 0\&.             #offset position
+Rotate        -84\&. 0\&. 166\&.         #intial rotation
+Sun           50\&. 1045\&. 0\&.         #sun position
+Background    1\&. 1\&. 1\&.             #background color
+Wheel         -1\&.35                #initial distance
+GridEdge      0 0 0                #number of lines per edge
+Legend        -\&.4 -\&.4 0\&. \&.4 \&.8     #position of the legend
+Info          -\&.4 -\&.4 0\&.           #position of the info string
+
+.fi
+.PP
+ Example of a script for the \fBDraw\fP engine: 
+.PP
+.nf
+#everything is normalized to 1
+Arrow
+0\&.0 0\&.3 0\&.0 1\&.0 3\&.0
+0\&.0 0\&.0 0\&.0 1\&.0 0\&.0 0\&.0
+Text
+height
+0\&.0 0\&.0 0\&.0 1\&.0 3\&.0
+1\&.1 0\&.0 -0\&.05
+Polygon #Wall
+0\&.4 0\&.1 0\&.1 1\&.0
+0\&.0 0\&.0 0\&.125
+1\&.0 0\&.0 0\&.125
+1\&.0 1\&.0 0\&.125
+0\&.0 1\&.0 0\&.125
+Fog #color(3) alpha(1) \\ dens(1) type(1) from(1) boh(2) to(1)
+0\&.0 1\&.0 0\&.0 1\&.0
+1 0\&.35 0\&.0 0\&.0 0\&.0 0\&.125
+
+.fi
+.PP
+.SH "Dinamica"
+.PP
+Parameter file for a molecuar dynamics simulation (used by Dinamica): 
+.PP
+.nf
+#Sys size/type
+NEdge       300            #number of particle per edge/box
+Edge        20 20 20       #box size
+SysShape    md             #0d 2d 3d leaves trial rigid mc md
+CalcMode    NVT            #ensemble: NVT NcVT mcVT mVT
+Potential   LJ             #potential: LJ LJ39 Harmonic
+PotentialMode DensFunc     #Pair DensFunc DensFuncCh
+#Dyn quantities
+Deltat      0\&.003          #integration delta t
+NChemPotId   200\&.          #eq number of particles
+ChemPotEx   0              #interaction energy
+Viscosity   0\&.2            #viscosity parameter
+Temp        1              #temperature
+#Force parameters
+El          -1 -1 1265     #elastic coupling
+Lap         3              #laplacian prefactor
+SLap        0\&.1            #square laplacian prefactor
+Ext         0\&.             #external force 
+LJ          8\&.5            #Lennard Jones prefactor
+LJMin       1              #Lennard Jones minimum
+CutOff      1              #cutoff distance
+Cont        0\&.             #contact/friction coefficient
+Elong       0\&.2 0\&.1 0\&.2    #rest distance for the armonic spring
+#boundary
+IncrDist    0\&.01           #increase the distance of the selected bead
+ExtRad      \&.12            #radius of the inclusion
+ExtHeight   \&.52            #height of the inclusion
+ExtAngle    60\&.            #contact angle
+ExtCenter   \&.09 \&.0 \&.5      #position of the center
+#tension profile
+TNSlab      60             #number of slabs
+TNDim       3              #number of dimensions
+TNComp      6              #number of components
+TCalcMode   2d             #calculation mode
+#visualisation
+NOut        1000           #number of points for visualizing the splines
+IfMovie     0              #if produces images of the snaphots
+IfLine      0              #if draws the line
+NUpdate     1000           #how many timesteps before redrawing
+IfInterp    0              #if interpolates the points
+
+.fi
+.PP
+ Parameter file for a Monte Carlo simulation (used by Dinamica): 
+.PP
+.nf
+#Sys size/type
+NEdge       300            #number of particle per edge/box
+Edge        20 20 20       #box size
+SysShape    mc             #0d 2d 3d leaves trial rigid mc md
+CalcMode    mcVT           #ensemble: NVT NcVT mcVT mVT
+Potential   LJ             #potential: LJ LJ39 Harmonic
+PotentialMode DensFuncCh   #Pair DensFunc DensFuncCh
+SimLimit    100000         #maximum number of timesteps
+#Dyn quantities
+Deltat      0\&.003          #integration delta t
+NChemPotId  100\&.           #eq number of particles
+ChemPotEx   10\&.5        #ext chem pot (more neg: del,less neg: add)
+Viscosity   0\&.2            #viscosity parameter
+Temp        1              #temperature
+#Force parameters
+El          -1 -1 1265     #elastic coupling
+Lap         3              #laplacian prefactor
+SLap        0\&.1            #square laplacian prefactor
+Ext         0\&.             #external force 
+LJ          8\&.5            #Lennard Jones prefactor
+LJMin       1              #Lennard Jones minimum
+CutOff      1              #cutoff distance
+Cont        0\&.             #contact/friction coefficient
+Elong       0\&.2 0\&.1 0\&.2    #rest distance for the armonic spring
+#boundary
+IncrDist    0\&.01           #increase the distance of the selected bead
+ExtRad      \&.12            #radius of the inclusion
+ExtHeight   \&.52            #height of the inclusion
+ExtAngle    60\&.            #contact angle
+ExtCenter   \&.09 \&.0 \&.5      #position of the center
+#tension profile
+TNSlab      60             #number of slabs
+TNDim       3              #number of dimensions
+TNComp      6              #number of components
+TCalcMode   3d             #calculation mode
+#visualisation
+NSpline     1000           #number of points for visualizing the splines
+IfMovie     0              #if produces images of the snaphots
+IfLine      0              #if draws the line
+NUpdate     100            #how many timesteps before redrawing
+NWrite      10000           #how many timesteps before writing 
+IfInterp    0              #if interpolates the points
+
+.fi
+.PP
+ Parameter file for the solution od a differential equation in 2d (used by Dinamica): 
+.PP
+.nf
+Sys size/type
+NEdge       60            #number of particle per edge/box
+Edge        30 30 5       #box size
+SysShape    2d pore         #0d 2d 3d leaves trial rigid mc md
+CalcMode    NVT            #ensemble: NVT NcVT mcVT mVT
+Potential   LJ             #potential: LJ LJ39 Harmonic
+PotentialMode DensFunc     #Pair DensFunc DensFuncCh
+Thermostat no #Langevin
+#Dyn quantities
+Deltat      0\&.003          #integration delta t
+Viscosity 0\&.2
+ChemPotId   200\&.           #eq number of particles
+ChemPotEx   0              #interaction energy
+Temp        1              #temperature
+#Force parameters
+El          1 -1 10000      #elastic coupling
+Lap         0\&.52              #laplacian prefactor
+SLap        1             #square laplacian prefactor
+Ext         0\&.             #external force 
+LJ          8\&.5            #Lennard Jones prefactor
+LJMin       1              #Lennard Jones minimum
+CutOff      1              #cutoff distance
+Cont        0\&.             #contact/friction coefficient
+Elong       0\&.2 0\&.1 0\&.05    #rest distance for the armonic spring
+#boundary
+Rigid x(15\&. 15\&. 0\&.0) a(0\&.00 0\&.00 1\&.00) c(1\&.0 35\&.00 2\&.0 2\&.2000) s{cyl}
+#Rigid x(0\&.7 0\&.25 0\&.5) a(0\&.00 0\&.00 1\&.00) c(0\&.05 35\&.00 0\&.4 2\&.2000) s{cyl}
+Boundary 1 1 1 1 0 0       #boundary conditions on x0 x1 y0 y1 z0 z1
+Periodic 1 1 1             #periodic image convention on x y z 
+#tension profile
+TNSlab      60             #number of slabs
+TNDim       3              #number of dimensions
+TNComp      6              #number of components
+TCalcMode   3d             #calculation mode
+#visualisation
+NSplie      1000
+NOut        1000           #number of points for visualizing the splines
+IfMovie     0              #if produces images of the snaphots
+IfLine      0              #if draws the line
+NUpdate     1000           #how many timesteps before redrawing
+IfInterp    0              #if interpolates the points
+NWrite      2000           #how many timesteps before dumping a trajectory file
+
+.fi
+.PP
+.SH "Visualizza"
+.PP
+Script file for the plotting options (used by Visualizza): 
+.PP
+.nf
+# α-a β-b γ-c δ-d ε-e ζ-f η-g θ-h ι-i κ-l λ-k μ-l ν-m ξ-n ο-o π-p ρ-q σ-r ς-r τ-s υ-t φ-u ψ-v ω-x χ-y  
+# http://htmlhelp\&.com/reference/html40/entities/symbols\&.html
+NGrid
+6 6
+#XBound
+-90 10
+#YBound
+5 500
+FontSize
+32
+RatioWidthHeight
+1\&.3
+DigPrecX
+2 f
+DigPrecY
+2 f
+#ViewportX
+0\&.05
+#ViewportY
+0\&.05
+LabelX
+q<sup>2</sup> [&Delta;L<sup>-2</sup>]
+LabelY
+&lang;h<sup>2</sup>&rang;L<sup>2</sup> [k<sub>B</sub>T]
+#Title
+Tension Profile
+#ScaleX
+1\&.0     
+#OffSetX
+-9\&.9
+#ScaleY
+3\&.9
+PosLegend
+\&.05 \&.25 \&.9 \&.9
+PosInterp
+\&.5 \&.9 
+Line
+1 #number of line
+0\&.7 0\&.0 0\&.4 1\&.0 #color
+2 # 0 no line, 1 dots, 2 lines, 3 lines and dots
+midplane
+Line
+2 #number of line
+0\&.0 0\&.7 0\&.0 1\&.0 #color
+2 # 0 no line, 1 dots, 2 lines, 3 lines and dots
+upper 
+Line
+3 #number of line
+0\&.0 0\&.0 0\&.7 1\&.0 #color
+2 # 0 no line, 1 dots, 2 lines, 3 lines and dots
+lower
+Line
+4 #number of line
+0\&.5 0\&.2 0\&.7 1\&.0 #color
+2 # 0 no line, 1 dots, 2 lines, 3 lines and dots
+thickness
+PutStr
+0\&. 0\&. 0\&. 1\&.
+\&.17 \&.84 0 16
+S 1 H 4
+
+.fi
+.PP
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBAllink\fP (Up)  
+.IP "\(bu" 2
+\fBDesign Overview\fP (Next)  
+.PP
+

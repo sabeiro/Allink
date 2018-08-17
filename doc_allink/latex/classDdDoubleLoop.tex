@@ -1,0 +1,428 @@
+\hypertarget{classDdDoubleLoop}{}\subsection{Dd\+Double\+Loop Class Reference}
+\label{classDdDoubleLoop}\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+
+
+Stupid double loop to check the other pair loops.  
+
+
+
+
+{\ttfamily \#include $<$Cubo.\+h$>$}
+
+Inheritance diagram for Dd\+Double\+Loop\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDdDoubleLoop}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDdDoubleLoop_ac6bab403b0b1578fcb14b996b377d10f}{Dd\+Double\+Loop} (double \hyperlink{classDomDecBasics_a8895c89605e91c6cf7430bad336f77c6}{Edge}\mbox{[}3\mbox{]}, int \hyperlink{classDomDecBasics_abdcc792391d8c5092471dff191de47f4}{N\+Part}, double \hyperlink{classDomDecBasics_af2411aba2dd63fa22b1bc279653ff7a0}{Cut\+Off})
+\begin{DoxyCompactList}\small\item\em Allocate. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a98ae2e78109ea826eea71da14c37ce95}{Erase} ()
+\begin{DoxyCompactList}\small\item\em Erase the pairlist. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_aa71d36872f416feaa853788a7a7a7ef8}{Clear} ()\hypertarget{classDdDoubleLoop_aa71d36872f416feaa853788a7a7a7ef8}{}\label{classDdDoubleLoop_aa71d36872f416feaa853788a7a7a7ef8}
+
+\begin{DoxyCompactList}\small\item\em Clear the pairlist. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_a19f169980d772f5f0df4c37de864ef48}{Swap\+Part} (int p1, double $\ast$Pos1, int p2, double $\ast$Pos2)\hypertarget{classDdDoubleLoop_a19f169980d772f5f0df4c37de864ef48}{}\label{classDdDoubleLoop_a19f169980d772f5f0df4c37de864ef48}
+
+\begin{DoxyCompactList}\small\item\em Swap two particles. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a9a64ea1512bb8d62f9f6a7a80a2bfec9}{Add\+Part} (const int p, double $\ast$Pos)
+\begin{DoxyCompactList}\small\item\em Add a particle to the cell c. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a0f523b65341953255ea5926b23beccf0}{Rem\+Part} (const int p, double $\ast$Pos)
+\begin{DoxyCompactList}\small\item\em Remove a particle form the cell c. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a2c4dbc782956c74becbe3dc2b454d9d0}{Rem\+Part} (const int p)
+\begin{DoxyCompactList}\small\item\em Remove the particle p. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_afd35b58ff7908ca3e30a6fa8cee88b4e}{Add\+Part} (const int p, const int c)
+\begin{DoxyCompactList}\small\item\em Add a particle to the cell c. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a5113d105bbcfea8b1b1c50555f21c6fe}{Rem\+Part} (const int p, const int c)
+\begin{DoxyCompactList}\small\item\em Remove a particle form the cell c. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_ae2dcbe9a9469a6b50ae328d1cdaae812}{Move\+Part} (const int p, double $\ast$Old\+Pos, double $\ast$New\+Pos)
+\begin{DoxyCompactList}\small\item\em Move a particle form the cell c1 to the cell c2. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a9cc296b765f59b6286128b37d9fedc9f}{Move\+Part} (const int p, double $\ast$New\+Pos)
+\begin{DoxyCompactList}\small\item\em Move a particle form the cell c1 to the cell c2. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_ad10ce7d8491ba213cdbc79d4dd4dc013}{Pos\+Ret} (const double Pos\mbox{[}3\mbox{]})\hypertarget{classDdDoubleLoop_ad10ce7d8491ba213cdbc79d4dd4dc013}{}\label{classDdDoubleLoop_ad10ce7d8491ba213cdbc79d4dd4dc013}
+
+\begin{DoxyCompactList}\small\item\em Relative position in the cell. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_a6a2d62432ffa4c509f4a7f1fb5aa7630}{p\+N\+Part} (const int c)\hypertarget{classDdDoubleLoop_a6a2d62432ffa4c509f4a7f1fb5aa7630}{}\label{classDdDoubleLoop_a6a2d62432ffa4c509f4a7f1fb5aa7630}
+
+\begin{DoxyCompactList}\small\item\em \subsubsection*{part in the cell}\end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_a388622b5e7d2ad20e8ac1a8a951d655f}{p\+N\+Part} ()\hypertarget{classDdDoubleLoop_a388622b5e7d2ad20e8ac1a8a951d655f}{}\label{classDdDoubleLoop_a388622b5e7d2ad20e8ac1a8a951d655f}
+
+\begin{DoxyCompactList}\small\item\em \subsubsection*{part in the class}\end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_a2d9507d25b2164c0bf4282b38b4a5d88}{p\+Cell} (const int p)\hypertarget{classDdDoubleLoop_a2d9507d25b2164c0bf4282b38b4a5d88}{}\label{classDdDoubleLoop_a2d9507d25b2164c0bf4282b38b4a5d88}
+
+\begin{DoxyCompactList}\small\item\em Print the cell which the particle belong. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_aafe289a3b1eb08ed1b960f1f93e8d836}{First} (const int c)\hypertarget{classDdDoubleLoop_aafe289a3b1eb08ed1b960f1f93e8d836}{}\label{classDdDoubleLoop_aafe289a3b1eb08ed1b960f1f93e8d836}
+
+\begin{DoxyCompactList}\small\item\em First part in the cell. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_a8b3b22221e5f8d516a2c4818bea703ad}{Next} (const int p)\hypertarget{classDdDoubleLoop_a8b3b22221e5f8d516a2c4818bea703ad}{}\label{classDdDoubleLoop_a8b3b22221e5f8d516a2c4818bea703ad}
+
+\begin{DoxyCompactList}\small\item\em Next linked part. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_af415aae03ca33a44460cc0a84bda0f6d}{It\+Cell} (const int c)\hypertarget{classDdDoubleLoop_af415aae03ca33a44460cc0a84bda0f6d}{}\label{classDdDoubleLoop_af415aae03ca33a44460cc0a84bda0f6d}
+
+\begin{DoxyCompactList}\small\item\em Iterate in the cell. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_a7389c3097a5406135ae60ac38ad141f5}{If\+It\+Cell} (const int c)
+\begin{DoxyCompactList}\small\item\em Stop the loop and set the counter to zero. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_ab8ed71a5fc65abc128da0367f93803c1}{Set\+Coor\+Numb} (double $\ast$Pos, int p)
+\begin{DoxyCompactList}\small\item\em Stop the loop and set the counter to zero. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_afe0e4e9746cdae570f8c1efdfd04ac16}{Get\+Nei} (double $\ast$Pos, int $\ast$Nei\+List)\hypertarget{classDdDoubleLoop_afe0e4e9746cdae570f8c1efdfd04ac16}{}\label{classDdDoubleLoop_afe0e4e9746cdae570f8c1efdfd04ac16}
+
+\begin{DoxyCompactList}\small\item\em Choose among the different neighbouring lists. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_aadd6f477626e28e8284b9db4649e841d}{Set\+Counters} (int c)
+\begin{DoxyCompactList}\small\item\em Set the counters to the initial position. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_af5188eb0e6caae79f8bf349bf2345cf2}{Print\+Cell} (const int c)
+\begin{DoxyCompactList}\small\item\em Print the particles in a cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a1132024d8fdd721fd6a36781d4235162}{Print\+Cells} ()
+\begin{DoxyCompactList}\small\item\em Print the the particles in the cells. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a74b7b0d716684a7d46993c83795fd9e7}{Set\+Curr} (int p)\hypertarget{classDdDoubleLoop_a74b7b0d716684a7d46993c83795fd9e7}{}\label{classDdDoubleLoop_a74b7b0d716684a7d46993c83795fd9e7}
+
+\begin{DoxyCompactList}\small\item\em Gather information of the neighbouring cells. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a42eeb7049c078ca89057fbc08726eded}{Next\+Curr} ()\hypertarget{classDdDoubleLoop_a42eeb7049c078ca89057fbc08726eded}{}\label{classDdDoubleLoop_a42eeb7049c078ca89057fbc08726eded}
+
+\begin{DoxyCompactList}\small\item\em Increase the iterator to the next couple. \end{DoxyCompactList}\item 
+int \hyperlink{classDdDoubleLoop_a63c5d18d3a487d1a8ab2a5881c6acb38}{If\+Curr} ()\hypertarget{classDdDoubleLoop_a63c5d18d3a487d1a8ab2a5881c6acb38}{}\label{classDdDoubleLoop_a63c5d18d3a487d1a8ab2a5881c6acb38}
+
+\begin{DoxyCompactList}\small\item\em Tell when the curr loop is over. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_ad4860e7b4a26d4b424e5c98b7c6bae09}{Dist2\+Curr} (double $\ast$Dist\+Rel)
+\begin{DoxyCompactList}\small\item\em Retrun the squared current interparticle distance. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_abacbda4ce7eed0eee33efe489157ff81}{Print\+List} (const int c)\hypertarget{classDdDoubleLoop_abacbda4ce7eed0eee33efe489157ff81}{}\label{classDdDoubleLoop_abacbda4ce7eed0eee33efe489157ff81}
+
+\begin{DoxyCompactList}\small\item\em Print the the particle list in the cells. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_aff89725be8d743f07f318ef0c06858e1}{Print\+Lists} ()\hypertarget{classDdDoubleLoop_aff89725be8d743f07f318ef0c06858e1}{}\label{classDdDoubleLoop_aff89725be8d743f07f318ef0c06858e1}
+
+\begin{DoxyCompactList}\small\item\em Print the the particle list in the cells. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a4e589206ab9bc4752d547111d6bba6e7}{Check\+List} ()\hypertarget{classDdDoubleLoop_a4e589206ab9bc4752d547111d6bba6e7}{}\label{classDdDoubleLoop_a4e589206ab9bc4752d547111d6bba6e7}
+
+\begin{DoxyCompactList}\small\item\em Check the list. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_ad6d4b1b657a39ed64c2c45d4706dbcc1}{Check\+Nei} (int p)\hypertarget{classDdDoubleLoop_ad6d4b1b657a39ed64c2c45d4706dbcc1}{}\label{classDdDoubleLoop_ad6d4b1b657a39ed64c2c45d4706dbcc1}
+
+\begin{DoxyCompactList}\small\item\em Check the neighbours. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_ab61672aad0bc83dc07c8efd5a4543fc7}{Incr\+Curr} (const int c)
+\begin{DoxyCompactList}\small\item\em Increment the current part in the cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDdDoubleLoop_a0c040f6773c460a8eb46bff752c08d2d}{Incr\+Curr\+List} (const int c)\hypertarget{classDdDoubleLoop_a0c040f6773c460a8eb46bff752c08d2d}{}\label{classDdDoubleLoop_a0c040f6773c460a8eb46bff752c08d2d}
+
+\begin{DoxyCompactList}\small\item\em Increment the current iterators in the cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDomCell}{Dom\+Cell} $\ast$ \hyperlink{classDdDoubleLoop_a34021657728255effd1ed64c5d0c5906}{Cella}\hypertarget{classDdDoubleLoop_a34021657728255effd1ed64c5d0c5906}{}\label{classDdDoubleLoop_a34021657728255effd1ed64c5d0c5906}
+
+\begin{DoxyCompactList}\small\item\em Number of particles and iterators per cell. \end{DoxyCompactList}\item 
+\hyperlink{structDOMAIN__PART}{D\+O\+M\+A\+I\+N\+\_\+\+P\+A\+RT} $\ast$ \hyperlink{classDdDoubleLoop_a71fca1e109827e1efe1b06f386c44b40}{Pc}\hypertarget{classDdDoubleLoop_a71fca1e109827e1efe1b06f386c44b40}{}\label{classDdDoubleLoop_a71fca1e109827e1efe1b06f386c44b40}
+
+\begin{DoxyCompactList}\small\item\em List of position of the particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Stupid double loop to check the other pair loops. 
+
+Definition at line 382 of file Cubo.\+h.
+
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Dd\+Double\+Loop(double Edge[3], int N\+Part, double Cut\+Off)}{DdDoubleLoop(double Edge[3], int NPart, double CutOff)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dd\+Double\+Loop} (
+\begin{DoxyParamCaption}
+\item[{double}]{Edge\mbox{[}3\mbox{]}, }
+\item[{int}]{N\+Part, }
+\item[{double}]{Cut\+Off}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_ac6bab403b0b1578fcb14b996b377d10f}{}\label{classDdDoubleLoop_ac6bab403b0b1578fcb14b996b377d10f}
+
+
+Allocate. 
+
+Constructor for the domain decomposition with the linked list. 
+
+Definition at line 855 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+Edge, Dom\+Dec\+Basics\+::\+Inv\+Edge, Dom\+Dec\+Basics\+::\+Mod10, Dom\+Dec\+Basics\+::\+N\+AllocP, Dom\+Dec\+Basics\+::\+N\+Cell, Dom\+Dec\+Basics\+::\+N\+Part, Dom\+Dec\+Basics\+::\+N\+Sect, Dom\+Dec\+Basics\+::\+Set\+Cut\+Off(), and Dom\+Dec\+Basics\+::\+Sig\+Err().
+
+
+
+\subsubsection{Member Function Documentation}
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Erase@{Erase}}
+\index{Erase@{Erase}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Erase()}{Erase()}}]{\setlength{\rightskip}{0pt plus 5cm}void Erase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_a98ae2e78109ea826eea71da14c37ce95}{}\label{classDdDoubleLoop_a98ae2e78109ea826eea71da14c37ce95}
+
+
+Erase the pairlist. 
+
+Empty the records of the cells. 
+
+Definition at line 878 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+N\+Cell, and Dom\+Dec\+Basics\+::\+N\+Part.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Add\+Part@{Add\+Part}}
+\index{Add\+Part@{Add\+Part}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Add\+Part(const int p, double $\ast$\+Pos)}{AddPart(const int p, double *Pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Add\+Part (
+\begin{DoxyParamCaption}
+\item[{const int}]{p, }
+\item[{double $\ast$}]{Pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_a9a64ea1512bb8d62f9f6a7a80a2bfec9}{}\label{classDdDoubleLoop_a9a64ea1512bb8d62f9f6a7a80a2bfec9}
+
+
+Add a particle to the cell c. 
+
+Add a part to the correspondent cell. 
+
+Definition at line 896 of file Cubo.\+cpp.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Rem\+Part@{Rem\+Part}}
+\index{Rem\+Part@{Rem\+Part}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Rem\+Part(const int p, double $\ast$\+Pos)}{RemPart(const int p, double *Pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Rem\+Part (
+\begin{DoxyParamCaption}
+\item[{const int}]{p, }
+\item[{double $\ast$}]{Pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_a0f523b65341953255ea5926b23beccf0}{}\label{classDdDoubleLoop_a0f523b65341953255ea5926b23beccf0}
+
+
+Remove a particle form the cell c. 
+
+Remove particle from the cell. 
+
+Definition at line 909 of file Cubo.\+cpp.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Rem\+Part@{Rem\+Part}}
+\index{Rem\+Part@{Rem\+Part}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Rem\+Part(const int p)}{RemPart(const int p)}}]{\setlength{\rightskip}{0pt plus 5cm}void Rem\+Part (
+\begin{DoxyParamCaption}
+\item[{const int}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_a2c4dbc782956c74becbe3dc2b454d9d0}{}\label{classDdDoubleLoop_a2c4dbc782956c74becbe3dc2b454d9d0}
+
+
+Remove the particle p. 
+
+Remove a part to the correspondent cell. 
+
+Definition at line 931 of file Cubo.\+cpp.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Add\+Part@{Add\+Part}}
+\index{Add\+Part@{Add\+Part}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Add\+Part(const int p, const int c)}{AddPart(const int p, const int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Add\+Part (
+\begin{DoxyParamCaption}
+\item[{const int}]{p, }
+\item[{const int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_afd35b58ff7908ca3e30a6fa8cee88b4e}{}\label{classDdDoubleLoop_afd35b58ff7908ca3e30a6fa8cee88b4e}
+
+
+Add a particle to the cell c. 
+
+Add a part to the correspondent cell. 
+
+Definition at line 901 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+N\+Part.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Rem\+Part@{Rem\+Part}}
+\index{Rem\+Part@{Rem\+Part}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Rem\+Part(const int p, const int c)}{RemPart(const int p, const int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Rem\+Part (
+\begin{DoxyParamCaption}
+\item[{const int}]{p, }
+\item[{const int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_a5113d105bbcfea8b1b1c50555f21c6fe}{}\label{classDdDoubleLoop_a5113d105bbcfea8b1b1c50555f21c6fe}
+
+
+Remove a particle form the cell c. 
+
+Remove a part to the correspondent cell. 
+
+Definition at line 913 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+N\+Part.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Move\+Part@{Move\+Part}}
+\index{Move\+Part@{Move\+Part}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Move\+Part(const int p, double $\ast$\+Old\+Pos, double $\ast$\+New\+Pos)}{MovePart(const int p, double *OldPos, double *NewPos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+Part (
+\begin{DoxyParamCaption}
+\item[{const int}]{p, }
+\item[{double $\ast$}]{Old\+Pos, }
+\item[{double $\ast$}]{New\+Pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_ae2dcbe9a9469a6b50ae328d1cdaae812}{}\label{classDdDoubleLoop_ae2dcbe9a9469a6b50ae328d1cdaae812}
+
+
+Move a particle form the cell c1 to the cell c2. 
+
+Shift a particle from one position to its new. 
+
+Definition at line 943 of file Cubo.\+cpp.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Move\+Part@{Move\+Part}}
+\index{Move\+Part@{Move\+Part}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Move\+Part(const int p, double $\ast$\+New\+Pos)}{MovePart(const int p, double *NewPos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+Part (
+\begin{DoxyParamCaption}
+\item[{const int}]{p, }
+\item[{double $\ast$}]{New\+Pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_a9cc296b765f59b6286128b37d9fedc9f}{}\label{classDdDoubleLoop_a9cc296b765f59b6286128b37d9fedc9f}
+
+
+Move a particle form the cell c1 to the cell c2. 
+
+Shift a particle from one position to its new. 
+
+Definition at line 939 of file Cubo.\+cpp.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!If\+It\+Cell@{If\+It\+Cell}}
+\index{If\+It\+Cell@{If\+It\+Cell}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{If\+It\+Cell(const int c)}{IfItCell(const int c)}}]{\setlength{\rightskip}{0pt plus 5cm}int If\+It\+Cell (
+\begin{DoxyParamCaption}
+\item[{const int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_a7389c3097a5406135ae60ac38ad141f5}{}\label{classDdDoubleLoop_a7389c3097a5406135ae60ac38ad141f5}
+
+
+Stop the loop and set the counter to zero. 
+
+Return 0 when the loop inside the cell is over. 
+
+Definition at line 956 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+N\+Part, and Dom\+Dec\+Basics\+::p1\+Curr.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Set\+Coor\+Numb@{Set\+Coor\+Numb}}
+\index{Set\+Coor\+Numb@{Set\+Coor\+Numb}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Set\+Coor\+Numb(double $\ast$\+Pos, int p)}{SetCoorNumb(double *Pos, int p)}}]{\setlength{\rightskip}{0pt plus 5cm}int Set\+Coor\+Numb (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Pos, }
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_ab8ed71a5fc65abc128da0367f93803c1}{}\label{classDdDoubleLoop_ab8ed71a5fc65abc128da0367f93803c1}
+
+
+Stop the loop and set the counter to zero. 
+
+Coordination number of the particle in the cell. 
+
+Definition at line 891 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+Get\+Coor\+Numb().
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Set\+Counters@{Set\+Counters}}
+\index{Set\+Counters@{Set\+Counters}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Set\+Counters(int c)}{SetCounters(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Set\+Counters (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_aadd6f477626e28e8284b9db4649e841d}{}\label{classDdDoubleLoop_aadd6f477626e28e8284b9db4649e841d}
+
+
+Set the counters to the initial position. 
+
+Set the counters to the first particle of the cell c1 for the first loop. 
+
+Definition at line 947 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::c\+Curr, Dom\+Dec\+Basics\+::p1\+Curr, and Dom\+Dec\+Basics\+::p2\+Curr.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Print\+Cell@{Print\+Cell}}
+\index{Print\+Cell@{Print\+Cell}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Print\+Cell(const int c)}{PrintCell(const int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Print\+Cell (
+\begin{DoxyParamCaption}
+\item[{const int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_af5188eb0e6caae79f8bf349bf2345cf2}{}\label{classDdDoubleLoop_af5188eb0e6caae79f8bf349bf2345cf2}
+
+
+Print the particles in a cell. 
+
+Print the content of the cell. 
+
+Definition at line 969 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+N\+Part.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Print\+Cells@{Print\+Cells}}
+\index{Print\+Cells@{Print\+Cells}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Print\+Cells()}{PrintCells()}}]{\setlength{\rightskip}{0pt plus 5cm}void Print\+Cells (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_a1132024d8fdd721fd6a36781d4235162}{}\label{classDdDoubleLoop_a1132024d8fdd721fd6a36781d4235162}
+
+
+Print the the particles in the cells. 
+
+Print the content of all cells. 
+
+Definition at line 976 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+N\+Cell, and Dom\+Dec\+Basics\+::\+Print\+Cell().
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Dist2\+Curr@{Dist2\+Curr}}
+\index{Dist2\+Curr@{Dist2\+Curr}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Dist2\+Curr(double $\ast$\+Dist\+Rel)}{Dist2Curr(double *DistRel)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dist2\+Curr (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Dist\+Rel}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_ad4860e7b4a26d4b424e5c98b7c6bae09}{}\label{classDdDoubleLoop_ad4860e7b4a26d4b424e5c98b7c6bae09}
+
+
+Retrun the squared current interparticle distance. 
+
+Iterate one step and return the position. 
+
+Definition at line 994 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+Edge, Dom\+Dec\+Basics\+::\+Inv\+Edge, Dom\+Dec\+Basics\+::p1\+Curr, and Dom\+Dec\+Basics\+::p2\+Curr.
+
+\index{Dd\+Double\+Loop@{Dd\+Double\+Loop}!Incr\+Curr@{Incr\+Curr}}
+\index{Incr\+Curr@{Incr\+Curr}!Dd\+Double\+Loop@{Dd\+Double\+Loop}}
+\paragraph[{\texorpdfstring{Incr\+Curr(const int c)}{IncrCurr(const int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Incr\+Curr (
+\begin{DoxyParamCaption}
+\item[{const int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdDoubleLoop_ab61672aad0bc83dc07c8efd5a4543fc7}{}\label{classDdDoubleLoop_ab61672aad0bc83dc07c8efd5a4543fc7}
+
+
+Increment the current part in the cell. 
+
+Increment the iterator to the next particle. 
+
+Definition at line 961 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+N\+Part, Dom\+Dec\+Basics\+::p1\+Curr, and Dom\+Dec\+Basics\+::p2\+Curr.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Cubo.\+h\item 
+src/\+Var\+Data/Cubo.\+cpp\end{DoxyCompactItemize}

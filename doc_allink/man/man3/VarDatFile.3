@@ -1,0 +1,661 @@
+.TH "VarDatFile" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VarDatFile \- Reads and stores a data file to be elaborated via \fBMatematica\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VarDatFile\&.h>\fP
+.PP
+Inherits \fBMatematica\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVarDatFile\fP (char *file, int \fBNBin\fP)"
+.br
+.RI "\fIMoltiplication factor for a scaled set (MediaMob) \fP"
+.ti -1c
+.RI "\fBVarDatFile\fP (int ExtNMax, int ExtNVar, int ExtNBin)"
+.br
+.RI "\fIAllocate the vector with a given size\&. \fP"
+.ti -1c
+.RI "\fBVarDatFile\fP (double **ExtSt, int ExtNMax, int ExtNVar, int ExtNBin)"
+.br
+.RI "\fIPoint to the already allocated vector\&. \fP"
+.ti -1c
+.RI "\fBVarDatFile\fP (char **FileList, int *Pos, int NFile, int Values)"
+.br
+.RI "\fILoad list\&. \fP"
+.ti -1c
+.RI "\fB~VarDatFile\fP ()"
+.br
+.RI "\fIFreeing\&. \fP"
+.ti -1c
+.RI "int \fBAggiungi\fP (char *file)"
+.br
+.RI "\fIAdd the content of the file into the memory\&. \fP"
+.ti -1c
+.RI "int \fBFileInfo\fP (FILE *InFIle, int *NCol)"
+.br
+.RI "\fIReads information contained in the file\&. \fP"
+.ti -1c
+.RI "int \fBReadLine\fP (char *cLine, double *Value)"
+.br
+.RI "\fIReads a single line\&. \fP"
+.ti -1c
+.RI "int \fBReadLine\fP (FILE *InFile, const char *Format,\&.\&.\&.)"
+.br
+.RI "\fIIs it working? \fP"
+.ti -1c
+.RI "int \fBElabSegnale\fP (int NElMin, int NElMax)"
+.br
+.RI "\fIDo a generic elaboration\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistrSegnale\fP (int NElMin, int NElMax, int IfNorm)"
+.br
+.RI "\fIDistribution of a signal\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistrLogSegnale\fP (int NElMin, int NElMax, int IfNorm)"
+.br
+.RI "\fILogarithmic distribution of a signal\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistrExpSegnale\fP (int NElMin, int NElMax, int IfNorm)"
+.br
+.RI "\fIExponential distribution of a signal\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistrSegnale\fP (int NElMin, int NElMax, double *Border, int IfNorm)"
+.br
+.RI "\fIDistribution of a signal\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistrSignErr\fP (int NElMin, int NElMax, double *Border, int IfNorm)"
+.br
+.RI "\fIDistribution of a signal with error\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBDistrGaussSegnale\fP (int ElMin, int ElMax, int IfNorm)"
+.br
+.RI "\fITests a gaussian distribution of the signal\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBWeightAverageSet\fP (int CoordY, int ElMin, int ElMax)"
+.br
+.RI "\fIWeighted distribution\&. \fP"
+.ti -1c
+.RI "void \fBDistrSignSample\fP (int ElMin, int ElMax, double **Distr, int NSample, int IfNorm, double *xBound)"
+.br
+.RI "\fIDistributions of data organized in different samples\&. \fP"
+.ti -1c
+.RI "int \fBSpettroSegnale\fP (int NElMin, int NElMax)"
+.br
+.RI "\fICalculate the spectrum\&. \fP"
+.ti -1c
+.RI "void \fBSpeLine\fP (int ElMin, int ElMax, int \fBNBin\fP, double *Spe)"
+.br
+.RI "\fISpectrum of a sequence of lines\&. \fP"
+.ti -1c
+.RI "int \fBNormalizzaSegnale\fP (int NElMin, int NElMax)"
+.br
+.RI "\fINormalize the signal\&. \fP"
+.ti -1c
+.RI "int \fBNormalizzaInter\fP ()"
+.br
+.RI "\fINormalize the intervals\&. \fP"
+.ti -1c
+.RI "bool \fBRadiceSegnale\fP ()"
+.br
+.RI "\fITransforms the signal into its square root\&. \fP"
+.ti -1c
+.RI "int \fBAutocorSegnale\fP (int NElMin, int NElMax)"
+.br
+.RI "\fIAutocorrelation of the signal\&. \fP"
+.ti -1c
+.RI "double \fBSumSegnale\fP (int CoordY, int NElMin, int NElMax)"
+.br
+.RI "\fISum the values between ElMin and ElMax\&. \fP"
+.ti -1c
+.RI "double \fBIntSegnale\fP ()"
+.br
+.RI "\fINumerical integration of the signal\&. \fP"
+.ti -1c
+.RI "void \fBSommaSegnali\fP ()"
+.br
+.RI "\fISums all the yCoordinates\&. \fP"
+.ti -1c
+.RI "void \fBAverageOrdinate\fP (int ElMin, int ElMax, double *Distr, double *xBound)"
+.br
+.RI "\fIAverage of all ordinate\&. \fP"
+.ti -1c
+.RI "void \fBPunta\fP (int n)"
+.br
+.RI "\fIPoints to a different column\&. \fP"
+.ti -1c
+.RI "void \fBPunta\fP (double **ExtSt, int n)"
+.br
+.RI "\fIPoints to an external pointer, probably not working\&. \fP"
+.ti -1c
+.RI "void \fBPunta\fP (double *\fBsp\fP, int n)"
+.br
+.RI "\fIPoint an external pointer to the private memory\&. \fP"
+.ti -1c
+.RI "void \fBPuntaInt\fP (double *\fBsp\fP)"
+.br
+.RI "\fIPoint the internal pointer to an external memory\&. \fP"
+.ti -1c
+.RI "void \fBDerivataSegnale\fP ()"
+.br
+.RI "\fIPoints the function Elab to the derivative, probably not working\&. \fP"
+.ti -1c
+.RI "void \fBVarieSegnale\fP ()"
+.br
+.RI "\fIPoints the function Elab to the square gradient, probably not working\&. \fP"
+.ti -1c
+.RI "void \fBModuloSegnale\fP ()"
+.br
+.RI "\fIPoints the function Elab to the module, probably not working\&. \fP"
+.ti -1c
+.RI "double \fBVarieSegnale\fP (int NElMin, int NElMax)"
+.br
+.RI "\fIA generic function to be edit\&. \fP"
+.ti -1c
+.RI "\fBRETTA\fP \fBInterRettSegnale\fP (int CoordY, int NElMin, int NElMax, int LogLog)"
+.br
+.RI "\fIComputes a liner fit\&. \fP"
+.ti -1c
+.RI "\fBRETTA\fP \fBInterExpSegnale\fP (int CoordY, int NElMin, int NElMax, int LogLog)"
+.br
+.RI "\fIComputes a exponential fit\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBInterGaussSegnale\fP (int CoordY, int NElMin, int NElMax, int LogLog)"
+.br
+.RI "\fIComputes a Gaussian fit\&. \fP"
+.ti -1c
+.RI "\fBPARABOLA\fP \fBParabolaSegnale\fP (int CoordY, int NElMin, int NElMax, int LogLog)"
+.br
+.RI "\fIComputes a parabolic fit\&. \fP"
+.ti -1c
+.RI "int \fBMediaMobSegnale\fP (int)"
+.br
+.RI "\fIRunning average\&. \fP"
+.ti -1c
+.RI "int \fBWeightHistoSign\fP (int NHisto)"
+.br
+.RI "\fIWeighted histogram analysis\&. \fP"
+.ti -1c
+.RI "int \fBCorrelaADuePunti\fP (int dist)"
+.br
+.RI "\fITo point correlation at a distance dist\&. \fP"
+.ti -1c
+.RI "void \fBAutosimilaritaSegnale\fP (int)"
+.br
+.RI "\fISelfsimilarity\&. \fP"
+.ti -1c
+.RI "void \fBCambiaNBin\fP (int)"
+.br
+.RI "\fIReallocate the pointer dInter dInter1\&. \fP"
+.ti -1c
+.RI "void \fBCambiaPunti\fP ()"
+.br
+.RI "\fICopies Punti in Punti1 to store the information of the already elaborated array, to be fixed\&. \fP"
+.ti -1c
+.RI "void \fBPrint\fP ()"
+.br
+.RI "\fIPrints the content in memory\&. \fP"
+.ti -1c
+.RI "void \fBSort\fP ()"
+.br
+.RI "\fISort with respect to a coordinate\&. \fP"
+.ti -1c
+.RI "void \fBScriviPunti\fP (char *file)"
+.br
+.RI "\fIWrites the content of the elaborated array\&. \fP"
+.ti -1c
+.RI "void \fBScriviFile\fP (char *file, int CoordY, int LogLog, int NVisMin, int NVisMax)"
+.br
+.RI "\fIWrites the content of the pointed vector\&. \fP"
+.ti -1c
+.RI "void \fBScriviTutto\fP (char *file, int LogLog, int NVisMin, int NVisMax)"
+.br
+.RI "\fIWrites all the content in memory\&. \fP"
+.ti -1c
+.RI "void \fBRescaleToBulk\fP (char *FName)"
+.br
+.RI "\fIRescale to bulk\&. \fP"
+.ti -1c
+.RI "void \fBExportTxvl\fP (char *FName, int NElMin, int NElMax)"
+.br
+.RI "\fIExport in the txvl file format\&. \fP"
+.ti -1c
+.RI "void \fBTecPlot\fP (char *FName)"
+.br
+.RI "\fIExport a contour plot\&. \fP"
+.ti -1c
+.RI "void \fBPuntiAlloc\fP ()"
+.br
+.RI "\fIAllocates\&. \fP"
+.ti -1c
+.RI "void \fBPuntiFree\fP ()"
+.br
+.RI "\fIFree Punti if it is allocated\&. \fP"
+.ti -1c
+.RI "int \fBpNVar\fP ()"
+.br
+.RI "\fIPrint the number of variables\&. \fP"
+.ti -1c
+.RI "int \fBpNMax\fP ()"
+.br
+.RI "\fIPrint the maximum number of data in the array\&. \fP"
+.ti -1c
+.RI "int \fBpNRow\fP (int CoordY)"
+.br
+.RI "\fIPrint the maximum number of data for the column\&. \fP"
+.ti -1c
+.RI "void \fBpGlobBorder\fP (double *xMin, double *xMax, double *yMin, double *yMax)"
+.br
+.RI "\fIPrint global borders\&. \fP"
+.ti -1c
+.RI "double \fBVal\fP (int CoordY, int n)"
+.br
+.RI "\fIValue at the position\&. \fP"
+.ti -1c
+.RI "double \fBAbscissa\fP (int CoordY, int n)"
+.br
+.RI "\fIValue of the Abscissa at position\&. \fP"
+.ti -1c
+.RI "double \fBpPunti\fP (int n)"
+.br
+.RI "\fIValue of the elaborated array at position\&. \fP"
+.ti -1c
+.RI "double \fBpPuntiErr\fP (int n)"
+.br
+.RI "\fIValue of the error array at postion\&. \fP"
+.ti -1c
+.RI "void \fBpMinMaxGlob\fP (int NVisMin, int NVisMax)"
+.br
+.RI "\fIFind the borders globally\&. \fP"
+.ti -1c
+.RI "double \fBpMaxGlob\fP (int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the maximum of all sets\&. \fP"
+.ti -1c
+.RI "double \fBpMinGlob\fP (int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the minimum of all sets\&. \fP"
+.ti -1c
+.RI "double \fBpxMinGlob\fP (int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the abscissa minimum of all sets\&. \fP"
+.ti -1c
+.RI "double \fBpxMaxGlob\fP (int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the abscissa maximum of all sets\&. \fP"
+.ti -1c
+.RI "double \fBpMax\fP (int CoordY, int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the maximum of the column\&. \fP"
+.ti -1c
+.RI "double \fBpMin\fP (int CoordY, int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the minimum of the column\&. \fP"
+.ti -1c
+.RI "double \fBpMaxGlobLog\fP (int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the maximum of all sets\&. \fP"
+.ti -1c
+.RI "double \fBpMinGlobLog\fP (int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the minimum of all sets\&. \fP"
+.ti -1c
+.RI "double \fBpMaxLog\fP (int CoordY, int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the maximum of the column\&. \fP"
+.ti -1c
+.RI "double \fBpMinLog\fP (int CoordY, int NVisMin, int NVisMax)"
+.br
+.RI "\fIPrint the minimum of the column\&. \fP"
+.ti -1c
+.RI "double \fBpInter\fP (int n)"
+.br
+.RI "\fIPrint the postion\&. \fP"
+.ti -1c
+.RI "double \fBpError\fP (int n)"
+.br
+.RI "\fIPrint the postion\&. \fP"
+.ti -1c
+.RI "double \fBpInter1\fP (int n)"
+.br
+.RI "\fIPrint the postion\&. \fP"
+.ti -1c
+.RI "double \fBPuntiMin\fP ()"
+.br
+.RI "\fIPrint the minimum of\&. \fP"
+.ti -1c
+.RI "double \fBPuntiMax\fP ()"
+.br
+.RI "\fIPrint the maximum of\&. \fP"
+.ti -1c
+.RI "int \fBIsAbscissa\fP (int Col)"
+.br
+.RI "\fIIf the column is an ascissa\&. \fP"
+.ti -1c
+.RI "int \fBpRefAbsc\fP (int Col)"
+.br
+.RI "\fIIf the column is an ascissa\&. \fP"
+.ti -1c
+.RI "int \fBpSetNMax\fP (int Col)"
+.br
+.RI "\fIIf the column is an ascissa\&. \fP"
+.ti -1c
+.RI "int \fBIsSequence\fP (int Col)"
+.br
+.RI "\fIIf the column is an ascissa\&. \fP"
+.ti -1c
+.RI "void \fBImpSequence\fP (int Col)"
+.br
+.RI "\fISet the natural sequence as abscissa for the column Col\&. \fP"
+.ti -1c
+.RI "void \fBImpSequence\fP ()"
+.br
+.RI "\fISet the natural sequence as abscissa for all sets\&. \fP"
+.ti -1c
+.RI "void \fBImpCoordX\fP (int vAbs)"
+.br
+.RI "\fISet the columns for the x array\&. \fP"
+.ti -1c
+.RI "void \fBImpCoordX\fP (int vSet, int vAbs)"
+.br
+.RI "\fISet the column for the x array\&. \fP"
+.ti -1c
+.RI "void \fBImpCoordY\fP (int Ext)"
+.br
+.RI "\fISet the column for the y array\&. \fP"
+.ti -1c
+.RI "void \fBsetXFormula\fP (char *str)"
+.br
+.RI "\fISet the value of XFormula\&. \fP"
+.ti -1c
+.RI "void \fBsetYFormula\fP (char *str)"
+.br
+.RI "\fISet the value of YFormula\&. \fP"
+.ti -1c
+.RI "void \fBReverse\fP ()"
+.br
+.RI "\fIReverse the sets\&. \fP"
+.ti -1c
+.RI "int \fBSmooth\fP (double Fact, int CoordY, int NVisMin, int NVisMax)"
+.br
+.RI "\fISmooth the line\&. \fP"
+.ti -1c
+.RI "void \fBSmoothGauss\fP (double Fact, int CoordY, int NVisMin, int NVisMax)"
+.br
+.RI "\fISmooth the line\&. \fP"
+.ti -1c
+.RI "void \fBDoubleDistFluct\fP ()"
+.br
+.RI "\fIDistribution of distances\&. \fP"
+.ti -1c
+.RI "void \fBWriteFormula\fP (char *Exit)"
+.br
+.RI "\fIExecute a formula defined in XFormula and YFormula\&. \fP"
+.ti -1c
+.RI "char * \fBPrintHeader\fP ()"
+.br
+.RI "\fIPrint the header\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBNBin\fP"
+.br
+.RI "\fINumber of point of the distribution\&. \fP"
+.ti -1c
+.RI "double * \fBsp\fP"
+.br
+.RI "\fIPoints to a column of st\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Reads and stores a data file to be elaborated via \fBMatematica\fP\&. 
+.PP
+Definition at line 26 of file VarDatFile\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBVarDatFile\fP (char * file, int NBin)"
+
+.PP
+Moltiplication factor for a scaled set (MediaMob) Allocate the vectors reading from a file 
+.SH "Member Function Documentation"
+.PP 
+.SS "int WeightHistoSign (int NHisto)"
+
+.PP
+Weighted histogram analysis\&. Find the borders globally 
+.PP
+Definition at line 578 of file VarDatFile\&.cpp\&.
+.PP
+References IsAbscissa(), NBin, pMinMaxGlob(), and Matematica::WeightHisto()\&.
+.PP
+Referenced by ModuloSegnale()\&.
+.SS "void PuntiAlloc ()"
+
+.PP
+Allocates\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+Punti if necessary 
+.RE
+.PP
+
+.PP
+Definition at line 900 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by AutocorSegnale(), AutosimilaritaSegnale(), CorrelaADuePunti(), DistrExpSegnale(), DistrLogSegnale(), DoubleDistFluct(), ElabSegnale(), IntSegnale(), MediaMobSegnale(), ModuloSegnale(), RadiceSegnale(), Smooth(), SmoothGauss(), SommaSegnali(), SpettroSegnale(), and VarieSegnale()\&.
+.SS "double Val (int CoordY, int n)"
+
+.PP
+Value at the position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP in the column 
+.br
+\fIv\fP 
+.RE
+.PP
+
+.PP
+Definition at line 657 of file VarDatFile\&.cpp\&.
+.PP
+References NBin\&.
+.PP
+Referenced by ExportTxvl(), pGlobBorder(), and TecPlot()\&.
+.SS "double Abscissa (int CoordY, int n)"
+
+.PP
+Value of the Abscissa at position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP 
+.RE
+.PP
+
+.PP
+Definition at line 667 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by AverageOrdinate(), ExportTxvl(), pGlobBorder(), pMinMaxGlob(), Print(), RescaleToBulk(), and TecPlot()\&.
+.SS "double pPunti (int n)"
+
+.PP
+Value of the elaborated array at position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP 
+.RE
+.PP
+
+.PP
+Definition at line 673 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by pGlobBorder()\&.
+.SS "double pPuntiErr (int n)"
+
+.PP
+Value of the error array at postion\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP 
+.RE
+.PP
+
+.PP
+Definition at line 680 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by pGlobBorder()\&.
+.SS "double pMax (int CoordY, int NVisMin, int NVisMax)"
+
+.PP
+Print the maximum of the column\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1108 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by pGlobBorder()\&.
+.SS "double pMin (int CoordY, int NVisMin, int NVisMax)"
+
+.PP
+Print the minimum of the column\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1116 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by pGlobBorder()\&.
+.SS "double pMaxLog (int CoordY, int NVisMin, int NVisMax)"
+
+.PP
+Print the maximum of the column\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1124 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by pGlobBorder()\&.
+.SS "double pMinLog (int CoordY, int NVisMin, int NVisMax)"
+
+.PP
+Print the minimum of the column\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1133 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by pGlobBorder()\&.
+.SS "double pInter (int n)\fC [inline]\fP"
+
+.PP
+Print the postion\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP of array 
+.br
+\fIdInter\fP 
+.RE
+.PP
+
+.PP
+Definition at line 246 of file VarDatFile\&.h\&.
+.SS "double pError (int n)\fC [inline]\fP"
+
+.PP
+Print the postion\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP of array 
+.br
+\fIdError\fP 
+.RE
+.PP
+
+.PP
+Definition at line 248 of file VarDatFile\&.h\&.
+.SS "double pInter1 (int n)\fC [inline]\fP"
+
+.PP
+Print the postion\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP of array 
+.br
+\fIdInter1\fP 
+.RE
+.PP
+
+.PP
+Definition at line 250 of file VarDatFile\&.h\&.
+.PP
+References PuntiMax(), and PuntiMin()\&.
+.SS "double PuntiMin ()"
+
+.PP
+Print the minimum of\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+Punti 
+.RE
+.PP
+
+.PP
+Definition at line 690 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by pInter1()\&.
+.SS "double PuntiMax ()"
+
+.PP
+Print the maximum of\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+Punti 
+.RE
+.PP
+
+.PP
+Definition at line 700 of file VarDatFile\&.cpp\&.
+.PP
+Referenced by pInter1()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

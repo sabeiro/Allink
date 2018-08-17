@@ -1,0 +1,120 @@
+\hypertarget{classPiano}{}\subsection{Piano Class Reference}
+\label{classPiano}\index{Piano@{Piano}}
+
+
+Define a plane.  
+
+
+
+
+{\ttfamily \#include $<$Matematica\+Plane.\+h$>$}
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPiano_a3e0f72f2e5410fb6ac0994b962e3b0f4}{Piano} (\hyperlink{classVettore}{Vettore} $\ast$\hyperlink{classPiano_aca046e5963a53f1b4a12c2ad4617149b}{P1}, \hyperlink{classVettore}{Vettore} $\ast$P2, \hyperlink{classVettore}{Vettore} $\ast$P3)\hypertarget{classPiano_a3e0f72f2e5410fb6ac0994b962e3b0f4}{}\label{classPiano_a3e0f72f2e5410fb6ac0994b962e3b0f4}
+
+\begin{DoxyCompactList}\small\item\em Allocates. \end{DoxyCompactList}\item 
+\hyperlink{classPiano_ae2f8ebc5dd8ecab651c1e8a0551ec11d}{$\sim$\+Piano} ()\hypertarget{classPiano_ae2f8ebc5dd8ecab651c1e8a0551ec11d}{}\label{classPiano_ae2f8ebc5dd8ecab651c1e8a0551ec11d}
+
+\begin{DoxyCompactList}\small\item\em Frees. \end{DoxyCompactList}\item 
+double \hyperlink{classPiano_a8ec22e845b3d00f3a815a132132fc9a1}{Distance} (\hyperlink{classVettore}{Vettore} $\ast$P)\hypertarget{classPiano_a8ec22e845b3d00f3a815a132132fc9a1}{}\label{classPiano_a8ec22e845b3d00f3a815a132132fc9a1}
+
+\begin{DoxyCompactList}\small\item\em Distance. \end{DoxyCompactList}\item 
+int \hyperlink{classPiano_a119e25248ace7e082367a7b64e3bcbc1}{Impact} (\hyperlink{classVettore}{Vettore} $\ast$P, \hyperlink{classVettore}{Vettore} $\ast$V)\hypertarget{classPiano_a119e25248ace7e082367a7b64e3bcbc1}{}\label{classPiano_a119e25248ace7e082367a7b64e3bcbc1}
+
+\begin{DoxyCompactList}\small\item\em Reflect velocity. \end{DoxyCompactList}\item 
+\hyperlink{classVettore}{Vettore} \hyperlink{classPiano_a1c0e56e45b12255147f5cbbc5a8e0b1f}{Get\+Vertex} (int i)\hypertarget{classPiano_a1c0e56e45b12255147f5cbbc5a8e0b1f}{}\label{classPiano_a1c0e56e45b12255147f5cbbc5a8e0b1f}
+
+\begin{DoxyCompactList}\small\item\em Get vertex. \end{DoxyCompactList}\item 
+\hyperlink{classVettore}{Vettore} \hyperlink{classPiano_a4aedb9029e37fb894e1e3a4514e4707d}{Proj\+On\+Surf} (\hyperlink{classVettore}{Vettore} $\ast$Pos)\hypertarget{classPiano_a4aedb9029e37fb894e1e3a4514e4707d}{}\label{classPiano_a4aedb9029e37fb894e1e3a4514e4707d}
+
+\begin{DoxyCompactList}\small\item\em Project on surface (point) \end{DoxyCompactList}\item 
+\hyperlink{classVettore}{Vettore} \hyperlink{classPiano_af86bbe20f8d523af9e2553f0039c088b}{Proj\+On\+Norm} (\hyperlink{classVettore}{Vettore} $\ast$v)\hypertarget{classPiano_af86bbe20f8d523af9e2553f0039c088b}{}\label{classPiano_af86bbe20f8d523af9e2553f0039c088b}
+
+\begin{DoxyCompactList}\small\item\em Project on normal (vector) \end{DoxyCompactList}\item 
+int \hyperlink{classPiano_a07236f42214a9066ed4c12a8b62ada12}{Same\+Side} (\hyperlink{classVettore}{Vettore} $\ast$P, \hyperlink{classVettore}{Vettore} $\ast$A, \hyperlink{classVettore}{Vettore} $\ast$B, \hyperlink{classVettore}{Vettore} $\ast$C)\hypertarget{classPiano_a07236f42214a9066ed4c12a8b62ada12}{}\label{classPiano_a07236f42214a9066ed4c12a8b62ada12}
+
+\begin{DoxyCompactList}\small\item\em Is the orientation of the difference vectors on the same side? \end{DoxyCompactList}\item 
+double \hyperlink{classPiano_a9341053ea31914d454cab1a86e2f8dd9}{Inv} (double x)\hypertarget{classPiano_a9341053ea31914d454cab1a86e2f8dd9}{}\label{classPiano_a9341053ea31914d454cab1a86e2f8dd9}
+
+\begin{DoxyCompactList}\small\item\em Calculate the inverse. \end{DoxyCompactList}\item 
+int \hyperlink{classPiano_ad605fc62ded454a95190f42608532c64}{Is\+On\+Surf} (\hyperlink{classVettore}{Vettore} $\ast$P)\hypertarget{classPiano_ad605fc62ded454a95190f42608532c64}{}\label{classPiano_ad605fc62ded454a95190f42608532c64}
+
+\begin{DoxyCompactList}\small\item\em If the point is inside the triangle. \end{DoxyCompactList}\item 
+int \hyperlink{classPiano_a4e22ad7774b15806c2da88e9ee6f0bf5}{Is\+On\+Surf1} (\hyperlink{classVettore}{Vettore} $\ast$P)\hypertarget{classPiano_a4e22ad7774b15806c2da88e9ee6f0bf5}{}\label{classPiano_a4e22ad7774b15806c2da88e9ee6f0bf5}
+
+\begin{DoxyCompactList}\small\item\em If the point is inside the triangle first method. \end{DoxyCompactList}\item 
+int \hyperlink{classPiano_a4791ab5ce64e6a050c906d06d8f248ce}{Is\+On\+Surf2} (\hyperlink{classVettore}{Vettore} $\ast$P)\hypertarget{classPiano_a4791ab5ce64e6a050c906d06d8f248ce}{}\label{classPiano_a4791ab5ce64e6a050c906d06d8f248ce}
+
+\begin{DoxyCompactList}\small\item\em If the point is inside the triangle second method. \end{DoxyCompactList}\item 
+\hyperlink{classVettore}{Vettore} \hyperlink{classPiano_aaa1ed0db1c12ff7d0bbb4bfc5c4c7369}{Reflect} (\hyperlink{classVettore}{Vettore} $\ast$V)\hypertarget{classPiano_aaa1ed0db1c12ff7d0bbb4bfc5c4c7369}{}\label{classPiano_aaa1ed0db1c12ff7d0bbb4bfc5c4c7369}
+
+\begin{DoxyCompactList}\small\item\em Reflect a vector by the normal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVettore}{Vettore} \hyperlink{classPiano_aca046e5963a53f1b4a12c2ad4617149b}{P1}\hypertarget{classPiano_aca046e5963a53f1b4a12c2ad4617149b}{}\label{classPiano_aca046e5963a53f1b4a12c2ad4617149b}
+
+\begin{DoxyCompactList}\small\item\em Points defining the plane. \end{DoxyCompactList}\item 
+\hyperlink{classVettore}{Vettore} {\bfseries P2}\hypertarget{classPiano_ad050602e276c245a496194771c7fff21}{}\label{classPiano_ad050602e276c245a496194771c7fff21}
+
+\item 
+\hyperlink{classVettore}{Vettore} {\bfseries P3}\hypertarget{classPiano_acbfbcbb14eb212f8efa693ab853ebd01}{}\label{classPiano_acbfbcbb14eb212f8efa693ab853ebd01}
+
+\item 
+\hyperlink{classVettore}{Vettore} {\bfseries P4}\hypertarget{classPiano_a38453649fabfde536f80682c128faa98}{}\label{classPiano_a38453649fabfde536f80682c128faa98}
+
+\item 
+\hyperlink{classVettore}{Vettore} \hyperlink{classPiano_ada81ae3736dfa66c9fe499f26cb7d99f}{Dir21}\hypertarget{classPiano_ada81ae3736dfa66c9fe499f26cb7d99f}{}\label{classPiano_ada81ae3736dfa66c9fe499f26cb7d99f}
+
+\begin{DoxyCompactList}\small\item\em Direction vectors. \end{DoxyCompactList}\item 
+\hyperlink{classVettore}{Vettore} {\bfseries Dir31}\hypertarget{classPiano_a67ceebf5e194de4c35e044d4c4e57378}{}\label{classPiano_a67ceebf5e194de4c35e044d4c4e57378}
+
+\item 
+\hyperlink{classVettore}{Vettore} {\bfseries Dir23}\hypertarget{classPiano_a512f3cab3bbf1f19533d83fc7e97a47d}{}\label{classPiano_a512f3cab3bbf1f19533d83fc7e97a47d}
+
+\item 
+\hyperlink{classVettore}{Vettore} \hyperlink{classPiano_aa8f93fbd686be3f3007c1dfa30540c93}{Norm}\hypertarget{classPiano_aa8f93fbd686be3f3007c1dfa30540c93}{}\label{classPiano_aa8f93fbd686be3f3007c1dfa30540c93}
+
+\begin{DoxyCompactList}\small\item\em Normal and inverse to the normal. \end{DoxyCompactList}\item 
+\hyperlink{classVettore}{Vettore} {\bfseries Inv\+Norm}\hypertarget{classPiano_aa4d08f1fb27cc9a543a1284307a7056e}{}\label{classPiano_aa4d08f1fb27cc9a543a1284307a7056e}
+
+\item 
+double \hyperlink{classPiano_a0f41faab69f9c65dfd0fb1be94a39e98}{Bound} \mbox{[}6\mbox{]}\hypertarget{classPiano_a0f41faab69f9c65dfd0fb1be94a39e98}{}\label{classPiano_a0f41faab69f9c65dfd0fb1be94a39e98}
+
+\begin{DoxyCompactList}\small\item\em Boundaries. \end{DoxyCompactList}\item 
+int \hyperlink{classPiano_a1674748957dda21006ad123fdd340ae5}{Is\+Inf} \mbox{[}3\mbox{]}\hypertarget{classPiano_a1674748957dda21006ad123fdd340ae5}{}\label{classPiano_a1674748957dda21006ad123fdd340ae5}
+
+\begin{DoxyCompactList}\small\item\em If the inverse to the normal is infinite. \end{DoxyCompactList}\item 
+double \hyperlink{classPiano_a572f508f165c489a801e9952b2147404}{d\+Par}\hypertarget{classPiano_a572f508f165c489a801e9952b2147404}{}\label{classPiano_a572f508f165c489a801e9952b2147404}
+
+\begin{DoxyCompactList}\small\item\em d of ax+by+cz+d=0 \end{DoxyCompactList}\item 
+double \hyperlink{classPiano_a860bef50013f57ab1a6437b7986a9487}{Rad}\hypertarget{classPiano_a860bef50013f57ab1a6437b7986a9487}{}\label{classPiano_a860bef50013f57ab1a6437b7986a9487}
+
+\begin{DoxyCompactList}\small\item\em Radius of the contact. \end{DoxyCompactList}\item 
+double \hyperlink{classPiano_adad63c5605eb5e3c78e5a256458a6db9}{mxy} \mbox{[}3\mbox{]}\hypertarget{classPiano_adad63c5605eb5e3c78e5a256458a6db9}{}\label{classPiano_adad63c5605eb5e3c78e5a256458a6db9}
+
+\begin{DoxyCompactList}\small\item\em Slope. \end{DoxyCompactList}\item 
+double {\bfseries mxz} \mbox{[}3\mbox{]}\hypertarget{classPiano_a1d227138d7d70c0c41daccf38c22dd56}{}\label{classPiano_a1d227138d7d70c0c41daccf38c22dd56}
+
+\item 
+double \hyperlink{classPiano_adec87ca29093f1081bf0ce93a026c107}{qxy} \mbox{[}3\mbox{]}\hypertarget{classPiano_adec87ca29093f1081bf0ce93a026c107}{}\label{classPiano_adec87ca29093f1081bf0ce93a026c107}
+
+\begin{DoxyCompactList}\small\item\em Intercept. \end{DoxyCompactList}\item 
+double {\bfseries qxz} \mbox{[}3\mbox{]}\hypertarget{classPiano_a5b42094ccf2602beb24464acdd28c0ac}{}\label{classPiano_a5b42094ccf2602beb24464acdd28c0ac}
+
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Define a plane. 
+
+Definition at line 10 of file Matematica\+Plane.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Matematica\+Plane.\+h\item 
+src/\+Matematica/Matematica\+Plane.\+cpp\end{DoxyCompactItemize}

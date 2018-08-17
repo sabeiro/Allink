@@ -1,0 +1,2085 @@
+\hypertarget{classForces}{}\subsection{Forces Class Reference}
+\label{classForces}\index{Forces@{Forces}}
+
+
+This class performs the different steps to solve the equations of motion via molecular dynamics simulation, simple grancanonical simulation in Monte Carlo and solution of 1d differential equations.  
+
+
+
+
+{\ttfamily \#include $<$Forces.\+h$>$}
+
+Inheritance diagram for Forces\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classForces}
+\end{center}
+\end{figure}
+\subsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(Forces\+::$\ast$ \hyperlink{classForces_a287767d0d121df9d18211f05b84b692d}{C\+A\+L\+C\+\_\+\+T\+H\+E\+RM}) ()\hypertarget{classForces_a287767d0d121df9d18211f05b84b692d}{}\label{classForces_a287767d0d121df9d18211f05b84b692d}
+
+\begin{DoxyCompactList}\small\item\em Pointer type to the potential function. \end{DoxyCompactList}\item 
+typedef double(Forces\+::$\ast$ \hyperlink{classForces_a6a793e08866e28de487e8de0b0dd6cb6}{T\+E\+N\+S\+\_\+\+R\+EF}) (double $\ast$Pos1, double $\ast$Pos2, double $\ast$Pos\+P1, double $\ast$Pos\+P2)\hypertarget{classForces_a6a793e08866e28de487e8de0b0dd6cb6}{}\label{classForces_a6a793e08866e28de487e8de0b0dd6cb6}
+
+\begin{DoxyCompactList}\small\item\em Data type for distance/field functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classForces_a0b40ef47e7e825a72223abc459561c10}{Forces} (int argc, char $\ast$$\ast$argv, int N\+Part, char $\ast$Conf\+File)\hypertarget{classForces_a0b40ef47e7e825a72223abc459561c10}{}\label{classForces_a0b40ef47e7e825a72223abc459561c10}
+
+\begin{DoxyCompactList}\small\item\em Create an initial system and choose the simulation thecnique. \end{DoxyCompactList}\item 
+\hyperlink{classForces_abbcd2fc791d4ded94db5172ef1000e42}{Forces} (int argc, char $\ast$$\ast$argv, char $\ast$Conf\+File\+Ext, char $\ast$Snapshot)\hypertarget{classForces_abbcd2fc791d4ded94db5172ef1000e42}{}\label{classForces_abbcd2fc791d4ded94db5172ef1000e42}
+
+\begin{DoxyCompactList}\small\item\em Read an initial system and choose the simulation thecnique. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ac11429f7ec42e6eb4806e77f8aa24e7f}{Shout} (const char $\ast$s,...)\hypertarget{classForces_ac11429f7ec42e6eb4806e77f8aa24e7f}{}\label{classForces_ac11429f7ec42e6eb4806e77f8aa24e7f}
+
+\begin{DoxyCompactList}\small\item\em Internal message. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aa7040ce5b212b067b9edc0e48966f593}{Alloc\+Method} ()\hypertarget{classForces_aa7040ce5b212b067b9edc0e48966f593}{}\label{classForces_aa7040ce5b212b067b9edc0e48966f593}
+
+\begin{DoxyCompactList}\small\item\em Allocated the structures needed for the corresponding simulation method. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a053a9be7328b6a532baf8774f8479188}{Prepare\+Sys} ()\hypertarget{classForces_a053a9be7328b6a532baf8774f8479188}{}\label{classForces_a053a9be7328b6a532baf8774f8479188}
+
+\begin{DoxyCompactList}\small\item\em Calculate some initial quantities for the succesive calculations. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_afb0db3e5d9d3ca56511f4942b695a33c}{Prepare\+Parallel} (int argc, char $\ast$$\ast$argv)\hypertarget{classForces_afb0db3e5d9d3ca56511f4942b695a33c}{}\label{classForces_afb0db3e5d9d3ca56511f4942b695a33c}
+
+\begin{DoxyCompactList}\small\item\em Create the grid for the parallelisation. \end{DoxyCompactList}\item 
+\hyperlink{classForces_ad23deb6f28e0c4e08e69556f04028e82}{$\sim$\+Forces} ()\hypertarget{classForces_ad23deb6f28e0c4e08e69556f04028e82}{}\label{classForces_ad23deb6f28e0c4e08e69556f04028e82}
+
+\begin{DoxyCompactList}\small\item\em Frees the memory. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a632d50bc6acb5d08614d0f99a7ed7293}{Info} ()\hypertarget{classForces_a632d50bc6acb5d08614d0f99a7ed7293}{}\label{classForces_a632d50bc6acb5d08614d0f99a7ed7293}
+
+\begin{DoxyCompactList}\small\item\em System\textquotesingle{}s info. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a54e451b95d534ac661b873f7c5773435}{Read\+Conf\+Dinamica} (char $\ast$File)\hypertarget{classForces_a54e451b95d534ac661b873f7c5773435}{}\label{classForces_a54e451b95d534ac661b873f7c5773435}
+
+\begin{DoxyCompactList}\small\item\em Read the config file. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a2d9aa5d817b97aecdc4dc418d1be255c}{Init\+Const} ()\hypertarget{classForces_a2d9aa5d817b97aecdc4dc418d1be255c}{}\label{classForces_a2d9aa5d817b97aecdc4dc418d1be255c}
+
+\begin{DoxyCompactList}\small\item\em Read the config file. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a2bd0476e620e68ae04990018f4520bf6}{Re\+Set\+N\+Part} (int New\+N\+Part)\hypertarget{classForces_a2bd0476e620e68ae04990018f4520bf6}{}\label{classForces_a2bd0476e620e68ae04990018f4520bf6}
+
+\begin{DoxyCompactList}\small\item\em Realloc the number of particles. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a935982eadb27b11f47553c06e7aa77ba}{Re\+Set\+N\+Chain} (int New\+N\+Chain)\hypertarget{classForces_a935982eadb27b11f47553c06e7aa77ba}{}\label{classForces_a935982eadb27b11f47553c06e7aa77ba}
+
+\begin{DoxyCompactList}\small\item\em Realloc the number of chains. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aa95d72aa125333d83e91047bc8f4319a}{Re\+Set\+N\+P\+Ch} (int New\+N\+P\+Ch)\hypertarget{classForces_aa95d72aa125333d83e91047bc8f4319a}{}\label{classForces_aa95d72aa125333d83e91047bc8f4319a}
+
+\begin{DoxyCompactList}\small\item\em Set a new number of particle per chain. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a3f36144668126bc6bb1c682c5b10b300}{Re\+Open} (char $\ast$F\+Name, int Bf)\hypertarget{classForces_a3f36144668126bc6bb1c682c5b10b300}{}\label{classForces_a3f36144668126bc6bb1c682c5b10b300}
+
+\begin{DoxyCompactList}\small\item\em Open a new file. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a5d2e87f58183d51c11ed77483b0d8b4f}{Fill\+Matrix} ()\hypertarget{classForces_a5d2e87f58183d51c11ed77483b0d8b4f}{}\label{classForces_a5d2e87f58183d51c11ed77483b0d8b4f}
+
+\begin{DoxyCompactList}\small\item\em Fill the entries of the interaction matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a5404beae7f264277208ee9e55cbea66e}{Study\+Sys} ()
+\begin{DoxyCompactList}\small\item\em Obtain informations for a better performance in inserting the chains. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ad3b093268ba213a56fd6350ad4c861f2}{Min\+Helfrich} ()\hypertarget{classForces_ad3b093268ba213a56fd6350ad4c861f2}{}\label{classForces_ad3b093268ba213a56fd6350ad4c861f2}
+
+\begin{DoxyCompactList}\small\item\em Minimum of the Helfrich Hamiltonian. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_affd222b3ce256a0c538341cc4d81865e}{Dyn\+Integration} ()\hypertarget{classForces_affd222b3ce256a0c538341cc4d81865e}{}\label{classForces_affd222b3ce256a0c538341cc4d81865e}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a338adbdaecf3f72150ce3e88ec710bf1}{Dynamics} ()\hypertarget{classForces_a338adbdaecf3f72150ce3e88ec710bf1}{}\label{classForces_a338adbdaecf3f72150ce3e88ec710bf1}
+
+\begin{DoxyCompactList}\small\item\em Sum up all the forces and update the positions. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a941bab4d0655ea3e774cd525e664be52}{Solve} ()
+\begin{DoxyCompactList}\small\item\em Solve a system of four oder differential equation. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ac6b917be683f5ceaeec62edbf9472511}{Solve\+Links} ()
+\begin{DoxyCompactList}\small\item\em Solve a system of four oder differential equation of particles connected by links. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a35266508f74e6ca08000446ebbd62fc6}{Solve\+Links\+Sparse} ()\hypertarget{classForces_a35266508f74e6ca08000446ebbd62fc6}{}\label{classForces_a35266508f74e6ca08000446ebbd62fc6}
+
+\begin{DoxyCompactList}\small\item\em Solve a system of four oder differential equation of particles connected by links. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_abcac13d7754b73f6f22b2900a0d46d7d}{Solve\+Links\+Iterative} ()
+\begin{DoxyCompactList}\small\item\em Solve a system of four oder differential equation of particles connected by links. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a3953ee74479102530a979e3cd447d174}{Solve\+Rod} ()
+\begin{DoxyCompactList}\small\item\em Solve a system of four oder differential equation of particles connected by links. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a7a03a3d52f5a114cbbc22e60af60c049}{Solve\+Leaves} ()
+\begin{DoxyCompactList}\small\item\em Solve a system of four oder differential equation of particles in a line. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a02e68a26ce7e19af9d0b729af61e72d3}{Update} ()\hypertarget{classForces_a02e68a26ce7e19af9d0b729af61e72d3}{}\label{classForces_a02e68a26ce7e19af9d0b729af61e72d3}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a050e80ecdb61ccf749649d6ec6542ee7}{Vel\+Verlet\+Rigid} ()
+\begin{DoxyCompactList}\small\item\em Velocity Verlet for a rigid body, first step. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a3d421e17e32ee064077a14cc483a7c4e}{Vel\+Verlet\+Rigid2} ()
+\begin{DoxyCompactList}\small\item\em Velocity Verlet for a rigid body, second step. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a8b42f5fd80b4ad0cbf71649cd58f17ef}{If\+Metropolis} (double Exp\+Arg, double Weight)
+\begin{DoxyCompactList}\small\item\em Metropolis acceptance criterium. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a105420510a35a5f3ab726a943a279ce4}{Insert\+Bead} (int p)
+\begin{DoxyCompactList}\small\item\em Insert a particle in the box. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ada3b7b85ea783d27acfd5ff27165e4e2}{Ignore\+Ch} (int c)
+\begin{DoxyCompactList}\small\item\em Ignore a chain in the system (densities, pairlist) \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a93ffd0cd932626a8b09911f2b3c96e10}{Rem\+Ch\+From\+Sys} (int c)
+\begin{DoxyCompactList}\small\item\em Delete a chain in the system. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a69e06a7f5662a462ed7b67428f1a8e69}{Save\+Ch} (int c)
+\begin{DoxyCompactList}\small\item\em Save the chain configuration. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aaea07c5c698924ba7efc75988997086c}{Re\+Insert\+Ch} (int c)
+\begin{DoxyCompactList}\small\item\em Reinsert the chain in the previous position. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a1c4bc6d5b46ce58c1e6139e9feccea5a}{Consider\+Ch} (int c)
+\begin{DoxyCompactList}\small\item\em Consider a chain in the system (densities, pairlist) \end{DoxyCompactList}\item 
+double \hyperlink{classForces_aed7689c1abd36c6ac8743fadd2e6cbdf}{Insert\+Ch} (int c)
+\begin{DoxyCompactList}\small\item\em Displace a chain in the box. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a8e9fda810a12eeaba2c7b72af5a1e664}{Insert\+Rest} (int p\+Curr, int Start\+Pos)
+\begin{DoxyCompactList}\small\item\em Build the rest of the chain. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_aae7e57b54965ad985ab041a040dfc93d}{Remove\+Ch\+Bias} (int c)
+\begin{DoxyCompactList}\small\item\em Remove a chain in the box. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a766511ed1b66a8b4ef97b1b343fb6254}{Insert\+Ch\+Bias} (int c)
+\begin{DoxyCompactList}\small\item\em Put a chain in the box. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a97d31164f5b192ff0e68d26f120e9e78}{Weight\+Set\+Bond} (int p, int t)
+\begin{DoxyCompactList}\small\item\em Weight a set of bonds for the configurational bias. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ac80c2d5ad9a6b3f4de84f825844d1a36}{Create\+Set\+Bond} (int p, int t)
+\begin{DoxyCompactList}\small\item\em Create a set of bonds for the configurational bias. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_aaa86df6dc24f47e52ca153db60bd6749}{Move\+Bead} (int p)
+\begin{DoxyCompactList}\small\item\em Move a particle in the box. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a56709cda842db1c6f3813acc5bca5237}{Try\+Insert} ()
+\begin{DoxyCompactList}\small\item\em Trial insertion. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a0658783c2d6dcab7a875f938747255a6}{Try\+Remove} ()
+\begin{DoxyCompactList}\small\item\em Trial removal. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ad69656acc46a08f2361dbe5b1067dffa}{Try\+Move} ()
+\begin{DoxyCompactList}\small\item\em Trial movement. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_aa30016ca75ff4d48a905a9dad7da023f}{Try\+Move\+Ch} ()
+\begin{DoxyCompactList}\small\item\em Trial desplacement of a chain. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ab7bfa9d7122c69b311f666740653bd0b}{Try\+Insert\+Ch} ()
+\begin{DoxyCompactList}\small\item\em Trial insertion of a chain. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_aefc3ccff8a9805e952ddc49194595844}{Try\+Remove\+Ch} ()
+\begin{DoxyCompactList}\small\item\em Trial removal of a chain. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a949d9de0a157e4258f88d5b5f322f74e}{Try\+Insert\+Ch\+Bias} ()
+\begin{DoxyCompactList}\small\item\em Trial biased insertion of a chain. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a32c3f4b656bce2cf73370ce605f53113}{Try\+Remove\+Ch\+Bias} ()
+\begin{DoxyCompactList}\small\item\em Trial biased removal of a chain. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_af9eda9a781eabd31a8813c9a64f2d5ec}{Widom\+Insert} (double $\ast$Nrg\+Diff)
+\begin{DoxyCompactList}\small\item\em Widom insertion. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a85d825b7b4af29d476abbf098ce630e3}{Widom\+Remove} (double $\ast$Nrg\+Diff, int p)
+\begin{DoxyCompactList}\small\item\em Widom removal. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_acffb530559d4e3ebfac6481a46468f52}{Widom\+Insert\+Ch} (double $\ast$Nrg\+Diff)
+\begin{DoxyCompactList}\small\item\em Widom insertion. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a0ab84cf7b372ab5ae21966ed671ee4c3}{Widom\+Remove\+Ch} (double $\ast$Nrg\+Diff, int c)
+\begin{DoxyCompactList}\small\item\em Widom removal. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_af07ae7761f13798c6de1391b10c5856d}{Widom\+Bias\+Ch\+In} (double $\ast$Weight)
+\begin{DoxyCompactList}\small\item\em Widom with Rosenbluth weight. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ab249c91e15e3611167002159ef6d5b60}{Widom\+Bias\+Ch\+Out} (double $\ast$Weight, int c)
+\begin{DoxyCompactList}\small\item\em Widom with Rosenbluth weight. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a7a55d93047438c9c5f5f9145a995e8d0}{Vel\+Verlet1} ()
+\begin{DoxyCompactList}\small\item\em First step of the velocity Verlet. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a379f6968f484a2a975c657f07821731c}{Langevin\+Therm} ()
+\begin{DoxyCompactList}\small\item\em Langevin thermostat. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a731619cf10a23878480c0af79252ed3e}{Andersen\+Therm} ()
+\begin{DoxyCompactList}\small\item\em Andersen thermostat. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a795803d47c68fef34839e68ffb2de60e}{Berendsen\+Therm} ()
+\begin{DoxyCompactList}\small\item\em Berendsen thermostat. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ae11de37aafa6549029bdf20e36bee7f4}{No\+Therm} ()\hypertarget{classForces_ae11de37aafa6549029bdf20e36bee7f4}{}\label{classForces_ae11de37aafa6549029bdf20e36bee7f4}
+
+\begin{DoxyCompactList}\small\item\em No thermostat. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a7965b2207a6253f8215b96a7195cb5bc}{Vel\+Verlet2} ()
+\begin{DoxyCompactList}\small\item\em Second step of the velocity Verlet. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a8de191a7e9bb4c04ea140023c0bffaba}{Choose\+Thermostat} (int Mode)
+\begin{DoxyCompactList}\small\item\em Choose a calculation mode. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a0ccf73fded29832c9d6c8edad5a51b76}{Apply\+Therm} ()\hypertarget{classForces_a0ccf73fded29832c9d6c8edad5a51b76}{}\label{classForces_a0ccf73fded29832c9d6c8edad5a51b76}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the energy function. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_abe46a6cf819d53f35747565f9276854f}{Force\+Field\+Line} ()
+\begin{DoxyCompactList}\small\item\em Helfrich Hamiltonian for a line. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_aad7c51f4a67ea41983881db33d1e5434}{Sum\+Some\+Forces} (int How\+Many)\hypertarget{classForces_aad7c51f4a67ea41983881db33d1e5434}{}\label{classForces_aad7c51f4a67ea41983881db33d1e5434}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_aed97e42cbfeb918574e91a90719864ab}{Force\+Field\+Leaves} ()
+\begin{DoxyCompactList}\small\item\em Helfrich Hamiltonian with an elastic coupling. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_aa57796d41906bf35c6a79225ecda6f98}{Force\+Field\+Bulk} ()
+\begin{DoxyCompactList}\small\item\em Armonic potential on a lattice. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ae35380222f8a3cacfa4a4df6d1742ffb}{Force\+Field\+Rod} ()
+\begin{DoxyCompactList}\small\item\em Bending potential on a rod. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a8f12492ed75d05c816d8f14bbeaf71be}{Force\+Field\+Rigid} ()\hypertarget{classForces_a8f12492ed75d05c816d8f14bbeaf71be}{}\label{classForces_a8f12492ed75d05c816d8f14bbeaf71be}
+
+\begin{DoxyCompactList}\small\item\em Interaction between rigid bodies. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a5c32ef207ba714e72e72de3063860b39}{Calc\+Forces\+Dens\+Func} ()\hypertarget{classForces_a5c32ef207ba714e72e72de3063860b39}{}\label{classForces_a5c32ef207ba714e72e72de3063860b39}
+
+\begin{DoxyCompactList}\small\item\em Calculate the forces for the density functional. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a7b92a25206538d578d6129879bfac183}{Print\+Force} ()\hypertarget{classForces_a7b92a25206538d578d6129879bfac183}{}\label{classForces_a7b92a25206538d578d6129879bfac183}
+
+\begin{DoxyCompactList}\small\item\em Print the force and the potential. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a68e26f1fe45d8de3362c59de39ddcbc9}{Get\+Force\+Field} ()\hypertarget{classForces_a68e26f1fe45d8de3362c59de39ddcbc9}{}\label{classForces_a68e26f1fe45d8de3362c59de39ddcbc9}
+
+\begin{DoxyCompactList}\small\item\em Calculate the force field summing every single contribution. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ab7b56f14cb877cece5075bc6a160aab3}{Tab\+Force\+Alloc} (int N\+Tab\+Ext)\hypertarget{classForces_ab7b56f14cb877cece5075bc6a160aab3}{}\label{classForces_ab7b56f14cb877cece5075bc6a160aab3}
+
+\begin{DoxyCompactList}\small\item\em Tabulate the values of the force. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a1c00d241ca805ba05becca0e9aafe45f}{Tab\+Pot} ()\hypertarget{classForces_a1c00d241ca805ba05becca0e9aafe45f}{}\label{classForces_a1c00d241ca805ba05becca0e9aafe45f}
+
+\begin{DoxyCompactList}\small\item\em Tabulate the values of the potential. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ac56bd243d0c3cac921959104fac03d2c}{Nano\+Interaction} ()\hypertarget{classForces_ac56bd243d0c3cac921959104fac03d2c}{}\label{classForces_ac56bd243d0c3cac921959104fac03d2c}
+
+\begin{DoxyCompactList}\small\item\em Calculate all the interaction with the nano. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a7ab5c0bcf11c3f33530a25984720b424}{Nano\+Nrg} (int p)\hypertarget{classForces_a7ab5c0bcf11c3f33530a25984720b424}{}\label{classForces_a7ab5c0bcf11c3f33530a25984720b424}
+
+\begin{DoxyCompactList}\small\item\em Exchange energy with the nano. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_af2058d93db6e3ef4894d33f6790a6749}{Nano\+Nrg} (double $\ast$Pos, int t)\hypertarget{classForces_af2058d93db6e3ef4894d33f6790a6749}{}\label{classForces_af2058d93db6e3ef4894d33f6790a6749}
+
+\begin{DoxyCompactList}\small\item\em Exchange energy with the nano. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ad7e01b1bd04ce252d991ae872eaa5270}{Def\+Force\+Param} ()\hypertarget{classForces_ad7e01b1bd04ce252d991ae872eaa5270}{}\label{classForces_ad7e01b1bd04ce252d991ae872eaa5270}
+
+\begin{DoxyCompactList}\small\item\em Define the parameters for calculating the force. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ae1187ff72e7ad2765b17948df1aff2b4}{Def\+Nano\+Force\+Param} ()\hypertarget{classForces_ae1187ff72e7ad2765b17948df1aff2b4}{}\label{classForces_ae1187ff72e7ad2765b17948df1aff2b4}
+
+\begin{DoxyCompactList}\small\item\em Define the parameters for calculating the force. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a299061ca48b352b4d40c0dfbb6ffd2da}{Rigid\+LJ} (int n\+Nano, double Dist, double $\ast$Pot, double Sign)\hypertarget{classForces_a299061ca48b352b4d40c0dfbb6ffd2da}{}\label{classForces_a299061ca48b352b4d40c0dfbb6ffd2da}
+
+\begin{DoxyCompactList}\small\item\em Force between to rigid bodies. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_abd9350bc451b7ae5507675805b4318d5}{Rigid\+Hamaker} (int n, double Dist, double $\ast$Pot, double Sign)
+\begin{DoxyCompactList}\small\item\em Hamaker potential. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_af8f6e965e516633b54115556243a681a}{Rigid\+Coulomb} (int n\+Nano, double Dist, double $\ast$Pot, double Sign)\hypertarget{classForces_af8f6e965e516633b54115556243a681a}{}\label{classForces_af8f6e965e516633b54115556243a681a}
+
+\begin{DoxyCompactList}\small\item\em Force between to rigid bodies. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a4aa4b64aa78c004e13b7d5e059c61c7f}{Rigid\+Distance\+Rad} (int n, int nn, double $\ast$dr)\hypertarget{classForces_a4aa4b64aa78c004e13b7d5e059c61c7f}{}\label{classForces_a4aa4b64aa78c004e13b7d5e059c61c7f}
+
+\begin{DoxyCompactList}\small\item\em Distance between two bodies. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a0bd8b1fc300bbbf7b4d7a6c5836ff0dc}{Rigid\+Distance\+Axis} (int n, int nn, double $\ast$dr)\hypertarget{classForces_a0bd8b1fc300bbbf7b4d7a6c5836ff0dc}{}\label{classForces_a0bd8b1fc300bbbf7b4d7a6c5836ff0dc}
+
+\begin{DoxyCompactList}\small\item\em Distance between two bodies. \end{DoxyCompactList}\item 
+void {\bfseries Point\+Shape} (int i\+Shape)\hypertarget{classForces_a0d76b871ebe7ef570ef9c2fcba03ddb8}{}\label{classForces_a0d76b871ebe7ef570ef9c2fcba03ddb8}
+
+\item 
+double \hyperlink{classForces_af449f7871a4d5c5f1e263e4fe660bd63}{Harmonic} (double Dist2, int t1, int t2, double $\ast$Pot)\hypertarget{classForces_af449f7871a4d5c5f1e263e4fe660bd63}{}\label{classForces_af449f7871a4d5c5f1e263e4fe660bd63}
+
+\begin{DoxyCompactList}\small\item\em Harmonic potential. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a1f0b019b2a8c81938b8f4a3f3ddcfc48}{Step\+Pot} (double Dist2, int t1, int t2, double $\ast$Pot)\hypertarget{classForces_a1f0b019b2a8c81938b8f4a3f3ddcfc48}{}\label{classForces_a1f0b019b2a8c81938b8f4a3f3ddcfc48}
+
+\begin{DoxyCompactList}\small\item\em Step potential. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ad1ef4b910c2f6e057b8b2e079d32100b}{Electro\+Pot} (double Dist2, int t1, int t2, double $\ast$Pot)\hypertarget{classForces_ad1ef4b910c2f6e057b8b2e079d32100b}{}\label{classForces_ad1ef4b910c2f6e057b8b2e079d32100b}
+
+\begin{DoxyCompactList}\small\item\em Potential for the electrical lines. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a28fd299b40762b1703462b830df2473d}{L\+J39} (double Dist2, int t1, int t2, double $\ast$Pot)\hypertarget{classForces_a28fd299b40762b1703462b830df2473d}{}\label{classForces_a28fd299b40762b1703462b830df2473d}
+
+\begin{DoxyCompactList}\small\item\em Integrated Lennard Jones potential. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ad6b11a62ba4f9871d598109fe007a121}{L\+J\+Pot} (double Dist2, int t1, int t2, double $\ast$Pot)\hypertarget{classForces_ad6b11a62ba4f9871d598109fe007a121}{}\label{classForces_ad6b11a62ba4f9871d598109fe007a121}
+
+\begin{DoxyCompactList}\small\item\em Classical Lennard Jones potential. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ac5ef477f97601b779392b8622ac6b1fe}{Potential} (double Dist, int t1, int t2, double $\ast$Pot)\hypertarget{classForces_ac5ef477f97601b779392b8622ac6b1fe}{}\label{classForces_ac5ef477f97601b779392b8622ac6b1fe}
+
+\begin{DoxyCompactList}\small\item\em Pointer to a potential. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a59c5e973ca9b852115683c3cc2fc6035}{Calc\+Tot\+Nrg\+Ch} ()
+\begin{DoxyCompactList}\small\item\em Calculate and sum up the energy of the chains. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a279acbc4a6538860aad95a08f3edc78f}{Calc\+Tot\+Nrg\+Bead} ()
+\begin{DoxyCompactList}\small\item\em Calculate and sum up the energy of the part. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a3fa7f92932bea2b6abd0231b7610b6d2}{Calc\+Nrg\+Bead} (int p, double $\ast$Pot)\hypertarget{classForces_a3fa7f92932bea2b6abd0231b7610b6d2}{}\label{classForces_a3fa7f92932bea2b6abd0231b7610b6d2}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the energy function. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ac028948e0862f18bf805f23078ebf7fa}{Calc\+Nrg\+Ch} (int c, double $\ast$Pot)\hypertarget{classForces_ac028948e0862f18bf805f23078ebf7fa}{}\label{classForces_ac028948e0862f18bf805f23078ebf7fa}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the chain energy function. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ab282af6b6987c94833eb3eb9bc5d28a4}{Nrg\+Ch\+Bond\+Dens} (int c, double $\ast$Pot)
+\begin{DoxyCompactList}\small\item\em Calculate the bond and the density functional energies. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ab40568d4784987cff90e5081eee86a93}{Nrg\+Ch\+Dens} (int c, double $\ast$Pot)\hypertarget{classForces_ab40568d4784987cff90e5081eee86a93}{}\label{classForces_ab40568d4784987cff90e5081eee86a93}
+
+\begin{DoxyCompactList}\small\item\em Calculate the density functional energies. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_abcf9fe5fd43b953a9f9c836bb23f4b26}{Calc\+Pairwise} (int p, double $\ast$Pot)\hypertarget{classForces_abcf9fe5fd43b953a9f9c836bb23f4b26}{}\label{classForces_abcf9fe5fd43b953a9f9c836bb23f4b26}
+
+\begin{DoxyCompactList}\small\item\em Calculate the non bonded interaction energy with the neighbouring particles. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ad5fa9268736b6a2b17b8b600fea178be}{Calc\+Pairwise\+Ch} (int c, double $\ast$Pot)\hypertarget{classForces_ad5fa9268736b6a2b17b8b600fea178be}{}\label{classForces_ad5fa9268736b6a2b17b8b600fea178be}
+
+\begin{DoxyCompactList}\small\item\em Calculate the non bonded interaction energy with the neighbouring particles. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a85c318f4f79eb537a5d0be2552fae2af}{Calc\+Bending} (int p)\hypertarget{classForces_a85c318f4f79eb537a5d0be2552fae2af}{}\label{classForces_a85c318f4f79eb537a5d0be2552fae2af}
+
+\begin{DoxyCompactList}\small\item\em Calculate the bonded interaction energy with the neighbouring particles. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a9695c7258e7d8a3fb781280f258747cf}{Calc\+Spring} (int p)\hypertarget{classForces_a9695c7258e7d8a3fb781280f258747cf}{}\label{classForces_a9695c7258e7d8a3fb781280f258747cf}
+
+\begin{DoxyCompactList}\small\item\em Calculate the spring interaction energy with the neighbouring particles. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_adb6d3708682daf3cc9dd70081adfb894}{Calc\+Bonded} (int p, double $\ast$Pot)
+\begin{DoxyCompactList}\small\item\em Calculate the spring and the bonded interactions with the other monomers in the chain. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a2ba180156b26af3e2eea135743275fa9}{Calc\+Bending\+Ghost} (double $\ast$Pos, int p\+Ext)
+\begin{DoxyCompactList}\small\item\em Calculate the bending energy for a ghost particle. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a6fec1e71c9031503f3f3b7a4f4851319}{Calc\+Bonded\+Ch} (int c, double $\ast$Pot)\hypertarget{classForces_a6fec1e71c9031503f3f3b7a4f4851319}{}\label{classForces_a6fec1e71c9031503f3f3b7a4f4851319}
+
+\begin{DoxyCompactList}\small\item\em Calculate the bonded and spring interaction in a cell. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a616546bdad154256f89f9eee067e8166}{Calc\+Nrg\+Bead\+Dens\+Func} ()\hypertarget{classForces_a616546bdad154256f89f9eee067e8166}{}\label{classForces_a616546bdad154256f89f9eee067e8166}
+
+\begin{DoxyCompactList}\small\item\em Calculate the spring, bending and non bonded interactions and write it in Old\+Nrg\+Pm. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ab18a8becb1983fc28fbeadea39623079}{Calc\+Nrg\+Bead\+Dens\+Func} (int p, double $\ast$Pot)
+\begin{DoxyCompactList}\small\item\em Calculate the spring, bending and non bonded interactions. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a2595efd4257201b5b7c30c73086f94c3}{Check\+Dom\+Dec} (int p)
+\begin{DoxyCompactList}\small\item\em Check if all the particles are taken in account. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a419ca9dee6d5e955abe44cf409e24d66}{Check\+Pair\+List} ()\hypertarget{classForces_a419ca9dee6d5e955abe44cf409e24d66}{}\label{classForces_a419ca9dee6d5e955abe44cf409e24d66}
+
+\begin{DoxyCompactList}\small\item\em Check the pair list. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a791c1d5f301eb9c0d39c43a180eaf737}{Sum\+Forces\+MD} ()\hypertarget{classForces_a791c1d5f301eb9c0d39c43a180eaf737}{}\label{classForces_a791c1d5f301eb9c0d39c43a180eaf737}
+
+\begin{DoxyCompactList}\small\item\em Iterate all over the particles and calculate the forces. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a5c95469e44bbbea88c38809308ca4551}{Wei3} (const double r, const double a)\hypertarget{classForces_a5c95469e44bbbea88c38809308ca4551}{}\label{classForces_a5c95469e44bbbea88c38809308ca4551}
+
+\begin{DoxyCompactList}\small\item\em Cubic weighting function. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a3d44e49e6ced82a300d6071060b72c48}{Der\+Wei3} (const double r, const double a)\hypertarget{classForces_a3d44e49e6ced82a300d6071060b72c48}{}\label{classForces_a3d44e49e6ced82a300d6071060b72c48}
+
+\begin{DoxyCompactList}\small\item\em Derivative of the cubic weighting function. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a2a275bbffe53c778eb8d535f3dc601f8}{Wei2} (const double r, const double b)\hypertarget{classForces_a2a275bbffe53c778eb8d535f3dc601f8}{}\label{classForces_a2a275bbffe53c778eb8d535f3dc601f8}
+
+\begin{DoxyCompactList}\small\item\em Quadratic weighting function. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a5c07d0e26deb83592ec816a9d6dfd05b}{Der\+Wei2} (const double r, const double b)\hypertarget{classForces_a5c07d0e26deb83592ec816a9d6dfd05b}{}\label{classForces_a5c07d0e26deb83592ec816a9d6dfd05b}
+
+\begin{DoxyCompactList}\small\item\em Derivative of the quadratic weighting function. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a6330de60f8b181b6e7ac68f9cd103f58}{Dens\+Func\+Nrg\+Ghost} (double $\ast$Pos, int p1, int t1)\hypertarget{classForces_a6330de60f8b181b6e7ac68f9cd103f58}{}\label{classForces_a6330de60f8b181b6e7ac68f9cd103f58}
+
+\begin{DoxyCompactList}\small\item\em Calculation of the energy from the density functional Hamiltonian for the ghost particle. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a75fb72ed9ede20a211933fe11dabebcf}{Dens\+Func\+Nrg\+Ghost\+Internal} (double $\ast$Pos, int p1, int t1)\hypertarget{classForces_a75fb72ed9ede20a211933fe11dabebcf}{}\label{classForces_a75fb72ed9ede20a211933fe11dabebcf}
+
+\begin{DoxyCompactList}\small\item\em Calculation of the energy from the density functional Hamiltonian for the ghost particle. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_aaf00acd2a6784650ce2b34f2c802b6c4}{Dens\+Func\+Nrg\+Bead} (int p1)\hypertarget{classForces_aaf00acd2a6784650ce2b34f2c802b6c4}{}\label{classForces_aaf00acd2a6784650ce2b34f2c802b6c4}
+
+\begin{DoxyCompactList}\small\item\em Calculation of the energy from the density functional Hamiltonian for the particle p1. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ad288fce3211ed5cafbe899b4d3ca08f5}{Dens\+Func\+Nrg\+Ch} (int c, double $\ast$Pot)
+\begin{DoxyCompactList}\small\item\em Calculate the energy from the density functional Hamiltonian for the chain c. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a3d6dfad06fbcd3a6b9f84b2ccd40f1ef}{Dens\+Func\+Nrg\+Ch\+Av} (int c)\hypertarget{classForces_a3d6dfad06fbcd3a6b9f84b2ccd40f1ef}{}\label{classForces_a3d6dfad06fbcd3a6b9f84b2ccd40f1ef}
+
+\begin{DoxyCompactList}\small\item\em Calculate the average energy from the density functional Hamiltonian for the chain c. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a424676c9ec7046ecef5f6df4a4a104e8}{Dens\+Func\+Nrg\+Ch\+Internal} (int c)\hypertarget{classForces_a424676c9ec7046ecef5f6df4a4a104e8}{}\label{classForces_a424676c9ec7046ecef5f6df4a4a104e8}
+
+\begin{DoxyCompactList}\small\item\em Calculate the average energy from the density functional Hamiltonian for the chain c. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ad6b09c65169c95c3aff47220ad8327c6}{Dens\+Func\+Nrg\+Sys} ()\hypertarget{classForces_ad6b09c65169c95c3aff47220ad8327c6}{}\label{classForces_ad6b09c65169c95c3aff47220ad8327c6}
+
+\begin{DoxyCompactList}\small\item\em Calculation of the energy from the density functional Hamiltonian for the system. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_af84f3585b204886f9166af82c0a229ac}{Calc\+Dens} (int p\+Init, int p\+End)\hypertarget{classForces_af84f3585b204886f9166af82c0a229ac}{}\label{classForces_af84f3585b204886f9166af82c0a229ac}
+
+\begin{DoxyCompactList}\small\item\em Calculate the local density for the particles between p\+Init and p\+End. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a0390d97ed1665851fb6175342d1c598b}{Clear\+Dens} ()\hypertarget{classForces_a0390d97ed1665851fb6175342d1c598b}{}\label{classForces_a0390d97ed1665851fb6175342d1c598b}
+
+\begin{DoxyCompactList}\small\item\em Set the local densities to zero. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_aa0300c3611e3180e228fda26be216a09}{Nrg\+Step} (int p)
+\begin{DoxyCompactList}\small\item\em The energy is constant within the cutoff. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a65ed048334c9f52f87bd30a01b174739}{Nrg\+Step\+Ch} (int c, double $\ast$Pot)\hypertarget{classForces_a65ed048334c9f52f87bd30a01b174739}{}\label{classForces_a65ed048334c9f52f87bd30a01b174739}
+
+\begin{DoxyCompactList}\small\item\em The energy per chain is constant within the cutoff. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_afc300be0d6cee6289a532bfa34cd551d}{Nrg\+Electro} (int p)\hypertarget{classForces_afc300be0d6cee6289a532bfa34cd551d}{}\label{classForces_afc300be0d6cee6289a532bfa34cd551d}
+
+\begin{DoxyCompactList}\small\item\em Energy of an electric line. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a9d4e2ba1cf8ce2142f50a1b7e8bf4f7b}{Add\+Dens} (int p\+Init, int p\+End)\hypertarget{classForces_a9d4e2ba1cf8ce2142f50a1b7e8bf4f7b}{}\label{classForces_a9d4e2ba1cf8ce2142f50a1b7e8bf4f7b}
+
+\begin{DoxyCompactList}\small\item\em Add the densities connected with the particles between p\+Init and p\+End. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ab1186dfbad2e6906d0da986495e05872}{Rem\+Dens} (int p\+Init, int p\+End)\hypertarget{classForces_ab1186dfbad2e6906d0da986495e05872}{}\label{classForces_ab1186dfbad2e6906d0da986495e05872}
+
+\begin{DoxyCompactList}\small\item\em Substract the densities connected with the particles between p\+Init and p\+End. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a0449e9410bf23ad4d073f1eab66c2a68}{Sum\+Dens} (int p\+Init, int p\+End)\hypertarget{classForces_a0449e9410bf23ad4d073f1eab66c2a68}{}\label{classForces_a0449e9410bf23ad4d073f1eab66c2a68}
+
+\begin{DoxyCompactList}\small\item\em Sum the local density for the particles between p\+Init and p\+End and multiply the factors by the virial coefficients. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a74fa0e6d8f6f25674644320d69e2b8b1}{List\+Nei\+Cell} (int p, double $\ast$Pos, int $\ast$Nei\+List)\hypertarget{classForces_a74fa0e6d8f6f25674644320d69e2b8b1}{}\label{classForces_a74fa0e6d8f6f25674644320d69e2b8b1}
+
+\begin{DoxyCompactList}\small\item\em List of the cells close to the particle position. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a6fc6ac99c5e421a12a39ad80e20c9bd6}{Pull\+Bead} ()\hypertarget{classForces_a6fc6ac99c5e421a12a39ad80e20c9bd6}{}\label{classForces_a6fc6ac99c5e421a12a39ad80e20c9bd6}
+
+\begin{DoxyCompactList}\small\item\em Move a particle. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_af92f2e6f00fbbe4093f47b78b91eb2e0}{Push\+Bead} ()\hypertarget{classForces_af92f2e6f00fbbe4093f47b78b91eb2e0}{}\label{classForces_af92f2e6f00fbbe4093f47b78b91eb2e0}
+
+\begin{DoxyCompactList}\small\item\em Move a particle. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ad4ff146c379b2d2fa7ea219aae0c124e}{Select\+Bead} (int p)\hypertarget{classForces_ad4ff146c379b2d2fa7ea219aae0c124e}{}\label{classForces_ad4ff146c379b2d2fa7ea219aae0c124e}
+
+\begin{DoxyCompactList}\small\item\em Select a particle. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aea3ac235b677278906db133f4cfd54f4}{Wave} ()\hypertarget{classForces_aea3ac235b677278906db133f4cfd54f4}{}\label{classForces_aea3ac235b677278906db133f4cfd54f4}
+
+\begin{DoxyCompactList}\small\item\em Sinusoidal surface wave. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a3f2b57f5a0d64d4e41d00c90f0600717}{Add\+Circle} (int n\+Nano)\hypertarget{classForces_a3f2b57f5a0d64d4e41d00c90f0600717}{}\label{classForces_a3f2b57f5a0d64d4e41d00c90f0600717}
+
+\begin{DoxyCompactList}\small\item\em Add a circle as a boundary condition. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ad955b144c055a67de0e854e33894ed94}{Add\+Cylinder} (int n\+Nano)\hypertarget{classForces_ad955b144c055a67de0e854e33894ed94}{}\label{classForces_ad955b144c055a67de0e854e33894ed94}
+
+\begin{DoxyCompactList}\small\item\em Add a cylinder as a boundary condition. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a7689eeac5fe56921d52790bcf6344d1f}{Add\+Pore} (int n\+Nano)\hypertarget{classForces_a7689eeac5fe56921d52790bcf6344d1f}{}\label{classForces_a7689eeac5fe56921d52790bcf6344d1f}
+
+\begin{DoxyCompactList}\small\item\em Add a pore as a boundary condition. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_adee9a7de583494983844ed4378f51df4}{Add\+Rigid} ()\hypertarget{classForces_adee9a7de583494983844ed4378f51df4}{}\label{classForces_adee9a7de583494983844ed4378f51df4}
+
+\begin{DoxyCompactList}\small\item\em Add all rigid bodies as a boundary condition. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a68881ea0f9f8038dc0e6a714df062896}{Height\+Boundary} (double $\ast$Pos, int dir)
+\begin{DoxyCompactList}\small\item\em Height of the boundary condition depending on the direction. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ab18de8ad228c4133d61e09f94ef4b33f}{Create\+Initial} ()\hypertarget{classForces_ab18de8ad228c4133d61e09f94ef4b33f}{}\label{classForces_ab18de8ad228c4133d61e09f94ef4b33f}
+
+\begin{DoxyCompactList}\small\item\em Create an initial configuration and an appropriate force field. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a9e66d18b6b637a388161c4310deb71e9}{Create2d} ()\hypertarget{classForces_a9e66d18b6b637a388161c4310deb71e9}{}\label{classForces_a9e66d18b6b637a388161c4310deb71e9}
+
+\begin{DoxyCompactList}\small\item\em Create a plane of connected beads. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a71fdb49e2a01e439097a4cde373b639f}{Create3d} ()\hypertarget{classForces_a71fdb49e2a01e439097a4cde373b639f}{}\label{classForces_a71fdb49e2a01e439097a4cde373b639f}
+
+\begin{DoxyCompactList}\small\item\em Create a lattice of connected beads. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ada62abd7228e54fbd365aba5aaf4ce8f}{Create\+Leaves} ()\hypertarget{classForces_ada62abd7228e54fbd365aba5aaf4ce8f}{}\label{classForces_ada62abd7228e54fbd365aba5aaf4ce8f}
+
+\begin{DoxyCompactList}\small\item\em Create two connected sheets and add a protein. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_afea6ddedbed181a50906556f6075257f}{Create\+Stalk} ()\hypertarget{classForces_afea6ddedbed181a50906556f6075257f}{}\label{classForces_afea6ddedbed181a50906556f6075257f}
+
+\begin{DoxyCompactList}\small\item\em Create the 1d representation of a stalk. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a20cdf4594381226c7b142df535f41893}{Create\+Pore} ()\hypertarget{classForces_a20cdf4594381226c7b142df535f41893}{}\label{classForces_a20cdf4594381226c7b142df535f41893}
+
+\begin{DoxyCompactList}\small\item\em Create the 1d representation of a pore. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a150658611a20b7185df56cc52412bc3f}{Create1d} ()\hypertarget{classForces_a150658611a20b7185df56cc52412bc3f}{}\label{classForces_a150658611a20b7185df56cc52412bc3f}
+
+\begin{DoxyCompactList}\small\item\em Create single line of connected monomers. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a655ba1e4004f501b750638d781f45c82}{Create\+Rigid} ()\hypertarget{classForces_a655ba1e4004f501b750638d781f45c82}{}\label{classForces_a655ba1e4004f501b750638d781f45c82}
+
+\begin{DoxyCompactList}\small\item\em Create rigid bodies. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a3f01e349d6a138fb20f9caa406c0d561}{Create\+MC} ()\hypertarget{classForces_a3f01e349d6a138fb20f9caa406c0d561}{}\label{classForces_a3f01e349d6a138fb20f9caa406c0d561}
+
+\begin{DoxyCompactList}\small\item\em Create a initial disposition of particle for the MC sim. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a344629f905b1cbbcb311a4d3e6ff8818}{Create\+MD} ()\hypertarget{classForces_a344629f905b1cbbcb311a4d3e6ff8818}{}\label{classForces_a344629f905b1cbbcb311a4d3e6ff8818}
+
+\begin{DoxyCompactList}\small\item\em Create a initial disposition of particle for the MD sim. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ae3378b62462d086cb39724e03074fb97}{Create\+Rod} ()\hypertarget{classForces_ae3378b62462d086cb39724e03074fb97}{}\label{classForces_ae3378b62462d086cb39724e03074fb97}
+
+\begin{DoxyCompactList}\small\item\em Create a initial disposition of particle for a stiff rod. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a6ef0b763f3b80142cda476d73e2753a5}{Create\+Electro} ()\hypertarget{classForces_a6ef0b763f3b80142cda476d73e2753a5}{}\label{classForces_a6ef0b763f3b80142cda476d73e2753a5}
+
+\begin{DoxyCompactList}\small\item\em Create a initial disposition of houses to collect on a line. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ac6a2e2465107cd1b6eea81aeb80646c2}{Alloc\+Tens} ()\hypertarget{classForces_ac6a2e2465107cd1b6eea81aeb80646c2}{}\label{classForces_ac6a2e2465107cd1b6eea81aeb80646c2}
+
+\begin{DoxyCompactList}\small\item\em Alloc the pressure profile. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a69a4a0318fb6e0382d6e2288a40c9e98}{Calc\+Tens} ()\hypertarget{classForces_a69a4a0318fb6e0382d6e2288a40c9e98}{}\label{classForces_a69a4a0318fb6e0382d6e2288a40c9e98}
+
+\begin{DoxyCompactList}\small\item\em Calculate the forces for the tension profile. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a44c4bed1843e51f20f252a5dd05f64fe}{Calc\+Dens} ()\hypertarget{classForces_a44c4bed1843e51f20f252a5dd05f64fe}{}\label{classForces_a44c4bed1843e51f20f252a5dd05f64fe}
+
+\begin{DoxyCompactList}\small\item\em Calculate the densities. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_afad21f344bdeced26172aaf70d26e844}{Tens\+Ref\+Cart} (double $\ast$Pos1, double $\ast$Pos2, double $\ast$Pos\+P1, double $\ast$Pos\+P2)\hypertarget{classForces_afad21f344bdeced26172aaf70d26e844}{}\label{classForces_afad21f344bdeced26172aaf70d26e844}
+
+\begin{DoxyCompactList}\small\item\em Particle positions back folded on the tension reference point (Cartesian coordinates) \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a8d63955572a8c5888a8a305fb56ada48}{Tens\+Ref\+Pol} (double $\ast$Pos1, double $\ast$Pos2, double $\ast$Pos\+P1, double $\ast$Pos\+P2)\hypertarget{classForces_a8d63955572a8c5888a8a305fb56ada48}{}\label{classForces_a8d63955572a8c5888a8a305fb56ada48}
+
+\begin{DoxyCompactList}\small\item\em Particle positions back folded on the tension reference point (polar coordinates) \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ab49daa22c5de576835d55d185f1a53be}{Tens\+Ref} (double $\ast$Pos1, double $\ast$Pos2, double $\ast$Pos\+P1, double $\ast$Pos\+P2)\hypertarget{classForces_ab49daa22c5de576835d55d185f1a53be}{}\label{classForces_ab49daa22c5de576835d55d185f1a53be}
+
+\begin{DoxyCompactList}\small\item\em Particle positions back folded on the tension reference point. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a1a74ebb3cab127dd10c8d642fb19a537}{Sum\+Tens} (int p1, int p2, double \hyperlink{classForces}{Forces}, double $\ast$Dist\+Rel)\hypertarget{classForces_a1a74ebb3cab127dd10c8d642fb19a537}{}\label{classForces_a1a74ebb3cab127dd10c8d642fb19a537}
+
+\begin{DoxyCompactList}\small\item\em Sum the forces on the line joining the points p1 and p2. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a898790f8f00dd994c472c5526c454b77}{Sum\+Tens} (int p1, int p2, double $\ast$Pre)\hypertarget{classForces_a898790f8f00dd994c472c5526c454b77}{}\label{classForces_a898790f8f00dd994c472c5526c454b77}
+
+\begin{DoxyCompactList}\small\item\em Sum the forces on the line joining the points p1 and p2. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aa4ae1e5942505c407b95ebf6d88156eb}{Sum\+Tens} (double $\ast$Pos1, double $\ast$Pos2, double $\ast$Pre)\hypertarget{classForces_aa4ae1e5942505c407b95ebf6d88156eb}{}\label{classForces_aa4ae1e5942505c407b95ebf6d88156eb}
+
+\begin{DoxyCompactList}\small\item\em Sum the forces on the line joining the points p1 and p2. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a0bd0430e9512fea0edf8d3cc157f6e7f}{Write\+Tens} (char $\ast$T\+File, int Comp, double Inv\+N\+File)\hypertarget{classForces_a0bd0430e9512fea0edf8d3cc157f6e7f}{}\label{classForces_a0bd0430e9512fea0edf8d3cc157f6e7f}
+
+\begin{DoxyCompactList}\small\item\em Write the pressure and density profile. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a7b39177dbabd51bb886537f9674160ba}{Write\+Tens2d} (F\+I\+LE $\ast$F\+Write, int Comp, double Inv\+N\+File)\hypertarget{classForces_a7b39177dbabd51bb886537f9674160ba}{}\label{classForces_a7b39177dbabd51bb886537f9674160ba}
+
+\begin{DoxyCompactList}\small\item\em Write the 2d pressure profile. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a49654bba62557156b6599f4875484078}{Explore\+Pep\+Size} ()\hypertarget{classForces_a49654bba62557156b6599f4875484078}{}\label{classForces_a49654bba62557156b6599f4875484078}
+
+\begin{DoxyCompactList}\small\item\em Find the minimun bilayer thickness for different peptide sizes. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a9ebbcc00e2ef112a3739e90118698f80}{Explore\+Pep\+Size2d} ()\hypertarget{classForces_a9ebbcc00e2ef112a3739e90118698f80}{}\label{classForces_a9ebbcc00e2ef112a3739e90118698f80}
+
+\begin{DoxyCompactList}\small\item\em Find the minimun bilayer thickness for different peptide sizes. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a3efc71eff5d768421c05dc9f9ef801d1}{Explore\+Double\+Min} ()\hypertarget{classForces_a3efc71eff5d768421c05dc9f9ef801d1}{}\label{classForces_a3efc71eff5d768421c05dc9f9ef801d1}
+
+\begin{DoxyCompactList}\small\item\em Find the minimum for different interpeptide distances. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aa82709db8e55cc620cfbfb483489f5b6}{Calc\+Tot\+Nrg} (char $\ast$F\+Name, int n\+File)\hypertarget{classForces_aa82709db8e55cc620cfbfb483489f5b6}{}\label{classForces_aa82709db8e55cc620cfbfb483489f5b6}
+
+\begin{DoxyCompactList}\small\item\em Total energy of the system. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a6a491826bd0df50e5d4941710783a54c}{Calc\+Nrg\+Pep} (char $\ast$File2\+Open, int f)\hypertarget{classForces_a6a491826bd0df50e5d4941710783a54c}{}\label{classForces_a6a491826bd0df50e5d4941710783a54c}
+
+\begin{DoxyCompactList}\small\item\em Exchange energy of the protein. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aadef342da0e2abb136031d2df4c264bf}{Run\+Dynamics} ()\hypertarget{classForces_aadef342da0e2abb136031d2df4c264bf}{}\label{classForces_aadef342da0e2abb136031d2df4c264bf}
+
+\begin{DoxyCompactList}\small\item\em Run a step further. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_abfa5f0b075c87a5ae914d91c5481c359}{Run\+Widom} (char $\ast$File2\+Read, int f)\hypertarget{classForces_abfa5f0b075c87a5ae914d91c5481c359}{}\label{classForces_abfa5f0b075c87a5ae914d91c5481c359}
+
+\begin{DoxyCompactList}\small\item\em Build the widom histograms. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ac313c324785f5c7c044e2e94ea39c01c}{Run\+Widom\+Ch\+In} (char $\ast$File2\+Read, int f)\hypertarget{classForces_ac313c324785f5c7c044e2e94ea39c01c}{}\label{classForces_ac313c324785f5c7c044e2e94ea39c01c}
+
+\begin{DoxyCompactList}\small\item\em Build the widom histograms. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a6c88528ae5cf46ad5cc7080ca47ef1fb}{Run\+Widom\+Ch\+Out} (char $\ast$File2\+Read, int f)\hypertarget{classForces_a6c88528ae5cf46ad5cc7080ca47ef1fb}{}\label{classForces_a6c88528ae5cf46ad5cc7080ca47ef1fb}
+
+\begin{DoxyCompactList}\small\item\em Build the widom histograms. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a3f16bbc64bdd8ac4835e6a4702e30678}{Rosen\+In} (F\+I\+LE $\ast$Widom\+In)\hypertarget{classForces_a3f16bbc64bdd8ac4835e6a4702e30678}{}\label{classForces_a3f16bbc64bdd8ac4835e6a4702e30678}
+
+\begin{DoxyCompactList}\small\item\em Rosenbluth weights for insertion. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a7a1566050eaabfebba82e0b6002d797b}{Rosen\+Out} (F\+I\+LE $\ast$Widom\+In)\hypertarget{classForces_a7a1566050eaabfebba82e0b6002d797b}{}\label{classForces_a7a1566050eaabfebba82e0b6002d797b}
+
+\begin{DoxyCompactList}\small\item\em Rosenbluth histograms for deletion. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a395a965e8373d10dc626ea945f161168}{Run\+Widom\+Bias\+Ch\+Out} (F\+I\+LE $\ast$Widom\+Out)\hypertarget{classForces_a395a965e8373d10dc626ea945f161168}{}\label{classForces_a395a965e8373d10dc626ea945f161168}
+
+\begin{DoxyCompactList}\small\item\em Build the widom histograms with Rosenbluth weight. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a111835c2cd5d392591f9e32ea6d9cf19}{Choose\+Sim\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Choose the simulation method. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_af662b8c150e7cdd3983066e8dab609be}{Task} ()\hypertarget{classForces_af662b8c150e7cdd3983066e8dab609be}{}\label{classForces_af662b8c150e7cdd3983066e8dab609be}
+
+\begin{DoxyCompactList}\small\item\em Perform a operation every time step. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aac83d4bd108ccaa2c52289f05ea0d009}{Calc\+Tens} (char $\ast$$\ast$argv, int $\ast$File\+Pos, int \hyperlink{classForces_afc36f5ebb0ee5c1be5fc2161e1fa3959}{N\+File})\hypertarget{classForces_aac83d4bd108ccaa2c52289f05ea0d009}{}\label{classForces_aac83d4bd108ccaa2c52289f05ea0d009}
+
+\begin{DoxyCompactList}\small\item\em Calculate and sum up the pressure profile from the file list. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_acf39045486a7e38d437f191e2a845d83}{Av\+Forces} (char $\ast$$\ast$argv, int $\ast$File\+Pos, int \hyperlink{classForces_afc36f5ebb0ee5c1be5fc2161e1fa3959}{N\+File})\hypertarget{classForces_acf39045486a7e38d437f191e2a845d83}{}\label{classForces_acf39045486a7e38d437f191e2a845d83}
+
+\begin{DoxyCompactList}\small\item\em Average of the forces. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a38ef42f2e70e5ed764a0fa0d56757a57}{Trial} ()\hypertarget{classForces_a38ef42f2e70e5ed764a0fa0d56757a57}{}\label{classForces_a38ef42f2e70e5ed764a0fa0d56757a57}
+
+\begin{DoxyCompactList}\small\item\em Trial loop. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a3ee2891acdfca29fc27e89883f2a2df4}{Minimal\+MD} ()\hypertarget{classForces_a3ee2891acdfca29fc27e89883f2a2df4}{}\label{classForces_a3ee2891acdfca29fc27e89883f2a2df4}
+
+\begin{DoxyCompactList}\small\item\em Minmal md. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a8f18498c3494e8fe2476f90f9631c6a8}{Minimal\+Nrg} ()\hypertarget{classForces_a8f18498c3494e8fe2476f90f9631c6a8}{}\label{classForces_a8f18498c3494e8fe2476f90f9631c6a8}
+
+\begin{DoxyCompactList}\small\item\em Minmal nrg. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ae0225eda5d6d3f7a453e0e31f239f21a}{Sim1d} ()\hypertarget{classForces_ae0225eda5d6d3f7a453e0e31f239f21a}{}\label{classForces_ae0225eda5d6d3f7a453e0e31f239f21a}
+
+\begin{DoxyCompactList}\small\item\em Simulation loop for 1d. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a4bd890b646820cd5f60651f61826358e}{Sim2d} ()\hypertarget{classForces_a4bd890b646820cd5f60651f61826358e}{}\label{classForces_a4bd890b646820cd5f60651f61826358e}
+
+\begin{DoxyCompactList}\small\item\em Simulation loop for 2d. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a58f9413505ed155d74be878ac9648a41}{Sim3d} ()\hypertarget{classForces_a58f9413505ed155d74be878ac9648a41}{}\label{classForces_a58f9413505ed155d74be878ac9648a41}
+
+\begin{DoxyCompactList}\small\item\em Simulation loop for 1d. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aed42c487755c00ff4ddb916d6729da14}{Sim\+Leaves} ()\hypertarget{classForces_aed42c487755c00ff4ddb916d6729da14}{}\label{classForces_aed42c487755c00ff4ddb916d6729da14}
+
+\begin{DoxyCompactList}\small\item\em Simulation loop for leaves. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ab58dbf3583c50b0d8b0b9fbc35dfa4fa}{Sim\+Rigid} ()\hypertarget{classForces_ab58dbf3583c50b0d8b0b9fbc35dfa4fa}{}\label{classForces_ab58dbf3583c50b0d8b0b9fbc35dfa4fa}
+
+\begin{DoxyCompactList}\small\item\em Simulation loop for rigid. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a4a0ed3bb2c5155bda06158b0e918cd34}{Minimize\+Sol} ()\hypertarget{classForces_a4a0ed3bb2c5155bda06158b0e918cd34}{}\label{classForces_a4a0ed3bb2c5155bda06158b0e918cd34}
+
+\begin{DoxyCompactList}\small\item\em Iterative process to approach to the solution. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ae411df3ab40a4d3b604548c9afa0a8f4}{Interp} ()\hypertarget{classForces_ae411df3ab40a4d3b604548c9afa0a8f4}{}\label{classForces_ae411df3ab40a4d3b604548c9afa0a8f4}
+
+\begin{DoxyCompactList}\small\item\em Show interpolating lines. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a7411c318f14258f65a45ba2572697aa2}{Graphics} (int argc, char $\ast$$\ast$argv)\hypertarget{classForces_a7411c318f14258f65a45ba2572697aa2}{}\label{classForces_a7411c318f14258f65a45ba2572697aa2}
+
+\begin{DoxyCompactList}\small\item\em Initialize the scene. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aef7ba2f69afb2d954545f64c7fe24b14}{keyboard} (unsigned char key, int x, int y)\hypertarget{classForces_aef7ba2f69afb2d954545f64c7fe24b14}{}\label{classForces_aef7ba2f69afb2d954545f64c7fe24b14}
+
+\begin{DoxyCompactList}\small\item\em Additional key bindings. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a67bc3c9dc5545a69fc67ac97ad8073d7}{Draw\+Soil} ()\hypertarget{classForces_a67bc3c9dc5545a69fc67ac97ad8073d7}{}\label{classForces_a67bc3c9dc5545a69fc67ac97ad8073d7}
+
+\begin{DoxyCompactList}\small\item\em Two dimensional soil. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a513ff446a4f7dcabe0879c5225686bb5}{Draw\+Carpet} ()\hypertarget{classForces_a513ff446a4f7dcabe0879c5225686bb5}{}\label{classForces_a513ff446a4f7dcabe0879c5225686bb5}
+
+\begin{DoxyCompactList}\small\item\em Two dimensional surface. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a2e34d3fde75270ca8e234e988acacaeb}{Draw\+Particles} ()\hypertarget{classForces_a2e34d3fde75270ca8e234e988acacaeb}{}\label{classForces_a2e34d3fde75270ca8e234e988acacaeb}
+
+\begin{DoxyCompactList}\small\item\em Alternative drawing of the particle position. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aaafad604e85636fc1404b8973e3a6361}{Dr\+Bond\+Line} (int p)\hypertarget{classForces_aaafad604e85636fc1404b8973e3a6361}{}\label{classForces_aaafad604e85636fc1404b8973e3a6361}
+
+\begin{DoxyCompactList}\small\item\em Alternative drawing of the particle position. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_ad3af99165d3fa882579d67cea83e9eab}{Draw\+Scene} ()\hypertarget{classForces_ad3af99165d3fa882579d67cea83e9eab}{}\label{classForces_ad3af99165d3fa882579d67cea83e9eab}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDraw}{Draw} the scene. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_a7fa19bc7fff5918e9ef3ad1e80d41930}{Draw\+Nano} ()\hypertarget{classForces_a7fa19bc7fff5918e9ef3ad1e80d41930}{}\label{classForces_a7fa19bc7fff5918e9ef3ad1e80d41930}
+
+\begin{DoxyCompactList}\small\item\em Draws cylinder or spheres. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_aceab61c4b3e708dc33860c1c2cf2e407}{Dynamics\+View} ()\hypertarget{classForces_aceab61c4b3e708dc33860c1c2cf2e407}{}\label{classForces_aceab61c4b3e708dc33860c1c2cf2e407}
+
+\begin{DoxyCompactList}\small\item\em Idle function to run the dynamics. \end{DoxyCompactList}\item 
+void \hyperlink{classForces_afdf1ca9e7afc3e7ec41b47fea4b3d80d}{Menu} ()\hypertarget{classForces_afdf1ca9e7afc3e7ec41b47fea4b3d80d}{}\label{classForces_afdf1ca9e7afc3e7ec41b47fea4b3d80d}
+
+\begin{DoxyCompactList}\small\item\em Menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classForces_a287767d0d121df9d18211f05b84b692d}{C\+A\+L\+C\+\_\+\+T\+H\+E\+RM} \hyperlink{classForces_ad70e5d3740ce86208f93f64c134cd67a}{Calc\+Therm}\hypertarget{classForces_ad70e5d3740ce86208f93f64c134cd67a}{}\label{classForces_ad70e5d3740ce86208f93f64c134cd67a}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the energy calculation function. \end{DoxyCompactList}\item 
+\hyperlink{classForces_a6a793e08866e28de487e8de0b0dd6cb6}{T\+E\+N\+S\+\_\+\+R\+EF} \hyperlink{classForces_ac399a421f2e2ac8c1af8b456ce4d6e5c}{Tens\+\_\+\+Ref}\hypertarget{classForces_ac399a421f2e2ac8c1af8b456ce4d6e5c}{}\label{classForces_ac399a421f2e2ac8c1af8b456ce4d6e5c}
+
+\begin{DoxyCompactList}\small\item\em Pointer to a coordinate distance. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a3849139567c198e89d67104e61a42b79}{Incr\+Dist}\hypertarget{classForces_a3849139567c198e89d67104e61a42b79}{}\label{classForces_a3849139567c198e89d67104e61a42b79}
+
+\begin{DoxyCompactList}\small\item\em Step to move a particle. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ac321dc561843cb5d3f74604036a3a8da}{Deltat}\hypertarget{classForces_ac321dc561843cb5d3f74604036a3a8da}{}\label{classForces_ac321dc561843cb5d3f74604036a3a8da}
+
+\begin{DoxyCompactList}\small\item\em Time step. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a1e6e0ae467497e3c8ed1e1cc017e74b9}{N\+Chem\+Pot\+Id}\hypertarget{classForces_a1e6e0ae467497e3c8ed1e1cc017e74b9}{}\label{classForces_a1e6e0ae467497e3c8ed1e1cc017e74b9}
+
+\begin{DoxyCompactList}\small\item\em Equilibrium number of particles/chains. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a2e25f2942dd28ddaf03d12e8ece82c9a}{Chem\+Pot\+Id}\hypertarget{classForces_a2e25f2942dd28ddaf03d12e8ece82c9a}{}\label{classForces_a2e25f2942dd28ddaf03d12e8ece82c9a}
+
+\begin{DoxyCompactList}\small\item\em Chemical potential of the particles. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_ab7f8fa6b5791ce382b080bb3cb2ff87a}{Chem\+Pot\+Ex}\hypertarget{classForces_ab7f8fa6b5791ce382b080bb3cb2ff87a}{}\label{classForces_ab7f8fa6b5791ce382b080bb3cb2ff87a}
+
+\begin{DoxyCompactList}\small\item\em Chemical potential of the particles. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a0b6541f9bb6a818203ef208f3f5ee9ea}{Gauss\+Var}\hypertarget{classForces_a0b6541f9bb6a818203ef208f3f5ee9ea}{}\label{classForces_a0b6541f9bb6a818203ef208f3f5ee9ea}
+
+\begin{DoxyCompactList}\small\item\em Standard deviation of the gaussian chain. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_af2411aba2dd63fa22b1bc279653ff7a0}{Cut\+Off}\hypertarget{classForces_af2411aba2dd63fa22b1bc279653ff7a0}{}\label{classForces_af2411aba2dd63fa22b1bc279653ff7a0}
+
+\begin{DoxyCompactList}\small\item\em Cut off of the interactions. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_aea50b2cb321ee5dfaa107a0726838e1a}{Dx}\hypertarget{classForces_aea50b2cb321ee5dfaa107a0726838e1a}{}\label{classForces_aea50b2cb321ee5dfaa107a0726838e1a}
+
+\begin{DoxyCompactList}\small\item\em Spatial separation between particles. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a0846f0b0f68bb4cbe7b44d53f6200139}{Viscosity}\hypertarget{classForces_a0846f0b0f68bb4cbe7b44d53f6200139}{}\label{classForces_a0846f0b0f68bb4cbe7b44d53f6200139}
+
+\begin{DoxyCompactList}\small\item\em Viscosity of the medium. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_af51ff88ae9c6c4b9907f516c09ebf68f}{Time}\hypertarget{classForces_af51ff88ae9c6c4b9907f516c09ebf68f}{}\label{classForces_af51ff88ae9c6c4b9907f516c09ebf68f}
+
+\begin{DoxyCompactList}\small\item\em Total time. \end{DoxyCompactList}\item 
+double \hyperlink{classForces_a57e3c33b787c38c105cf9a2ed973326e}{Nrg\+P\+Bead}\hypertarget{classForces_a57e3c33b787c38c105cf9a2ed973326e}{}\label{classForces_a57e3c33b787c38c105cf9a2ed973326e}
+
+\begin{DoxyCompactList}\small\item\em Average energy per particle. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a9a870e91a0fb8ba626adc4c77b532c9c}{Bead2\+Move}\hypertarget{classForces_a9a870e91a0fb8ba626adc4c77b532c9c}{}\label{classForces_a9a870e91a0fb8ba626adc4c77b532c9c}
+
+\begin{DoxyCompactList}\small\item\em Bead to move. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_aca306e88f54f775febb7f1643d963416}{Old2\+Move}\hypertarget{classForces_aca306e88f54f775febb7f1643d963416}{}\label{classForces_aca306e88f54f775febb7f1643d963416}
+
+\begin{DoxyCompactList}\small\item\em Old part to move. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_abcd718a03c5cbbd304b98012a6d89b48}{Int\+Max}\hypertarget{classForces_abcd718a03c5cbbd304b98012a6d89b48}{}\label{classForces_abcd718a03c5cbbd304b98012a6d89b48}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_adcf19dc278dd27f0bba8cc1ae9375b4f}{n\+Edge} \mbox{[}3\mbox{]}\hypertarget{classForces_adcf19dc278dd27f0bba8cc1ae9375b4f}{}\label{classForces_adcf19dc278dd27f0bba8cc1ae9375b4f}
+
+\begin{DoxyCompactList}\small\item\em Number of particle per edge. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_abb0374374d00777fe085e4a163a0e9c5}{Sys\+Shape}\hypertarget{classForces_abb0374374d00777fe085e4a163a0e9c5}{}\label{classForces_abb0374374d00777fe085e4a163a0e9c5}
+
+\begin{DoxyCompactList}\small\item\em Shape of system. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ae7fd260630480928a069e7e536739df1}{Calc\+Mode}\hypertarget{classForces_ae7fd260630480928a069e7e536739df1}{}\label{classForces_ae7fd260630480928a069e7e536739df1}
+
+\begin{DoxyCompactList}\small\item\em Calculation mode. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a28654ea1667e43ab257cfbc040b51eda}{Therm\+Mode}\hypertarget{classForces_a28654ea1667e43ab257cfbc040b51eda}{}\label{classForces_a28654ea1667e43ab257cfbc040b51eda}
+
+\begin{DoxyCompactList}\small\item\em Thermostat mode. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_afa426c87de325a8eb41e1f2a29485003}{Sim\+Limit}\hypertarget{classForces_afa426c87de325a8eb41e1f2a29485003}{}\label{classForces_afa426c87de325a8eb41e1f2a29485003}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of time steps. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ab3f89c2d946d9c242d3d6061ae17ae78}{Sys\+Alloc}\hypertarget{classForces_ab3f89c2d946d9c242d3d6061ae17ae78}{}\label{classForces_ab3f89c2d946d9c242d3d6061ae17ae78}
+
+\begin{DoxyCompactList}\small\item\em Which arrays are allocated. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a283f91fa3fbd05178f4b77ff3a585495}{If\+Interp}\hypertarget{classForces_a283f91fa3fbd05178f4b77ff3a585495}{}\label{classForces_a283f91fa3fbd05178f4b77ff3a585495}
+
+\begin{DoxyCompactList}\small\item\em If interpolates with the splines. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a14788e7d8ed482305999af37d4cf65fd}{If\+Leaves}\hypertarget{classForces_a14788e7d8ed482305999af37d4cf65fd}{}\label{classForces_a14788e7d8ed482305999af37d4cf65fd}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ac32bde5ec94f284f39489e4608b580d4}{If\+Move}\hypertarget{classForces_ac32bde5ec94f284f39489e4608b580d4}{}\label{classForces_ac32bde5ec94f284f39489e4608b580d4}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a2f3ad1a6e0b8ab8fbc82813879781139}{If\+Nano}\hypertarget{classForces_a2f3ad1a6e0b8ab8fbc82813879781139}{}\label{classForces_a2f3ad1a6e0b8ab8fbc82813879781139}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a1d4b4e62a626434fc48475224ab89dca}{If\+Fill\+Matrix}\hypertarget{classForces_a1d4b4e62a626434fc48475224ab89dca}{}\label{classForces_a1d4b4e62a626434fc48475224ab89dca}
+
+\begin{DoxyCompactList}\small\item\em If the matrix has to be changed. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a41cc954e53faed412468476c9ec715df}{If\+Exit}\hypertarget{classForces_a41cc954e53faed412468476c9ec715df}{}\label{classForces_a41cc954e53faed412468476c9ec715df}
+
+\begin{DoxyCompactList}\small\item\em Exit from the loop. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ae1da38d5d966b9236ebd3641d103546d}{N\+Insertion}\hypertarget{classForces_ae1da38d5d966b9236ebd3641d103546d}{}\label{classForces_ae1da38d5d966b9236ebd3641d103546d}
+
+\begin{DoxyCompactList}\small\item\em Count accepted moves. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_aeeef7711986a24838884d8ef8c12f4ae}{N\+Removal}\hypertarget{classForces_aeeef7711986a24838884d8ef8c12f4ae}{}\label{classForces_aeeef7711986a24838884d8ef8c12f4ae}
+
+\begin{DoxyCompactList}\small\item\em Count accepted moves. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_afc36f5ebb0ee5c1be5fc2161e1fa3959}{N\+File} \mbox{[}2\mbox{]}\hypertarget{classForces_afc36f5ebb0ee5c1be5fc2161e1fa3959}{}\label{classForces_afc36f5ebb0ee5c1be5fc2161e1fa3959}
+
+\begin{DoxyCompactList}\small\item\em First and last file of the list. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ab8c3546f48b68bd8fa59174d8a5afa97}{N\+Update}\hypertarget{classForces_ab8c3546f48b68bd8fa59174d8a5afa97}{}\label{classForces_ab8c3546f48b68bd8fa59174d8a5afa97}
+
+\begin{DoxyCompactList}\small\item\em How many timesteps before redrawing. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_adcaf21deb47f48c1e25997f52ebd09d6}{N\+Write}\hypertarget{classForces_adcaf21deb47f48c1e25997f52ebd09d6}{}\label{classForces_adcaf21deb47f48c1e25997f52ebd09d6}
+
+\begin{DoxyCompactList}\small\item\em How many timesteps before write the snapshot. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a41019c483f6a39b86e1e25d07b99ee58}{N\+Spline}\hypertarget{classForces_a41019c483f6a39b86e1e25d07b99ee58}{}\label{classForces_a41019c483f6a39b86e1e25d07b99ee58}
+
+\begin{DoxyCompactList}\small\item\em Total number of points for drawing a spline. \end{DoxyCompactList}\item 
+\hyperlink{structKFORCES}{K\+F\+O\+R\+C\+ES} \hyperlink{classForces_a774d65ef8685d2859fae66bad8c9b435}{Kf}\hypertarget{classForces_a774d65ef8685d2859fae66bad8c9b435}{}\label{classForces_a774d65ef8685d2859fae66bad8c9b435}
+
+\begin{DoxyCompactList}\small\item\em Prefactor of the forces. \end{DoxyCompactList}\item 
+\hyperlink{structFORCES}{F\+O\+R\+C\+ES} $\ast$ \hyperlink{classForces_afca243db3841bf482910199bdb22e5f3}{Fm}\hypertarget{classForces_afca243db3841bf482910199bdb22e5f3}{}\label{classForces_afca243db3841bf482910199bdb22e5f3}
+
+\begin{DoxyCompactList}\small\item\em Array containing the forces for each particle. \end{DoxyCompactList}\item 
+\hyperlink{structTENS}{T\+E\+NS} \hyperlink{classForces_a77e000512807ae8da791d650d739299a}{Tens}\hypertarget{classForces_a77e000512807ae8da791d650d739299a}{}\label{classForces_a77e000512807ae8da791d650d739299a}
+
+\begin{DoxyCompactList}\small\item\em Structure for the pressure calculation. \end{DoxyCompactList}\item 
+\hyperlink{classDdLinkedList}{Dom\+Dec} $\ast$ \hyperlink{classForces_a5d8052dd63b08f01b581aeffa8506051}{Pc}\hypertarget{classForces_a5d8052dd63b08f01b581aeffa8506051}{}\label{classForces_a5d8052dd63b08f01b581aeffa8506051}
+
+\begin{DoxyCompactList}\small\item\em Pair list. \end{DoxyCompactList}\item 
+\hyperlink{structPART}{P\+A\+RT} $\ast$ \hyperlink{classForces_af6f3b943a0341846e18ac90f4f871b98}{Pl}\hypertarget{classForces_af6f3b943a0341846e18ac90f4f871b98}{}\label{classForces_af6f3b943a0341846e18ac90f4f871b98}
+
+\begin{DoxyCompactList}\small\item\em Splines. \end{DoxyCompactList}\item 
+\hyperlink{classSingProc}{Sing\+Proc} $\ast$ {\bfseries Proc}\hypertarget{classForces_adde8a4e5814f247c722934064b0f68b9}{}\label{classForces_adde8a4e5814f247c722934064b0f68b9}
+
+\item 
+G\+Luint $\ast$ \hyperlink{classForces_a10385a058195a115177656da1926ee5b}{Cylinder}\hypertarget{classForces_a10385a058195a115177656da1926ee5b}{}\label{classForces_a10385a058195a115177656da1926ee5b}
+
+\begin{DoxyCompactList}\small\item\em List referring the cylinder. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{classForces_a0fd83139e0b18df8d7beb2a83c5ab4d2}{Particles}\hypertarget{classForces_a0fd83139e0b18df8d7beb2a83c5ab4d2}{}\label{classForces_a0fd83139e0b18df8d7beb2a83c5ab4d2}
+
+\begin{DoxyCompactList}\small\item\em List referring the particle. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_acebb58ed475923de8833745b19b76f69}{N\+Show}\hypertarget{classForces_acebb58ed475923de8833745b19b76f69}{}\label{classForces_acebb58ed475923de8833745b19b76f69}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a059f36969951363c4c2158e3a0d4f526}{If\+Movie}\hypertarget{classForces_a059f36969951363c4c2158e3a0d4f526}{}\label{classForces_a059f36969951363c4c2158e3a0d4f526}
+
+\begin{DoxyCompactList}\small\item\em Produce the images for the video. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a2aa5389f98e8d550f84ceab92dc6bd86}{Frame}\hypertarget{classForces_a2aa5389f98e8d550f84ceab92dc6bd86}{}\label{classForces_a2aa5389f98e8d550f84ceab92dc6bd86}
+
+\begin{DoxyCompactList}\small\item\em Current number of frame. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ae79e4c8bd829af6de9af7f31efd18936}{If\+Ext}\hypertarget{classForces_ae79e4c8bd829af6de9af7f31efd18936}{}\label{classForces_ae79e4c8bd829af6de9af7f31efd18936}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_ae09e8643cb34f698b9d3dc6ffbf6c0e2}{If\+Spline}\hypertarget{classForces_ae09e8643cb34f698b9d3dc6ffbf6c0e2}{}\label{classForces_ae09e8643cb34f698b9d3dc6ffbf6c0e2}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a2c1a353b3d35ac1fdcc12aca81f6bb9d}{If\+Rot}\hypertarget{classForces_a2c1a353b3d35ac1fdcc12aca81f6bb9d}{}\label{classForces_a2c1a353b3d35ac1fdcc12aca81f6bb9d}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a49498134a2a543fdb43ec67e5dca8e37}{If\+Sphere}\hypertarget{classForces_a49498134a2a543fdb43ec67e5dca8e37}{}\label{classForces_a49498134a2a543fdb43ec67e5dca8e37}
+
+\begin{DoxyCompactList}\small\item\em Visualize spheres or points. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a06476a36da66d85ccb8de14d0275474d}{Bead\+Type}\hypertarget{classForces_a06476a36da66d85ccb8de14d0275474d}{}\label{classForces_a06476a36da66d85ccb8de14d0275474d}
+
+\begin{DoxyCompactList}\small\item\em Boundary condition for a single particle. \end{DoxyCompactList}\item 
+int \hyperlink{classForces_a26b42906c0869d0cef7431a39a162950}{menu}\hypertarget{classForces_a26b42906c0869d0cef7431a39a162950}{}\label{classForces_a26b42906c0869d0cef7431a39a162950}
+
+\begin{DoxyCompactList}\small\item\em Menu identifier. \end{DoxyCompactList}\item 
+int {\bfseries submenu}\hypertarget{classForces_af6060165f2c5013a4339818e9c08833d}{}\label{classForces_af6060165f2c5013a4339818e9c08833d}
+
+\item 
+int \hyperlink{classForces_ac3e70209b515c8a6293fcdb019a2fb29}{If\+Line}\hypertarget{classForces_ac3e70209b515c8a6293fcdb019a2fb29}{}\label{classForces_ac3e70209b515c8a6293fcdb019a2fb29}
+
+\begin{DoxyCompactList}\small\item\em Boh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+This class performs the different steps to solve the equations of motion via molecular dynamics simulation, simple grancanonical simulation in Monte Carlo and solution of 1d differential equations. 
+
+Definition at line 223 of file Forces.\+h.
+
+
+
+\subsubsection{Member Function Documentation}
+\index{Forces@{Forces}!Study\+Sys@{Study\+Sys}}
+\index{Study\+Sys@{Study\+Sys}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Study\+Sys()}{StudySys()}}]{\setlength{\rightskip}{0pt plus 5cm}void Study\+Sys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a5404beae7f264277208ee9e55cbea66e}{}\label{classForces_a5404beae7f264277208ee9e55cbea66e}
+
+
+Obtain informations for a better performance in inserting the chains. 
+
+a 
+
+Definition at line 488 of file Forces\+Integration.\+cpp.
+
+
+
+References Var\+Data\+::\+C\+Norm, Var\+Data\+::\+Inter\+B\+Spline1\+D(), Var\+Data\+::p\+Edge(), Var\+Data\+::p\+Inv\+Edge(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Chain(), and Var\+Data\+::p\+N\+P\+Ch().
+
+
+
+Referenced by Read\+Conf\+Dinamica().
+
+\index{Forces@{Forces}!Solve@{Solve}}
+\index{Solve@{Solve}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Solve()}{Solve()}}]{\setlength{\rightskip}{0pt plus 5cm}void Solve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a941bab4d0655ea3e774cd525e664be52}{}\label{classForces_a941bab4d0655ea3e774cd525e664be52}
+
+
+Solve a system of four oder differential equation. 
+
+Solve a differential equation. 
+
+Definition at line 9 of file Forces\+Loop.\+cpp.
+
+
+
+References Solve\+Leaves(), Solve\+Links\+Iterative(), Solve\+Rod(), and Sys\+Shape.
+
+
+
+Referenced by Explore\+Double\+Min(), Explore\+Pep\+Size(), Explore\+Pep\+Size2d(), and keyboard().
+
+\index{Forces@{Forces}!Solve\+Links@{Solve\+Links}}
+\index{Solve\+Links@{Solve\+Links}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Solve\+Links()}{SolveLinks()}}]{\setlength{\rightskip}{0pt plus 5cm}void Solve\+Links (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ac6b917be683f5ceaeec62edbf9472511}{}\label{classForces_ac6b917be683f5ceaeec62edbf9472511}
+
+
+Solve a system of four oder differential equation of particles connected by links. 
+
+a 
+
+Definition at line 109 of file Forces\+Integration.\+cpp.
+
+
+
+References Add\+Rigid(), Matrice\+::\+Apply(), Var\+Data\+::\+C\+Norm, Fill\+Matrix(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), and P\+A\+R\+T\+::\+Pos.
+
+\index{Forces@{Forces}!Solve\+Links\+Iterative@{Solve\+Links\+Iterative}}
+\index{Solve\+Links\+Iterative@{Solve\+Links\+Iterative}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Solve\+Links\+Iterative()}{SolveLinksIterative()}}]{\setlength{\rightskip}{0pt plus 5cm}void Solve\+Links\+Iterative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_abcac13d7754b73f6f22b2900a0d46d7d}{}\label{classForces_abcac13d7754b73f6f22b2900a0d46d7d}
+
+
+Solve a system of four oder differential equation of particles connected by links. 
+
+It uses Jacobi iterative method to converge to the solution. 
+
+Definition at line 47 of file Forces\+Integration.\+cpp.
+
+
+
+References S\+P\+L\+I\+N\+E\+::a0, S\+P\+L\+I\+N\+E\+::a1, S\+P\+L\+I\+N\+E\+::a2, S\+P\+L\+I\+N\+E\+::a3, S\+P\+L\+I\+N\+E\+::a4, Add\+Rigid(), Var\+Data\+::\+C\+Lat1, Var\+Data\+::\+C\+Norm, K\+F\+O\+R\+C\+E\+S\+::\+El, Kf, K\+F\+O\+R\+C\+E\+S\+::\+Lap, L\+I\+N\+K\+S\+::\+Link, Var\+Data\+::\+Ln, Var\+Data\+::\+N\+Edge, Var\+Data\+::p\+Edge(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), P\+A\+R\+T\+::\+Pos, Matrice\+::\+Print(), K\+F\+O\+R\+C\+E\+S\+::\+S\+Lap, and Matrice\+::\+Val().
+
+
+
+Referenced by Solve().
+
+\index{Forces@{Forces}!Solve\+Rod@{Solve\+Rod}}
+\index{Solve\+Rod@{Solve\+Rod}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Solve\+Rod()}{SolveRod()}}]{\setlength{\rightskip}{0pt plus 5cm}void Solve\+Rod (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a3953ee74479102530a979e3cd447d174}{}\label{classForces_a3953ee74479102530a979e3cd447d174}
+
+
+Solve a system of four oder differential equation of particles connected by links. 
+
+a 
+
+Definition at line 29 of file Forces\+Integration.\+cpp.
+
+
+
+References Matrice\+::\+Apply(), Var\+Data\+::\+C\+Norm, Var\+Data\+::p\+Edge(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Solve().
+
+\index{Forces@{Forces}!Solve\+Leaves@{Solve\+Leaves}}
+\index{Solve\+Leaves@{Solve\+Leaves}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Solve\+Leaves()}{SolveLeaves()}}]{\setlength{\rightskip}{0pt plus 5cm}void Solve\+Leaves (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a7a03a3d52f5a114cbbc22e60af60c049}{}\label{classForces_a7a03a3d52f5a114cbbc22e60af60c049}
+
+
+Solve a system of four oder differential equation of particles in a line. 
+
+a 
+
+Definition at line 5 of file Forces\+Integration.\+cpp.
+
+
+
+References Add\+Rigid(), Matrice\+::\+Apply(), Var\+Data\+::\+C\+Norm, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+P\+Ch(), and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Solve().
+
+\index{Forces@{Forces}!Vel\+Verlet\+Rigid@{Vel\+Verlet\+Rigid}}
+\index{Vel\+Verlet\+Rigid@{Vel\+Verlet\+Rigid}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Vel\+Verlet\+Rigid()}{VelVerletRigid()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vel\+Verlet\+Rigid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a050e80ecdb61ccf749649d6ec6542ee7}{}\label{classForces_a050e80ecdb61ccf749649d6ec6542ee7}
+
+
+Velocity Verlet for a rigid body, first step. 
+
+Update the position of a rotating cylinder. 
+
+Definition at line 321 of file Forces\+Integration.\+cpp.
+
+
+
+References N\+A\+N\+O\+::\+A\+Mom, Vettore\+::\+Angle(), N\+A\+N\+O\+::\+A\+Vel, N\+A\+N\+O\+::\+Axis, Var\+Data\+::\+Back\+Bone(), Matematica\+::\+Casuale(), Matrice\+::\+Copy\+On(), Vettore\+::\+Export(), N\+A\+N\+O\+::\+Force, N\+A\+N\+O\+::\+Gamma, N\+A\+N\+O\+::\+Height, N\+A\+N\+O\+::\+Mass, Var\+Data\+::\+Mat, Matrice\+::\+Mult(), Var\+Data\+::\+Nano, Vettore\+::\+Normalize(), Var\+Data\+::p\+Deltat(), Var\+Data\+::p\+Edge(), Var\+Data\+::p\+N\+Nano(), N\+A\+N\+O\+::\+Pos, N\+A\+N\+O\+::\+Rad, Matrice\+::\+Set(), Matrice\+::\+Transpose(), N\+A\+N\+O\+::\+Vel, Vettore\+::\+Vet\+V(), Vettore\+::x, and N\+A\+N\+O\+::\+Zeta.
+
+
+
+Referenced by Dynamics(), and Sim\+Rigid().
+
+\index{Forces@{Forces}!Vel\+Verlet\+Rigid2@{Vel\+Verlet\+Rigid2}}
+\index{Vel\+Verlet\+Rigid2@{Vel\+Verlet\+Rigid2}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Vel\+Verlet\+Rigid2()}{VelVerletRigid2()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vel\+Verlet\+Rigid2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a3d421e17e32ee064077a14cc483a7c4e}{}\label{classForces_a3d421e17e32ee064077a14cc483a7c4e}
+
+
+Velocity Verlet for a rigid body, second step. 
+
+a 
+
+Definition at line 382 of file Forces\+Integration.\+cpp.
+
+
+
+References N\+A\+N\+O\+::\+A\+Mom, N\+A\+N\+O\+::\+A\+Vel, N\+A\+N\+O\+::\+Force, N\+A\+N\+O\+::\+Mass, Var\+Data\+::\+Nano, Var\+Data\+::p\+Deltat(), Var\+Data\+::p\+N\+Nano(), and N\+A\+N\+O\+::\+Vel.
+
+\index{Forces@{Forces}!If\+Metropolis@{If\+Metropolis}}
+\index{If\+Metropolis@{If\+Metropolis}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{If\+Metropolis(double Exp\+Arg, double Weight)}{IfMetropolis(double ExpArg, double Weight)}}]{\setlength{\rightskip}{0pt plus 5cm}int If\+Metropolis (
+\begin{DoxyParamCaption}
+\item[{double}]{Exp\+Arg, }
+\item[{double}]{Weight}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a8b42f5fd80b4ad0cbf71649cd58f17ef}{}\label{classForces_a8b42f5fd80b4ad0cbf71649cd58f17ef}
+
+
+Metropolis acceptance criterium. 
+
+The general version of the Metropolis algorythm. 
+
+Definition at line 394 of file Forces\+Integration.\+cpp.
+
+
+
+References Matematica\+::\+Casuale(), Var\+Data\+::\+Mat, and Var\+Data\+::p\+Beta().
+
+
+
+Referenced by Try\+Insert(), Try\+Insert\+Ch(), Try\+Insert\+Ch\+Bias(), Try\+Move(), Try\+Move\+Ch(), Try\+Remove(), Try\+Remove\+Ch(), and Try\+Remove\+Ch\+Bias().
+
+\index{Forces@{Forces}!Insert\+Bead@{Insert\+Bead}}
+\index{Insert\+Bead@{Insert\+Bead}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Insert\+Bead(int p)}{InsertBead(int p)}}]{\setlength{\rightskip}{0pt plus 5cm}int Insert\+Bead (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a105420510a35a5f3ab726a943a279ce4}{}\label{classForces_a105420510a35a5f3ab726a943a279ce4}
+
+
+Insert a particle in the box. 
+
+Insert a particle in the system and in the cell list. 
+
+Definition at line 404 of file Forces\+Integration.\+cpp.
+
+
+
+References Dd\+Linked\+List\+::\+Add\+Part(), Matematica\+::\+Casuale(), Var\+Data\+::\+Mat, Pc, Var\+Data\+::p\+Edge(), Var\+Data\+::\+Pm, and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Try\+Insert(), and Widom\+Insert().
+
+\index{Forces@{Forces}!Ignore\+Ch@{Ignore\+Ch}}
+\index{Ignore\+Ch@{Ignore\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Ignore\+Ch(int c)}{IgnoreCh(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ignore\+Ch (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ada3b7b85ea783d27acfd5ff27165e4e2}{}\label{classForces_ada3b7b85ea783d27acfd5ff27165e4e2}
+
+
+Ignore a chain in the system (densities, pairlist) 
+
+a 
+
+Definition at line 532 of file Forces\+Integration.\+cpp.
+
+
+
+References Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+P\+Ch(), P\+A\+R\+T\+::\+Pos, Rem\+Dens(), and Dd\+Linked\+List\+::\+Rem\+Part().
+
+
+
+Referenced by Re\+Insert\+Ch(), and Try\+Move\+Ch().
+
+\index{Forces@{Forces}!Rem\+Ch\+From\+Sys@{Rem\+Ch\+From\+Sys}}
+\index{Rem\+Ch\+From\+Sys@{Rem\+Ch\+From\+Sys}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Rem\+Ch\+From\+Sys(int c)}{RemChFromSys(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Rem\+Ch\+From\+Sys (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a93ffd0cd932626a8b09911f2b3c96e10}{}\label{classForces_a93ffd0cd932626a8b09911f2b3c96e10}
+
+
+Delete a chain in the system. 
+
+a 
+
+Definition at line 540 of file Forces\+Integration.\+cpp.
+
+
+
+References Add\+Dens(), Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+N\+P\+Ch(), P\+A\+R\+T\+::\+Pos, Rem\+Dens(), Dd\+Linked\+List\+::\+Rem\+Part(), Re\+Set\+N\+Chain(), Re\+Set\+N\+Part(), Var\+Data\+::\+Swap\+Chain(), and Dd\+Linked\+List\+::\+Swap\+Part().
+
+
+
+Referenced by Try\+Insert\+Ch(), Try\+Insert\+Ch\+Bias(), Try\+Remove\+Ch(), Try\+Remove\+Ch\+Bias(), Widom\+Bias\+Ch\+In(), and Widom\+Insert\+Ch().
+
+\index{Forces@{Forces}!Save\+Ch@{Save\+Ch}}
+\index{Save\+Ch@{Save\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Save\+Ch(int c)}{SaveCh(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Save\+Ch (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a69e06a7f5662a462ed7b67428f1a8e69}{}\label{classForces_a69e06a7f5662a462ed7b67428f1a8e69}
+
+
+Save the chain configuration. 
+
+a 
+
+Definition at line 569 of file Forces\+Integration.\+cpp.
+
+
+
+References Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+P\+Ch(), and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Try\+Move\+Ch().
+
+\index{Forces@{Forces}!Re\+Insert\+Ch@{Re\+Insert\+Ch}}
+\index{Re\+Insert\+Ch@{Re\+Insert\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Re\+Insert\+Ch(int c)}{ReInsertCh(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Re\+Insert\+Ch (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aaea07c5c698924ba7efc75988997086c}{}\label{classForces_aaea07c5c698924ba7efc75988997086c}
+
+
+Reinsert the chain in the previous position. 
+
+a 
+
+Definition at line 580 of file Forces\+Integration.\+cpp.
+
+
+
+References Consider\+Ch(), Ignore\+Ch(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+P\+Ch(), and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Try\+Move\+Ch().
+
+\index{Forces@{Forces}!Consider\+Ch@{Consider\+Ch}}
+\index{Consider\+Ch@{Consider\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Consider\+Ch(int c)}{ConsiderCh(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Consider\+Ch (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a1c4bc6d5b46ce58c1e6139e9feccea5a}{}\label{classForces_a1c4bc6d5b46ce58c1e6139e9feccea5a}
+
+
+Consider a chain in the system (densities, pairlist) 
+
+a 
+
+Definition at line 524 of file Forces\+Integration.\+cpp.
+
+
+
+References Add\+Dens(), Dd\+Linked\+List\+::\+Add\+Part(), Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+P\+Ch(), and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Insert\+Ch(), and Re\+Insert\+Ch().
+
+\index{Forces@{Forces}!Insert\+Ch@{Insert\+Ch}}
+\index{Insert\+Ch@{Insert\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Insert\+Ch(int c)}{InsertCh(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}double Insert\+Ch (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aed7689c1abd36c6ac8743fadd2e6cbdf}{}\label{classForces_aed7689c1abd36c6ac8743fadd2e6cbdf}
+
+
+Displace a chain in the box. 
+
+Insert a chain in the system and in the cell list. 
+
+Definition at line 592 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Mode, Matematica\+::\+Casuale(), Var\+Data\+::\+C\+Lat1, Var\+Data\+::\+C\+Lat2, Var\+Data\+::\+C\+Norm, Consider\+Ch(), Insert\+Rest(), Var\+Data\+::\+Mat, Var\+Data\+::\+Nano, Var\+Data\+::p\+Edge(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+N\+P\+Ch(), P\+A\+R\+T\+::\+Pos, N\+A\+N\+O\+::\+Pos, Var\+Data\+::p\+Vol(), N\+A\+N\+O\+::\+Rad, Re\+Set\+N\+Chain(), and Re\+Set\+N\+Part().
+
+
+
+Referenced by Try\+Insert\+Ch(), Try\+Move\+Ch(), and Widom\+Insert\+Ch().
+
+\index{Forces@{Forces}!Insert\+Rest@{Insert\+Rest}}
+\index{Insert\+Rest@{Insert\+Rest}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Insert\+Rest(int p\+Curr, int Start\+Pos)}{InsertRest(int pCurr, int StartPos)}}]{\setlength{\rightskip}{0pt plus 5cm}double Insert\+Rest (
+\begin{DoxyParamCaption}
+\item[{int}]{p\+Curr, }
+\item[{int}]{Start\+Pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a8e9fda810a12eeaba2c7b72af5a1e664}{}\label{classForces_a8e9fda810a12eeaba2c7b72af5a1e664}
+
+
+Build the rest of the chain. 
+
+Insert the remaining particles of the new created chain. 
+
+Definition at line 628 of file Forces\+Integration.\+cpp.
+
+
+
+References Matematica\+::\+Gaussiano(), Gauss\+Var, Var\+Data\+::\+Mat, Var\+Data\+::p\+Edge(), Var\+Data\+::p\+Inv\+Edge(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+P\+Ch(), and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Insert\+Ch().
+
+\index{Forces@{Forces}!Remove\+Ch\+Bias@{Remove\+Ch\+Bias}}
+\index{Remove\+Ch\+Bias@{Remove\+Ch\+Bias}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Remove\+Ch\+Bias(int c)}{RemoveChBias(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}double Remove\+Ch\+Bias (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aae7e57b54965ad985ab041a040dfc93d}{}\label{classForces_aae7e57b54965ad985ab041a040dfc93d}
+
+
+Remove a chain in the box. 
+
+Remove a chain in the system calculating the weight of the super detailed balance. 
+
+Definition at line 724 of file Forces\+Integration.\+cpp.
+
+
+
+References Add\+Dens(), Dd\+Linked\+List\+::\+Add\+Part(), Calc\+Bending\+Ghost(), Dens\+Func\+Nrg\+Ghost(), Nano\+Nrg(), Nrg\+P\+Bead, Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+P\+Ch(), P\+A\+R\+T\+::\+Pos, Rem\+Dens(), Dd\+Linked\+List\+::\+Rem\+Part(), and Weight\+Set\+Bond().
+
+
+
+Referenced by Try\+Remove\+Ch\+Bias(), and Widom\+Bias\+Ch\+Out().
+
+\index{Forces@{Forces}!Insert\+Ch\+Bias@{Insert\+Ch\+Bias}}
+\index{Insert\+Ch\+Bias@{Insert\+Ch\+Bias}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Insert\+Ch\+Bias(int c)}{InsertChBias(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}double Insert\+Ch\+Bias (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a766511ed1b66a8b4ef97b1b343fb6254}{}\label{classForces_a766511ed1b66a8b4ef97b1b343fb6254}
+
+
+Put a chain in the box. 
+
+Create a chain choosing among a set of different bond vectors with a probability given by their Boltzmann factors. 
+
+Definition at line 766 of file Forces\+Integration.\+cpp.
+
+
+
+References Add\+Dens(), Dd\+Linked\+List\+::\+Add\+Part(), Calc\+Bending\+Ghost(), Calc\+Mode, Matematica\+::\+Casuale(), Var\+Data\+::\+C\+Lat1, Var\+Data\+::\+C\+Lat2, Var\+Data\+::\+C\+Norm, Create\+Set\+Bond(), Dens\+Func\+Nrg\+Ghost(), Var\+Data\+::\+Mat, Var\+Data\+::\+Nano, Nano\+Nrg(), Nrg\+P\+Bead, Pc, Var\+Data\+::p\+Edge(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+N\+P\+Ch(), P\+A\+R\+T\+::\+Pos, N\+A\+N\+O\+::\+Pos, Var\+Data\+::p\+Vol(), N\+A\+N\+O\+::\+Rad, Re\+Set\+N\+Chain(), and Re\+Set\+N\+Part().
+
+
+
+Referenced by Try\+Insert\+Ch\+Bias(), and Widom\+Bias\+Ch\+In().
+
+\index{Forces@{Forces}!Weight\+Set\+Bond@{Weight\+Set\+Bond}}
+\index{Weight\+Set\+Bond@{Weight\+Set\+Bond}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Weight\+Set\+Bond(int p, int t)}{WeightSetBond(int p, int t)}}]{\setlength{\rightskip}{0pt plus 5cm}double Weight\+Set\+Bond (
+\begin{DoxyParamCaption}
+\item[{int}]{p, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a97d31164f5b192ff0e68d26f120e9e78}{}\label{classForces_a97d31164f5b192ff0e68d26f120e9e78}
+
+
+Weight a set of bonds for the configurational bias. 
+
+Calculate the weights of a set of bonds created for the existing monomer of the chain to remove. 
+
+Definition at line 743 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Bending\+Ghost(), Dens\+Func\+Nrg\+Ghost(), Matematica\+::\+Gaussiano(), Gauss\+Var, Var\+Data\+::\+Mat, Nano\+Nrg(), Nrg\+P\+Bead, Var\+Data\+::p\+Edge(), Var\+Data\+::p\+Inv\+Edge(), Var\+Data\+::\+Pm, and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Remove\+Ch\+Bias().
+
+\index{Forces@{Forces}!Create\+Set\+Bond@{Create\+Set\+Bond}}
+\index{Create\+Set\+Bond@{Create\+Set\+Bond}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Create\+Set\+Bond(int p, int t)}{CreateSetBond(int p, int t)}}]{\setlength{\rightskip}{0pt plus 5cm}double Create\+Set\+Bond (
+\begin{DoxyParamCaption}
+\item[{int}]{p, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ac80c2d5ad9a6b3f4de84f825844d1a36}{}\label{classForces_ac80c2d5ad9a6b3f4de84f825844d1a36}
+
+
+Create a set of bonds for the configurational bias. 
+
+Create a set of bond vectors and choose among them one with a probability given by its Boltzmann weight. 
+
+Definition at line 816 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Bending\+Ghost(), Matematica\+::\+Casuale(), Dens\+Func\+Nrg\+Ghost(), Matematica\+::\+Gaussiano(), Gauss\+Var, Var\+Data\+::\+Mat, Nano\+Nrg(), Nrg\+P\+Bead, Var\+Data\+::p\+Edge(), Var\+Data\+::p\+Inv\+Edge(), Var\+Data\+::\+Pm, and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Insert\+Ch\+Bias().
+
+\index{Forces@{Forces}!Move\+Bead@{Move\+Bead}}
+\index{Move\+Bead@{Move\+Bead}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Move\+Bead(int p)}{MoveBead(int p)}}]{\setlength{\rightskip}{0pt plus 5cm}int Move\+Bead (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aaa86df6dc24f47e52ca153db60bd6749}{}\label{classForces_aaa86df6dc24f47e52ca153db60bd6749}
+
+
+Move a particle in the box. 
+
+Give a new position for the particle p. 
+
+Definition at line 448 of file Forces\+Integration.\+cpp.
+
+
+
+References Matematica\+::\+Gaussiano(), Gauss\+Var, Var\+Data\+::\+Mat, Var\+Data\+::p\+Edge(), Var\+Data\+::p\+Inv\+Edge(), Var\+Data\+::\+Pm, and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Try\+Move().
+
+\index{Forces@{Forces}!Try\+Insert@{Try\+Insert}}
+\index{Try\+Insert@{Try\+Insert}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Try\+Insert()}{TryInsert()}}]{\setlength{\rightskip}{0pt plus 5cm}int Try\+Insert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a56709cda842db1c6f3813acc5bca5237}{}\label{classForces_a56709cda842db1c6f3813acc5bca5237}
+
+
+Trial insertion. 
+
+a 
+
+Definition at line 413 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Nrg\+Bead(), Chem\+Pot\+Ex, Chem\+Pot\+Id, If\+Metropolis(), Insert\+Bead(), Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+Vol(), Dd\+Linked\+List\+::\+Rem\+Part(), and Re\+Set\+N\+Part().
+
+
+
+Referenced by Dynamics().
+
+\index{Forces@{Forces}!Try\+Remove@{Try\+Remove}}
+\index{Try\+Remove@{Try\+Remove}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Try\+Remove()}{TryRemove()}}]{\setlength{\rightskip}{0pt plus 5cm}int Try\+Remove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a0658783c2d6dcab7a875f938747255a6}{}\label{classForces_a0658783c2d6dcab7a875f938747255a6}
+
+
+Trial removal. 
+
+a 
+
+Definition at line 432 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Nrg\+Bead(), Matematica\+::\+Casuale(), Chem\+Pot\+Ex, Chem\+Pot\+Id, If\+Metropolis(), Var\+Data\+::\+Mat, Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+Vol(), Dd\+Linked\+List\+::\+Rem\+Part(), Re\+Set\+N\+Part(), Dd\+Linked\+List\+::\+Swap\+Part(), and Var\+Data\+::\+Swap\+Part().
+
+
+
+Referenced by Dynamics().
+
+\index{Forces@{Forces}!Try\+Move@{Try\+Move}}
+\index{Try\+Move@{Try\+Move}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Try\+Move()}{TryMove()}}]{\setlength{\rightskip}{0pt plus 5cm}int Try\+Move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ad69656acc46a08f2361dbe5b1067dffa}{}\label{classForces_ad69656acc46a08f2361dbe5b1067dffa}
+
+
+Trial movement. 
+
+a 
+
+Definition at line 457 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Nrg\+Bead(), Matematica\+::\+Casuale(), If\+Metropolis(), Var\+Data\+::\+Mat, Move\+Bead(), Dd\+Linked\+List\+::\+Move\+Part(), Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), and P\+A\+R\+T\+::\+Pos.
+
+
+
+Referenced by Dynamics().
+
+\index{Forces@{Forces}!Try\+Move\+Ch@{Try\+Move\+Ch}}
+\index{Try\+Move\+Ch@{Try\+Move\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Try\+Move\+Ch()}{TryMoveCh()}}]{\setlength{\rightskip}{0pt plus 5cm}int Try\+Move\+Ch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aa30016ca75ff4d48a905a9dad7da023f}{}\label{classForces_aa30016ca75ff4d48a905a9dad7da023f}
+
+
+Trial desplacement of a chain. 
+
+a 
+
+Definition at line 649 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Nrg\+Ch(), Matematica\+::\+Casuale(), If\+Metropolis(), Ignore\+Ch(), Insert\+Ch(), Var\+Data\+::\+Mat, Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+N\+P\+Ch(), Re\+Insert\+Ch(), Re\+Set\+N\+Chain(), Re\+Set\+N\+Part(), and Save\+Ch().
+
+
+
+Referenced by Dynamics().
+
+\index{Forces@{Forces}!Try\+Insert\+Ch@{Try\+Insert\+Ch}}
+\index{Try\+Insert\+Ch@{Try\+Insert\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Try\+Insert\+Ch()}{TryInsertCh()}}]{\setlength{\rightskip}{0pt plus 5cm}int Try\+Insert\+Ch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ab7bfa9d7122c69b311f666740653bd0b}{}\label{classForces_ab7bfa9d7122c69b311f666740653bd0b}
+
+
+Trial insertion of a chain. 
+
+a 
+
+Definition at line 697 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Nrg\+Ch(), Chem\+Pot\+Ex, Chem\+Pot\+Id, If\+Metropolis(), Insert\+Ch(), Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+P\+Ch(), Var\+Data\+::p\+Vol(), and Rem\+Ch\+From\+Sys().
+
+
+
+Referenced by Dynamics().
+
+\index{Forces@{Forces}!Try\+Remove\+Ch@{Try\+Remove\+Ch}}
+\index{Try\+Remove\+Ch@{Try\+Remove\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Try\+Remove\+Ch()}{TryRemoveCh()}}]{\setlength{\rightskip}{0pt plus 5cm}int Try\+Remove\+Ch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aefc3ccff8a9805e952ddc49194595844}{}\label{classForces_aefc3ccff8a9805e952ddc49194595844}
+
+
+Trial removal of a chain. 
+
+a 
+
+Definition at line 675 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Nrg\+Ch(), Matematica\+::\+Casuale(), Chem\+Pot\+Ex, Chem\+Pot\+Id, If\+Metropolis(), Var\+Data\+::\+Mat, Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+N\+P\+Ch(), Var\+Data\+::p\+Vol(), and Rem\+Ch\+From\+Sys().
+
+
+
+Referenced by Dynamics().
+
+\index{Forces@{Forces}!Try\+Insert\+Ch\+Bias@{Try\+Insert\+Ch\+Bias}}
+\index{Try\+Insert\+Ch\+Bias@{Try\+Insert\+Ch\+Bias}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Try\+Insert\+Ch\+Bias()}{TryInsertChBias()}}]{\setlength{\rightskip}{0pt plus 5cm}int Try\+Insert\+Ch\+Bias (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a949d9de0a157e4258f88d5b5f322f74e}{}\label{classForces_a949d9de0a157e4258f88d5b5f322f74e}
+
+
+Trial biased insertion of a chain. 
+
+a 
+
+Definition at line 873 of file Forces\+Integration.\+cpp.
+
+
+
+References Chem\+Pot\+Ex, Chem\+Pot\+Id, If\+Metropolis(), Insert\+Ch\+Bias(), Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+P\+Ch(), Var\+Data\+::p\+Vol(), and Rem\+Ch\+From\+Sys().
+
+
+
+Referenced by Dynamics().
+
+\index{Forces@{Forces}!Try\+Remove\+Ch\+Bias@{Try\+Remove\+Ch\+Bias}}
+\index{Try\+Remove\+Ch\+Bias@{Try\+Remove\+Ch\+Bias}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Try\+Remove\+Ch\+Bias()}{TryRemoveChBias()}}]{\setlength{\rightskip}{0pt plus 5cm}int Try\+Remove\+Ch\+Bias (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a32c3f4b656bce2cf73370ce605f53113}{}\label{classForces_a32c3f4b656bce2cf73370ce605f53113}
+
+
+Trial biased removal of a chain. 
+
+a 
+
+Definition at line 854 of file Forces\+Integration.\+cpp.
+
+
+
+References Matematica\+::\+Casuale(), Chem\+Pot\+Ex, Chem\+Pot\+Id, If\+Metropolis(), Var\+Data\+::\+Mat, Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+N\+P\+Ch(), Var\+Data\+::p\+Vol(), Rem\+Ch\+From\+Sys(), and Remove\+Ch\+Bias().
+
+
+
+Referenced by Dynamics().
+
+\index{Forces@{Forces}!Widom\+Insert@{Widom\+Insert}}
+\index{Widom\+Insert@{Widom\+Insert}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Widom\+Insert(double $\ast$\+Nrg\+Diff)}{WidomInsert(double *NrgDiff)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widom\+Insert (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Nrg\+Diff}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_af9eda9a781eabd31a8813c9a64f2d5ec}{}\label{classForces_af9eda9a781eabd31a8813c9a64f2d5ec}
+
+
+Widom insertion. 
+
+a 
+
+Definition at line 890 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Bending\+Ghost(), Dens\+Func\+Nrg\+Ghost(), Insert\+Bead(), Nano\+Nrg(), Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), and Dd\+Linked\+List\+::\+Rem\+Part().
+
+
+
+Referenced by Run\+Widom().
+
+\index{Forces@{Forces}!Widom\+Remove@{Widom\+Remove}}
+\index{Widom\+Remove@{Widom\+Remove}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Widom\+Remove(double $\ast$\+Nrg\+Diff, int p)}{WidomRemove(double *NrgDiff, int p)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widom\+Remove (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Nrg\+Diff, }
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a85d825b7b4af29d476abbf098ce630e3}{}\label{classForces_a85d825b7b4af29d476abbf098ce630e3}
+
+
+Widom removal. 
+
+a 
+
+Definition at line 901 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Nrg\+Bead().
+
+
+
+Referenced by Run\+Widom().
+
+\index{Forces@{Forces}!Widom\+Insert\+Ch@{Widom\+Insert\+Ch}}
+\index{Widom\+Insert\+Ch@{Widom\+Insert\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Widom\+Insert\+Ch(double $\ast$\+Nrg\+Diff)}{WidomInsertCh(double *NrgDiff)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widom\+Insert\+Ch (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Nrg\+Diff}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_acffb530559d4e3ebfac6481a46468f52}{}\label{classForces_acffb530559d4e3ebfac6481a46468f52}
+
+
+Widom insertion. 
+
+a 
+
+Definition at line 908 of file Forces\+Integration.\+cpp.
+
+
+
+References Calc\+Nrg\+Ch(), Insert\+Ch(), Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+P\+Ch(), and Rem\+Ch\+From\+Sys().
+
+
+
+Referenced by Run\+Widom\+Ch\+In().
+
+\index{Forces@{Forces}!Widom\+Remove\+Ch@{Widom\+Remove\+Ch}}
+\index{Widom\+Remove\+Ch@{Widom\+Remove\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Widom\+Remove\+Ch(double $\ast$\+Nrg\+Diff, int c)}{WidomRemoveCh(double *NrgDiff, int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widom\+Remove\+Ch (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Nrg\+Diff, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a0ab84cf7b372ab5ae21966ed671ee4c3}{}\label{classForces_a0ab84cf7b372ab5ae21966ed671ee4c3}
+
+
+Widom removal. 
+
+a 
+
+Definition at line 918 of file Forces\+Integration.\+cpp.
+
+
+
+Referenced by Run\+Widom\+Ch\+Out().
+
+\index{Forces@{Forces}!Widom\+Bias\+Ch\+In@{Widom\+Bias\+Ch\+In}}
+\index{Widom\+Bias\+Ch\+In@{Widom\+Bias\+Ch\+In}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Widom\+Bias\+Ch\+In(double $\ast$\+Weight)}{WidomBiasChIn(double *Weight)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widom\+Bias\+Ch\+In (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Weight}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_af07ae7761f13798c6de1391b10c5856d}{}\label{classForces_af07ae7761f13798c6de1391b10c5856d}
+
+
+Widom with Rosenbluth weight. 
+
+a 
+
+Definition at line 926 of file Forces\+Integration.\+cpp.
+
+
+
+References Insert\+Ch\+Bias(), Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+P\+Ch(), and Rem\+Ch\+From\+Sys().
+
+
+
+Referenced by Rosen\+In().
+
+\index{Forces@{Forces}!Widom\+Bias\+Ch\+Out@{Widom\+Bias\+Ch\+Out}}
+\index{Widom\+Bias\+Ch\+Out@{Widom\+Bias\+Ch\+Out}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Widom\+Bias\+Ch\+Out(double $\ast$\+Weight, int c)}{WidomBiasChOut(double *Weight, int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Widom\+Bias\+Ch\+Out (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Weight, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ab249c91e15e3611167002159ef6d5b60}{}\label{classForces_ab249c91e15e3611167002159ef6d5b60}
+
+
+Widom with Rosenbluth weight. 
+
+a 
+
+Definition at line 935 of file Forces\+Integration.\+cpp.
+
+
+
+References Remove\+Ch\+Bias().
+
+
+
+Referenced by Rosen\+Out().
+
+\index{Forces@{Forces}!Vel\+Verlet1@{Vel\+Verlet1}}
+\index{Vel\+Verlet1@{Vel\+Verlet1}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Vel\+Verlet1()}{VelVerlet1()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vel\+Verlet1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a7a55d93047438c9c5f5f9145a995e8d0}{}\label{classForces_a7a55d93047438c9c5f5f9145a995e8d0}
+
+
+First step of the velocity Verlet. 
+
+a 
+
+Definition at line 942 of file Forces\+Integration.\+cpp.
+
+
+
+References F\+O\+R\+C\+E\+S\+::\+Dir, F\+O\+R\+C\+E\+S\+::\+Ext, Fm, Var\+Data\+::p\+Deltat(), Var\+Data\+::p\+Edge(), Var\+Data\+::p\+Inv\+Edge(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), P\+A\+R\+T\+::\+Pos, and P\+A\+R\+T\+::\+Vel.
+
+
+
+Referenced by Dynamics(), Sim1d(), Sim2d(), Sim3d(), Sim\+Leaves(), and Sim\+Rigid().
+
+\index{Forces@{Forces}!Langevin\+Therm@{Langevin\+Therm}}
+\index{Langevin\+Therm@{Langevin\+Therm}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Langevin\+Therm()}{LangevinTherm()}}]{\setlength{\rightskip}{0pt plus 5cm}void Langevin\+Therm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a379f6968f484a2a975c657f07821731c}{}\label{classForces_a379f6968f484a2a975c657f07821731c}
+
+
+Langevin thermostat. 
+
+a 
+
+Definition at line 957 of file Forces\+Integration.\+cpp.
+
+
+
+References Matematica\+::\+Casuale(), F\+O\+R\+C\+E\+S\+::\+Dir, Fm, Var\+Data\+::\+Mat, Var\+Data\+::p\+Deltat(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), P\+A\+R\+T\+::\+Vel, and Viscosity.
+
+
+
+Referenced by Choose\+Thermostat().
+
+\index{Forces@{Forces}!Andersen\+Therm@{Andersen\+Therm}}
+\index{Andersen\+Therm@{Andersen\+Therm}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Andersen\+Therm()}{AndersenTherm()}}]{\setlength{\rightskip}{0pt plus 5cm}void Andersen\+Therm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a731619cf10a23878480c0af79252ed3e}{}\label{classForces_a731619cf10a23878480c0af79252ed3e}
+
+
+Andersen thermostat. 
+
+a 
+
+Definition at line 971 of file Forces\+Integration.\+cpp.
+
+
+
+References Matematica\+::\+Casuale(), Matematica\+::\+Gaussiano(), Var\+Data\+::\+Mat, Var\+Data\+::p\+Deltat(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+Temp(), and P\+A\+R\+T\+::\+Vel.
+
+
+
+Referenced by Choose\+Thermostat().
+
+\index{Forces@{Forces}!Berendsen\+Therm@{Berendsen\+Therm}}
+\index{Berendsen\+Therm@{Berendsen\+Therm}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Berendsen\+Therm()}{BerendsenTherm()}}]{\setlength{\rightskip}{0pt plus 5cm}void Berendsen\+Therm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a795803d47c68fef34839e68ffb2de60e}{}\label{classForces_a795803d47c68fef34839e68ffb2de60e}
+
+
+Berendsen thermostat. 
+
+a 
+
+Definition at line 984 of file Forces\+Integration.\+cpp.
+
+
+
+References F\+O\+R\+C\+E\+S\+::\+Dir, Fm, Var\+Data\+::p\+Deltat(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), and P\+A\+R\+T\+::\+Vel.
+
+
+
+Referenced by Choose\+Thermostat().
+
+\index{Forces@{Forces}!Vel\+Verlet2@{Vel\+Verlet2}}
+\index{Vel\+Verlet2@{Vel\+Verlet2}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Vel\+Verlet2()}{VelVerlet2()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vel\+Verlet2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a7965b2207a6253f8215b96a7195cb5bc}{}\label{classForces_a7965b2207a6253f8215b96a7195cb5bc}
+
+
+Second step of the velocity Verlet. 
+
+a 
+
+Definition at line 1029 of file Forces\+Integration.\+cpp.
+
+
+
+References F\+O\+R\+C\+E\+S\+::\+Dir, F\+O\+R\+C\+E\+S\+::\+Ext, Fm, Var\+Data\+::p\+Deltat(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), and P\+A\+R\+T\+::\+Vel.
+
+
+
+Referenced by Dynamics(), No\+Therm(), Sim1d(), Sim2d(), Sim3d(), Sim\+Leaves(), and Sim\+Rigid().
+
+\index{Forces@{Forces}!Choose\+Thermostat@{Choose\+Thermostat}}
+\index{Choose\+Thermostat@{Choose\+Thermostat}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Choose\+Thermostat(int Mode)}{ChooseThermostat(int Mode)}}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Thermostat (
+\begin{DoxyParamCaption}
+\item[{int}]{Mode}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a8de191a7e9bb4c04ea140023c0bffaba}{}\label{classForces_a8de191a7e9bb4c04ea140023c0bffaba}
+
+
+Choose a calculation mode. 
+
+a 
+
+Definition at line 1003 of file Forces\+Integration.\+cpp.
+
+
+
+References Andersen\+Therm(), Berendsen\+Therm(), Calc\+Therm, Langevin\+Therm(), and No\+Therm().
+
+
+
+Referenced by Alloc\+Method(), and No\+Therm().
+
+\index{Forces@{Forces}!Force\+Field\+Line@{Force\+Field\+Line}}
+\index{Force\+Field\+Line@{Force\+Field\+Line}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Force\+Field\+Line()}{ForceFieldLine()}}]{\setlength{\rightskip}{0pt plus 5cm}int Force\+Field\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_abe46a6cf819d53f35747565f9276854f}{}\label{classForces_abe46a6cf819d53f35747565f9276854f}
+
+
+Helfrich Hamiltonian for a line. 
+
+Use different types of splines to interpolate the points and calculate the second and forth derivative. 
+
+Definition at line 4 of file Forces\+Force\+Field.\+cpp.
+
+
+
+References S\+P\+L\+I\+N\+E\+::a2, S\+P\+L\+I\+N\+E\+::a4, Matematica\+::\+Cubica(), F\+O\+R\+C\+E\+S\+::\+Dir, Dx, F\+O\+R\+C\+E\+S\+::\+Ext, Fm, Matematica\+::\+Forth(), If\+Interp, Kf, K\+F\+O\+R\+C\+E\+S\+::\+Lap, Var\+Data\+::\+Mat, Matematica\+::\+Parab(), Matematica\+::\+Parab2(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), P\+A\+R\+T\+::\+Pos, K\+F\+O\+R\+C\+E\+S\+::\+S\+Lap, Matematica\+::\+Spline3(), Matematica\+::\+Spline3\+Beg(), Matematica\+::\+Spline3\+End(), Matematica\+::\+Spline4(), and Matematica\+::\+Spline4\+Beg().
+
+
+
+Referenced by Apply\+Therm(), Dynamics(), and Sim1d().
+
+\index{Forces@{Forces}!Force\+Field\+Leaves@{Force\+Field\+Leaves}}
+\index{Force\+Field\+Leaves@{Force\+Field\+Leaves}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Force\+Field\+Leaves()}{ForceFieldLeaves()}}]{\setlength{\rightskip}{0pt plus 5cm}int Force\+Field\+Leaves (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aed97e42cbfeb918574e91a90719864ab}{}\label{classForces_aed97e42cbfeb918574e91a90719864ab}
+
+
+Helfrich Hamiltonian with an elastic coupling. 
+
+Use different types of splines to interpolate the points and calculate the second and forth derivative, the two sheets have an elastic coupling. 
+
+Definition at line 130 of file Forces\+Force\+Field.\+cpp.
+
+
+
+References S\+P\+L\+I\+N\+E\+::a2, S\+P\+L\+I\+N\+E\+::a4, F\+O\+R\+C\+E\+S\+::\+Dir, Dx, F\+O\+R\+C\+E\+S\+::\+Ext, Fm, Matematica\+::\+Forth(), Kf, K\+F\+O\+R\+C\+E\+S\+::\+Lap, K\+F\+O\+R\+C\+E\+S\+::\+LJ, Var\+Data\+::\+Mat, Var\+Data\+::\+Nano, Var\+Data\+::\+N\+Edge, Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+Part(), P\+A\+R\+T\+::\+Pos, N\+A\+N\+O\+::\+Pos, N\+A\+N\+O\+::\+Rad, K\+F\+O\+R\+C\+E\+S\+::\+S\+Lap, Matematica\+::\+Spline3(), Matematica\+::\+Spline3\+End(), and Matematica\+::\+Spline4\+Beg().
+
+
+
+Referenced by Apply\+Therm(), Dynamics(), and Sim\+Leaves().
+
+\index{Forces@{Forces}!Force\+Field\+Bulk@{Force\+Field\+Bulk}}
+\index{Force\+Field\+Bulk@{Force\+Field\+Bulk}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Force\+Field\+Bulk()}{ForceFieldBulk()}}]{\setlength{\rightskip}{0pt plus 5cm}int Force\+Field\+Bulk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aa57796d41906bf35c6a79225ecda6f98}{}\label{classForces_aa57796d41906bf35c6a79225ecda6f98}
+
+
+Armonic potential on a lattice. 
+
+Calculate the harmonic potential along the links. 
+
+Definition at line 187 of file Forces\+Force\+Field.\+cpp.
+
+
+
+References F\+O\+R\+C\+E\+S\+::\+Dir, K\+F\+O\+R\+C\+E\+S\+::\+El, K\+F\+O\+R\+C\+E\+S\+::\+Elong, F\+O\+R\+C\+E\+S\+::\+Ext, Fm, Kf, L\+I\+N\+K\+S\+::\+Link, Var\+Data\+::\+Ln, L\+I\+N\+K\+S\+::\+N\+Link, Var\+Data\+::\+Pm, and Var\+Data\+::p\+N\+Part().
+
+
+
+Referenced by Apply\+Therm(), Dynamics(), and Sim3d().
+
+\index{Forces@{Forces}!Force\+Field\+Rod@{Force\+Field\+Rod}}
+\index{Force\+Field\+Rod@{Force\+Field\+Rod}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Force\+Field\+Rod()}{ForceFieldRod()}}]{\setlength{\rightskip}{0pt plus 5cm}void Force\+Field\+Rod (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ae35380222f8a3cacfa4a4df6d1742ffb}{}\label{classForces_ae35380222f8a3cacfa4a4df6d1742ffb}
+
+
+Bending potential on a rod. 
+
+Calculate the harmonic potential along the links. 
+
+Definition at line 210 of file Forces\+Force\+Field.\+cpp.
+
+
+
+References F\+O\+R\+C\+E\+S\+::\+Dir, Fm, Var\+Data\+::pk\+Ben(), Var\+Data\+::pk\+Spr(), Var\+Data\+::p\+N\+Block(), Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+P\+Ch(), Var\+Data\+::p\+Spr\+Rest(), and Var\+Data\+::\+Two\+Part\+Dist().
+
+
+
+Referenced by Apply\+Therm(), and Dynamics().
+
+\index{Forces@{Forces}!Rigid\+Hamaker@{Rigid\+Hamaker}}
+\index{Rigid\+Hamaker@{Rigid\+Hamaker}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Rigid\+Hamaker(int n, double Dist, double $\ast$\+Pot, double Sign)}{RigidHamaker(int n, double Dist, double *Pot, double Sign)}}]{\setlength{\rightskip}{0pt plus 5cm}double Rigid\+Hamaker (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{double}]{Dist, }
+\item[{double $\ast$}]{Pot, }
+\item[{double}]{Sign}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_abd9350bc451b7ae5507675805b4318d5}{}\label{classForces_abd9350bc451b7ae5507675805b4318d5}
+
+
+Hamaker potential. 
+
+Hamker Physica IV 10 p 1058 (1937) 
+
+Definition at line 458 of file Forces\+Force\+Field.\+cpp.
+
+
+
+References N\+A\+N\+O\+::\+Base\+Line, N\+A\+N\+O\+::\+Dist\+Thr, N\+A\+N\+O\+::\+For\+Thr, N\+A\+N\+O\+::\+Hamaker, Var\+Data\+::\+Nano, N\+A\+N\+O\+::\+Pot\+Thr, and N\+A\+N\+O\+::\+Rad.
+
+
+
+Referenced by Apply\+Therm(), Def\+Nano\+Force\+Param(), and Nano\+Nrg().
+
+\index{Forces@{Forces}!Calc\+Tot\+Nrg\+Ch@{Calc\+Tot\+Nrg\+Ch}}
+\index{Calc\+Tot\+Nrg\+Ch@{Calc\+Tot\+Nrg\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Calc\+Tot\+Nrg\+Ch()}{CalcTotNrgCh()}}]{\setlength{\rightskip}{0pt plus 5cm}double Calc\+Tot\+Nrg\+Ch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a59c5e973ca9b852115683c3cc2fc6035}{}\label{classForces_a59c5e973ca9b852115683c3cc2fc6035}
+
+
+Calculate and sum up the energy of the chains. 
+
+Fill the array Old\+Nrg\+Ch with the non bonded, spring and bending energy. 
+
+Definition at line 411 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References Calc\+Nrg\+Ch(), Var\+Data\+::p\+N\+Chain(), Var\+Data\+::p\+N\+P\+Ch(), and Shout().
+
+
+
+Referenced by Calc\+Tot\+Nrg(), Potential(), and Run\+Widom\+Ch\+Out().
+
+\index{Forces@{Forces}!Calc\+Tot\+Nrg\+Bead@{Calc\+Tot\+Nrg\+Bead}}
+\index{Calc\+Tot\+Nrg\+Bead@{Calc\+Tot\+Nrg\+Bead}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Calc\+Tot\+Nrg\+Bead()}{CalcTotNrgBead()}}]{\setlength{\rightskip}{0pt plus 5cm}double Calc\+Tot\+Nrg\+Bead (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a279acbc4a6538860aad95a08f3edc78f}{}\label{classForces_a279acbc4a6538860aad95a08f3edc78f}
+
+
+Calculate and sum up the energy of the part. 
+
+Fill the array Old\+Nrg\+Ch with the non bonded, spring and bending energy. 
+
+Definition at line 470 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References Calc\+Nrg\+Bead(), Var\+Data\+::p\+N\+Chain(), and Shout().
+
+
+
+Referenced by Potential().
+
+\index{Forces@{Forces}!Nrg\+Ch\+Bond\+Dens@{Nrg\+Ch\+Bond\+Dens}}
+\index{Nrg\+Ch\+Bond\+Dens@{Nrg\+Ch\+Bond\+Dens}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Nrg\+Ch\+Bond\+Dens(int c, double $\ast$\+Pot)}{NrgChBondDens(int c, double *Pot)}}]{\setlength{\rightskip}{0pt plus 5cm}double Nrg\+Ch\+Bond\+Dens (
+\begin{DoxyParamCaption}
+\item[{int}]{c, }
+\item[{double $\ast$}]{Pot}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ab282af6b6987c94833eb3eb9bc5d28a4}{}\label{classForces_ab282af6b6987c94833eb3eb9bc5d28a4}
+
+
+Calculate the bond and the density functional energies. 
+
+Calculate the bonded and non bonded energies for the chain c. 
+
+Definition at line 435 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References Calc\+Bonded\+Ch(), Dens\+Func\+Nrg\+Ch\+Internal(), and Var\+Data\+::p\+N\+P\+Ch().
+
+
+
+Referenced by Calc\+Nrg\+Ch().
+
+\index{Forces@{Forces}!Calc\+Bonded@{Calc\+Bonded}}
+\index{Calc\+Bonded@{Calc\+Bonded}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Calc\+Bonded(int p, double $\ast$\+Pot)}{CalcBonded(int p, double *Pot)}}]{\setlength{\rightskip}{0pt plus 5cm}double Calc\+Bonded (
+\begin{DoxyParamCaption}
+\item[{int}]{p, }
+\item[{double $\ast$}]{Pot}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_adb6d3708682daf3cc9dd70081adfb894}{}\label{classForces_adb6d3708682daf3cc9dd70081adfb894}
+
+
+Calculate the spring and the bonded interactions with the other monomers in the chain. 
+
+Calculates the spring and bending force between B / \textbackslash{} A C. 
+
+Definition at line 29 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References Var\+Data\+::pk\+Ben(), Var\+Data\+::pk\+Spr(), Var\+Data\+::\+Pm, Var\+Data\+::p\+N\+Part(), P\+A\+R\+T\+::\+Pos, and Var\+Data\+::p\+Spr\+Rest().
+
+
+
+Referenced by Calc\+Nrg\+Bead\+Dens\+Func(), and Calc\+Nrg\+Ch().
+
+\index{Forces@{Forces}!Calc\+Bending\+Ghost@{Calc\+Bending\+Ghost}}
+\index{Calc\+Bending\+Ghost@{Calc\+Bending\+Ghost}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Calc\+Bending\+Ghost(double $\ast$\+Pos, int p\+Ext)}{CalcBendingGhost(double *Pos, int pExt)}}]{\setlength{\rightskip}{0pt plus 5cm}double Calc\+Bending\+Ghost (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Pos, }
+\item[{int}]{p\+Ext}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a2ba180156b26af3e2eea135743275fa9}{}\label{classForces_a2ba180156b26af3e2eea135743275fa9}
+
+
+Calculate the bending energy for a ghost particle. 
+
+Calculates the bending force between B / \textbackslash{} A C if the ghost particle C is at least the third in the chain. 
+
+Definition at line 80 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References Var\+Data\+::p\+Chain(), Var\+Data\+::p\+Edge(), Var\+Data\+::p\+Inv\+Edge(), Var\+Data\+::pk\+Ben(), Var\+Data\+::p\+N\+P\+Ch(), and Var\+Data\+::p\+Pos().
+
+
+
+Referenced by Calc\+Nrg\+Ch(), Create\+Set\+Bond(), Insert\+Ch\+Bias(), Remove\+Ch\+Bias(), Weight\+Set\+Bond(), and Widom\+Insert().
+
+\index{Forces@{Forces}!Calc\+Nrg\+Bead\+Dens\+Func@{Calc\+Nrg\+Bead\+Dens\+Func}}
+\index{Calc\+Nrg\+Bead\+Dens\+Func@{Calc\+Nrg\+Bead\+Dens\+Func}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Calc\+Nrg\+Bead\+Dens\+Func(int p, double $\ast$\+Pot)}{CalcNrgBeadDensFunc(int p, double *Pot)}}]{\setlength{\rightskip}{0pt plus 5cm}double Calc\+Nrg\+Bead\+Dens\+Func (
+\begin{DoxyParamCaption}
+\item[{int}]{p, }
+\item[{double $\ast$}]{Pot}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ab18a8becb1983fc28fbeadea39623079}{}\label{classForces_ab18a8becb1983fc28fbeadea39623079}
+
+
+Calculate the spring, bending and non bonded interactions. 
+
+Calculate the bonded and non bonded energies for the chain c. 
+
+Definition at line 494 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References Calc\+Bonded(), and Dens\+Func\+Nrg\+Bead().
+
+\index{Forces@{Forces}!Check\+Dom\+Dec@{Check\+Dom\+Dec}}
+\index{Check\+Dom\+Dec@{Check\+Dom\+Dec}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Check\+Dom\+Dec(int p)}{CheckDomDec(int p)}}]{\setlength{\rightskip}{0pt plus 5cm}double Check\+Dom\+Dec (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a2595efd4257201b5b7c30c73086f94c3}{}\label{classForces_a2595efd4257201b5b7c30c73086f94c3}
+
+
+Check if all the particles are taken in account. 
+
+Compare the pair found in the domain decomposition method with the ones found with the simple N$^\wedge$2 neighbours search. 
+
+Definition at line 658 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::c\+Curr, K\+F\+O\+R\+C\+E\+S\+::\+Cut\+Off2, Dd\+Linked\+List\+::\+Dist2\+Curr(), Dd\+Linked\+List\+::\+If\+Curr(), Kf, Dd\+Linked\+List\+::\+Next\+Curr(), Dom\+Dec\+Basics\+::p2\+Curr, Pc, Var\+Data\+::p\+Edge(), Var\+Data\+::p\+Inv\+Edge(), Var\+Data\+::p\+N\+Part(), Var\+Data\+::p\+Pos(), and Dd\+Linked\+List\+::\+Set\+Curr().
+
+
+
+Referenced by Calc\+Nrg\+Ch().
+
+\index{Forces@{Forces}!Dens\+Func\+Nrg\+Ch@{Dens\+Func\+Nrg\+Ch}}
+\index{Dens\+Func\+Nrg\+Ch@{Dens\+Func\+Nrg\+Ch}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Dens\+Func\+Nrg\+Ch(int c, double $\ast$\+Pot)}{DensFuncNrgCh(int c, double *Pot)}}]{\setlength{\rightskip}{0pt plus 5cm}double Dens\+Func\+Nrg\+Ch (
+\begin{DoxyParamCaption}
+\item[{int}]{c, }
+\item[{double $\ast$}]{Pot}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_ad288fce3211ed5cafbe899b4d3ca08f5}{}\label{classForces_ad288fce3211ed5cafbe899b4d3ca08f5}
+
+
+Calculate the energy from the density functional Hamiltonian for the chain c. 
+
+Calculate the bonded and non bonded energies for the chain c. 
+
+Definition at line 428 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References Dens\+Func\+Nrg\+Ch\+Internal(), Nano\+Nrg(), and Var\+Data\+::p\+N\+P\+Ch().
+
+
+
+Referenced by Calc\+Nrg\+Ch(), and Calc\+Pairwise().
+
+\index{Forces@{Forces}!Nrg\+Step@{Nrg\+Step}}
+\index{Nrg\+Step@{Nrg\+Step}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Nrg\+Step(int p)}{NrgStep(int p)}}]{\setlength{\rightskip}{0pt plus 5cm}double Nrg\+Step (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_aa0300c3611e3180e228fda26be216a09}{}\label{classForces_aa0300c3611e3180e228fda26be216a09}
+
+
+The energy is constant within the cutoff. 
+
+Step potential. 
+
+Definition at line 153 of file Forces\+Calc\+Energies.\+cpp.
+
+
+
+References K\+F\+O\+R\+C\+E\+S\+::\+Cut\+Off2, Dd\+Linked\+List\+::\+Dist2\+Curr(), Dd\+Linked\+List\+::\+If\+Curr(), Kf, K\+F\+O\+R\+C\+E\+S\+::\+LJ, Dd\+Linked\+List\+::\+Next\+Curr(), Dom\+Dec\+Basics\+::p2\+Curr, Pc, Var\+Data\+::\+Pm, Var\+Data\+::p\+Type(), and Dd\+Linked\+List\+::\+Set\+Curr().
+
+
+
+Referenced by Calc\+Nrg\+Ch().
+
+\index{Forces@{Forces}!Height\+Boundary@{Height\+Boundary}}
+\index{Height\+Boundary@{Height\+Boundary}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Height\+Boundary(double $\ast$\+Pos, int dir)}{HeightBoundary(double *Pos, int dir)}}]{\setlength{\rightskip}{0pt plus 5cm}double Height\+Boundary (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Pos, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a68881ea0f9f8038dc0e6a714df062896}{}\label{classForces_a68881ea0f9f8038dc0e6a714df062896}
+
+
+Height of the boundary condition depending on the direction. 
+
+The boundary condition depends on the lateral distance from the border. 
+
+Definition at line 88 of file Forces\+Boundary.\+cpp.
+
+
+
+References N\+A\+N\+O\+::\+Height, Var\+Data\+::\+Nano, Var\+Data\+::p\+N\+Nano(), N\+A\+N\+O\+::\+Pos, and N\+A\+N\+O\+::\+Rad.
+
+
+
+Referenced by List\+Nei\+Cell().
+
+\index{Forces@{Forces}!Choose\+Sim\+Mode@{Choose\+Sim\+Mode}}
+\index{Choose\+Sim\+Mode@{Choose\+Sim\+Mode}!Forces@{Forces}}
+\paragraph[{\texorpdfstring{Choose\+Sim\+Mode()}{ChooseSimMode()}}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Sim\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classForces_a111835c2cd5d392591f9e32ea6d9cf19}{}\label{classForces_a111835c2cd5d392591f9e32ea6d9cf19}
+
+
+Choose the simulation method. 
+
+main loop 
+
+Definition at line 3 of file Forces\+Loop.\+cpp.
+
+
+
+References Sys\+Shape.
+
+
+
+Referenced by Tens\+Ref().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Addyn/Forces.\+h\item 
+src/\+Addyn/Forces.\+cpp\item 
+src/\+Addyn/Forces\+Boundary.\+cpp\item 
+src/\+Addyn/Forces\+Calc\+Energies.\+cpp\item 
+src/\+Addyn/Forces\+Create.\+cpp\item 
+src/\+Addyn/Forces\+Draw.\+cpp\item 
+src/\+Addyn/Forces\+Force\+Field.\+cpp\item 
+src/\+Addyn/Forces\+Integration.\+cpp\item 
+src/\+Addyn/Forces\+Loop.\+cpp\item 
+src/\+Addyn/Forces\+Tens.\+cpp\end{DoxyCompactItemize}

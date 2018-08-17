@@ -1,0 +1,1617 @@
+.TH "Forces" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Forces \- This class performs the different steps to solve the equations of motion via molecular dynamics simulation, simple grancanonical simulation in Monte Carlo and solution of 1d differential equations\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Forces\&.h>\fP
+.PP
+Inherits \fBVarData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef void(Forces::* \fBCALC_THERM\fP) ()"
+.br
+.RI "\fIPointer type to the potential function\&. \fP"
+.ti -1c
+.RI "typedef double(Forces::* \fBTENS_REF\fP) (double *Pos1, double *Pos2, double *PosP1, double *PosP2)"
+.br
+.RI "\fIData type for distance/field functions\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBForces\fP (int argc, char **argv, int NPart, char *ConfFile)"
+.br
+.RI "\fICreate an initial system and choose the simulation thecnique\&. \fP"
+.ti -1c
+.RI "\fBForces\fP (int argc, char **argv, char *ConfFileExt, char *Snapshot)"
+.br
+.RI "\fIRead an initial system and choose the simulation thecnique\&. \fP"
+.ti -1c
+.RI "void \fBShout\fP (const char *s,\&.\&.\&.)"
+.br
+.RI "\fIInternal message\&. \fP"
+.ti -1c
+.RI "void \fBAllocMethod\fP ()"
+.br
+.RI "\fIAllocated the structures needed for the corresponding simulation method\&. \fP"
+.ti -1c
+.RI "void \fBPrepareSys\fP ()"
+.br
+.RI "\fICalculate some initial quantities for the succesive calculations\&. \fP"
+.ti -1c
+.RI "void \fBPrepareParallel\fP (int argc, char **argv)"
+.br
+.RI "\fICreate the grid for the parallelisation\&. \fP"
+.ti -1c
+.RI "\fB~Forces\fP ()"
+.br
+.RI "\fIFrees the memory\&. \fP"
+.ti -1c
+.RI "void \fBInfo\fP ()"
+.br
+.RI "\fISystem's info\&. \fP"
+.ti -1c
+.RI "int \fBReadConfDinamica\fP (char *File)"
+.br
+.RI "\fIRead the config file\&. \fP"
+.ti -1c
+.RI "void \fBInitConst\fP ()"
+.br
+.RI "\fIRead the config file\&. \fP"
+.ti -1c
+.RI "int \fBReSetNPart\fP (int NewNPart)"
+.br
+.RI "\fIRealloc the number of particles\&. \fP"
+.ti -1c
+.RI "int \fBReSetNChain\fP (int NewNChain)"
+.br
+.RI "\fIRealloc the number of chains\&. \fP"
+.ti -1c
+.RI "void \fBReSetNPCh\fP (int NewNPCh)"
+.br
+.RI "\fISet a new number of particle per chain\&. \fP"
+.ti -1c
+.RI "void \fBReOpen\fP (char *FName, int Bf)"
+.br
+.RI "\fIOpen a new file\&. \fP"
+.ti -1c
+.RI "void \fBFillMatrix\fP ()"
+.br
+.RI "\fIFill the entries of the interaction matrix\&. \fP"
+.ti -1c
+.RI "void \fBStudySys\fP ()"
+.br
+.RI "\fIObtain informations for a better performance in inserting the chains\&. \fP"
+.ti -1c
+.RI "int \fBMinHelfrich\fP ()"
+.br
+.RI "\fIMinimum of the Helfrich Hamiltonian\&. \fP"
+.ti -1c
+.RI "int \fBDynIntegration\fP ()"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "void \fBDynamics\fP ()"
+.br
+.RI "\fISum up all the forces and update the positions\&. \fP"
+.ti -1c
+.RI "void \fBSolve\fP ()"
+.br
+.RI "\fISolve a system of four oder differential equation\&. \fP"
+.ti -1c
+.RI "void \fBSolveLinks\fP ()"
+.br
+.RI "\fISolve a system of four oder differential equation of particles connected by links\&. \fP"
+.ti -1c
+.RI "void \fBSolveLinksSparse\fP ()"
+.br
+.RI "\fISolve a system of four oder differential equation of particles connected by links\&. \fP"
+.ti -1c
+.RI "void \fBSolveLinksIterative\fP ()"
+.br
+.RI "\fISolve a system of four oder differential equation of particles connected by links\&. \fP"
+.ti -1c
+.RI "void \fBSolveRod\fP ()"
+.br
+.RI "\fISolve a system of four oder differential equation of particles connected by links\&. \fP"
+.ti -1c
+.RI "void \fBSolveLeaves\fP ()"
+.br
+.RI "\fISolve a system of four oder differential equation of particles in a line\&. \fP"
+.ti -1c
+.RI "int \fBUpdate\fP ()"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "void \fBVelVerletRigid\fP ()"
+.br
+.RI "\fIVelocity Verlet for a rigid body, first step\&. \fP"
+.ti -1c
+.RI "void \fBVelVerletRigid2\fP ()"
+.br
+.RI "\fIVelocity Verlet for a rigid body, second step\&. \fP"
+.ti -1c
+.RI "int \fBIfMetropolis\fP (double ExpArg, double Weight)"
+.br
+.RI "\fIMetropolis acceptance criterium\&. \fP"
+.ti -1c
+.RI "int \fBInsertBead\fP (int p)"
+.br
+.RI "\fIInsert a particle in the box\&. \fP"
+.ti -1c
+.RI "void \fBIgnoreCh\fP (int c)"
+.br
+.RI "\fIIgnore a chain in the system (densities, pairlist) \fP"
+.ti -1c
+.RI "void \fBRemChFromSys\fP (int c)"
+.br
+.RI "\fIDelete a chain in the system\&. \fP"
+.ti -1c
+.RI "void \fBSaveCh\fP (int c)"
+.br
+.RI "\fISave the chain configuration\&. \fP"
+.ti -1c
+.RI "void \fBReInsertCh\fP (int c)"
+.br
+.RI "\fIReinsert the chain in the previous position\&. \fP"
+.ti -1c
+.RI "void \fBConsiderCh\fP (int c)"
+.br
+.RI "\fIConsider a chain in the system (densities, pairlist) \fP"
+.ti -1c
+.RI "double \fBInsertCh\fP (int c)"
+.br
+.RI "\fIDisplace a chain in the box\&. \fP"
+.ti -1c
+.RI "double \fBInsertRest\fP (int pCurr, int StartPos)"
+.br
+.RI "\fIBuild the rest of the chain\&. \fP"
+.ti -1c
+.RI "double \fBRemoveChBias\fP (int c)"
+.br
+.RI "\fIRemove a chain in the box\&. \fP"
+.ti -1c
+.RI "double \fBInsertChBias\fP (int c)"
+.br
+.RI "\fIPut a chain in the box\&. \fP"
+.ti -1c
+.RI "double \fBWeightSetBond\fP (int p, int t)"
+.br
+.RI "\fIWeight a set of bonds for the configurational bias\&. \fP"
+.ti -1c
+.RI "double \fBCreateSetBond\fP (int p, int t)"
+.br
+.RI "\fICreate a set of bonds for the configurational bias\&. \fP"
+.ti -1c
+.RI "int \fBMoveBead\fP (int p)"
+.br
+.RI "\fIMove a particle in the box\&. \fP"
+.ti -1c
+.RI "int \fBTryInsert\fP ()"
+.br
+.RI "\fITrial insertion\&. \fP"
+.ti -1c
+.RI "int \fBTryRemove\fP ()"
+.br
+.RI "\fITrial removal\&. \fP"
+.ti -1c
+.RI "int \fBTryMove\fP ()"
+.br
+.RI "\fITrial movement\&. \fP"
+.ti -1c
+.RI "int \fBTryMoveCh\fP ()"
+.br
+.RI "\fITrial desplacement of a chain\&. \fP"
+.ti -1c
+.RI "int \fBTryInsertCh\fP ()"
+.br
+.RI "\fITrial insertion of a chain\&. \fP"
+.ti -1c
+.RI "int \fBTryRemoveCh\fP ()"
+.br
+.RI "\fITrial removal of a chain\&. \fP"
+.ti -1c
+.RI "int \fBTryInsertChBias\fP ()"
+.br
+.RI "\fITrial biased insertion of a chain\&. \fP"
+.ti -1c
+.RI "int \fBTryRemoveChBias\fP ()"
+.br
+.RI "\fITrial biased removal of a chain\&. \fP"
+.ti -1c
+.RI "void \fBWidomInsert\fP (double *NrgDiff)"
+.br
+.RI "\fIWidom insertion\&. \fP"
+.ti -1c
+.RI "void \fBWidomRemove\fP (double *NrgDiff, int p)"
+.br
+.RI "\fIWidom removal\&. \fP"
+.ti -1c
+.RI "void \fBWidomInsertCh\fP (double *NrgDiff)"
+.br
+.RI "\fIWidom insertion\&. \fP"
+.ti -1c
+.RI "void \fBWidomRemoveCh\fP (double *NrgDiff, int c)"
+.br
+.RI "\fIWidom removal\&. \fP"
+.ti -1c
+.RI "void \fBWidomBiasChIn\fP (double *Weight)"
+.br
+.RI "\fIWidom with Rosenbluth weight\&. \fP"
+.ti -1c
+.RI "void \fBWidomBiasChOut\fP (double *Weight, int c)"
+.br
+.RI "\fIWidom with Rosenbluth weight\&. \fP"
+.ti -1c
+.RI "void \fBVelVerlet1\fP ()"
+.br
+.RI "\fIFirst step of the velocity Verlet\&. \fP"
+.ti -1c
+.RI "void \fBLangevinTherm\fP ()"
+.br
+.RI "\fILangevin thermostat\&. \fP"
+.ti -1c
+.RI "void \fBAndersenTherm\fP ()"
+.br
+.RI "\fIAndersen thermostat\&. \fP"
+.ti -1c
+.RI "void \fBBerendsenTherm\fP ()"
+.br
+.RI "\fIBerendsen thermostat\&. \fP"
+.ti -1c
+.RI "void \fBNoTherm\fP ()"
+.br
+.RI "\fINo thermostat\&. \fP"
+.ti -1c
+.RI "void \fBVelVerlet2\fP ()"
+.br
+.RI "\fISecond step of the velocity Verlet\&. \fP"
+.ti -1c
+.RI "void \fBChooseThermostat\fP (int Mode)"
+.br
+.RI "\fIChoose a calculation mode\&. \fP"
+.ti -1c
+.RI "void \fBApplyTherm\fP ()"
+.br
+.RI "\fIPointer to the energy function\&. \fP"
+.ti -1c
+.RI "int \fBForceFieldLine\fP ()"
+.br
+.RI "\fIHelfrich Hamiltonian for a line\&. \fP"
+.ti -1c
+.RI "int \fBSumSomeForces\fP (int HowMany)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBForceFieldLeaves\fP ()"
+.br
+.RI "\fIHelfrich Hamiltonian with an elastic coupling\&. \fP"
+.ti -1c
+.RI "int \fBForceFieldBulk\fP ()"
+.br
+.RI "\fIArmonic potential on a lattice\&. \fP"
+.ti -1c
+.RI "void \fBForceFieldRod\fP ()"
+.br
+.RI "\fIBending potential on a rod\&. \fP"
+.ti -1c
+.RI "void \fBForceFieldRigid\fP ()"
+.br
+.RI "\fIInteraction between rigid bodies\&. \fP"
+.ti -1c
+.RI "void \fBCalcForcesDensFunc\fP ()"
+.br
+.RI "\fICalculate the forces for the density functional\&. \fP"
+.ti -1c
+.RI "void \fBPrintForce\fP ()"
+.br
+.RI "\fIPrint the force and the potential\&. \fP"
+.ti -1c
+.RI "void \fBGetForceField\fP ()"
+.br
+.RI "\fICalculate the force field summing every single contribution\&. \fP"
+.ti -1c
+.RI "void \fBTabForceAlloc\fP (int NTabExt)"
+.br
+.RI "\fITabulate the values of the force\&. \fP"
+.ti -1c
+.RI "void \fBTabPot\fP ()"
+.br
+.RI "\fITabulate the values of the potential\&. \fP"
+.ti -1c
+.RI "void \fBNanoInteraction\fP ()"
+.br
+.RI "\fICalculate all the interaction with the nano\&. \fP"
+.ti -1c
+.RI "double \fBNanoNrg\fP (int p)"
+.br
+.RI "\fIExchange energy with the nano\&. \fP"
+.ti -1c
+.RI "double \fBNanoNrg\fP (double *Pos, int t)"
+.br
+.RI "\fIExchange energy with the nano\&. \fP"
+.ti -1c
+.RI "void \fBDefForceParam\fP ()"
+.br
+.RI "\fIDefine the parameters for calculating the force\&. \fP"
+.ti -1c
+.RI "void \fBDefNanoForceParam\fP ()"
+.br
+.RI "\fIDefine the parameters for calculating the force\&. \fP"
+.ti -1c
+.RI "double \fBRigidLJ\fP (int nNano, double Dist, double *Pot, double Sign)"
+.br
+.RI "\fIForce between to rigid bodies\&. \fP"
+.ti -1c
+.RI "double \fBRigidHamaker\fP (int n, double Dist, double *Pot, double Sign)"
+.br
+.RI "\fIHamaker potential\&. \fP"
+.ti -1c
+.RI "double \fBRigidCoulomb\fP (int nNano, double Dist, double *Pot, double Sign)"
+.br
+.RI "\fIForce between to rigid bodies\&. \fP"
+.ti -1c
+.RI "double \fBRigidDistanceRad\fP (int n, int nn, double *dr)"
+.br
+.RI "\fIDistance between two bodies\&. \fP"
+.ti -1c
+.RI "double \fBRigidDistanceAxis\fP (int n, int nn, double *dr)"
+.br
+.RI "\fIDistance between two bodies\&. \fP"
+.ti -1c
+.RI "void \fBPointShape\fP (int iShape)"
+.br
+.ti -1c
+.RI "double \fBHarmonic\fP (double Dist2, int t1, int t2, double *Pot)"
+.br
+.RI "\fIHarmonic potential\&. \fP"
+.ti -1c
+.RI "double \fBStepPot\fP (double Dist2, int t1, int t2, double *Pot)"
+.br
+.RI "\fIStep potential\&. \fP"
+.ti -1c
+.RI "double \fBElectroPot\fP (double Dist2, int t1, int t2, double *Pot)"
+.br
+.RI "\fIPotential for the electrical lines\&. \fP"
+.ti -1c
+.RI "double \fBLJ39\fP (double Dist2, int t1, int t2, double *Pot)"
+.br
+.RI "\fIIntegrated Lennard Jones potential\&. \fP"
+.ti -1c
+.RI "double \fBLJPot\fP (double Dist2, int t1, int t2, double *Pot)"
+.br
+.RI "\fIClassical Lennard Jones potential\&. \fP"
+.ti -1c
+.RI "double \fBPotential\fP (double Dist, int t1, int t2, double *Pot)"
+.br
+.RI "\fIPointer to a potential\&. \fP"
+.ti -1c
+.RI "double \fBCalcTotNrgCh\fP ()"
+.br
+.RI "\fICalculate and sum up the energy of the chains\&. \fP"
+.ti -1c
+.RI "double \fBCalcTotNrgBead\fP ()"
+.br
+.RI "\fICalculate and sum up the energy of the part\&. \fP"
+.ti -1c
+.RI "double \fBCalcNrgBead\fP (int p, double *Pot)"
+.br
+.RI "\fIPointer to the energy function\&. \fP"
+.ti -1c
+.RI "double \fBCalcNrgCh\fP (int c, double *Pot)"
+.br
+.RI "\fIPointer to the chain energy function\&. \fP"
+.ti -1c
+.RI "double \fBNrgChBondDens\fP (int c, double *Pot)"
+.br
+.RI "\fICalculate the bond and the density functional energies\&. \fP"
+.ti -1c
+.RI "double \fBNrgChDens\fP (int c, double *Pot)"
+.br
+.RI "\fICalculate the density functional energies\&. \fP"
+.ti -1c
+.RI "double \fBCalcPairwise\fP (int p, double *Pot)"
+.br
+.RI "\fICalculate the non bonded interaction energy with the neighbouring particles\&. \fP"
+.ti -1c
+.RI "double \fBCalcPairwiseCh\fP (int c, double *Pot)"
+.br
+.RI "\fICalculate the non bonded interaction energy with the neighbouring particles\&. \fP"
+.ti -1c
+.RI "double \fBCalcBending\fP (int p)"
+.br
+.RI "\fICalculate the bonded interaction energy with the neighbouring particles\&. \fP"
+.ti -1c
+.RI "double \fBCalcSpring\fP (int p)"
+.br
+.RI "\fICalculate the spring interaction energy with the neighbouring particles\&. \fP"
+.ti -1c
+.RI "double \fBCalcBonded\fP (int p, double *Pot)"
+.br
+.RI "\fICalculate the spring and the bonded interactions with the other monomers in the chain\&. \fP"
+.ti -1c
+.RI "double \fBCalcBendingGhost\fP (double *Pos, int pExt)"
+.br
+.RI "\fICalculate the bending energy for a ghost particle\&. \fP"
+.ti -1c
+.RI "double \fBCalcBondedCh\fP (int c, double *Pot)"
+.br
+.RI "\fICalculate the bonded and spring interaction in a cell\&. \fP"
+.ti -1c
+.RI "void \fBCalcNrgBeadDensFunc\fP ()"
+.br
+.RI "\fICalculate the spring, bending and non bonded interactions and write it in OldNrgPm\&. \fP"
+.ti -1c
+.RI "double \fBCalcNrgBeadDensFunc\fP (int p, double *Pot)"
+.br
+.RI "\fICalculate the spring, bending and non bonded interactions\&. \fP"
+.ti -1c
+.RI "double \fBCheckDomDec\fP (int p)"
+.br
+.RI "\fICheck if all the particles are taken in account\&. \fP"
+.ti -1c
+.RI "void \fBCheckPairList\fP ()"
+.br
+.RI "\fICheck the pair list\&. \fP"
+.ti -1c
+.RI "double \fBSumForcesMD\fP ()"
+.br
+.RI "\fIIterate all over the particles and calculate the forces\&. \fP"
+.ti -1c
+.RI "double \fBWei3\fP (const double r, const double a)"
+.br
+.RI "\fICubic weighting function\&. \fP"
+.ti -1c
+.RI "double \fBDerWei3\fP (const double r, const double a)"
+.br
+.RI "\fIDerivative of the cubic weighting function\&. \fP"
+.ti -1c
+.RI "double \fBWei2\fP (const double r, const double b)"
+.br
+.RI "\fIQuadratic weighting function\&. \fP"
+.ti -1c
+.RI "double \fBDerWei2\fP (const double r, const double b)"
+.br
+.RI "\fIDerivative of the quadratic weighting function\&. \fP"
+.ti -1c
+.RI "double \fBDensFuncNrgGhost\fP (double *Pos, int p1, int t1)"
+.br
+.RI "\fICalculation of the energy from the density functional Hamiltonian for the ghost particle\&. \fP"
+.ti -1c
+.RI "double \fBDensFuncNrgGhostInternal\fP (double *Pos, int p1, int t1)"
+.br
+.RI "\fICalculation of the energy from the density functional Hamiltonian for the ghost particle\&. \fP"
+.ti -1c
+.RI "double \fBDensFuncNrgBead\fP (int p1)"
+.br
+.RI "\fICalculation of the energy from the density functional Hamiltonian for the particle p1\&. \fP"
+.ti -1c
+.RI "double \fBDensFuncNrgCh\fP (int c, double *Pot)"
+.br
+.RI "\fICalculate the energy from the density functional Hamiltonian for the chain c\&. \fP"
+.ti -1c
+.RI "double \fBDensFuncNrgChAv\fP (int c)"
+.br
+.RI "\fICalculate the average energy from the density functional Hamiltonian for the chain c\&. \fP"
+.ti -1c
+.RI "double \fBDensFuncNrgChInternal\fP (int c)"
+.br
+.RI "\fICalculate the average energy from the density functional Hamiltonian for the chain c\&. \fP"
+.ti -1c
+.RI "double \fBDensFuncNrgSys\fP ()"
+.br
+.RI "\fICalculation of the energy from the density functional Hamiltonian for the system\&. \fP"
+.ti -1c
+.RI "void \fBCalcDens\fP (int pInit, int pEnd)"
+.br
+.RI "\fICalculate the local density for the particles between pInit and pEnd\&. \fP"
+.ti -1c
+.RI "void \fBClearDens\fP ()"
+.br
+.RI "\fISet the local densities to zero\&. \fP"
+.ti -1c
+.RI "double \fBNrgStep\fP (int p)"
+.br
+.RI "\fIThe energy is constant within the cutoff\&. \fP"
+.ti -1c
+.RI "double \fBNrgStepCh\fP (int c, double *Pot)"
+.br
+.RI "\fIThe energy per chain is constant within the cutoff\&. \fP"
+.ti -1c
+.RI "double \fBNrgElectro\fP (int p)"
+.br
+.RI "\fIEnergy of an electric line\&. \fP"
+.ti -1c
+.RI "int \fBAddDens\fP (int pInit, int pEnd)"
+.br
+.RI "\fIAdd the densities connected with the particles between pInit and pEnd\&. \fP"
+.ti -1c
+.RI "int \fBRemDens\fP (int pInit, int pEnd)"
+.br
+.RI "\fISubstract the densities connected with the particles between pInit and pEnd\&. \fP"
+.ti -1c
+.RI "double \fBSumDens\fP (int pInit, int pEnd)"
+.br
+.RI "\fISum the local density for the particles between pInit and pEnd and multiply the factors by the virial coefficients\&. \fP"
+.ti -1c
+.RI "int \fBListNeiCell\fP (int p, double *Pos, int *NeiList)"
+.br
+.RI "\fIList of the cells close to the particle position\&. \fP"
+.ti -1c
+.RI "void \fBPullBead\fP ()"
+.br
+.RI "\fIMove a particle\&. \fP"
+.ti -1c
+.RI "void \fBPushBead\fP ()"
+.br
+.RI "\fIMove a particle\&. \fP"
+.ti -1c
+.RI "void \fBSelectBead\fP (int p)"
+.br
+.RI "\fISelect a particle\&. \fP"
+.ti -1c
+.RI "void \fBWave\fP ()"
+.br
+.RI "\fISinusoidal surface wave\&. \fP"
+.ti -1c
+.RI "void \fBAddCircle\fP (int nNano)"
+.br
+.RI "\fIAdd a circle as a boundary condition\&. \fP"
+.ti -1c
+.RI "void \fBAddCylinder\fP (int nNano)"
+.br
+.RI "\fIAdd a cylinder as a boundary condition\&. \fP"
+.ti -1c
+.RI "void \fBAddPore\fP (int nNano)"
+.br
+.RI "\fIAdd a pore as a boundary condition\&. \fP"
+.ti -1c
+.RI "void \fBAddRigid\fP ()"
+.br
+.RI "\fIAdd all rigid bodies as a boundary condition\&. \fP"
+.ti -1c
+.RI "double \fBHeightBoundary\fP (double *Pos, int dir)"
+.br
+.RI "\fIHeight of the boundary condition depending on the direction\&. \fP"
+.ti -1c
+.RI "void \fBCreateInitial\fP ()"
+.br
+.RI "\fICreate an initial configuration and an appropriate force field\&. \fP"
+.ti -1c
+.RI "void \fBCreate2d\fP ()"
+.br
+.RI "\fICreate a plane of connected beads\&. \fP"
+.ti -1c
+.RI "void \fBCreate3d\fP ()"
+.br
+.RI "\fICreate a lattice of connected beads\&. \fP"
+.ti -1c
+.RI "void \fBCreateLeaves\fP ()"
+.br
+.RI "\fICreate two connected sheets and add a protein\&. \fP"
+.ti -1c
+.RI "void \fBCreateStalk\fP ()"
+.br
+.RI "\fICreate the 1d representation of a stalk\&. \fP"
+.ti -1c
+.RI "void \fBCreatePore\fP ()"
+.br
+.RI "\fICreate the 1d representation of a pore\&. \fP"
+.ti -1c
+.RI "void \fBCreate1d\fP ()"
+.br
+.RI "\fICreate single line of connected monomers\&. \fP"
+.ti -1c
+.RI "void \fBCreateRigid\fP ()"
+.br
+.RI "\fICreate rigid bodies\&. \fP"
+.ti -1c
+.RI "void \fBCreateMC\fP ()"
+.br
+.RI "\fICreate a initial disposition of particle for the MC sim\&. \fP"
+.ti -1c
+.RI "void \fBCreateMD\fP ()"
+.br
+.RI "\fICreate a initial disposition of particle for the MD sim\&. \fP"
+.ti -1c
+.RI "void \fBCreateRod\fP ()"
+.br
+.RI "\fICreate a initial disposition of particle for a stiff rod\&. \fP"
+.ti -1c
+.RI "void \fBCreateElectro\fP ()"
+.br
+.RI "\fICreate a initial disposition of houses to collect on a line\&. \fP"
+.ti -1c
+.RI "void \fBAllocTens\fP ()"
+.br
+.RI "\fIAlloc the pressure profile\&. \fP"
+.ti -1c
+.RI "void \fBCalcTens\fP ()"
+.br
+.RI "\fICalculate the forces for the tension profile\&. \fP"
+.ti -1c
+.RI "void \fBCalcDens\fP ()"
+.br
+.RI "\fICalculate the densities\&. \fP"
+.ti -1c
+.RI "double \fBTensRefCart\fP (double *Pos1, double *Pos2, double *PosP1, double *PosP2)"
+.br
+.RI "\fIParticle positions back folded on the tension reference point (Cartesian coordinates) \fP"
+.ti -1c
+.RI "double \fBTensRefPol\fP (double *Pos1, double *Pos2, double *PosP1, double *PosP2)"
+.br
+.RI "\fIParticle positions back folded on the tension reference point (polar coordinates) \fP"
+.ti -1c
+.RI "double \fBTensRef\fP (double *Pos1, double *Pos2, double *PosP1, double *PosP2)"
+.br
+.RI "\fIParticle positions back folded on the tension reference point\&. \fP"
+.ti -1c
+.RI "void \fBSumTens\fP (int p1, int p2, double \fBForces\fP, double *DistRel)"
+.br
+.RI "\fISum the forces on the line joining the points p1 and p2\&. \fP"
+.ti -1c
+.RI "void \fBSumTens\fP (int p1, int p2, double *Pre)"
+.br
+.RI "\fISum the forces on the line joining the points p1 and p2\&. \fP"
+.ti -1c
+.RI "void \fBSumTens\fP (double *Pos1, double *Pos2, double *Pre)"
+.br
+.RI "\fISum the forces on the line joining the points p1 and p2\&. \fP"
+.ti -1c
+.RI "void \fBWriteTens\fP (char *TFile, int Comp, double InvNFile)"
+.br
+.RI "\fIWrite the pressure and density profile\&. \fP"
+.ti -1c
+.RI "void \fBWriteTens2d\fP (FILE *FWrite, int Comp, double InvNFile)"
+.br
+.RI "\fIWrite the 2d pressure profile\&. \fP"
+.ti -1c
+.RI "void \fBExplorePepSize\fP ()"
+.br
+.RI "\fIFind the minimun bilayer thickness for different peptide sizes\&. \fP"
+.ti -1c
+.RI "void \fBExplorePepSize2d\fP ()"
+.br
+.RI "\fIFind the minimun bilayer thickness for different peptide sizes\&. \fP"
+.ti -1c
+.RI "void \fBExploreDoubleMin\fP ()"
+.br
+.RI "\fIFind the minimum for different interpeptide distances\&. \fP"
+.ti -1c
+.RI "void \fBCalcTotNrg\fP (char *FName, int nFile)"
+.br
+.RI "\fITotal energy of the system\&. \fP"
+.ti -1c
+.RI "void \fBCalcNrgPep\fP (char *File2Open, int f)"
+.br
+.RI "\fIExchange energy of the protein\&. \fP"
+.ti -1c
+.RI "void \fBRunDynamics\fP ()"
+.br
+.RI "\fIRun a step further\&. \fP"
+.ti -1c
+.RI "void \fBRunWidom\fP (char *File2Read, int f)"
+.br
+.RI "\fIBuild the widom histograms\&. \fP"
+.ti -1c
+.RI "void \fBRunWidomChIn\fP (char *File2Read, int f)"
+.br
+.RI "\fIBuild the widom histograms\&. \fP"
+.ti -1c
+.RI "void \fBRunWidomChOut\fP (char *File2Read, int f)"
+.br
+.RI "\fIBuild the widom histograms\&. \fP"
+.ti -1c
+.RI "void \fBRosenIn\fP (FILE *WidomIn)"
+.br
+.RI "\fIRosenbluth weights for insertion\&. \fP"
+.ti -1c
+.RI "void \fBRosenOut\fP (FILE *WidomIn)"
+.br
+.RI "\fIRosenbluth histograms for deletion\&. \fP"
+.ti -1c
+.RI "void \fBRunWidomBiasChOut\fP (FILE *WidomOut)"
+.br
+.RI "\fIBuild the widom histograms with Rosenbluth weight\&. \fP"
+.ti -1c
+.RI "void \fBChooseSimMode\fP ()"
+.br
+.RI "\fIChoose the simulation method\&. \fP"
+.ti -1c
+.RI "void \fBTask\fP ()"
+.br
+.RI "\fIPerform a operation every time step\&. \fP"
+.ti -1c
+.RI "void \fBCalcTens\fP (char **argv, int *FilePos, int \fBNFile\fP)"
+.br
+.RI "\fICalculate and sum up the pressure profile from the file list\&. \fP"
+.ti -1c
+.RI "void \fBAvForces\fP (char **argv, int *FilePos, int \fBNFile\fP)"
+.br
+.RI "\fIAverage of the forces\&. \fP"
+.ti -1c
+.RI "void \fBTrial\fP ()"
+.br
+.RI "\fITrial loop\&. \fP"
+.ti -1c
+.RI "void \fBMinimalMD\fP ()"
+.br
+.RI "\fIMinmal md\&. \fP"
+.ti -1c
+.RI "double \fBMinimalNrg\fP ()"
+.br
+.RI "\fIMinmal nrg\&. \fP"
+.ti -1c
+.RI "void \fBSim1d\fP ()"
+.br
+.RI "\fISimulation loop for 1d\&. \fP"
+.ti -1c
+.RI "void \fBSim2d\fP ()"
+.br
+.RI "\fISimulation loop for 2d\&. \fP"
+.ti -1c
+.RI "void \fBSim3d\fP ()"
+.br
+.RI "\fISimulation loop for 1d\&. \fP"
+.ti -1c
+.RI "void \fBSimLeaves\fP ()"
+.br
+.RI "\fISimulation loop for leaves\&. \fP"
+.ti -1c
+.RI "void \fBSimRigid\fP ()"
+.br
+.RI "\fISimulation loop for rigid\&. \fP"
+.ti -1c
+.RI "void \fBMinimizeSol\fP ()"
+.br
+.RI "\fIIterative process to approach to the solution\&. \fP"
+.ti -1c
+.RI "int \fBInterp\fP ()"
+.br
+.RI "\fIShow interpolating lines\&. \fP"
+.ti -1c
+.RI "int \fBGraphics\fP (int argc, char **argv)"
+.br
+.RI "\fIInitialize the scene\&. \fP"
+.ti -1c
+.RI "void \fBkeyboard\fP (unsigned char key, int x, int y)"
+.br
+.RI "\fIAdditional key bindings\&. \fP"
+.ti -1c
+.RI "void \fBDrawSoil\fP ()"
+.br
+.RI "\fITwo dimensional soil\&. \fP"
+.ti -1c
+.RI "void \fBDrawCarpet\fP ()"
+.br
+.RI "\fITwo dimensional surface\&. \fP"
+.ti -1c
+.RI "void \fBDrawParticles\fP ()"
+.br
+.RI "\fIAlternative drawing of the particle position\&. \fP"
+.ti -1c
+.RI "void \fBDrBondLine\fP (int p)"
+.br
+.RI "\fIAlternative drawing of the particle position\&. \fP"
+.ti -1c
+.RI "void \fBDrawScene\fP ()"
+.br
+.RI "\fI\fBDraw\fP the scene\&. \fP"
+.ti -1c
+.RI "void \fBDrawNano\fP ()"
+.br
+.RI "\fIDraws cylinder or spheres\&. \fP"
+.ti -1c
+.RI "void \fBDynamicsView\fP ()"
+.br
+.RI "\fIIdle function to run the dynamics\&. \fP"
+.ti -1c
+.RI "void \fBMenu\fP ()"
+.br
+.RI "\fIMenu\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCALC_THERM\fP \fBCalcTherm\fP"
+.br
+.RI "\fIPointer to the energy calculation function\&. \fP"
+.ti -1c
+.RI "\fBTENS_REF\fP \fBTens_Ref\fP"
+.br
+.RI "\fIPointer to a coordinate distance\&. \fP"
+.ti -1c
+.RI "double \fBIncrDist\fP"
+.br
+.RI "\fIStep to move a particle\&. \fP"
+.ti -1c
+.RI "double \fBDeltat\fP"
+.br
+.RI "\fITime step\&. \fP"
+.ti -1c
+.RI "double \fBNChemPotId\fP"
+.br
+.RI "\fIEquilibrium number of particles/chains\&. \fP"
+.ti -1c
+.RI "double \fBChemPotId\fP"
+.br
+.RI "\fIChemical potential of the particles\&. \fP"
+.ti -1c
+.RI "double \fBChemPotEx\fP"
+.br
+.RI "\fIChemical potential of the particles\&. \fP"
+.ti -1c
+.RI "double \fBGaussVar\fP"
+.br
+.RI "\fIStandard deviation of the gaussian chain\&. \fP"
+.ti -1c
+.RI "double \fBCutOff\fP"
+.br
+.RI "\fICut off of the interactions\&. \fP"
+.ti -1c
+.RI "double \fBDx\fP"
+.br
+.RI "\fISpatial separation between particles\&. \fP"
+.ti -1c
+.RI "double \fBViscosity\fP"
+.br
+.RI "\fIViscosity of the medium\&. \fP"
+.ti -1c
+.RI "double \fBTime\fP"
+.br
+.RI "\fITotal time\&. \fP"
+.ti -1c
+.RI "double \fBNrgPBead\fP"
+.br
+.RI "\fIAverage energy per particle\&. \fP"
+.ti -1c
+.RI "int \fBBead2Move\fP"
+.br
+.RI "\fIBead to move\&. \fP"
+.ti -1c
+.RI "int \fBOld2Move\fP"
+.br
+.RI "\fIOld part to move\&. \fP"
+.ti -1c
+.RI "int \fBIntMax\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBnEdge\fP [3]"
+.br
+.RI "\fINumber of particle per edge\&. \fP"
+.ti -1c
+.RI "int \fBSysShape\fP"
+.br
+.RI "\fIShape of system\&. \fP"
+.ti -1c
+.RI "int \fBCalcMode\fP"
+.br
+.RI "\fICalculation mode\&. \fP"
+.ti -1c
+.RI "int \fBThermMode\fP"
+.br
+.RI "\fIThermostat mode\&. \fP"
+.ti -1c
+.RI "int \fBSimLimit\fP"
+.br
+.RI "\fIMaximum number of time steps\&. \fP"
+.ti -1c
+.RI "int \fBSysAlloc\fP"
+.br
+.RI "\fIWhich arrays are allocated\&. \fP"
+.ti -1c
+.RI "int \fBIfInterp\fP"
+.br
+.RI "\fIIf interpolates with the splines\&. \fP"
+.ti -1c
+.RI "int \fBIfLeaves\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBIfMove\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBIfNano\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBIfFillMatrix\fP"
+.br
+.RI "\fIIf the matrix has to be changed\&. \fP"
+.ti -1c
+.RI "int \fBIfExit\fP"
+.br
+.RI "\fIExit from the loop\&. \fP"
+.ti -1c
+.RI "int \fBNInsertion\fP"
+.br
+.RI "\fICount accepted moves\&. \fP"
+.ti -1c
+.RI "int \fBNRemoval\fP"
+.br
+.RI "\fICount accepted moves\&. \fP"
+.ti -1c
+.RI "int \fBNFile\fP [2]"
+.br
+.RI "\fIFirst and last file of the list\&. \fP"
+.ti -1c
+.RI "int \fBNUpdate\fP"
+.br
+.RI "\fIHow many timesteps before redrawing\&. \fP"
+.ti -1c
+.RI "int \fBNWrite\fP"
+.br
+.RI "\fIHow many timesteps before write the snapshot\&. \fP"
+.ti -1c
+.RI "int \fBNSpline\fP"
+.br
+.RI "\fITotal number of points for drawing a spline\&. \fP"
+.ti -1c
+.RI "\fBKFORCES\fP \fBKf\fP"
+.br
+.RI "\fIPrefactor of the forces\&. \fP"
+.ti -1c
+.RI "\fBFORCES\fP * \fBFm\fP"
+.br
+.RI "\fIArray containing the forces for each particle\&. \fP"
+.ti -1c
+.RI "\fBTENS\fP \fBTens\fP"
+.br
+.RI "\fIStructure for the pressure calculation\&. \fP"
+.ti -1c
+.RI "\fBDomDec\fP * \fBPc\fP"
+.br
+.RI "\fIPair list\&. \fP"
+.ti -1c
+.RI "\fBPART\fP * \fBPl\fP"
+.br
+.RI "\fISplines\&. \fP"
+.ti -1c
+.RI "\fBSingProc\fP * \fBProc\fP"
+.br
+.ti -1c
+.RI "GLuint * \fBCylinder\fP"
+.br
+.RI "\fIList referring the cylinder\&. \fP"
+.ti -1c
+.RI "GLuint \fBParticles\fP"
+.br
+.RI "\fIList referring the particle\&. \fP"
+.ti -1c
+.RI "int \fBNShow\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBIfMovie\fP"
+.br
+.RI "\fIProduce the images for the video\&. \fP"
+.ti -1c
+.RI "int \fBFrame\fP"
+.br
+.RI "\fICurrent number of frame\&. \fP"
+.ti -1c
+.RI "int \fBIfExt\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBIfSpline\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBIfRot\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBIfSphere\fP"
+.br
+.RI "\fIVisualize spheres or points\&. \fP"
+.ti -1c
+.RI "int \fBBeadType\fP"
+.br
+.RI "\fIBoundary condition for a single particle\&. \fP"
+.ti -1c
+.RI "int \fBmenu\fP"
+.br
+.RI "\fIMenu identifier\&. \fP"
+.ti -1c
+.RI "int \fBsubmenu\fP"
+.br
+.ti -1c
+.RI "int \fBIfLine\fP"
+.br
+.RI "\fIBoh\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class performs the different steps to solve the equations of motion via molecular dynamics simulation, simple grancanonical simulation in Monte Carlo and solution of 1d differential equations\&. 
+.PP
+Definition at line 223 of file Forces\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void StudySys ()"
+
+.PP
+Obtain informations for a better performance in inserting the chains\&. a 
+.PP
+Definition at line 488 of file ForcesIntegration\&.cpp\&.
+.PP
+References VarData::CNorm, VarData::InterBSpline1D(), VarData::pEdge(), VarData::pInvEdge(), VarData::Pm, VarData::pNChain(), and VarData::pNPCh()\&.
+.PP
+Referenced by ReadConfDinamica()\&.
+.SS "void Solve ()"
+
+.PP
+Solve a system of four oder differential equation\&. Solve a differential equation\&. 
+.PP
+Definition at line 9 of file ForcesLoop\&.cpp\&.
+.PP
+References SolveLeaves(), SolveLinksIterative(), SolveRod(), and SysShape\&.
+.PP
+Referenced by ExploreDoubleMin(), ExplorePepSize(), ExplorePepSize2d(), and keyboard()\&.
+.SS "void SolveLinks ()"
+
+.PP
+Solve a system of four oder differential equation of particles connected by links\&. a 
+.PP
+Definition at line 109 of file ForcesIntegration\&.cpp\&.
+.PP
+References AddRigid(), Matrice::Apply(), VarData::CNorm, FillMatrix(), VarData::Pm, VarData::pNPart(), and PART::Pos\&.
+.SS "void SolveLinksIterative ()"
+
+.PP
+Solve a system of four oder differential equation of particles connected by links\&. It uses Jacobi iterative method to converge to the solution\&. 
+.PP
+Definition at line 47 of file ForcesIntegration\&.cpp\&.
+.PP
+References SPLINE::a0, SPLINE::a1, SPLINE::a2, SPLINE::a3, SPLINE::a4, AddRigid(), VarData::CLat1, VarData::CNorm, KFORCES::El, Kf, KFORCES::Lap, LINKS::Link, VarData::Ln, VarData::NEdge, VarData::pEdge(), VarData::Pm, VarData::pNPart(), PART::Pos, Matrice::Print(), KFORCES::SLap, and Matrice::Val()\&.
+.PP
+Referenced by Solve()\&.
+.SS "void SolveRod ()"
+
+.PP
+Solve a system of four oder differential equation of particles connected by links\&. a 
+.PP
+Definition at line 29 of file ForcesIntegration\&.cpp\&.
+.PP
+References Matrice::Apply(), VarData::CNorm, VarData::pEdge(), VarData::Pm, VarData::pNPart(), and PART::Pos\&.
+.PP
+Referenced by Solve()\&.
+.SS "void SolveLeaves ()"
+
+.PP
+Solve a system of four oder differential equation of particles in a line\&. a 
+.PP
+Definition at line 5 of file ForcesIntegration\&.cpp\&.
+.PP
+References AddRigid(), Matrice::Apply(), VarData::CNorm, VarData::Pm, VarData::pNChain(), VarData::pNPCh(), and PART::Pos\&.
+.PP
+Referenced by Solve()\&.
+.SS "void VelVerletRigid ()"
+
+.PP
+Velocity Verlet for a rigid body, first step\&. Update the position of a rotating cylinder\&. 
+.PP
+Definition at line 321 of file ForcesIntegration\&.cpp\&.
+.PP
+References NANO::AMom, Vettore::Angle(), NANO::AVel, NANO::Axis, VarData::BackBone(), Matematica::Casuale(), Matrice::CopyOn(), Vettore::Export(), NANO::Force, NANO::Gamma, NANO::Height, NANO::Mass, VarData::Mat, Matrice::Mult(), VarData::Nano, Vettore::Normalize(), VarData::pDeltat(), VarData::pEdge(), VarData::pNNano(), NANO::Pos, NANO::Rad, Matrice::Set(), Matrice::Transpose(), NANO::Vel, Vettore::VetV(), Vettore::x, and NANO::Zeta\&.
+.PP
+Referenced by Dynamics(), and SimRigid()\&.
+.SS "void VelVerletRigid2 ()"
+
+.PP
+Velocity Verlet for a rigid body, second step\&. a 
+.PP
+Definition at line 382 of file ForcesIntegration\&.cpp\&.
+.PP
+References NANO::AMom, NANO::AVel, NANO::Force, NANO::Mass, VarData::Nano, VarData::pDeltat(), VarData::pNNano(), and NANO::Vel\&.
+.SS "int IfMetropolis (double ExpArg, double Weight)"
+
+.PP
+Metropolis acceptance criterium\&. The general version of the Metropolis algorythm\&. 
+.PP
+Definition at line 394 of file ForcesIntegration\&.cpp\&.
+.PP
+References Matematica::Casuale(), VarData::Mat, and VarData::pBeta()\&.
+.PP
+Referenced by TryInsert(), TryInsertCh(), TryInsertChBias(), TryMove(), TryMoveCh(), TryRemove(), TryRemoveCh(), and TryRemoveChBias()\&.
+.SS "int InsertBead (int p)"
+
+.PP
+Insert a particle in the box\&. Insert a particle in the system and in the cell list\&. 
+.PP
+Definition at line 404 of file ForcesIntegration\&.cpp\&.
+.PP
+References DdLinkedList::AddPart(), Matematica::Casuale(), VarData::Mat, Pc, VarData::pEdge(), VarData::Pm, and PART::Pos\&.
+.PP
+Referenced by TryInsert(), and WidomInsert()\&.
+.SS "void IgnoreCh (int c)"
+
+.PP
+Ignore a chain in the system (densities, pairlist) a 
+.PP
+Definition at line 532 of file ForcesIntegration\&.cpp\&.
+.PP
+References Pc, VarData::Pm, VarData::pNPCh(), PART::Pos, RemDens(), and DdLinkedList::RemPart()\&.
+.PP
+Referenced by ReInsertCh(), and TryMoveCh()\&.
+.SS "void RemChFromSys (int c)"
+
+.PP
+Delete a chain in the system\&. a 
+.PP
+Definition at line 540 of file ForcesIntegration\&.cpp\&.
+.PP
+References AddDens(), Pc, VarData::Pm, VarData::pNChain(), VarData::pNPart(), VarData::pNPCh(), PART::Pos, RemDens(), DdLinkedList::RemPart(), ReSetNChain(), ReSetNPart(), VarData::SwapChain(), and DdLinkedList::SwapPart()\&.
+.PP
+Referenced by TryInsertCh(), TryInsertChBias(), TryRemoveCh(), TryRemoveChBias(), WidomBiasChIn(), and WidomInsertCh()\&.
+.SS "void SaveCh (int c)"
+
+.PP
+Save the chain configuration\&. a 
+.PP
+Definition at line 569 of file ForcesIntegration\&.cpp\&.
+.PP
+References VarData::Pm, VarData::pNPCh(), and PART::Pos\&.
+.PP
+Referenced by TryMoveCh()\&.
+.SS "void ReInsertCh (int c)"
+
+.PP
+Reinsert the chain in the previous position\&. a 
+.PP
+Definition at line 580 of file ForcesIntegration\&.cpp\&.
+.PP
+References ConsiderCh(), IgnoreCh(), VarData::Pm, VarData::pNPCh(), and PART::Pos\&.
+.PP
+Referenced by TryMoveCh()\&.
+.SS "void ConsiderCh (int c)"
+
+.PP
+Consider a chain in the system (densities, pairlist) a 
+.PP
+Definition at line 524 of file ForcesIntegration\&.cpp\&.
+.PP
+References AddDens(), DdLinkedList::AddPart(), Pc, VarData::Pm, VarData::pNPCh(), and PART::Pos\&.
+.PP
+Referenced by InsertCh(), and ReInsertCh()\&.
+.SS "double InsertCh (int c)"
+
+.PP
+Displace a chain in the box\&. Insert a chain in the system and in the cell list\&. 
+.PP
+Definition at line 592 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcMode, Matematica::Casuale(), VarData::CLat1, VarData::CLat2, VarData::CNorm, ConsiderCh(), InsertRest(), VarData::Mat, VarData::Nano, VarData::pEdge(), VarData::Pm, VarData::pNChain(), VarData::pNPart(), VarData::pNPCh(), PART::Pos, NANO::Pos, VarData::pVol(), NANO::Rad, ReSetNChain(), and ReSetNPart()\&.
+.PP
+Referenced by TryInsertCh(), TryMoveCh(), and WidomInsertCh()\&.
+.SS "double InsertRest (int pCurr, int StartPos)"
+
+.PP
+Build the rest of the chain\&. Insert the remaining particles of the new created chain\&. 
+.PP
+Definition at line 628 of file ForcesIntegration\&.cpp\&.
+.PP
+References Matematica::Gaussiano(), GaussVar, VarData::Mat, VarData::pEdge(), VarData::pInvEdge(), VarData::Pm, VarData::pNPCh(), and PART::Pos\&.
+.PP
+Referenced by InsertCh()\&.
+.SS "double RemoveChBias (int c)"
+
+.PP
+Remove a chain in the box\&. Remove a chain in the system calculating the weight of the super detailed balance\&. 
+.PP
+Definition at line 724 of file ForcesIntegration\&.cpp\&.
+.PP
+References AddDens(), DdLinkedList::AddPart(), CalcBendingGhost(), DensFuncNrgGhost(), NanoNrg(), NrgPBead, Pc, VarData::Pm, VarData::pNPCh(), PART::Pos, RemDens(), DdLinkedList::RemPart(), and WeightSetBond()\&.
+.PP
+Referenced by TryRemoveChBias(), and WidomBiasChOut()\&.
+.SS "double InsertChBias (int c)"
+
+.PP
+Put a chain in the box\&. Create a chain choosing among a set of different bond vectors with a probability given by their Boltzmann factors\&. 
+.PP
+Definition at line 766 of file ForcesIntegration\&.cpp\&.
+.PP
+References AddDens(), DdLinkedList::AddPart(), CalcBendingGhost(), CalcMode, Matematica::Casuale(), VarData::CLat1, VarData::CLat2, VarData::CNorm, CreateSetBond(), DensFuncNrgGhost(), VarData::Mat, VarData::Nano, NanoNrg(), NrgPBead, Pc, VarData::pEdge(), VarData::Pm, VarData::pNChain(), VarData::pNPart(), VarData::pNPCh(), PART::Pos, NANO::Pos, VarData::pVol(), NANO::Rad, ReSetNChain(), and ReSetNPart()\&.
+.PP
+Referenced by TryInsertChBias(), and WidomBiasChIn()\&.
+.SS "double WeightSetBond (int p, int t)"
+
+.PP
+Weight a set of bonds for the configurational bias\&. Calculate the weights of a set of bonds created for the existing monomer of the chain to remove\&. 
+.PP
+Definition at line 743 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcBendingGhost(), DensFuncNrgGhost(), Matematica::Gaussiano(), GaussVar, VarData::Mat, NanoNrg(), NrgPBead, VarData::pEdge(), VarData::pInvEdge(), VarData::Pm, and PART::Pos\&.
+.PP
+Referenced by RemoveChBias()\&.
+.SS "double CreateSetBond (int p, int t)"
+
+.PP
+Create a set of bonds for the configurational bias\&. Create a set of bond vectors and choose among them one with a probability given by its Boltzmann weight\&. 
+.PP
+Definition at line 816 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcBendingGhost(), Matematica::Casuale(), DensFuncNrgGhost(), Matematica::Gaussiano(), GaussVar, VarData::Mat, NanoNrg(), NrgPBead, VarData::pEdge(), VarData::pInvEdge(), VarData::Pm, and PART::Pos\&.
+.PP
+Referenced by InsertChBias()\&.
+.SS "int MoveBead (int p)"
+
+.PP
+Move a particle in the box\&. Give a new position for the particle p\&. 
+.PP
+Definition at line 448 of file ForcesIntegration\&.cpp\&.
+.PP
+References Matematica::Gaussiano(), GaussVar, VarData::Mat, VarData::pEdge(), VarData::pInvEdge(), VarData::Pm, and PART::Pos\&.
+.PP
+Referenced by TryMove()\&.
+.SS "int TryInsert ()"
+
+.PP
+Trial insertion\&. a 
+.PP
+Definition at line 413 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcNrgBead(), ChemPotEx, ChemPotId, IfMetropolis(), InsertBead(), Pc, VarData::Pm, VarData::pNPart(), VarData::pVol(), DdLinkedList::RemPart(), and ReSetNPart()\&.
+.PP
+Referenced by Dynamics()\&.
+.SS "int TryRemove ()"
+
+.PP
+Trial removal\&. a 
+.PP
+Definition at line 432 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcNrgBead(), Matematica::Casuale(), ChemPotEx, ChemPotId, IfMetropolis(), VarData::Mat, Pc, VarData::Pm, VarData::pNPart(), VarData::pVol(), DdLinkedList::RemPart(), ReSetNPart(), DdLinkedList::SwapPart(), and VarData::SwapPart()\&.
+.PP
+Referenced by Dynamics()\&.
+.SS "int TryMove ()"
+
+.PP
+Trial movement\&. a 
+.PP
+Definition at line 457 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcNrgBead(), Matematica::Casuale(), IfMetropolis(), VarData::Mat, MoveBead(), DdLinkedList::MovePart(), Pc, VarData::Pm, VarData::pNPart(), and PART::Pos\&.
+.PP
+Referenced by Dynamics()\&.
+.SS "int TryMoveCh ()"
+
+.PP
+Trial desplacement of a chain\&. a 
+.PP
+Definition at line 649 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcNrgCh(), Matematica::Casuale(), IfMetropolis(), IgnoreCh(), InsertCh(), VarData::Mat, VarData::pNChain(), VarData::pNPart(), VarData::pNPCh(), ReInsertCh(), ReSetNChain(), ReSetNPart(), and SaveCh()\&.
+.PP
+Referenced by Dynamics()\&.
+.SS "int TryInsertCh ()"
+
+.PP
+Trial insertion of a chain\&. a 
+.PP
+Definition at line 697 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcNrgCh(), ChemPotEx, ChemPotId, IfMetropolis(), InsertCh(), VarData::pNChain(), VarData::pNPCh(), VarData::pVol(), and RemChFromSys()\&.
+.PP
+Referenced by Dynamics()\&.
+.SS "int TryRemoveCh ()"
+
+.PP
+Trial removal of a chain\&. a 
+.PP
+Definition at line 675 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcNrgCh(), Matematica::Casuale(), ChemPotEx, ChemPotId, IfMetropolis(), VarData::Mat, VarData::pNChain(), VarData::pNPart(), VarData::pNPCh(), VarData::pVol(), and RemChFromSys()\&.
+.PP
+Referenced by Dynamics()\&.
+.SS "int TryInsertChBias ()"
+
+.PP
+Trial biased insertion of a chain\&. a 
+.PP
+Definition at line 873 of file ForcesIntegration\&.cpp\&.
+.PP
+References ChemPotEx, ChemPotId, IfMetropolis(), InsertChBias(), VarData::pNChain(), VarData::pNPCh(), VarData::pVol(), and RemChFromSys()\&.
+.PP
+Referenced by Dynamics()\&.
+.SS "int TryRemoveChBias ()"
+
+.PP
+Trial biased removal of a chain\&. a 
+.PP
+Definition at line 854 of file ForcesIntegration\&.cpp\&.
+.PP
+References Matematica::Casuale(), ChemPotEx, ChemPotId, IfMetropolis(), VarData::Mat, VarData::pNChain(), VarData::pNPart(), VarData::pNPCh(), VarData::pVol(), RemChFromSys(), and RemoveChBias()\&.
+.PP
+Referenced by Dynamics()\&.
+.SS "void WidomInsert (double * NrgDiff)"
+
+.PP
+Widom insertion\&. a 
+.PP
+Definition at line 890 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcBendingGhost(), DensFuncNrgGhost(), InsertBead(), NanoNrg(), Pc, VarData::Pm, VarData::pNPart(), and DdLinkedList::RemPart()\&.
+.PP
+Referenced by RunWidom()\&.
+.SS "void WidomRemove (double * NrgDiff, int p)"
+
+.PP
+Widom removal\&. a 
+.PP
+Definition at line 901 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcNrgBead()\&.
+.PP
+Referenced by RunWidom()\&.
+.SS "void WidomInsertCh (double * NrgDiff)"
+
+.PP
+Widom insertion\&. a 
+.PP
+Definition at line 908 of file ForcesIntegration\&.cpp\&.
+.PP
+References CalcNrgCh(), InsertCh(), VarData::pNChain(), VarData::pNPCh(), and RemChFromSys()\&.
+.PP
+Referenced by RunWidomChIn()\&.
+.SS "void WidomRemoveCh (double * NrgDiff, int c)"
+
+.PP
+Widom removal\&. a 
+.PP
+Definition at line 918 of file ForcesIntegration\&.cpp\&.
+.PP
+Referenced by RunWidomChOut()\&.
+.SS "void WidomBiasChIn (double * Weight)"
+
+.PP
+Widom with Rosenbluth weight\&. a 
+.PP
+Definition at line 926 of file ForcesIntegration\&.cpp\&.
+.PP
+References InsertChBias(), VarData::pNChain(), VarData::pNPCh(), and RemChFromSys()\&.
+.PP
+Referenced by RosenIn()\&.
+.SS "void WidomBiasChOut (double * Weight, int c)"
+
+.PP
+Widom with Rosenbluth weight\&. a 
+.PP
+Definition at line 935 of file ForcesIntegration\&.cpp\&.
+.PP
+References RemoveChBias()\&.
+.PP
+Referenced by RosenOut()\&.
+.SS "void VelVerlet1 ()"
+
+.PP
+First step of the velocity Verlet\&. a 
+.PP
+Definition at line 942 of file ForcesIntegration\&.cpp\&.
+.PP
+References FORCES::Dir, FORCES::Ext, Fm, VarData::pDeltat(), VarData::pEdge(), VarData::pInvEdge(), VarData::Pm, VarData::pNPart(), PART::Pos, and PART::Vel\&.
+.PP
+Referenced by Dynamics(), Sim1d(), Sim2d(), Sim3d(), SimLeaves(), and SimRigid()\&.
+.SS "void LangevinTherm ()"
+
+.PP
+Langevin thermostat\&. a 
+.PP
+Definition at line 957 of file ForcesIntegration\&.cpp\&.
+.PP
+References Matematica::Casuale(), FORCES::Dir, Fm, VarData::Mat, VarData::pDeltat(), VarData::Pm, VarData::pNPart(), PART::Vel, and Viscosity\&.
+.PP
+Referenced by ChooseThermostat()\&.
+.SS "void AndersenTherm ()"
+
+.PP
+Andersen thermostat\&. a 
+.PP
+Definition at line 971 of file ForcesIntegration\&.cpp\&.
+.PP
+References Matematica::Casuale(), Matematica::Gaussiano(), VarData::Mat, VarData::pDeltat(), VarData::Pm, VarData::pNPart(), VarData::pTemp(), and PART::Vel\&.
+.PP
+Referenced by ChooseThermostat()\&.
+.SS "void BerendsenTherm ()"
+
+.PP
+Berendsen thermostat\&. a 
+.PP
+Definition at line 984 of file ForcesIntegration\&.cpp\&.
+.PP
+References FORCES::Dir, Fm, VarData::pDeltat(), VarData::Pm, VarData::pNPart(), and PART::Vel\&.
+.PP
+Referenced by ChooseThermostat()\&.
+.SS "void VelVerlet2 ()"
+
+.PP
+Second step of the velocity Verlet\&. a 
+.PP
+Definition at line 1029 of file ForcesIntegration\&.cpp\&.
+.PP
+References FORCES::Dir, FORCES::Ext, Fm, VarData::pDeltat(), VarData::Pm, VarData::pNPart(), and PART::Vel\&.
+.PP
+Referenced by Dynamics(), NoTherm(), Sim1d(), Sim2d(), Sim3d(), SimLeaves(), and SimRigid()\&.
+.SS "void ChooseThermostat (int Mode)"
+
+.PP
+Choose a calculation mode\&. a 
+.PP
+Definition at line 1003 of file ForcesIntegration\&.cpp\&.
+.PP
+References AndersenTherm(), BerendsenTherm(), CalcTherm, LangevinTherm(), and NoTherm()\&.
+.PP
+Referenced by AllocMethod(), and NoTherm()\&.
+.SS "int ForceFieldLine ()"
+
+.PP
+Helfrich Hamiltonian for a line\&. Use different types of splines to interpolate the points and calculate the second and forth derivative\&. 
+.PP
+Definition at line 4 of file ForcesForceField\&.cpp\&.
+.PP
+References SPLINE::a2, SPLINE::a4, Matematica::Cubica(), FORCES::Dir, Dx, FORCES::Ext, Fm, Matematica::Forth(), IfInterp, Kf, KFORCES::Lap, VarData::Mat, Matematica::Parab(), Matematica::Parab2(), VarData::Pm, VarData::pNPart(), PART::Pos, KFORCES::SLap, Matematica::Spline3(), Matematica::Spline3Beg(), Matematica::Spline3End(), Matematica::Spline4(), and Matematica::Spline4Beg()\&.
+.PP
+Referenced by ApplyTherm(), Dynamics(), and Sim1d()\&.
+.SS "int ForceFieldLeaves ()"
+
+.PP
+Helfrich Hamiltonian with an elastic coupling\&. Use different types of splines to interpolate the points and calculate the second and forth derivative, the two sheets have an elastic coupling\&. 
+.PP
+Definition at line 130 of file ForcesForceField\&.cpp\&.
+.PP
+References SPLINE::a2, SPLINE::a4, FORCES::Dir, Dx, FORCES::Ext, Fm, Matematica::Forth(), Kf, KFORCES::Lap, KFORCES::LJ, VarData::Mat, VarData::Nano, VarData::NEdge, VarData::Pm, VarData::pNChain(), VarData::pNPart(), PART::Pos, NANO::Pos, NANO::Rad, KFORCES::SLap, Matematica::Spline3(), Matematica::Spline3End(), and Matematica::Spline4Beg()\&.
+.PP
+Referenced by ApplyTherm(), Dynamics(), and SimLeaves()\&.
+.SS "int ForceFieldBulk ()"
+
+.PP
+Armonic potential on a lattice\&. Calculate the harmonic potential along the links\&. 
+.PP
+Definition at line 187 of file ForcesForceField\&.cpp\&.
+.PP
+References FORCES::Dir, KFORCES::El, KFORCES::Elong, FORCES::Ext, Fm, Kf, LINKS::Link, VarData::Ln, LINKS::NLink, VarData::Pm, and VarData::pNPart()\&.
+.PP
+Referenced by ApplyTherm(), Dynamics(), and Sim3d()\&.
+.SS "void ForceFieldRod ()"
+
+.PP
+Bending potential on a rod\&. Calculate the harmonic potential along the links\&. 
+.PP
+Definition at line 210 of file ForcesForceField\&.cpp\&.
+.PP
+References FORCES::Dir, Fm, VarData::pkBen(), VarData::pkSpr(), VarData::pNBlock(), VarData::pNChain(), VarData::pNPCh(), VarData::pSprRest(), and VarData::TwoPartDist()\&.
+.PP
+Referenced by ApplyTherm(), and Dynamics()\&.
+.SS "double RigidHamaker (int n, double Dist, double * Pot, double Sign)"
+
+.PP
+Hamaker potential\&. Hamker Physica IV 10 p 1058 (1937) 
+.PP
+Definition at line 458 of file ForcesForceField\&.cpp\&.
+.PP
+References NANO::BaseLine, NANO::DistThr, NANO::ForThr, NANO::Hamaker, VarData::Nano, NANO::PotThr, and NANO::Rad\&.
+.PP
+Referenced by ApplyTherm(), DefNanoForceParam(), and NanoNrg()\&.
+.SS "double CalcTotNrgCh ()"
+
+.PP
+Calculate and sum up the energy of the chains\&. Fill the array OldNrgCh with the non bonded, spring and bending energy\&. 
+.PP
+Definition at line 411 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References CalcNrgCh(), VarData::pNChain(), VarData::pNPCh(), and Shout()\&.
+.PP
+Referenced by CalcTotNrg(), Potential(), and RunWidomChOut()\&.
+.SS "double CalcTotNrgBead ()"
+
+.PP
+Calculate and sum up the energy of the part\&. Fill the array OldNrgCh with the non bonded, spring and bending energy\&. 
+.PP
+Definition at line 470 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References CalcNrgBead(), VarData::pNChain(), and Shout()\&.
+.PP
+Referenced by Potential()\&.
+.SS "double NrgChBondDens (int c, double * Pot)"
+
+.PP
+Calculate the bond and the density functional energies\&. Calculate the bonded and non bonded energies for the chain c\&. 
+.PP
+Definition at line 435 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References CalcBondedCh(), DensFuncNrgChInternal(), and VarData::pNPCh()\&.
+.PP
+Referenced by CalcNrgCh()\&.
+.SS "double CalcBonded (int p, double * Pot)"
+
+.PP
+Calculate the spring and the bonded interactions with the other monomers in the chain\&. Calculates the spring and bending force between B / \\ A C\&. 
+.PP
+Definition at line 29 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References VarData::pkBen(), VarData::pkSpr(), VarData::Pm, VarData::pNPart(), PART::Pos, and VarData::pSprRest()\&.
+.PP
+Referenced by CalcNrgBeadDensFunc(), and CalcNrgCh()\&.
+.SS "double CalcBendingGhost (double * Pos, int pExt)"
+
+.PP
+Calculate the bending energy for a ghost particle\&. Calculates the bending force between B / \\ A C if the ghost particle C is at least the third in the chain\&. 
+.PP
+Definition at line 80 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References VarData::pChain(), VarData::pEdge(), VarData::pInvEdge(), VarData::pkBen(), VarData::pNPCh(), and VarData::pPos()\&.
+.PP
+Referenced by CalcNrgCh(), CreateSetBond(), InsertChBias(), RemoveChBias(), WeightSetBond(), and WidomInsert()\&.
+.SS "double CalcNrgBeadDensFunc (int p, double * Pot)"
+
+.PP
+Calculate the spring, bending and non bonded interactions\&. Calculate the bonded and non bonded energies for the chain c\&. 
+.PP
+Definition at line 494 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References CalcBonded(), and DensFuncNrgBead()\&.
+.SS "double CheckDomDec (int p)"
+
+.PP
+Check if all the particles are taken in account\&. Compare the pair found in the domain decomposition method with the ones found with the simple N^2 neighbours search\&. 
+.PP
+Definition at line 658 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References DomDecBasics::cCurr, KFORCES::CutOff2, DdLinkedList::Dist2Curr(), DdLinkedList::IfCurr(), Kf, DdLinkedList::NextCurr(), DomDecBasics::p2Curr, Pc, VarData::pEdge(), VarData::pInvEdge(), VarData::pNPart(), VarData::pPos(), and DdLinkedList::SetCurr()\&.
+.PP
+Referenced by CalcNrgCh()\&.
+.SS "double DensFuncNrgCh (int c, double * Pot)"
+
+.PP
+Calculate the energy from the density functional Hamiltonian for the chain c\&. Calculate the bonded and non bonded energies for the chain c\&. 
+.PP
+Definition at line 428 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References DensFuncNrgChInternal(), NanoNrg(), and VarData::pNPCh()\&.
+.PP
+Referenced by CalcNrgCh(), and CalcPairwise()\&.
+.SS "double NrgStep (int p)"
+
+.PP
+The energy is constant within the cutoff\&. Step potential\&. 
+.PP
+Definition at line 153 of file ForcesCalcEnergies\&.cpp\&.
+.PP
+References KFORCES::CutOff2, DdLinkedList::Dist2Curr(), DdLinkedList::IfCurr(), Kf, KFORCES::LJ, DdLinkedList::NextCurr(), DomDecBasics::p2Curr, Pc, VarData::Pm, VarData::pType(), and DdLinkedList::SetCurr()\&.
+.PP
+Referenced by CalcNrgCh()\&.
+.SS "double HeightBoundary (double * Pos, int dir)"
+
+.PP
+Height of the boundary condition depending on the direction\&. The boundary condition depends on the lateral distance from the border\&. 
+.PP
+Definition at line 88 of file ForcesBoundary\&.cpp\&.
+.PP
+References NANO::Height, VarData::Nano, VarData::pNNano(), NANO::Pos, and NANO::Rad\&.
+.PP
+Referenced by ListNeiCell()\&.
+.SS "void ChooseSimMode ()"
+
+.PP
+Choose the simulation method\&. main loop 
+.PP
+Definition at line 3 of file ForcesLoop\&.cpp\&.
+.PP
+References SysShape\&.
+.PP
+Referenced by TensRef()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

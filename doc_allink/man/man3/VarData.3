@@ -1,0 +1,1251 @@
+.TH "VarData" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VarData \- Reads and elaborates a system of chains\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VarData\&.h>\fP
+.PP
+Inherited by \fBElPoly\fP, and \fBForces\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef double(VarData::* \fBNANO_DIST\fP) (double *Pos, int n)"
+.br
+.RI "\fIData type for distance/field functions\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVarData\fP ()"
+.br
+.RI "\fISet the constants\&. \fP"
+.ti -1c
+.RI "\fB~VarData\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "void \fBVarMessage\fP (const char *s,\&.\&.\&.)"
+.br
+.RI "\fIIf enabled call the function position\&. \fP"
+.ti -1c
+.RI "bool \fBOpen\fP (char *InFile, int BF)"
+.br
+.RI "\fIOpen the\&. \fP"
+.ti -1c
+.RI "bool \fBOpenRisk\fP (char *InFile, int BF)"
+.br
+.RI "\fIOpens a file without reallocationg\&. \fP"
+.ti -1c
+.RI "bool \fBOpenTrust\fP (char *InFile, int BF)"
+.br
+.RI "\fIOpens a file checking if the information are correct\&. \fP"
+.ti -1c
+.RI "void \fBAllocPart\fP ()"
+.br
+.RI "\fIAlloc the structures\&. \fP"
+.ti -1c
+.RI "void \fBAllocChain\fP ()"
+.br
+.RI "\fIAlloc the structures\&. \fP"
+.ti -1c
+.RI "\fBProperties\fP \fBSysProperties\fP ()"
+.br
+.RI "\fICalculate some basis properties\&. \fP"
+.ti -1c
+.RI "void \fBSysInfo\fP (char *cSystem)"
+.br
+.RI "\fIPrint a string with the system information\&. \fP"
+.ti -1c
+.RI "void \fBSysDef\fP (char *cSystem)"
+.br
+.RI "\fIPrint a string with the system definitions\&. \fP"
+.ti -1c
+.RI "char * \fBSysState\fP ()"
+.br
+.RI "\fICalculates fundamental quantities\&. \fP"
+.ti -1c
+.RI "void \fBSetCoeff\fP ()"
+.br
+.RI "\fISet the virial coefficients from the known values of density coex\&.\&.\&. \fP"
+.ti -1c
+.RI "void \fBSetCoeff\fP (double *v2, double *v3)"
+.br
+.RI "\fISet and normalize the virial coefficients from the arrays v2 and v3\&. \fP"
+.ti -1c
+.RI "double \fBTwoPartDist\fP (int p1, int p2, double *RelDist)"
+.br
+.RI "\fIReturn the relative distance between two particles (wrapped) \fP"
+.ti -1c
+.RI "double \fBTwoPartDist\fP (double *Pos, int p2, double *RelDist)"
+.br
+.RI "\fIReturn the relative distance between two particles (wrapped) \fP"
+.ti -1c
+.RI "double \fBTwoPartDist2\fP (int p1, int p2, double *RelDist)"
+.br
+.RI "\fIReturn the relative distance between two particles (wrapped) \fP"
+.ti -1c
+.RI "double \fBTwoPartDist2\fP (double *Pos, int p2, double *RelDist)"
+.br
+.RI "\fIReturn the relative distance between two particles (wrapped) \fP"
+.ti -1c
+.RI "int \fBTwoPartDist\fP (int p1, int p2, double *RelDist, double CutOff)"
+.br
+.RI "\fIReturn the relative distance between two particles (wrapped) if the particles are within the cut off\&. \fP"
+.ti -1c
+.RI "int \fBTwoPartDist\fP (double *Pos, int p2, double *RelDist, double CutOff)"
+.br
+.RI "\fIReturn the relative distance between two particles (wrapped) if the particles are within the cut off\&. \fP"
+.ti -1c
+.RI "bool \fBWrite\fP (char *OutFile)"
+.br
+.RI "\fIWrites a 'system-file' or a 'x y z' file"\&. \fP"
+.ti -1c
+.RI "bool \fBWriteTxvl\fP (char *OutFile)"
+.br
+.RI "\fIWrites a 'system-file' or a 'x y z' file"\&. \fP"
+.ti -1c
+.RI "bool \fBWriteXvt\fP (char *OutFile)"
+.br
+.RI "\fIWrites a 'system-file' or a 'x y z' file"\&. \fP"
+.ti -1c
+.RI "bool \fBWriteXyz\fP (char *OutFile)"
+.br
+.RI "\fIWrites a 'system-file' or a 'x y z' file"\&. \fP"
+.ti -1c
+.RI "void \fBHeaderInteraction\fP (FILE *FileToWrite)"
+.br
+.RI "\fIHeader interactions\&. \fP"
+.ti -1c
+.RI "void \fBStringNano\fP (char *NString, int n)"
+.br
+.RI "\fIString for the rigid inclusion in the header file\&. \fP"
+.ti -1c
+.RI "int \fBHeaderNano\fP (FILE *FileToWrite)"
+.br
+.RI "\fIWrite the nano section of the header to the file\&. \fP"
+.ti -1c
+.RI "int \fBHeaderSoft\fP (char *Line)"
+.br
+.RI "\fIHeader soft\&. \fP"
+.ti -1c
+.RI "void \fBWriteLinkedSurf\fP (FILE *FWrite, double *Plot, int NSample, int NType, double *Bound, int *PId)"
+.br
+.RI "\fIWrite the positions of the egdes of the rectangles\&. \fP"
+.ti -1c
+.RI "void \fBWriteSurf\fP (FILE *F2Write, double **Plot, int NSample, int OffSet)"
+.br
+.RI "\fIWrite the particle position as linked edges of squares\&. \fP"
+.ti -1c
+.RI "void \fBShapeId\fP (int iShape, char *Shape)"
+.br
+.RI "\fIIdentifier of the shape\&. \fP"
+.ti -1c
+.RI "bool \fBBackFold\fP (int How)"
+.br
+.RI "\fIBackfold the particle position\&. \fP"
+.ti -1c
+.RI "int \fBBfDefChain\fP ()"
+.br
+.RI "\fIDefinition of the chain\&. \fP"
+.ti -1c
+.RI "int \fBBfEdge\fP ()"
+.br
+.RI "\fIFind the box size if missing\&. \fP"
+.ti -1c
+.RI "void \fBDistFromNp\fP ()"
+.br
+.RI "\fIDefine the distance form the nanoparticle\&. \fP"
+.ti -1c
+.RI "void \fBShiftRef\fP (int \fBBackFold\fP)"
+.br
+.RI "\fIBackfold the system wrt the reference position\&. \fP"
+.ti -1c
+.RI "int \fBStalkPos\fP (double *OldPos)"
+.br
+.RI "\fIFind the position of the stalk\&. \fP"
+.ti -1c
+.RI "void \fBBfPep\fP ()"
+.br
+.RI "\fIBackfold the nano described as a cluster of monomers\&. \fP"
+.ti -1c
+.RI "void \fBBackBone\fP (double *Line, int NBin)"
+.br
+.RI "\fIDescribe the backbone of a filament\&. \fP"
+.ti -1c
+.RI "void \fBStalkLineProf\fP (double *Line, int NBin)"
+.br
+.RI "\fIDescribe the line for a linear stalk\&. \fP"
+.ti -1c
+.RI "void \fBStalkPos2\fP (double *OldPos, double *CmStalk)"
+.br
+.RI "\fIFind the position of the stalk second method\&. \fP"
+.ti -1c
+.RI "void \fBStalkPos3\fP (double *OldPos, double *CmStalk)"
+.br
+.RI "\fIFind the position of the stalk third method\&. \fP"
+.ti -1c
+.RI "int \fBStalkPos4\fP (double *OldPos, double *CmStalk)"
+.br
+.RI "\fIFind the position of the stalk forth method\&. \fP"
+.ti -1c
+.RI "double \fBNormalWeight\fP (\fBVAR_TRIANGLE\fP *Triang, double *Weight, int NGrid, int NTri)"
+.br
+.RI "\fIWeight of the neighblorung normal on a vertex\&. \fP"
+.ti -1c
+.RI "void \fBConnectLineChain\fP (\fBVAR_LINE\fP *Triang, int NGrid, int NTri)"
+.br
+.RI "\fIConnect the lines in a chain\&. \fP"
+.ti -1c
+.RI "void \fBConnectLineChain2\fP (\fBVAR_LINE\fP *Triang, int NGrid, int NTri)"
+.br
+.RI "\fIConnect the lines in a chain\&. \fP"
+.ti -1c
+.RI "void \fBConnectLineChain3\fP (\fBVAR_LINE\fP *Triang, int NGrid, int NTri)"
+.br
+.RI "\fIConnect the lines in a chain\&. \fP"
+.ti -1c
+.RI "double \fBPorePos\fP ()"
+.br
+.RI "\fIFind the position of the pore\&. \fP"
+.ti -1c
+.RI "int \fBFetch\fP (char *str, char *mask, char *fmt,\&.\&.\&.)"
+.br
+.RI "\fIRetrive from a string the information concerning the mask\&. \fP"
+.ti -1c
+.RI "int \fBBraketPos\fP (char *str, char *mask, int *sPos, int *sLen)"
+.br
+.RI "\fIRetrive from a string the position of the brakets\&. \fP"
+.ti -1c
+.RI "int \fBFetch\fP (char *str, char *mask, int NArg, double *Val)"
+.br
+.RI "\fIRetrive from a string the information concerning the mask\&. \fP"
+.ti -1c
+.RI "bool \fBReadString\fP (const char *String, char *cLine, double *Value)"
+.br
+.RI "\fICopy the value in the\&. \fP"
+.ti -1c
+.RI "bool \fBReadString\fP (const char *String, double *Value, char *line)"
+.br
+.RI "\fICopy the value in the\&. \fP"
+.ti -1c
+.RI "bool \fBReadString\fP (const char *String, char *cLine, int *Value)"
+.br
+.RI "\fICopy the value in the\&. \fP"
+.ti -1c
+.RI "int \fBReadVal\fP (char *pLine, double *Value)"
+.br
+.RI "\fICopy the value in the String to the Value referring to the position of pLine\&. \fP"
+.ti -1c
+.RI "int \fBReadLineXvt\fP (char *cLine, double *Pos, int *Type)"
+.br
+.RI "\fIRead a single line in format Xvt\&. \fP"
+.ti -1c
+.RI "bool \fBReadConf\fP (char *InFile)"
+.br
+.RI "\fIReads a 'configuration file'\&. \fP"
+.ti -1c
+.RI "void \fBReadHeader\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads a header\&. \fP"
+.ti -1c
+.RI "void \fBReadHeaderTxvl\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads a header for a txvl file format\&. \fP"
+.ti -1c
+.RI "void \fBReadHeaderXvt\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads a header of xvl file format\&. \fP"
+.ti -1c
+.RI "int \fBReadPart\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads particle type and position\&. \fP"
+.ti -1c
+.RI "int \fBReadPartTxvl\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads a type-position-velocity-link file\&. \fP"
+.ti -1c
+.RI "int \fBReadPartXvt\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads a position-velocity-type file\&. \fP"
+.ti -1c
+.RI "int \fBReadPartXyz\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads a x y z file\&. \fP"
+.ti -1c
+.RI "int \fBReadPartXyzt\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads a x y z t file\&. \fP"
+.ti -1c
+.RI "int \fBReadPassThru\fP (FILE *FileToRead)"
+.br
+.RI "\fIReads the information to alloc the structure\&. \fP"
+.ti -1c
+.RI "int \fBReadSoft\fP (FILE *ConfFile)"
+.br
+.RI "\fIReads the specifications about the nano\&. \fP"
+.ti -1c
+.RI "void \fBReadNano\fP (FILE *ConfFile, int NCircle, int NHeight)"
+.br
+.RI "\fIReads the specifications about the hard object\&. \fP"
+.ti -1c
+.RI "int \fBNanoString\fP (char *cLine, int n)"
+.br
+.RI "\fIReads and set the specifics of the nano\&. \fP"
+.ti -1c
+.RI "void \fBSubNanoHeader\fP (char *cFile)"
+.br
+.RI "\fISubstitue the nano header\&. \fP"
+.ti -1c
+.RI "int \fBShapeId\fP (char *Shape)"
+.br
+.RI "\fIIdentifier of the shape\&. \fP"
+.ti -1c
+.RI "int \fBDefSoft\fP (char *nome2, char *ConfF)"
+.br
+.RI "\fIDefine and write the system as described in the conf file\&. \fP"
+.ti -1c
+.RI "int \fBTrialSys\fP ()"
+.br
+.RI "\fICreates a trial system\&. \fP"
+.ti -1c
+.RI "bool \fBCreateSoft\fP (int *arch, double Thickness, int s)"
+.br
+.RI "\fICreates an initial system\&. \fP"
+.ti -1c
+.RI "void \fBCreateTube\fP (int *arch, double Thickness, int s)"
+.br
+.RI "\fISoft in a tube shape\&. \fP"
+.ti -1c
+.RI "void \fBCreatePlanar\fP (int *arch, double Thickness, int s)"
+.br
+.RI "\fIplanar membrane \fP"
+.ti -1c
+.RI "void \fBCreateVesicle\fP (int *arch, double Thickness, int s)"
+.br
+.RI "\fIvesicle \fP"
+.ti -1c
+.RI "void \fBCreateCoating\fP (int *arch, double Thickness, int s)"
+.br
+.RI "\fIcoating around a cylindrical nanoparticle \fP"
+.ti -1c
+.RI "void \fBCreateObstacle\fP (int *arch, double Thickness, int s)"
+.br
+.RI "\fICreates obstacles\&. \fP"
+.ti -1c
+.RI "int \fBCheckNano\fP (double *Pos, int s)"
+.br
+.RI "\fINo particle inside the nano\&. \fP"
+.ti -1c
+.RI "void \fBAddProtein\fP (int NCircle, int NHeight, int nNano, char *filename)"
+.br
+.RI "\fIDefines the nanoparticle as a net of monomers\&. \fP"
+.ti -1c
+.RI "void \fBCreateProtein\fP (int nNano, int nStart)"
+.br
+.RI "\fIDefines the nanoparticle as a net of monomers\&. \fP"
+.ti -1c
+.RI "void \fBAddStuffing\fP (char *filename, int nStuffing, int nNano)"
+.br
+.RI "\fIFill the protein with water\&. \fP"
+.ti -1c
+.RI "void \fBAddSolvent\fP (char *filename, int nWater)"
+.br
+.RI "\fIAdd phantom solvent at the bottom\&. \fP"
+.ti -1c
+.RI "void \fBAddChains\fP (char *filename, double Thickness)"
+.br
+.RI "\fIAdd homopolymer chains in the bilayer\&. \fP"
+.ti -1c
+.RI "void \fBAddCholesterol\fP (char *filename, double Thickness, int s)"
+.br
+.RI "\fIAdd cholesterol chains in the bilayer\&. \fP"
+.ti -1c
+.RI "void \fBDefBlock\fP (int *NChStep, int How)"
+.br
+.RI "\fIDefine four different blocks\&. \fP"
+.ti -1c
+.RI "void \fBDefRest\fP (int *arch, int s)"
+.br
+.RI "\fIset the remaining information \fP"
+.ti -1c
+.RI "int \fBPutPart\fP (int j, int p, int HalfLim, double sigma)"
+.br
+.RI "\fIreturn the number in the chain of the next particle put \fP"
+.ti -1c
+.RI "void \fBFindNeighbours\fP (char *FileName)"
+.br
+.RI "\fIFind the couples of most neighbouring chains\&. \fP"
+.ti -1c
+.RI "void \fBSwapChain\fP (int c1, int c2, int b)"
+.br
+.RI "\fISwap two chains\&. \fP"
+.ti -1c
+.RI "void \fBSwapChain\fP (int c1, int c2)"
+.br
+.RI "\fISwap two cahins\&. \fP"
+.ti -1c
+.RI "void \fBSwapPart\fP (int p1, int p2)"
+.br
+.RI "\fISwap two particle\&. \fP"
+.ti -1c
+.RI "void \fBChangeNChain\fP (int NChain, int b)"
+.br
+.RI "\fIUpdate the new number of chains\&. \fP"
+.ti -1c
+.RI "bool \fBShiftSys\fP (int How)"
+.br
+.RI "\fIShift the system accordin to the SHIFT_ definitions\&. \fP"
+.ti -1c
+.RI "void \fBSampleSurface\fP (double *Plot, int NSample, int Type)"
+.br
+.RI "\fIDefine a normal coordinate for every patch\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBSampleSurfacePart\fP (double *Plot, int NSample, int Type)"
+.br
+.RI "\fIDefine a normal coordinate for every patch\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBSampleSurface\fP (\fBMatrice\fP *Plot, int NSample, int Type)"
+.br
+.RI "\fIDefine a normal coordinate for every patch\&. \fP"
+.ti -1c
+.RI "\fBMOMENTI\fP \fBSampleSurfaceMem\fP (int NSample)"
+.br
+.RI "\fIAllocate and fill PlotMem with the particle average position\&. \fP"
+.ti -1c
+.RI "void \fBLoadDensFile\fP (double **Plot, int NBin)"
+.br
+.RI "\fILoad in the array Plot the density of the system\&. \fP"
+.ti -1c
+.RI "int \fBSpatialDerivative\fP (\fBMatrice\fP *Surface, \fBMatrice\fP *Resp, \fBSPLINE\fP Weight, int NSample)"
+.br
+.RI "\fIPerform a spatial derivative on a surface\&. \fP"
+.ti -1c
+.RI "void \fBShiftBlock\fP (\fBVettore\fP *Shift, int b)"
+.br
+.RI "\fIShift a block wrt to Shift\&. \fP"
+.ti -1c
+.RI "void \fBRotateBlock\fP (\fBVettore\fP *Axis, \fBVettore\fP *Origin, int b)"
+.br
+.RI "\fIRotate a block wrt to the Axis from the Origin\&. \fP"
+.ti -1c
+.RI "void \fBMirrorBlock\fP (\fBVettore\fP *Px1, \fBVettore\fP *Px2, \fBVettore\fP *Px3, int b)"
+.br
+.RI "\fIMirror the position wrt to a plane\&. \fP"
+.ti -1c
+.RI "void \fBTransform\fP (int block)"
+.br
+.RI "\fITransform a block\&. \fP"
+.ti -1c
+.RI "void \fBPoint2Shape\fP (int iShape)"
+.br
+.RI "\fIPoint to the shape function\&. \fP"
+.ti -1c
+.RI "double \fBNanoDist2\fP (double *Pos, int n)"
+.br
+.RI "\fIPointer to a generic function\&. \fP"
+.ti -1c
+.RI "double \fBNanoDist2\fP (double x, double y, double z, int n)"
+.br
+.RI "\fIDistance from the nanoparticle\&. \fP"
+.ti -1c
+.RI "double \fBFieldNo\fP (double *Pos, int n)"
+.br
+.RI "\fINo field\&. \fP"
+.ti -1c
+.RI "double \fBFieldSphere\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a sphere\&. \fP"
+.ti -1c
+.RI "double \fBFieldElips\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a elipsoid\&. \fP"
+.ti -1c
+.RI "double \fBFieldParab\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a elipsoid\&. \fP"
+.ti -1c
+.RI "double \fBFieldCyl\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a cylinder\&. \fP"
+.ti -1c
+.RI "double \fBFieldTransMem\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a transmembrane protein\&. \fP"
+.ti -1c
+.RI "double \fBFieldJanus\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a janus peptide\&. \fP"
+.ti -1c
+.RI "double \fBFieldTorus\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a janus peptide\&. \fP"
+.ti -1c
+.RI "double \fBFieldTilt\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a tilted cylinder\&. \fP"
+.ti -1c
+.RI "double \fBFieldBound\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a hard wall at the box edges\&. \fP"
+.ti -1c
+.RI "double \fBFieldTiltWall\fP (double *Pos, int n)"
+.br
+.RI "\fIScalar field of a tilted cylinder\&. \fP"
+.ti -1c
+.RI "int \fBPairCorrelation\fP (double *Point, int NSample, int How, int Type)"
+.br
+.RI "\fI1-d pair correlation \fP"
+.ti -1c
+.RI "int \fBPairCorrelationRound\fP (double **Point, int NSample, int Type)"
+.br
+.RI "\fICircular 2-d pair correlation\&. \fP"
+.ti -1c
+.RI "int \fBPairCorrelationSquare\fP (double **Point, int NSample, int Type)"
+.br
+.RI "\fI2-d pair correlation on a square \fP"
+.ti -1c
+.RI "int \fBPairCorrelationPep\fP (double **Point, int NSample, int Type)"
+.br
+.RI "\fI2-d pair correlation on a square fererring to the pep position \fP"
+.ti -1c
+.RI "int \fBScattering2d\fP (double **Point, int NSample, int Type)"
+.br
+.RI "\fI2-d Scattering \fP"
+.ti -1c
+.RI "int \fBScattering2D\fP (double **Point, int NSample, int Type)"
+.br
+.RI "\fI2-d scattering \fP"
+.ti -1c
+.RI "void \fBSpettro2d\fP (double *Points, int NSample, int Type)"
+.br
+.RI "\fI1-d spectrum of a surface \fP"
+.ti -1c
+.RI "void \fBSpettro2d\fP (double *Plot, int NSample)"
+.br
+.RI "\fI2-d spectrum of a sirface \fP"
+.ti -1c
+.RI "int \fBDensityProfile\fP (int coord, int NSample, int NType, double *dDensity)"
+.br
+.RI "\fICalculate the density profile for the x, y, z, r coordinate\&. \fP"
+.ti -1c
+.RI "int \fBCore\fP (double ***Plot, int NSample, double Border[3][2])"
+.br
+.RI "\fISampled three dimentional weighted shape of the system\&. \fP"
+.ti -1c
+.RI "int \fBRadDistr\fP (int NSample, double *Plot, double Border[2], int How)"
+.br
+.RI "\fIrzd representation of the system referring to \fP"
+.ti -1c
+.RI "int \fBWorm\fP (int Partition, int NSample, double *Border, double *dPoint)"
+.br
+.RI "\fIDensity profile along a worm like micelle\&. \fP"
+.ti -1c
+.RI "void \fBVolumeCircSlab\fP (double *VolContr, int NSample)"
+.br
+.RI "\fIFill an array of\&. \fP"
+.ti -1c
+.RI "void \fBStalk\fP (int NSample, int NLevel, double **Plot, double Threshold)"
+.br
+.RI "\fIFollowing the contour of a stalk\&. \fP"
+.ti -1c
+.RI "int \fBArrange\fP (int **Triangle, int Vertex)"
+.br
+.RI "\fIThe naerest\&. \fP"
+.ti -1c
+.RI "int \fBFolding\fP ()"
+.br
+.RI "\fIBoh\&.\&.\&. \fP"
+.ti -1c
+.RI "int \fBOrderPos\fP ()"
+.br
+.RI "\fIA cell list to be fixed\&. \fP"
+.ti -1c
+.RI "int \fBCalcnPos\fP (double *Pos)"
+.br
+.RI "\fIreturn a univocal index of the chain position \fP"
+.ti -1c
+.RI "int \fBNeighbour\fP (double *Pos)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBNChainPSquare\fP (double *Plot)"
+.br
+.RI "\fIDistribution of number of chain per patch\&. \fP"
+.ti -1c
+.RI "int \fBLateralFluctuation\fP (double *Plot, int LatValue)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "int \fBVoronoi\fP ()"
+.br
+.RI "\fIVoronoi tassellation\&. \fP"
+.ti -1c
+.RI "int \fBPosVectInt\fP (double *Pos)"
+.br
+.RI "\fIReturn the integer index with respect to the partition NSquare\&. \fP"
+.ti -1c
+.RI "int \fBInterParab\fP (\fBPART\fP *PmIn, \fBPART\fP *PmOut, int NIn, int nOut)"
+.br
+.RI "\fIDiscontinous parabolas\&. \fP"
+.ti -1c
+.RI "int \fBInterParab2\fP (\fBPART\fP *PmIn, \fBPART\fP *PmOut, int NIn, int NOut)"
+.br
+.RI "\fIDiscontinous parabolas\&. \fP"
+.ti -1c
+.RI "int \fBInterCubica\fP (\fBPART\fP *PmIn, \fBPART\fP *PmOut, int NIn, int NOut)"
+.br
+.RI "\fIDiscontinous cubic\&. \fP"
+.ti -1c
+.RI "int \fBInterForth\fP (\fBPART\fP *PmIn, \fBPART\fP *PmOut, int NIn, int NOut)"
+.br
+.RI "\fIDiscontinous forth degree\&. \fP"
+.ti -1c
+.RI "int \fBInterSpline3\fP (\fBPART\fP *PmIn, \fBPART\fP *PmOut, int NIn, int NOut)"
+.br
+.RI "\fIthird order spline \fP"
+.ti -1c
+.RI "int \fBInterSpline4\fP (\fBPART\fP *PmIn, \fBPART\fP *PmOut, int NIn, int NOut)"
+.br
+.RI "\fIforth order spline \fP"
+.ti -1c
+.RI "int \fBInterBSpline\fP (\fBPART\fP *PmIn, \fBPART\fP *PmOut, int NIn, int NOut)"
+.br
+.RI "\fIBSpline\&. \fP"
+.ti -1c
+.RI "int \fBInterBSpline2D\fP (double **PlIn, double **PmOut, int NIn, int NOut)"
+.br
+.RI "\fI2-d BSpline \fP"
+.ti -1c
+.RI "int \fBInterBSpline2D\fP (double *PlIn, double *PmOut, int NIn, int NOut)"
+.br
+.RI "\fI2-d BSpline \fP"
+.ti -1c
+.RI "int \fBInterBSpline1D\fP (double *PlIn, double *PmOut, int NIn, int NOut)"
+.br
+.RI "\fI1-d BSpline \fP"
+.ti -1c
+.RI "int \fBInterPoly\fP (\fBPART\fP *PmIn, \fBPART\fP *PmOut, int NIn, int nOut)"
+.br
+.RI "\fINIn-polynomian\&. \fP"
+.ti -1c
+.RI "int \fBInterDerMatrix\fP (\fBPART\fP *\fBPm\fP, int NMass, \fBSPLINE\fP Weight, double Offset)"
+.br
+.RI "\fIBoh\&. \fP"
+.ti -1c
+.RI "void \fBSmoothGrid\fP (int NSample, char *FWrite)"
+.br
+.RI "\fISmooth a grid with BSplines\&. \fP"
+.ti -1c
+.RI "void \fBSmoothGrid\fP (int NSample)"
+.br
+.RI "\fISmooth a grid with BSplines and update the particle positions\&. \fP"
+.ti -1c
+.RI "void \fBConvoluteMatrix\fP (double *Plot, int NGrid, \fBMatrice\fP *Mask, int NDim)"
+.br
+.RI "\fIConvolute a matrix\&. \fP"
+.ti -1c
+.RI "void \fBConvoluteMatrix1\fP (double *Plot, int NGrid, \fBMatrice\fP *Mask)"
+.br
+.RI "\fIConvolute a matrix 1d\&. \fP"
+.ti -1c
+.RI "void \fBConvoluteMatrix2\fP (double *Plot, int NGrid, \fBMatrice\fP *Mask)"
+.br
+.RI "\fIConvolute a matrix 2d\&. \fP"
+.ti -1c
+.RI "void \fBConvoluteMatrix3\fP (double *Plot, int NGrid, \fBMatrice\fP *Mask)"
+.br
+.RI "\fIConvolute a matrix 3d\&. \fP"
+.ti -1c
+.RI "int \fBSetNPart\fP (int NewNPart)"
+.br
+.RI "\fISet and reallocate the number of particles\&. \fP"
+.ti -1c
+.RI "int \fBSetNChain\fP (int NewNCh)"
+.br
+.RI "\fISet and reallocate the number of chains\&. \fP"
+.ti -1c
+.RI "int \fBSetNLink\fP (int NewNCh)"
+.br
+.RI "\fISet and reallocate the number of links\&. \fP"
+.ti -1c
+.RI "void \fBSetNPCh\fP (int NewNCh)"
+.br
+.RI "\fISet and reallocate the number of particles per chains\&. \fP"
+.ti -1c
+.RI "void \fBSetNType\fP (int NewNType)"
+.br
+.RI "\fISet the number of species\&. \fP"
+.ti -1c
+.RI "int \fBAllocLinks\fP (int NewNCh)"
+.br
+.RI "\fI(re)allocate the links \fP"
+.ti -1c
+.RI "int \fBSetNBlock\fP (int Val)"
+.br
+.RI "\fISet NBlock\&. \fP"
+.ti -1c
+.RI "int \fBSetNNano\fP (int Val)"
+.br
+.RI "\fISet NNano\&. \fP"
+.ti -1c
+.RI "void \fBCopy\fP (\fBPART\fP *P1, \fBPART\fP *P2, int NPartOld)"
+.br
+.RI "\fICopy the part P2 on part P1\&. \fP"
+.ti -1c
+.RI "void \fBCopy\fP (\fBCHAIN\fP *C1, \fBCHAIN\fP *C2, int NChainOld)"
+.br
+.RI "\fICopy the chain C2 on chain C1\&. \fP"
+.ti -1c
+.RI "\fBVAR_TRIANGLE\fP * \fBMarchingCubes\fP (double *Plot, int NSample, double IsoLevel, int *NTri)"
+.br
+.RI "\fIDefines the triangles close to the IsoLevel of the 3d density Plot\&. \fP"
+.ti -1c
+.RI "\fBVAR_LINE\fP * \fBMarchingSquares\fP (double *Plot, int NSample, double IsoLevel, int *NTri)"
+.br
+.RI "\fIDefines the triangles close to the IsoLevel of the 3d density Plot\&. \fP"
+.ti -1c
+.RI "void \fBAreaDistr\fP (double *Distr, double *\fBRadDistr\fP, int NSample)"
+.br
+.RI "\fICalculate the (temporal/radial) area distribution\&. \fP"
+.ti -1c
+.RI "double \fBpTime\fP ()"
+.br
+.RI "\fITotal time\&. \fP"
+.ti -1c
+.RI "double \fBpDeltat\fP ()"
+.br
+.RI "\fIDelta t\&. \fP"
+.ti -1c
+.RI "double \fBpTemp\fP ()"
+.br
+.RI "\fITemperature\&. \fP"
+.ti -1c
+.RI "double \fBpBeta\fP ()"
+.br
+.RI "\fIBeta factor 1/kTB\&. \fP"
+.ti -1c
+.RI "double \fBpEnergy\fP (int d)"
+.br
+.RI "\fIPot, kinetik, free\&. \fP"
+.ti -1c
+.RI "double \fBpEdge\fP (int d)"
+.br
+.RI "\fIxyzr edges of the simulation box \fP"
+.ti -1c
+.RI "double \fBpInvEdge\fP (int d)"
+.br
+.RI "\fIInverted xyzr edges of the simulation box\&. \fP"
+.ti -1c
+.RI "double \fBpVol\fP ()"
+.br
+.RI "\fIxyzr edges of the simulation box \fP"
+.ti -1c
+.RI "double \fBpCm\fP (int d)"
+.br
+.RI "\fICenter of mass of the system\&. \fP"
+.ti -1c
+.RI "double \fBpVelMax\fP (int d)"
+.br
+.RI "\fIMaximum velocity\&. \fP"
+.ti -1c
+.RI "double \fBpchiN\fP ()"
+.br
+.RI "\fIIncompatibility\&. \fP"
+.ti -1c
+.RI "double \fBpkappaN\fP ()"
+.br
+.RI "\fIIncompressibility\&. \fP"
+.ti -1c
+.RI "double \fBpkBen\fP ()"
+.br
+.RI "\fIBending coupling\&. \fP"
+.ti -1c
+.RI "double \fBpkSpr\fP ()"
+.br
+.RI "\fISpring coupling\&. \fP"
+.ti -1c
+.RI "void \fBSetkBen\fP (double Val)"
+.br
+.RI "\fIBending coupling\&. \fP"
+.ti -1c
+.RI "void \fBSetkSpr\fP (double Val)"
+.br
+.RI "\fISpring coupling\&. \fP"
+.ti -1c
+.RI "void \fBSetSprRest\fP (double Val)"
+.br
+.RI "\fIRest distance of the harmonic potential\&. \fP"
+.ti -1c
+.RI "double \fBpSprRest\fP ()"
+.br
+.RI "\fIRest distance of the harmonic potential\&. \fP"
+.ti -1c
+.RI "double \fBprho\fP ()"
+.br
+.RI "\fIDensity coexistence\&. \fP"
+.ti -1c
+.RI "double \fBpReOverCutOff\fP ()"
+.br
+.RI "\fIRe/CutOff\&. \fP"
+.ti -1c
+.RI "double \fBpWei2Par\fP ()"
+.br
+.RI "\fIParameter of the second order weighting function\&. \fP"
+.ti -1c
+.RI "double \fBpWei3Par\fP ()"
+.br
+.RI "\fIParameter of the third order weighting function\&. \fP"
+.ti -1c
+.RI "int \fBpStep\fP ()"
+.br
+.RI "\fINumber of steps\&. \fP"
+.ti -1c
+.RI "int \fBpNPart\fP ()"
+.br
+.RI "\fINumber of particle\&. \fP"
+.ti -1c
+.RI "int \fBpNChain\fP ()"
+.br
+.RI "\fINumber of chain\&. \fP"
+.ti -1c
+.RI "int \fBpNChain\fP (int b)"
+.br
+.RI "\fINumber of chain\&. \fP"
+.ti -1c
+.RI "int \fBpNPCh\fP ()"
+.br
+.RI "\fINumber of particle per chain\&. \fP"
+.ti -1c
+.RI "int \fBpNPCh\fP (int c)"
+.br
+.RI "\fINumber of particle per chain\&. \fP"
+.ti -1c
+.RI "int \fBpNType\fP ()"
+.br
+.RI "\fI
+.SH "of types of the particle"
+.PP
+\fP"
+.ti -1c
+.RI "int \fBpNLink\fP ()"
+.br
+.RI "\fIMaximum number of bonds\&. \fP"
+.ti -1c
+.RI "int \fBpNNano\fP ()"
+.br
+.RI "\fINumber of nanoparticles\&. \fP"
+.ti -1c
+.RI "int \fBpNBlock\fP ()"
+.br
+.RI "\fINumber of blocks\&. \fP"
+.ti -1c
+.RI "int \fBpNAllocP\fP ()"
+.br
+.RI "\fIAllocated number of particles\&. \fP"
+.ti -1c
+.RI "int \fBpNAllocC\fP ()"
+.br
+.RI "\fIAllocated number of chains\&. \fP"
+.ti -1c
+.RI "void \fBSetEdge\fP (double Val, int d)"
+.br
+.RI "\fISet Edge\&. \fP"
+.ti -1c
+.RI "void \fBSetCNorm\fP (int d)"
+.br
+.RI "\fISet Edge\&. \fP"
+.ti -1c
+.RI "void \fBSetScaleF\fP (double *Scale)"
+.br
+.RI "\fISet scale factor\&. \fP"
+.ti -1c
+.RI "void \fBSetShiftPos\fP (double *RefPos)"
+.br
+.RI "\fISet reference pos\&. \fP"
+.ti -1c
+.RI "void \fBSetIfNormalize\fP (int If)"
+.br
+.ti -1c
+.RI "void \fBSetDeltat\fP (double Val)"
+.br
+.RI "\fISet DeltaT\&. \fP"
+.ti -1c
+.RI "void \fBSetStep\fP (int Val)"
+.br
+.RI "\fISet Step\&. \fP"
+.ti -1c
+.RI "void \fBSetTemp\fP (double Val)"
+.br
+.RI "\fISet Temperature\&. \fP"
+.ti -1c
+.RI "void \fBSetTime\fP (double Val)"
+.br
+.RI "\fISet Time\&. \fP"
+.ti -1c
+.RI "void \fBIncrStep\fP ()"
+.br
+.RI "\fIIncrement Step\&. \fP"
+.ti -1c
+.RI "double \fBpPos\fP (int p, int d)"
+.br
+.RI "\fIReturn back folded position\&. \fP"
+.ti -1c
+.RI "double \fBpChPos\fP (int p, int d)"
+.br
+.RI "\fIReturn back folded position\&. \fP"
+.ti -1c
+.RI "void \fBpPos\fP (int p, double *Pos)"
+.br
+.RI "\fIReturn back folded position\&. \fP"
+.ti -1c
+.RI "double * \fBpPos\fP (int p)"
+.br
+.RI "\fIPrint the particle position\&. \fP"
+.ti -1c
+.RI "double \fBpPosNoBkf\fP (int p, int d)"
+.br
+.RI "\fIReturn the velocity\&. \fP"
+.ti -1c
+.RI "double \fBpVel\fP (int p, int d)"
+.br
+.RI "\fIReturn the velocity\&. \fP"
+.ti -1c
+.RI "void \fBSetPos\fP (int p, double *Pos)"
+.br
+.RI "\fISet the particle position\&. \fP"
+.ti -1c
+.RI "void \fBSetPos\fP (int p, int d, double Pos)"
+.br
+.RI "\fISet the particle position\&. \fP"
+.ti -1c
+.RI "void \fBSetVel\fP (int p, double *Vel)"
+.br
+.RI "\fISet the particle velocity\&. \fP"
+.ti -1c
+.RI "void \fBSetType\fP (int p, int t)"
+.br
+.RI "\fISet the particle type\&. \fP"
+.ti -1c
+.RI "int \fBpType\fP (int p)"
+.br
+.RI "\fIReturn the type\&. \fP"
+.ti -1c
+.RI "int \fBpChain\fP (int p)"
+.br
+.RI "\fIReturn the chain\&. \fP"
+.ti -1c
+.RI "double \fBpNanoPos\fP (int n, int d)"
+.br
+.RI "\fIReturn back folded nano position\&. \fP"
+.ti -1c
+.RI "void \fBSetBkf\fP (int p)"
+.br
+.RI "\fISet the back folded array for the particle p\&. \fP"
+.ti -1c
+.RI "void \fBSetNanoBkf\fP (int n)"
+.br
+.RI "\fISet the back folded array for the nano n\&. \fP"
+.ti -1c
+.RI "void \fBpPos\fP (double *Pos)"
+.br
+.RI "\fIPrint a position\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMatematica\fP * \fBMat\fP"
+.br
+.RI "\fIImplementation of all usefull algorythms\&. \fP"
+.ti -1c
+.RI "\fBMatInt\fP * \fBMInt\fP"
+.br
+.RI "\fIMatrix of the prefactor of the interactions\&. \fP"
+.ti -1c
+.RI "\fBNANO_DIST\fP \fBNano_Dist\fP"
+.br
+.RI "\fIPointer to a distance/field function\&. \fP"
+.ti -1c
+.RI "char \fBcWhat2Draw\fP [STRSIZE]"
+.br
+.RI "\fIWhat to draw\&. \fP"
+.ti -1c
+.RI "\fBNANO\fP * \fBNano\fP"
+.br
+.RI "\fIExtra particle\&. \fP"
+.ti -1c
+.RI "\fBPART\fP * \fBPm\fP"
+.br
+.RI "\fIParticle information of all particle\&. \fP"
+.ti -1c
+.RI "\fBLINKS\fP * \fBLn\fP"
+.br
+.RI "\fIArray of linking between the particles\&. \fP"
+.ti -1c
+.RI "\fBCHAIN\fP * \fBCh\fP"
+.br
+.RI "\fIInformation on all chains\&. \fP"
+.ti -1c
+.RI "\fBSOFT\fP * \fBSoft\fP"
+.br
+.RI "\fISoft bodies\&. \fP"
+.ti -1c
+.RI "\fBBLOCK\fP * \fBBlock\fP"
+.br
+.RI "\fIInformation for every block\&. \fP"
+.ti -1c
+.RI "double * \fBPlotMem\fP"
+.br
+.RI "\fIParticle position/density on the square lattice\&. \fP"
+.ti -1c
+.RI "double \fBShiftPos\fP [3]"
+.br
+.RI "\fIReference position\&. \fP"
+.ti -1c
+.RI "double \fBScaleF\fP [3]"
+.br
+.RI "\fIScale factor\&. \fP"
+.ti -1c
+.RI "int \fBNSoft\fP"
+.br
+.RI "\fINumber of soft bodies\&. \fP"
+.ti -1c
+.RI "int \fBNPartNearSphere\fP"
+.br
+.RI "\fINumber of particle to be considered in the radial density profile\&. \fP"
+.ti -1c
+.RI "int \fBNAddChain\fP"
+.br
+.RI "\fIAdditional homopolymer chains into the membrane\&. \fP"
+.ti -1c
+.RI "int \fBNAddChol\fP"
+.br
+.RI "\fIAdditional cholesterol chains into the membrane\&. \fP"
+.ti -1c
+.RI "int \fBNSolvent\fP"
+.br
+.RI "\fISolvent molecules\&. \fP"
+.ti -1c
+.RI "int \fBNStuffing\fP"
+.br
+.RI "\fIStuffing for the cylinder\&. \fP"
+.ti -1c
+.RI "int \fBCNorm\fP"
+.br
+.RI "\fINormal coordinate\&. \fP"
+.ti -1c
+.RI "int \fBCLat1\fP"
+.br
+.RI "\fIlateral coordinate \fP"
+.ti -1c
+.RI "int \fBCLat2\fP"
+.br
+.RI "\fIlateral coordinate \fP"
+.ti -1c
+.RI "int \fBNChType\fP"
+.br
+.RI "\fIType of chain selected\&. \fP"
+.ti -1c
+.RI "int \fBNPType\fP"
+.br
+.RI "\fIType of particle selected\&. \fP"
+.ti -1c
+.RI "int \fBNEdge\fP"
+.br
+.RI "\fINumber of particles per edge\&. \fP"
+.ti -1c
+.RI "int \fBSysType\fP"
+.br
+.RI "\fIContains the definition of the system\&. \fP"
+.ti -1c
+.RI "int \fBSysFormat\fP"
+.br
+.RI "\fIContains the definition of the file format\&. \fP"
+.ti -1c
+.RI "int \fBSysCreate\fP"
+.br
+.RI "\fIContains the information for the creation\&. \fP"
+.ti -1c
+.RI "int \fBIfNormalize\fP"
+.br
+.RI "\fIIf normalize the lateral dimensions to one\&. \fP"
+.ti -1c
+.RI "int \fBIfPlotMem\fP"
+.br
+.RI "\fIIf PlotMem is allocated and filled\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Reads and elaborates a system of chains\&. 
+.PP
+Definition at line 521 of file VarData\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Open (char * InFile, int BF)"
+
+.PP
+Open the\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIInFile\fP and back fold 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file VarData\&.cpp\&.
+.PP
+References GENERAL::Edge, GENERAL::NType, ReadHeader(), ReadPart(), ReadPassThru(), ShiftRef(), SysType, and VarMessage()\&.
+.PP
+Referenced by ElPoly::Diff2Files(), Forces::Forces(), ElPoly::OpenFile(), ElPoly::PressTrace(), ElPoly::Prova(), ElPoly::RadNormPos(), Forces::ReOpen(), ElPoly::Shift2Center(), ElPoly::StalkLineProfF(), ElPoly::SumTens(), ElPoly::SurfTens(), and ElPoly::Tens2dCartRad()\&.
+.SS "void ConnectLineChain (\fBVAR_LINE\fP * Triang, int NGrid, int NTri)"
+
+.PP
+Connect the lines in a chain\&. Algorithm to connect al the vertices in a single chain, many weird cases are not covered\&. 
+.PP
+Definition at line 981 of file VarDataBackFold\&.cpp\&.
+.PP
+References DdLinkedList::AddPart(), CLat1, CLat2, GENERAL::Edge, DdLinkedList::IfCurr(), LINKS::Link, Ln, DdLinkedList::NextCurr(), DomDecBasics::p2Curr, pCm(), pEdge(), Pm, pNPart(), PART::Pos, DdLinkedList::SetCurr(), and SetNPart()\&.
+.PP
+Referenced by ElPoly::IsoLine()\&.
+.SS "void ConnectLineChain2 (\fBVAR_LINE\fP * Triang, int NGrid, int NTri)"
+
+.PP
+Connect the lines in a chain\&. Algorithm to connect al the vertices in a single chain, many weird cases are not coverd\&. 
+.PP
+Definition at line 1180 of file VarDataBackFold\&.cpp\&.
+.PP
+References NeiVertex::Add(), Ch, PART::CId, CHAIN::EndBead, NeiVertex::IfItCell(), NeiVertex::IncrCurr(), CHAIN::InitBead, LINKS::Link, Ln, LINKS::NLink, CHAIN::NPCh, pEdge(), Pm, pNChain(), pNPart(), NeiVertex::Reorder(), NeiVertex::SetCounters(), SetNChain(), SetNPart(), NeiVertex::TriaCurr(), and VAR_LINE::v\&.
+.SS "void ConnectLineChain3 (\fBVAR_LINE\fP * Triang, int NGrid, int NTri)"
+
+.PP
+Connect the lines in a chain\&. Algorithm to connect al the vertices in a single chain\&. 
+.PP
+Definition at line 1036 of file VarDataBackFold\&.cpp\&.
+.PP
+References DdLinkedList::AddPart(), PART::CId, DdLinkedList::Dist2Curr(), GENERAL::Edge, DdLinkedList::IfCurr(), LINKS::Link, Ln, DdLinkedList::NextCurr(), LINKS::NLink, DomDecBasics::p2Curr, pEdge(), Pm, pNPart(), DdLinkedList::SetCurr(), SetNChain(), SetNPart(), and SwapPart()\&.
+.SS "bool ReadString (const char * String, char * cLine, double * Value)"
+
+.PP
+Copy the value in the\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIString\fP to the 
+.br
+\fIValue\fP 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file VarDataString\&.cpp\&.
+.PP
+Referenced by ReadConf()\&.
+.SS "bool ReadString (const char * String, double * Value, char * line)"
+
+.PP
+Copy the value in the\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIString\fP to the 
+.br
+\fIValue\fP 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file VarDataString\&.cpp\&.
+.SS "bool ReadString (const char * String, char * cLine, int * Value)"
+
+.PP
+Copy the value in the\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIString\fP to the 
+.br
+\fIValue\fP 
+.RE
+.PP
+
+.SS "int DensityProfile (int coord, int NSample, int NType, double * dDensity)"
+
+.PP
+Calculate the density profile for the x, y, z, r coordinate\&. sum on small patches and shift the wrt the weighted average 
+.PP
+Definition at line 24 of file VarDataContour\&.cpp\&.
+.PP
+References BfDefChain(), Block, Ch, CLat1, CLat2, CNorm, GENERAL::Edge, BLOCK::EndIdx, GENERAL::NBlock, Pm, and PART::Typ\&.
+.SS "int RadDistr (int NSample, double * Plot, double Border[2], int How)"
+
+.PP
+rzd representation of the system referring to 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIHow\fP 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file VarDataEl\&.cpp\&.
+.SS "void VolumeCircSlab (double * VolContr, int NSample)"
+
+.PP
+Fill an array of\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fINSample\fP values with the volume contribution in a rectangular box 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file VarDataProfile\&.cpp\&.
+.PP
+References CLat1, CLat2, CNorm, GENERAL::Edge, and pEdge()\&.
+.PP
+Referenced by ElPoly::AreaDistrF(), ElPoly::BondDistr(), ElPoly::DensProf(), ElPoly::DensProfNormalSlab(), ElPoly::NanoParticle(), ElPoly::PressRadial(), ElPoly::RadDistrF(), ElPoly::SplayDistr(), ElPoly::SurfTens(), and Forces::WriteTens2d()\&.
+.SS "int Arrange (int ** Triangle, int Vertex)"
+
+.PP
+The naerest\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIVertex\fP -particle close to every chain 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file VarDataPos\&.cpp\&.
+.PP
+References BfDefChain(), Ch, CLat1, CLat2, GENERAL::Edge, GENERAL::NChain, NChType, and CHAIN::Pos\&.
+.SS "int InterBSpline2D (double * PlIn, double * PmOut, int NIn, int NOut)"
+
+.PP
+2-d BSpline Perform a 2d BSpline interpolation on two square arrays\&. 
+.PP
+Definition at line 424 of file VarDataInterp\&.cpp\&.
+.PP
+References Matematica::Blend(), CLat1, GENERAL::Edge, and Mat\&.
+.SS "void SmoothGrid (int NSample)"
+
+.PP
+Smooth a grid with BSplines and update the particle positions\&. Call InterBSpline2d to update the particle position;\&. 
+.PP
+Definition at line 401 of file VarDataInterp\&.cpp\&.
+.PP
+References InterBSpline2D(), Pm, PART::Pos, and pType()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

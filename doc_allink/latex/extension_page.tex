@@ -1,0 +1,124 @@
+Mol\+McD defines several base classes that are intended to be extended by users. Among these are\+: 
+\begin{DoxyItemize}
+\item Species, which represents a molecular species.  
+\item Md\+Integrator, which represents an MD integration algorithm. 
+\item Mc\+Move, which represents a MC Markov move.  
+\item Diagnostic, which represents a data analysis or output operation.  
+\end{DoxyItemize}Users can add new features to the package by writing new subclasses of these base classes.
+
+In order to fully integrate a user-\/defined subclass of any these base classes into Mol\+McD, one must also modify parts of the code that allow Mol\+McD to recognize and read the parameter file block associated with a new subclass. Once this is done, a user-\/defined subclass (e.\+g., a new Monte Carlo move) can be added to a simulation at run time using the same parameter file syntax as that used for subclasses that are distributed with the package.
+
+The parameter file blocks associated with instances of these polymorphic base classes are all polymorphic blocks. The algorithm used by Mol\+McD to read a polymorphic block (i.\+e., a block which could refer to any of a known set of subclasses of a polymorphic base class) involves the use of a Factory class for each such base class. The Factory classes associated with the base classes listed above are called Species\+Factory, Md\+Integrator\+Factory, Mc\+Move\+Factory, Mc\+Diagnostic\+Factory (for diagnostics in MC simulations) and Md\+Diagnostic\+Factory (for MD simulations). The implementation of a Factory class defines a set of subclasses of the associated base class whose names and parameter file block formats will be recognized if they appear in the parameter file, so that they can thus be added to a simulation at run time. To integrate a new subclass of Species, Md\+Integrator, Mc\+Move or Diagnostic into Mol\+McD one must thus\+:
+
+
+\begin{DoxyItemize}
+\item Write the new subclass of the relevant base class.
+\item Extend the associated Factory class.
+\item Instruct an instance of the parent class to use a new customized Factory class when reading the parameter file.
+\end{DoxyItemize}
+
+Here, we provide instructions for steps (2) and (3), which are required to integrate a new subclass into Mol\+McD.\hypertarget{extension_page_factory_custom_sec}{}\subsection{Factory Classes}\label{extension_page_factory_custom_sec}
+The Factory class associated with a class named Base (where base could be Mc\+Move, Diagnostic, etc.) is derived from the Factory $<$ Base $>$ class template. For example, Mc\+Move\+Factory is derived from the template Factory $<$ Mc\+Move $>$. The Factory class template declares a pure virtual method named factory(), which has the following interface. 
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{class} Base>
+Base* Factory<Base>::factory(std::string className) = 0;
+\end{DoxyCode}
+ This method take the name of a subclass of Base as a string parameter class\+Name. If it recognizes the name, it creates a new instance of the specified subclass, and returns a Base$\ast$ pointer to the new instance. The method should return a null pointer if it does not recognize the subclass name. The pointer to the new object can then be used by the invoking function to read the parameter file block associated with the new object, by invoking its read\+Param() method. In the default implementations of the Factory classes that are distributed with Mol\+McD, the factory method compares the classname string to the names of all of the subclasses of the relevant base class that are distributed with Mol\+McD, and creates a new instance of the desired subclass if it recognizes the name.
+
+As an example, here is the segment of the file src/\+Md\+Integrator\+Factor.\+cpp that defines Md\+Integrator\+Factory\+::factory().
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "MdIntegratorFactory.h"}
+
+\textcolor{comment}{// Subclasses of MdIntegrator }
+\textcolor{preprocessor}{#include "NVEIntegrator.h"}
+\textcolor{preprocessor}{#include "NVTIntegrator.h"}
+
+\textcolor{keyword}{namespace }\hyperlink{namespaceMolMcD}{MolMcD} 
+\{
+
+   \textcolor{comment}{// Return a pointer to an new instance of an MdIntegrator subclass.}
+   MdIntegrator* MdIntegratorFactory::factory(std::string &className)
+   \{
+      MdIntegrator *spp = 0;
+      \textcolor{keywordflow}{if} (className == \textcolor{stringliteral}{"NVEIntegrator"}) \{
+         spp = \textcolor{keyword}{new} NVEIntegrator(*systemPtr\_);
+      \} \textcolor{keywordflow}{else}
+      \textcolor{keywordflow}{if} (className == \textcolor{stringliteral}{"NVTIntegrator"}) \{
+         spp = \textcolor{keyword}{new} NVTIntegrator(*systemPtr\_);
+      \}
+      \textcolor{keywordflow}{return} spp;
+   \}
+
+\}
+\end{DoxyCode}
+ If the string class\+Name matches the name \char`\"{}\+N\+V\+E\+Integrator\char`\"{} or \char`\"{}\+N\+V\+T\+Integrator\char`\"{}, the factory method will create a new instance of that subclass and returns a pointer to the new instance. Otherwise, if the string is not recognized, factory must return a null pointer, spp=0. The full source code for this class is in the files src/md\+Integrator/\+Md\+Integrator\+Factory.\+h and src/md\+Integrator/\+Md\+Integrator\+Factor.\+cpp.\hypertarget{extension_page_custom_factory_extend_sec}{}\subsection{Extending a Factory Class}\label{extension_page_custom_factory_extend_sec}
+To extend the list of subclasses that can be recognized by a factory class, one can either\+: (1) Edit the default implementation that is provided with Mol\+McD, or (2) Define a subclass of the relevant Factory class, and re-\/implement that factory() method in the subclass. Despite the greater simplicity of the method (1), we recommend that users consider method (2) because it does not require the user to edit files that are provided with Mol\+McD, and thus allows the original files to remain synchronized with a revision control server and (if desired) shared by several users. We describe method (2) here.
+
+As an example, imagine that you have written an N\+V\+T\+Langevin\+Integrator subclass of Md\+Integrator, , because no Langevin integrator is provided with the current version of the package. You should also define a subclass of Md\+Integrator\+Factory, which will be called My\+Md\+Integrator\+Factory, and re-\/implement the factory method. Here is an example of the required class definition\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "MdIntegratorFactory.h"}
+
+\textcolor{comment}{// New user-defined subclass of MdIntegrator }
+\textcolor{preprocessor}{#include "LangevinNVTIntegrator.h"}
+
+\textcolor{keyword}{namespace }\hyperlink{namespaceMolMcD}{MolMcD} 
+\{
+
+   \textcolor{keyword}{class }MyMdIntegratorFactory : \textcolor{keyword}{public} MdIntegratorFactory 
+   \{
+
+      MdIntegrator* factory(std::string &subclassName)
+      \{
+         MdIntegrator *spp = 0;
+         \textcolor{keywordflow}{if} (subclassName == \textcolor{stringliteral}{"LangevinNVTIntegrator"}) \{
+            spp = \textcolor{keyword}{new} LangevinNVTIntegrator(*systemPtr\_);
+         \} \textcolor{keywordflow}{else} \{
+            spp = MdIntegratorFactory::factory(subclassName);
+         \}
+         \textcolor{keywordflow}{return} spp;
+      \}
+
+   \};
+
+\}
+\end{DoxyCode}
+ Note that the factory method first compares the class\+Name to the name \char`\"{}\+N\+V\+T\+Langevin\+Integrator\char`\"{}, but then passes class\+Name to the default factory method Md\+Integrator\+::factory() if class\+Name does not match \char`\"{}\+N\+V\+T\+Langevin\+Integrator\char`\"{}. The new method returns a null pointer (spp == 0) only if subclass\+Name does not match either \char`\"{}\+N\+V\+T\+Langevin\+Integrator\char`\"{} or any of the subclass names that are recognized by the default implementation.\hypertarget{extension_page_set_factory_extend_sec}{}\subsection{Registering a Custom Factory}\label{extension_page_set_factory_extend_sec}
+After writing a new subclass of a base class and a subclass of the associated Factory, we must also instruct a parent class to use an instance of the user-\/defined Factory when reading the param file. This is done in the main program by creating an instance of the user defined Factory, and then invoking a \char`\"{}set\char`\"{} method of a parent object. The parent object is generally either the main Simulation object or a System object.
+
+Below, we show an example of a main program for an Md\+Simulation that uses the subclass My\+Md\+Integrator\+Factory of Md\+Integrator\+Factory to read the Md\+Integrator block of a parameter file\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }\hyperlink{namespaceMolMcD}{MolMcD}
+\{
+
+   \textcolor{keywordtype}{int} main 
+   \{
+      McSimulation          sim;
+      MyMdIntegratorFactory integratorFactory;
+ 
+      \(\backslash\)\(\backslash\) Register the custom Factory with the MdSystem
+      sim.system().setMdIntegratorFactory(integratorFactory);
+
+      \(\backslash\)\(\backslash\) Read the parameter file from standard input
+      sim.readParam(std::cin);
+  
+      \(\backslash\)\(\backslash\) Run the simulation
+      sim.run();
+  
+   \}
+
+\}
+\end{DoxyCode}
+ In this example, The Md\+System\+::set\+Integrator\+Factory() method is invoked in order to register an instance of My\+Md\+Integrator\+Factory as the Md\+Integrator\+Factory that should be used by the Md\+System to read the block of the parameter file that contains a choice of integrator and the parameters required by the chosen integrator. In this example, the set\+Integrator\+Factory function is a method of Md\+System because an Md\+System has a pointer to an Md\+Integrator, and uses an Md\+Integrator\+Factory to read the associated sub-\/block of the parameter file.
+
+If set\+Md\+Integrator\+Factory() is not called before Md\+Simulation\+::read\+Param, then Md\+System\+::read\+Param will automatically create and use an instance of Md\+Integrator\+Factory to read the Md\+Integrator block of the parameter file. The default implementation of Md\+Integrator\+Factory\+::factory() would then recognize only the subclasses of Md\+Integrator that are distributed with Mol\+McD.
+
+A similar pattern is used to set user defined Factory classes for subclasses of Species, Mc\+Move, and Diagnostic, using set methods of of the relevant parent classes. Simulation class provides a set\+Species\+Factory() method, which can be used to set a new Species\+Factory in either MC or MD simulations. Mc\+Simulation provides a set\+Mc\+Move\+Factory() method. Mc\+Simulation and Md\+Simulation each provide a set\+Diagnostic\+Factory() method. In each case, if the set function is not invoked before the read\+Param() method of the parent object, then an instance of the default Factory class will be created and used to read the parameter file as needed.
+
+
+\begin{DoxyItemize}
+\item \hyperlink{param_page}{Parameter File} (Prevous)  
+\item \hyperlink{index}{Allink} (Up)  
+\item \hyperlink{typedef_page}{Potential Energy Typedefs} (Next)  
+\end{DoxyItemize}

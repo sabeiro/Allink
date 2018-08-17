@@ -1,0 +1,140 @@
+.TH "Piano" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Piano \- Define a plane\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MatematicaPlane\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPiano\fP (\fBVettore\fP *\fBP1\fP, \fBVettore\fP *P2, \fBVettore\fP *P3)"
+.br
+.RI "\fIAllocates\&. \fP"
+.ti -1c
+.RI "\fB~Piano\fP ()"
+.br
+.RI "\fIFrees\&. \fP"
+.ti -1c
+.RI "double \fBDistance\fP (\fBVettore\fP *P)"
+.br
+.RI "\fIDistance\&. \fP"
+.ti -1c
+.RI "int \fBImpact\fP (\fBVettore\fP *P, \fBVettore\fP *V)"
+.br
+.RI "\fIReflect velocity\&. \fP"
+.ti -1c
+.RI "\fBVettore\fP \fBGetVertex\fP (int i)"
+.br
+.RI "\fIGet vertex\&. \fP"
+.ti -1c
+.RI "\fBVettore\fP \fBProjOnSurf\fP (\fBVettore\fP *Pos)"
+.br
+.RI "\fIProject on surface (point) \fP"
+.ti -1c
+.RI "\fBVettore\fP \fBProjOnNorm\fP (\fBVettore\fP *v)"
+.br
+.RI "\fIProject on normal (vector) \fP"
+.ti -1c
+.RI "int \fBSameSide\fP (\fBVettore\fP *P, \fBVettore\fP *A, \fBVettore\fP *B, \fBVettore\fP *C)"
+.br
+.RI "\fIIs the orientation of the difference vectors on the same side? \fP"
+.ti -1c
+.RI "double \fBInv\fP (double x)"
+.br
+.RI "\fICalculate the inverse\&. \fP"
+.ti -1c
+.RI "int \fBIsOnSurf\fP (\fBVettore\fP *P)"
+.br
+.RI "\fIIf the point is inside the triangle\&. \fP"
+.ti -1c
+.RI "int \fBIsOnSurf1\fP (\fBVettore\fP *P)"
+.br
+.RI "\fIIf the point is inside the triangle first method\&. \fP"
+.ti -1c
+.RI "int \fBIsOnSurf2\fP (\fBVettore\fP *P)"
+.br
+.RI "\fIIf the point is inside the triangle second method\&. \fP"
+.ti -1c
+.RI "\fBVettore\fP \fBReflect\fP (\fBVettore\fP *V)"
+.br
+.RI "\fIReflect a vector by the normal\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVettore\fP \fBP1\fP"
+.br
+.RI "\fIPoints defining the plane\&. \fP"
+.ti -1c
+.RI "\fBVettore\fP \fBP2\fP"
+.br
+.ti -1c
+.RI "\fBVettore\fP \fBP3\fP"
+.br
+.ti -1c
+.RI "\fBVettore\fP \fBP4\fP"
+.br
+.ti -1c
+.RI "\fBVettore\fP \fBDir21\fP"
+.br
+.RI "\fIDirection vectors\&. \fP"
+.ti -1c
+.RI "\fBVettore\fP \fBDir31\fP"
+.br
+.ti -1c
+.RI "\fBVettore\fP \fBDir23\fP"
+.br
+.ti -1c
+.RI "\fBVettore\fP \fBNorm\fP"
+.br
+.RI "\fINormal and inverse to the normal\&. \fP"
+.ti -1c
+.RI "\fBVettore\fP \fBInvNorm\fP"
+.br
+.ti -1c
+.RI "double \fBBound\fP [6]"
+.br
+.RI "\fIBoundaries\&. \fP"
+.ti -1c
+.RI "int \fBIsInf\fP [3]"
+.br
+.RI "\fIIf the inverse to the normal is infinite\&. \fP"
+.ti -1c
+.RI "double \fBdPar\fP"
+.br
+.RI "\fId of ax+by+cz+d=0 \fP"
+.ti -1c
+.RI "double \fBRad\fP"
+.br
+.RI "\fIRadius of the contact\&. \fP"
+.ti -1c
+.RI "double \fBmxy\fP [3]"
+.br
+.RI "\fISlope\&. \fP"
+.ti -1c
+.RI "double \fBmxz\fP [3]"
+.br
+.ti -1c
+.RI "double \fBqxy\fP [3]"
+.br
+.RI "\fIIntercept\&. \fP"
+.ti -1c
+.RI "double \fBqxz\fP [3]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Define a plane\&. 
+.PP
+Definition at line 10 of file MatematicaPlane\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

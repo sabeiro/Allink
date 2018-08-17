@@ -1,0 +1,34 @@
+.TH "compile_page" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+compile_page \- Compilation 
+Allink is written in ANSI standard C++, and must be compiled from source\&. It was developed using the gnu gcc compiler in both linux and Mac OS X environments\&. The source code should compile with any standards compliant C++ compiler\&. The build system, however, is based on Unix makefiles, and so will work only in a unix (linux or mac) environment\&.
+.PP
+Source code for the class library is in the src directory\&. Examples of main programs and example input files are in the Examples directory\&.
+.SH "Compile"
+.PP
+To compile the entire Allink package 
+.PD 0
+
+.IP "\(bu" 2
+Edit /include/MakeInclude\&.mk and set the user defined flags\&. 
+.IP "\(bu" 2
+Run make\&.   
+.PP
+.PP
+The resulting object *\&.o files for each class is placed in the same directory as the corresponding *\&.h and *\&.cpp source files\&. To clean up all of the *\&.o files and start over, enter 'make clean' from the src directory\&.
+.SH "graphics"
+.PP
+\fBElPoly\fP has a visualisation tool if OpenGl libraries are installed\&. 
+.SH "graphics"
+.PP
+\fBElPoly\fP uses for Delaunay triangulation the CGAL libraries\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBAllink\fP (Up)  
+.IP "\(bu" 2
+\fBGetting Started\fP (Next)  
+.PP
+

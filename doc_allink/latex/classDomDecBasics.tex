@@ -1,0 +1,396 @@
+\hypertarget{classDomDecBasics}{}\subsection{Dom\+Dec\+Basics Class Reference}
+\label{classDomDecBasics}\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+
+
+All the general functions shared among the different domain decomposition structures.  
+
+
+
+
+{\ttfamily \#include $<$Cubo.\+h$>$}
+
+Inheritance diagram for Dom\+Dec\+Basics\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDomDecBasics}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDomDecBasics_aec40201a10397aa0c646f6dcb31d03d9}{Dom\+Dec\+Basics} ()
+\begin{DoxyCompactList}\small\item\em Allocate. \end{DoxyCompactList}\item 
+void \hyperlink{classDomDecBasics_a013bde7a8eb6c66e70ab5d90959af2c2}{Sig\+Err} (int Condition, const char $\ast$s,...)
+\begin{DoxyCompactList}\small\item\em Handle errors. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_ad10ce7d8491ba213cdbc79d4dd4dc013}{Pos\+Ret} (const double Pos\mbox{[}3\mbox{]})\hypertarget{classDomDecBasics_ad10ce7d8491ba213cdbc79d4dd4dc013}{}\label{classDomDecBasics_ad10ce7d8491ba213cdbc79d4dd4dc013}
+
+\begin{DoxyCompactList}\small\item\em Relative position in the cell. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a388622b5e7d2ad20e8ac1a8a951d655f}{p\+N\+Part} ()
+\begin{DoxyCompactList}\small\item\em \subsubsection*{part in the class}\end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a02631cacc3cd393a64b7e78df3734e48}{p\+N\+Cell} ()
+\begin{DoxyCompactList}\small\item\em Print the number of cells. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a8bc667d6b3e872a9cabbb54f1eb671e8}{p\+Cella} (const double Pos\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em (x,y,z)-\/$>$n \end{DoxyCompactList}\item 
+void \hyperlink{classDomDecBasics_a328df10e55925d98bc8ca3daa5ca4f96}{p\+Cella} (const double Pos\mbox{[}3\mbox{]}, int c\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em (x,y,z)-\/$>$(cx,cy,cz,c\+Tot) \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a14d68ab6ae97b1ddd6c8a56ec9607f87}{Get\+Coor\+Numb} (double $\ast$Pos)
+\begin{DoxyCompactList}\small\item\em Get the coordination number. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a99b8d5719387a53ac431da0b85694056}{Get\+Cell\+Coord} (int c, int Coord, int $\ast$Nei\+List)
+\begin{DoxyCompactList}\small\item\em Get the number of the neighbouring cells for the particles close to a wall. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_af2721958380b0ab29aed010a01b93ab8}{Get\+Cell\+Coord} (double $\ast$Pos, int $\ast$Nei\+List)
+\begin{DoxyCompactList}\small\item\em Get the number of the neighbouring cells for the particles close to a wall. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_aa02df5ddcb998bf1a8f221f1bf14e063}{Get\+Cell\+Ch} (int c, int $\ast$Nei\+List)
+\begin{DoxyCompactList}\small\item\em Get the number of the neighbouring cells. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a1d363b247b350543ea601e5f41a405eb}{Get\+Cell} (double $\ast$Pos, int $\ast$Nei\+List)
+\begin{DoxyCompactList}\small\item\em Get the number of the neighbouring cells for a ghost particle. \end{DoxyCompactList}\item 
+void \hyperlink{classDomDecBasics_af5188eb0e6caae79f8bf349bf2345cf2}{Print\+Cell} (const int c)\hypertarget{classDomDecBasics_af5188eb0e6caae79f8bf349bf2345cf2}{}\label{classDomDecBasics_af5188eb0e6caae79f8bf349bf2345cf2}
+
+\begin{DoxyCompactList}\small\item\em Print the content of a cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDomDecBasics_a1132024d8fdd721fd6a36781d4235162}{Print\+Cells} ()\hypertarget{classDomDecBasics_a1132024d8fdd721fd6a36781d4235162}{}\label{classDomDecBasics_a1132024d8fdd721fd6a36781d4235162}
+
+\begin{DoxyCompactList}\small\item\em Print the the particles in the cells. \end{DoxyCompactList}\item 
+void \hyperlink{classDomDecBasics_abacbda4ce7eed0eee33efe489157ff81}{Print\+List} (const int c)\hypertarget{classDomDecBasics_abacbda4ce7eed0eee33efe489157ff81}{}\label{classDomDecBasics_abacbda4ce7eed0eee33efe489157ff81}
+
+\begin{DoxyCompactList}\small\item\em Print the the particle list in the cells. \end{DoxyCompactList}\item 
+void \hyperlink{classDomDecBasics_aff89725be8d743f07f318ef0c06858e1}{Print\+Lists} ()\hypertarget{classDomDecBasics_aff89725be8d743f07f318ef0c06858e1}{}\label{classDomDecBasics_aff89725be8d743f07f318ef0c06858e1}
+
+\begin{DoxyCompactList}\small\item\em Print the the particle list in the cells. \end{DoxyCompactList}\item 
+void \hyperlink{classDomDecBasics_a4e589206ab9bc4752d547111d6bba6e7}{Check\+List} ()\hypertarget{classDomDecBasics_a4e589206ab9bc4752d547111d6bba6e7}{}\label{classDomDecBasics_a4e589206ab9bc4752d547111d6bba6e7}
+
+\begin{DoxyCompactList}\small\item\em Check the list. \end{DoxyCompactList}\item 
+void \hyperlink{classDomDecBasics_ad6d4b1b657a39ed64c2c45d4706dbcc1}{Check\+Nei} (int p)\hypertarget{classDomDecBasics_ad6d4b1b657a39ed64c2c45d4706dbcc1}{}\label{classDomDecBasics_ad6d4b1b657a39ed64c2c45d4706dbcc1}
+
+\begin{DoxyCompactList}\small\item\em Check the neighbours. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_aa1b1f1f1104d2124962ffbdec630f830}{Set\+Cut\+Off} (double Cut\+Off\+Ext)
+\begin{DoxyCompactList}\small\item\em Set the Cut\+Off. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classDomDecBasics_ae47fdfe8f7b7de2ed9a00d0109696435}{Bound\+Cond} \mbox{[}27\mbox{]}\mbox{[}3\mbox{]}\hypertarget{classDomDecBasics_ae47fdfe8f7b7de2ed9a00d0109696435}{}\label{classDomDecBasics_ae47fdfe8f7b7de2ed9a00d0109696435}
+
+\begin{DoxyCompactList}\small\item\em Boundary condition for the cell consider. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_ab8d5dea32bdd50bc532a901e60a98067}{c\+Curr}\hypertarget{classDomDecBasics_ab8d5dea32bdd50bc532a901e60a98067}{}\label{classDomDecBasics_ab8d5dea32bdd50bc532a901e60a98067}
+
+\begin{DoxyCompactList}\small\item\em Cell where the current particle sits. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a3f1699016098a6e8062fb140b2833206}{Nei\+List\+Curr} \mbox{[}27\mbox{]}\hypertarget{classDomDecBasics_a3f1699016098a6e8062fb140b2833206}{}\label{classDomDecBasics_a3f1699016098a6e8062fb140b2833206}
+
+\begin{DoxyCompactList}\small\item\em Neighbouring list. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a16f1ee8ae2cd837bc80f24b844e50575}{N\+Nei\+Curr}\hypertarget{classDomDecBasics_a16f1ee8ae2cd837bc80f24b844e50575}{}\label{classDomDecBasics_a16f1ee8ae2cd837bc80f24b844e50575}
+
+\begin{DoxyCompactList}\small\item\em Number of neighbouring cells. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a8c4a3cbd2beb1d216432d9659a8115b9}{n\+Nei\+Curr}\hypertarget{classDomDecBasics_a8c4a3cbd2beb1d216432d9659a8115b9}{}\label{classDomDecBasics_a8c4a3cbd2beb1d216432d9659a8115b9}
+
+\begin{DoxyCompactList}\small\item\em Current number of neighbours. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a25fda7e50215153ef24cfcaecd5d0fd1}{p1\+Curr}\hypertarget{classDomDecBasics_a25fda7e50215153ef24cfcaecd5d0fd1}{}\label{classDomDecBasics_a25fda7e50215153ef24cfcaecd5d0fd1}
+
+\begin{DoxyCompactList}\small\item\em Reference particle. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a28d65a777a97b96280ca0f9173c76c93}{p2\+Curr}\hypertarget{classDomDecBasics_a28d65a777a97b96280ca0f9173c76c93}{}\label{classDomDecBasics_a28d65a777a97b96280ca0f9173c76c93}
+
+\begin{DoxyCompactList}\small\item\em Current particle. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_aba0b8638ff017c1b638a2a09182e98cd}{If\+Loop\+Curr}\hypertarget{classDomDecBasics_aba0b8638ff017c1b638a2a09182e98cd}{}\label{classDomDecBasics_aba0b8638ff017c1b638a2a09182e98cd}
+
+\begin{DoxyCompactList}\small\item\em 1 if the loop is over \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_acc8f741b84a798988735ff527e5856e2}{Mod10} \mbox{[}3\mbox{]}\hypertarget{classDomDecBasics_acc8f741b84a798988735ff527e5856e2}{}\label{classDomDecBasics_acc8f741b84a798988735ff527e5856e2}
+
+\begin{DoxyCompactList}\small\item\em Module 10 (nx,ny,nz) -\/$>$ nc. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a8bf073be6a33b33896fcbfabfc299fb1}{N\+Cell}\hypertarget{classDomDecBasics_a8bf073be6a33b33896fcbfabfc299fb1}{}\label{classDomDecBasics_a8bf073be6a33b33896fcbfabfc299fb1}
+
+\begin{DoxyCompactList}\small\item\em Number of cells. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_aa908349bcd29a565cd53bfea2899b81e}{N\+Sect} \mbox{[}3\mbox{]}\hypertarget{classDomDecBasics_aa908349bcd29a565cd53bfea2899b81e}{}\label{classDomDecBasics_aa908349bcd29a565cd53bfea2899b81e}
+
+\begin{DoxyCompactList}\small\item\em Number of cells per direction. \end{DoxyCompactList}\item 
+double \hyperlink{classDomDecBasics_a8895c89605e91c6cf7430bad336f77c6}{Edge} \mbox{[}3\mbox{]}\hypertarget{classDomDecBasics_a8895c89605e91c6cf7430bad336f77c6}{}\label{classDomDecBasics_a8895c89605e91c6cf7430bad336f77c6}
+
+\begin{DoxyCompactList}\small\item\em Box sizes. \end{DoxyCompactList}\item 
+double \hyperlink{classDomDecBasics_a6ee15bbdebce69774ca6b655a1828b20}{Inv\+Edge} \mbox{[}3\mbox{]}\hypertarget{classDomDecBasics_a6ee15bbdebce69774ca6b655a1828b20}{}\label{classDomDecBasics_a6ee15bbdebce69774ca6b655a1828b20}
+
+\begin{DoxyCompactList}\small\item\em Inverse box size. \end{DoxyCompactList}\item 
+double \hyperlink{classDomDecBasics_af2411aba2dd63fa22b1bc279653ff7a0}{Cut\+Off}\hypertarget{classDomDecBasics_af2411aba2dd63fa22b1bc279653ff7a0}{}\label{classDomDecBasics_af2411aba2dd63fa22b1bc279653ff7a0}
+
+\begin{DoxyCompactList}\small\item\em Cell Cut\+Off. \end{DoxyCompactList}\item 
+double \hyperlink{classDomDecBasics_a8d8ef8940cfe4b3b94a2ffd97aaeecb3}{Pos\+Curr} \mbox{[}3\mbox{]}\hypertarget{classDomDecBasics_a8d8ef8940cfe4b3b94a2ffd97aaeecb3}{}\label{classDomDecBasics_a8d8ef8940cfe4b3b94a2ffd97aaeecb3}
+
+\begin{DoxyCompactList}\small\item\em Position of the current particle. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a4c6eee002f7cf6e171979efae96f56d9}{N\+AllocP}\hypertarget{classDomDecBasics_a4c6eee002f7cf6e171979efae96f56d9}{}\label{classDomDecBasics_a4c6eee002f7cf6e171979efae96f56d9}
+
+\begin{DoxyCompactList}\small\item\em Number of allocated part. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_abdcc792391d8c5092471dff191de47f4}{N\+Part}\hypertarget{classDomDecBasics_abdcc792391d8c5092471dff191de47f4}{}\label{classDomDecBasics_abdcc792391d8c5092471dff191de47f4}
+
+\begin{DoxyCompactList}\small\item\em Total number of particle. \end{DoxyCompactList}\item 
+int \hyperlink{classDomDecBasics_a344d1f69bf058351f6cbcc32f14a3057}{N\+Neighbour}\hypertarget{classDomDecBasics_a344d1f69bf058351f6cbcc32f14a3057}{}\label{classDomDecBasics_a344d1f69bf058351f6cbcc32f14a3057}
+
+\begin{DoxyCompactList}\small\item\em Number of neighbours. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+All the general functions shared among the different domain decomposition structures. 
+
+Definition at line 35 of file Cubo.\+h.
+
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{Dom\+Dec\+Basics()}{DomDecBasics()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dom\+Dec\+Basics} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_aec40201a10397aa0c646f6dcb31d03d9}{}\label{classDomDecBasics_aec40201a10397aa0c646f6dcb31d03d9}
+
+
+Allocate. 
+
+Allocator of the general structure. 
+
+Definition at line 17 of file Cubo.\+cpp.
+
+
+
+\subsubsection{Member Function Documentation}
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Sig\+Err@{Sig\+Err}}
+\index{Sig\+Err@{Sig\+Err}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{Sig\+Err(int Condition, const char $\ast$s,...)}{SigErr(int Condition, const char *s,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Sig\+Err (
+\begin{DoxyParamCaption}
+\item[{int}]{Condition, }
+\item[{const char $\ast$}]{s, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_a013bde7a8eb6c66e70ab5d90959af2c2}{}\label{classDomDecBasics_a013bde7a8eb6c66e70ab5d90959af2c2}
+
+
+Handle errors. 
+
+Signal an error and exit. 
+
+Definition at line 24 of file Cubo.\+cpp.
+
+
+
+Referenced by Dd\+Linked\+List\+::\+Add\+Part(), Dd\+Linked\+List\+::\+Couple(), Dd\+Double\+Loop\+::\+Dd\+Double\+Loop(), Dd\+Linked\+List\+::\+Dd\+Linked\+List(), Get\+Cell\+Ch(), Get\+Cell\+Coord(), Dd\+Linked\+List\+::\+Incr\+Curr\+List(), Dd\+Linked\+List\+::\+It\+Cell(), p\+Cella(), Dd\+Linked\+List\+::\+Rem\+Part(), Nei\+Vertex\+::\+Reorder(), Dd\+Linked\+List\+::\+Set\+Curr(), and Dd\+Linked\+List\+::\+Set\+Curr\+Ghost().
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!p\+N\+Part@{p\+N\+Part}}
+\index{p\+N\+Part@{p\+N\+Part}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{p\+N\+Part()}{pNPart()}}]{\setlength{\rightskip}{0pt plus 5cm}int p\+N\+Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_a388622b5e7d2ad20e8ac1a8a951d655f}{}\label{classDomDecBasics_a388622b5e7d2ad20e8ac1a8a951d655f}
+
+
+\subsubsection*{part in the class}
+
+Number of particles. 
+
+Definition at line 51 of file Cubo.\+cpp.
+
+
+
+References N\+Part.
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!p\+N\+Cell@{p\+N\+Cell}}
+\index{p\+N\+Cell@{p\+N\+Cell}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{p\+N\+Cell()}{pNCell()}}]{\setlength{\rightskip}{0pt plus 5cm}int p\+N\+Cell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_a02631cacc3cd393a64b7e78df3734e48}{}\label{classDomDecBasics_a02631cacc3cd393a64b7e78df3734e48}
+
+
+Print the number of cells. 
+
+Number of cells. 
+
+Definition at line 55 of file Cubo.\+cpp.
+
+
+
+References N\+Cell.
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!p\+Cella@{p\+Cella}}
+\index{p\+Cella@{p\+Cella}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{p\+Cella(const double Pos[3])}{pCella(const double Pos[3])}}]{\setlength{\rightskip}{0pt plus 5cm}int p\+Cella (
+\begin{DoxyParamCaption}
+\item[{const double}]{Pos\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_a8bc667d6b3e872a9cabbb54f1eb671e8}{}\label{classDomDecBasics_a8bc667d6b3e872a9cabbb54f1eb671e8}
+
+
+(x,y,z)-\/$>$n 
+
+Return the unique cell identification number for the given position. 
+
+Definition at line 192 of file Cubo.\+cpp.
+
+
+
+References Edge, Inv\+Edge, Mod10, N\+Cell, N\+Sect, and Sig\+Err().
+
+
+
+Referenced by Dd\+Linked\+List\+::\+Add\+Part(), Dd\+Array\+::\+Add\+Part(), Dd\+Fixed\+Size\+::\+Add\+Part(), Get\+Cell(), Get\+Cell\+Coord(), Dd\+Linked\+List\+::\+Move\+Part(), Dd\+Array\+::\+Move\+Part(), Dd\+Fixed\+Size\+::\+Move\+Part(), Dd\+Linked\+List\+::\+Rem\+Part(), Dd\+Array\+::\+Rem\+Part(), Dd\+Fixed\+Size\+::\+Rem\+Part(), Dd\+Linked\+List\+::\+Set\+Curr\+Ghost(), Dd\+Array\+::\+Swap\+Part(), and Dd\+Fixed\+Size\+::\+Swap\+Part().
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!p\+Cella@{p\+Cella}}
+\index{p\+Cella@{p\+Cella}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{p\+Cella(const double Pos[3], int c[4])}{pCella(const double Pos[3], int c[4])}}]{\setlength{\rightskip}{0pt plus 5cm}void p\+Cella (
+\begin{DoxyParamCaption}
+\item[{const double}]{Pos\mbox{[}3\mbox{]}, }
+\item[{int}]{c\mbox{[}4\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_a328df10e55925d98bc8ca3daa5ca4f96}{}\label{classDomDecBasics_a328df10e55925d98bc8ca3daa5ca4f96}
+
+
+(x,y,z)-\/$>$(cx,cy,cz,c\+Tot) 
+
+Return the unique cell identification number for the given position. 
+
+Definition at line 203 of file Cubo.\+cpp.
+
+
+
+References Edge, Mod10, N\+Cell, N\+Sect, and Sig\+Err().
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Get\+Coor\+Numb@{Get\+Coor\+Numb}}
+\index{Get\+Coor\+Numb@{Get\+Coor\+Numb}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{Get\+Coor\+Numb(double $\ast$\+Pos)}{GetCoorNumb(double *Pos)}}]{\setlength{\rightskip}{0pt plus 5cm}int Get\+Coor\+Numb (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_a14d68ab6ae97b1ddd6c8a56ec9607f87}{}\label{classDomDecBasics_a14d68ab6ae97b1ddd6c8a56ec9607f87}
+
+
+Get the coordination number. 
+
+Retrun the coordination number for the given position. 
+
+Definition at line 212 of file Cubo.\+cpp.
+
+
+
+References Cut\+Off, Edge, and N\+Sect.
+
+
+
+Referenced by Get\+Cell\+Coord(), Dd\+Linked\+List\+::\+Set\+Coor\+Numb(), and Dd\+Double\+Loop\+::\+Set\+Coor\+Numb().
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Get\+Cell\+Coord@{Get\+Cell\+Coord}}
+\index{Get\+Cell\+Coord@{Get\+Cell\+Coord}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{Get\+Cell\+Coord(int c, int Coord, int $\ast$\+Nei\+List)}{GetCellCoord(int c, int Coord, int *NeiList)}}]{\setlength{\rightskip}{0pt plus 5cm}int Get\+Cell\+Coord (
+\begin{DoxyParamCaption}
+\item[{int}]{c, }
+\item[{int}]{Coord, }
+\item[{int $\ast$}]{Nei\+List}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_a99b8d5719387a53ac431da0b85694056}{}\label{classDomDecBasics_a99b8d5719387a53ac431da0b85694056}
+
+
+Get the number of the neighbouring cells for the particles close to a wall. 
+
+Coordination number of the particle in the cell, every particle has a flag which tells to which cell border is close to.
+
+Saves computational time. 
+
+Definition at line 121 of file Cubo.\+cpp.
+
+
+
+References Bound\+Cond, Mod10, N\+Sect, and Sig\+Err().
+
+
+
+Referenced by Get\+Cell\+Coord().
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Get\+Cell\+Coord@{Get\+Cell\+Coord}}
+\index{Get\+Cell\+Coord@{Get\+Cell\+Coord}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{Get\+Cell\+Coord(double $\ast$\+Pos, int $\ast$\+Nei\+List)}{GetCellCoord(double *Pos, int *NeiList)}}]{\setlength{\rightskip}{0pt plus 5cm}int Get\+Cell\+Coord (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Pos, }
+\item[{int $\ast$}]{Nei\+List}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_af2721958380b0ab29aed010a01b93ab8}{}\label{classDomDecBasics_af2721958380b0ab29aed010a01b93ab8}
+
+
+Get the number of the neighbouring cells for the particles close to a wall. 
+
+Coordination number of the particle in the cell. 
+
+Definition at line 115 of file Cubo.\+cpp.
+
+
+
+References Get\+Cell\+Coord(), Get\+Coor\+Numb(), and p\+Cella().
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Get\+Cell\+Ch@{Get\+Cell\+Ch}}
+\index{Get\+Cell\+Ch@{Get\+Cell\+Ch}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{Get\+Cell\+Ch(int c, int $\ast$\+Nei\+List)}{GetCellCh(int c, int *NeiList)}}]{\setlength{\rightskip}{0pt plus 5cm}int Get\+Cell\+Ch (
+\begin{DoxyParamCaption}
+\item[{int}]{c, }
+\item[{int $\ast$}]{Nei\+List}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_aa02df5ddcb998bf1a8f221f1bf14e063}{}\label{classDomDecBasics_aa02df5ddcb998bf1a8f221f1bf14e063}
+
+
+Get the number of the neighbouring cells. 
+
+Neighbouring cells with periodic boundary conditions. 
+
+Definition at line 64 of file Cubo.\+cpp.
+
+
+
+References Bound\+Cond, Mod10, N\+Cell, N\+Sect, and Sig\+Err().
+
+
+
+Referenced by Get\+Cell().
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Get\+Cell@{Get\+Cell}}
+\index{Get\+Cell@{Get\+Cell}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{Get\+Cell(double $\ast$\+Pos, int $\ast$\+Nei\+List)}{GetCell(double *Pos, int *NeiList)}}]{\setlength{\rightskip}{0pt plus 5cm}int Get\+Cell (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Pos, }
+\item[{int $\ast$}]{Nei\+List}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_a1d363b247b350543ea601e5f41a405eb}{}\label{classDomDecBasics_a1d363b247b350543ea601e5f41a405eb}
+
+
+Get the number of the neighbouring cells for a ghost particle. 
+
+Return the list of neighbouring cells. 
+
+Definition at line 59 of file Cubo.\+cpp.
+
+
+
+References Get\+Cell\+Ch(), and p\+Cella().
+
+\index{Dom\+Dec\+Basics@{Dom\+Dec\+Basics}!Set\+Cut\+Off@{Set\+Cut\+Off}}
+\index{Set\+Cut\+Off@{Set\+Cut\+Off}!Dom\+Dec\+Basics@{Dom\+Dec\+Basics}}
+\paragraph[{\texorpdfstring{Set\+Cut\+Off(double Cut\+Off\+Ext)}{SetCutOff(double CutOffExt)}}]{\setlength{\rightskip}{0pt plus 5cm}int Set\+Cut\+Off (
+\begin{DoxyParamCaption}
+\item[{double}]{Cut\+Off\+Ext}
+\end{DoxyParamCaption}
+)}\hypertarget{classDomDecBasics_aa1b1f1f1104d2124962ffbdec630f830}{}\label{classDomDecBasics_aa1b1f1f1104d2124962ffbdec630f830}
+
+
+Set the Cut\+Off. 
+
+Set the cut off of the grid spacing, the cut off should be much smaller than the box size. 
+
+Definition at line 40 of file Cubo.\+cpp.
+
+
+
+References Cut\+Off, Edge, and N\+Sect.
+
+
+
+Referenced by Dd\+Double\+Loop\+::\+Dd\+Double\+Loop(), and Dd\+Linked\+List\+::\+Dd\+Linked\+List().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Cubo.\+h\item 
+src/\+Var\+Data/Cubo.\+cpp\item 
+src/\+Var\+Data/Cubo.\+mirror.\+cpp\end{DoxyCompactItemize}

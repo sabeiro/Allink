@@ -1,0 +1,230 @@
+.TH "ElPoly_page" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ElPoly_page \- \fBElPoly\fP 
+Mechanical properties calculation for a system of particles bounded in chains\&. 
+.br
+ Perform a calculation of the characteristic properties of lipid chains in bilayer membrane (diffusivity, pressure profile, radial density plot\&.\&.\&.)\&.
+.br
+ Required:OpenGl, optional CGAL\&.
+.SH "Command list:"
+.PP
+All the commands that can be typed in the command line can be written in the argument list with a single dash '-' for single characters or with double dash '--' for words\&.
+.PP
+'d' Graphics(argc,argv); '?' Legenda(); '!' printf('Insert a shell command: '); 'dens' DensProf(NBin,NSample,Coord); '3to2' From3To2d(NSample,Param[0]); '3to1' From3To1d(Coord); '2to1' From2To1d(Coord); 'pro' ProjectionF(NBin,Coord); 'core' CoreF(NSample,0); 'coreNano' CoreF(NSample,1); 'RadShell' RadialShell(NBin); 'angle' Angle(NBin); 'SlabProf' SlabProf(NBin,nNano,CoordProfile); 'SlabAngleProfs' SlabAngleProfs(NBin,10,CoordProfile); 'CartDens' CartDens(NBin,nNano); 'radNano' RadDistrF(NBin,1,nNano); 'radCm' RadDistrF(NBin,0,nNano); 'radCmN' RadDistrF(NBin,2,nNano); 'radStalk' RadDistrF(NBin,4,nNano); 'radPore' RadDistrF(NBin,5,nNano); 'cartNano' RadDistrF(NBin,6,nNano); 'BondDistr' BondDistr(NSample); 'SplayDistr' SplayDistr(NSample); 'cm' CenterOfMass(Coord); 'Dens2Thick' RadDens2Thick(NBin); 'Dens2Thick2d' RadDens2Thick2d(NBin); 'ThickFromDens' ThickFromDens(NBin); 'temp' Temperature(NBin,Coord); 'nano' NanoParticle(NBin); 'surf' Surface(NBin,1); 'diff' \fBDiffusivity()\fP; 'DiffSlab' DiffSlab(NSample); 'PairCorr' PairCorr(NBin,1); 'pairMon' PairCorrelationF(NBin,0); 'pairChain' PairCorrelationF(NBin,1); 'pairRound' PairCorrelationF(NBin,2); 'pairSquare' PairCorrelationF(NBin,3); 'pairPep' PairCorrelationF(NBin,4); 'AvSnap' \fBAvSnap()\fP; 'scatt' ScatteringF(NBin,0); 'scatt2' ScatteringF(NBin,1); 'worm' WormF(20,NBin); 'header' HeaderAverage(nNano); 'spe' SpectrumF(NSample); 'RadNormPos' RadNormPos(NBin,NSample); 'AreaDistr' AreaDistrF(NBin); 'mid' Midplane(NSample); 'midSpe' SpectrumMidplane(NSample); 'prop' \fBPropertiesF()\fP; 'divOpp' DivideLayers(VAR_OPPOSED); 'divTube' DivideLayers(VAR_TUBE); 'divVes' DivideLayers(VAR_VESICLE); 'AreaCompr' AreaCompr(NSample); 'PTrace' \fBPressTrace()\fP; 'PRadial' \fBPressRadial()\fP; 'Tens' SurfTens(NBin); 'TensCartRad' \fBTens2dCartRad()\fP; 'SumTens' \fBSumTens()\fP; 'Prova' \fBProva()\fP; 'stalk' StalkF(32); 'StalkLine' StalkLineProfF(NBin); 'BackBone' BackBone(Line,NBin); 'rem' \fBRemoveChains()\fP; 'ChPos' FILE *FWrite = fopen('ChainPos\&.dat','w'); for(int c=0;c<\fBpNChain()\fP;c++){ fprintf(FWrite,'%lf %lf %lf\\n',Ch[c]\&.Pos[0],Ch[c]\&.Pos[1],Ch[c]\&.Pos[2]); } fclose(FWrite); 'tra' Transform(nBlock); Write('transformed\&.dat'); 'xyz' WriteXyz('resume\&.dat'); 'ConvLattice' ConvLattice(NSample,'LatticePoints\&.dat'); 'write' Write('resume\&.dat'); 'WidomOut' WidomOut('NrgLipid\&.dat',NBin); \fBWidomOut()\fP; 'WidomIn' WidomIn('NrgLipid\&.dat',NBin); \fBWidomIn()\fP; 'End2End' End2EndDistr('End2EndDistr'); 'ElCoup' ElasticCoupling(NSample); 'ElCoupNVT' \fBElasticCouplingNVT()\fP; 'E2EDec' Decoupling(1); 'SmoothGrid' SmoothGrid(NBin,'GridSmoothed\&.dat'); 'IsoSurf' IsoSurf(NSample,Param,NParam); 'IsoLine' NParam = 10; double OldParam = Param[0]; for(int p=0;p<NParam;p++){ Param[p] = OldParam*p/(double)(NParam); } IsoLine(NSample,Param,NParam,0); 'IsoLineDens' IsoLine(NSample,Param,NParam,1); 'FPore' \fBFetchPore()\fP; 'FStalk' \fBFetchStalk()\fP; 'AStalk' \fBStalkArea()\fP; 'Shift2Center' \fBShift2Center()\fP; 'AvSnap' \fBAvSnap()\fP; 'DirDec' Decoupling(0); 'BilDist' BilayerDistance('BilayerDistance\&.dat',NSample); 'Bond' BondDistr('BondDistr\&.dat',NBin); 'Diff2Dens' Diff2Files(NSample,1); 'Diff2Pre' Diff2Files(NSample,0); 'RestPre' RestPress(NBin); 'tecplotDens' Conv2Tecplot(NBin,0); 'tecplotPre' Conv2Tecplot(NBin,1); 'tecplotHei' Conv2Tecplot(NBin,2); 'rzd' Conv2rzd(NBin); 'xyzd' Conv2xyzd(NBin); 'vmd' \fBConv2Vmd()\fP; 'povray' \fBConv2Povray()\fP; 'coord' printf('Enter coordinate number [0 2] or radius [3]: '); scanf('%d',&Coord); if(Coord < 0 || Coord > 3){ printf('Value not valid, coord set to 0\\n'); Coord = 0; } 'norm' printf('Enter the direction of the normal: '); int Temp = 0; scanf('%d',&Temp); if(Temp >= 0 && Temp < 3){ CNorm = Temp; CLat1 = (CNorm+1)%3; CLat2 = (CNorm+2)%3; printf('n %d c1 %d c2 %d\\n',CNorm,CLat1,CLat2); } 'type' int NChType = CHAIN_EVERY; printf('up %d down %d flabby %d stretch %d added %d every %d: ',CHAIN_UP,CHAIN_DOWN,CHAIN_FLABBY,CHAIN_STRETCH,CHAIN_ADDED,CHAIN_EVERY); scanf('%d',&NChType); if(NChType != CHAIN_UP && NChType != CHAIN_DOWN && NChType != CHAIN_FLABBY && NChType != CHAIN_STRETCH && NChType != CHAIN_ADDED && NChType != CHAIN_EVERY){ printf('Value not valid, type set to %d\\n',CHAIN_EVERY); NChType = CHAIN_EVERY; } NChType = NChType; 'file' \fBChangeFile()\fP; 'val' printf('Number bins (NBin) :'); scanf('%d',&NBin); 'Nei' FindNeighbours('CrossLinks\&.dat'); 'sample' Sample(NSample); 'open' char InFile[256]; printf('New file name: '); scanf('%s',Comando); sprintf(InFile,Comando); OpenFile(InFile); '>' quando++; if(quando >= NFile){ quando = 0; } if(quando >=0 && quando < NFile){ OpenFile(quando); printf('Opening: %s\\n',argv[FilePos[quando]]); } '<' quando--; if(quando < 0){ quando = NFile-1; } if(quando >=0 && quando < NFile){ OpenFile(quando); printf('Opening: %s\\n',argv[FilePos[quando]]); } 'f' printf('Open file num 0-%d: ',NFile); scanf('%d',&quando); if( quando >= 0 && quando < NFile){ OpenFile(quando); } 'info' printf('------------------------------------------------------\\n'); char cSystem[STRSIZE]; SysInfo(cSystem); printf('%s\\n',cSystem); SysDef(cSystem); printf('%s\\n',cSystem);
+.PP
+.PD 0
+.IP "\(bu" 2
+'dens' \fBElPoly::DensProf\fP 
+.IP "\(bu" 2
+'3to2' \fBElPoly::From3To2d\fP 
+.IP "\(bu" 2
+'3to1' \fBElPoly::From3To1d\fP 
+.IP "\(bu" 2
+'2to1' \fBElPoly::From2To1d\fP 
+.IP "\(bu" 2
+'pro' \fBElPoly::ProjectionF\fP 
+.IP "\(bu" 2
+'core' \fBElPoly::CoreF\fP 
+.IP "\(bu" 2
+'coreNano' \fBElPoly::CoreF\fP 
+.IP "\(bu" 2
+'RadShell' \fBElPoly::RadialShell\fP 
+.IP "\(bu" 2
+'angle' \fBElPoly::Angle\fP 
+.IP "\(bu" 2
+'SlabProf' \fBElPoly::SlabProf\fP 
+.IP "\(bu" 2
+'SlabAngleProfs' \fBElPoly::SlabAngleProfs\fP 
+.IP "\(bu" 2
+'CartDens' \fBElPoly::CartDens\fP 
+.IP "\(bu" 2
+'radNano' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'radCm' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'radCmN' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'radStalk' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'radPore' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'cartNano' \fBElPoly::RadDistrF\fP 
+.IP "\(bu" 2
+'cm' \fBElPoly::CenterOfMass\fP 
+.IP "\(bu" 2
+'Dens2Thick' \fBElPoly::RadDens2Thick\fP 
+.IP "\(bu" 2
+'Dens2Thick2d' \fBElPoly::RadDens2Thick2d\fP 
+.IP "\(bu" 2
+'ThickFromDens' \fBElPoly::ThickFromDens\fP 
+.IP "\(bu" 2
+'temp' \fBElPoly::Temperature\fP 
+.IP "\(bu" 2
+'nano' \fBElPoly::NanoParticle\fP 
+.IP "\(bu" 2
+'surf' \fBElPoly::Surface\fP 
+.IP "\(bu" 2
+'diff' \fBElPoly::Diffusivity\fP 
+.IP "\(bu" 2
+'DiffSlab' \fBElPoly::DiffSlab\fP 
+.IP "\(bu" 2
+'PairCorr' \fBElPoly::PairCorr\fP 
+.IP "\(bu" 2
+'pairMon' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'pairChain' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'pairRound' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'pairSquare' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'pairPep' \fBElPoly::PairCorrelationF\fP 
+.IP "\(bu" 2
+'AvSnap' \fBElPoly::AvSnap\fP 
+.IP "\(bu" 2
+'scatt' \fBElPoly::ScatteringF\fP 
+.IP "\(bu" 2
+'scatt2' \fBElPoly::ScatteringF\fP 
+.IP "\(bu" 2
+'worm' \fBElPoly::WormF\fP 
+.IP "\(bu" 2
+'header' \fBElPoly::HeaderAverage\fP 
+.IP "\(bu" 2
+'spe' \fBElPoly::SpectrumF\fP 
+.IP "\(bu" 2
+'RadNormPos' \fBElPoly::RadNormPos\fP 
+.IP "\(bu" 2
+'AreaDistr' \fBElPoly::AreaDistrF\fP 
+.IP "\(bu" 2
+'mid' \fBElPoly::Midplane\fP 
+.IP "\(bu" 2
+'midSpe' \fBElPoly::SpectrumMidplane\fP 
+.IP "\(bu" 2
+'prop' \fBElPoly::PropertiesF\fP 
+.IP "\(bu" 2
+'divOpp' \fBElPoly::DivideLayers\fP 
+.IP "\(bu" 2
+'divTube' \fBElPoly::DivideLayers\fP 
+.IP "\(bu" 2
+'divVes' \fBElPoly::DivideLayers\fP 
+.IP "\(bu" 2
+'AreaCompr' \fBElPoly::AreaCompr\fP 
+.IP "\(bu" 2
+'PTrace' \fBElPoly::PressTrace\fP 
+.IP "\(bu" 2
+'PRadial' \fBElPoly::PressRadial\fP 
+.IP "\(bu" 2
+'Tens' \fBElPoly::SurfTens\fP 
+.IP "\(bu" 2
+'TensCartRad' \fBElPoly::Tens2dCartRad\fP 
+.IP "\(bu" 2
+'SumTens' \fBElPoly::SumTens\fP 
+.IP "\(bu" 2
+'stalk' \fBElPoly::StalkF\fP 
+.IP "\(bu" 2
+'StalkLine' \fBElPoly::StalkLineProfF\fP 
+.IP "\(bu" 2
+'BackBone' \fBElPoly::BackBone\fP 
+.IP "\(bu" 2
+'rem' \fBElPoly::RemoveChains\fP 
+.IP "\(bu" 2
+'ChPos' 
+.IP "\(bu" 2
+'tra' \fBElPoly::Transform\fP 
+.IP "\(bu" 2
+'ConvLattice' \fBElPoly::ConvLattice\fP 
+.IP "\(bu" 2
+'write' \fBElPoly::Write\fP 
+.IP "\(bu" 2
+'WidomOut' \fBElPoly::WidomOut\fP 
+.IP "\(bu" 2
+'WidomIn' \fBElPoly::WidomIn\fP 
+.IP "\(bu" 2
+'End2End' \fBElPoly::End2EndDistr\fP 
+.IP "\(bu" 2
+'ElCoup' \fBElPoly::ElasticCoupling\fP 
+.IP "\(bu" 2
+'ElCoupNVT' \fBElPoly::ElasticCouplingNVT\fP 
+.IP "\(bu" 2
+'E2EDec' \fBElPoly::Decoupling\fP 
+.IP "\(bu" 2
+'SmoothGrid' \fBElPoly::SmoothGrid\fP 
+.IP "\(bu" 2
+'IsoSurf' \fBElPoly::IsoSurf\fP 
+.IP "\(bu" 2
+'IsoLine' \fBElPoly::IsoLine\fP 
+.IP "\(bu" 2
+'IsoLineDens' \fBElPoly::IsoLine\fP 
+.IP "\(bu" 2
+'FPore' \fBElPoly::FetchPore\fP 
+.IP "\(bu" 2
+'FStalk' \fBElPoly::FetchStalk\fP 
+.IP "\(bu" 2
+'AStalk' \fBElPoly::StalkArea\fP 
+.IP "\(bu" 2
+'Shift2Center' \fBElPoly::Shift2Center\fP 
+.IP "\(bu" 2
+'AvSnap' \fBElPoly::AvSnap\fP 
+.IP "\(bu" 2
+'DirDec' \fBElPoly::Decoupling\fP 
+.IP "\(bu" 2
+'BilDist' \fBElPoly::BilayerDistance\fP 
+.IP "\(bu" 2
+'Bond' \fBElPoly::BondDistr\fP 
+.IP "\(bu" 2
+'Diff2Dens' \fBElPoly::Diff2Files\fP 
+.IP "\(bu" 2
+'Diff2Pre' \fBElPoly::Diff2Files\fP 
+.IP "\(bu" 2
+'RestPre' \fBElPoly::RestPress\fP 
+.IP "\(bu" 2
+'tecplotDens' \fBElPoly::Conv2Tecplot\fP 
+.IP "\(bu" 2
+'tecplotPre' \fBElPoly::Conv2Tecplot\fP 
+.IP "\(bu" 2
+'tecplotHei' \fBElPoly::Conv2Tecplot\fP 
+.IP "\(bu" 2
+'rzd' \fBElPoly::Conv2rzd\fP 
+.IP "\(bu" 2
+'xyzd' \fBElPoly::Conv2xyzd\fP 
+.IP "\(bu" 2
+'vmd' \fBElPoly::Conv2Vmd\fP 
+.IP "\(bu" 2
+'povray' \fBElPoly::Conv2Povray\fP 
+.IP "\(bu" 2
+'coord' 
+.IP "\(bu" 2
+'norm' 
+.IP "\(bu" 2
+'type' 
+.IP "\(bu" 2
+'file' \fBElPoly::ChangeFile\fP 
+.IP "\(bu" 2
+'val' 
+.IP "\(bu" 2
+'Nei' \fBElPoly::FindNeighbours\fP 
+.IP "\(bu" 2
+'sample' 
+.IP "\(bu" 2
+'open' \fBElPoly::OpenFile\fP 
+.IP "\(bu" 2
+'>' \fBElPoly::OpenFile\fP 
+.IP "\(bu" 2
+'<' \fBElPoly::OpenFile\fP 
+.IP "\(bu" 2
+'f' \fBElPoly::OpenFile\fP 
+.IP "\(bu" 2
+'info' \fBElPoly::SysInfo\fP \fBElPoly::SysDef\fP 
+.IP "\(bu" 2
+'q'
+.PP
+
+.PP
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBAllink\fP (Up)  
+.PP
+

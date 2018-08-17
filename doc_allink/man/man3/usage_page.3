@@ -1,0 +1,100 @@
+.TH "usage_page" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+usage_page \- Getting Started 
+
+.SH "ElPoly"
+.PP
+Create an intial system: edit Polymers\&.conf in the same directory and run 
+.PP
+.nf
+ElPoly -x resume\&.dat
+
+.fi
+.PP
+ Study the properties of a system: 
+.PP
+.nf
+ElPoly resume\&.dat
+
+.fi
+.PP
+ The option can be either specified in the argument list with a dash in the front 
+.PP
+.nf
+ElPoly resume\&.dat -d part
+
+.fi
+.PP
+ or in the command line: 
+.PP
+.nf
+[marelli@Hoshi]-(Examples) $ ElPoly resume\&.dat 
+------------------------------------------------------
+# NPart 7500 NType 0 NChain 511 NPCh 2410 Asymmetry 7499 Edge: [12 12 18] rho 6 chiN 30 kappaN 70 
+Nano 64 (# 4) (1\&.000000 1\&.000000 4\&.000000) NBlock 1 NFile 1
+# SysType) Edge 1 Sys (Txvl 1 Xvt 0) 
+
+------------------------------------------------------
+ElPoly> 
+
+.fi
+.PP
+.SH "Visualizza"
+.PP
+Run Visualizza specifing the argument list and the config file with '-c' 
+.PP
+.nf
+Visualizza SpectrumBilayer*\&.dat FittedData*\&.dat -c PlotDef\&.txt &
+
+.fi
+.PP
+.SH "UsaMatematica"
+.PP
+The same analysis tools of Visualizza can be run by UsaMatematica specifing a command with the double dash in the front or typing the command in the command line: 
+.PP
+.nf
+UsaMatematica -x 1 -y 2 --exec x/6 y/35\&.2  DistMinSepRaw\&.dat -o Temp\&.dat
+UsaMatematica --smoothGauss Temp\&.dat -o DistMinSep\&.dat
+
+.fi
+.PP
+.SH "DrImage"
+.PP
+Movie effects applied on a \&.png image\&. In the following example we run a Lennard-Jones simulation using squares of pixel as particles\&. 
+.PP
+.nf
+DrImage Picture\&.png -l
+
+.fi
+.PP
+.SH "DrEffect"
+.PP
+Load a picture to apply the different filters and picture analysis 
+.PP
+.nf
+DrEffect Picture\&.tif
+
+.fi
+.PP
+.SH "Dinamica"
+.PP
+Run a simulation on a specific system with a specific integrator: 
+.PP
+.nf
+Dinamica -c DynMC\&.conf -i resume\&.dat -d 
+
+.fi
+.PP
+ The option can be either specified in the argument list with a dash in the front or in the command line: '-d' display, '-r' run, '--Tens' tension profile, '--AvForces' average forces\&.\&.\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBCompilation\fP (Previous)  
+.IP "\(bu" 2
+\fBAllink\fP (Up)  
+.IP "\(bu" 2
+\fBParameter File\fP (Next)  
+.PP
+

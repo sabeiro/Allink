@@ -1,0 +1,130 @@
+.TH "DrEffect" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DrEffect \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBDraw\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBEffectFilter\fP ()"
+.br
+.RI "\fIApplies a filter to pixel\&. \fP"
+.ti -1c
+.RI "void \fBEffectMotion\fP ()"
+.br
+.RI "\fIShifting of pixels\&. \fP"
+.ti -1c
+.RI "void \fBEffectMC\fP ()"
+.br
+.RI "\fIApplies a random disposition of blocks\&. \fP"
+.ti -1c
+.RI "void \fBEffectCoarseGrain\fP (int Grana)"
+.br
+.RI "\fIDefocus the images in blocks\&. \fP"
+.ti -1c
+.RI "void \fBEffectIncrease\fP ()"
+.br
+.RI "\fIIncrease the resolution\&. \fP"
+.ti -1c
+.RI "void \fBRun\fP ()"
+.br
+.RI "\fICreate an animation\&. \fP"
+.ti -1c
+.RI "void \fBInitialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBHisto\fP ()"
+.br
+.ti -1c
+.RI "void \fBNablaPhi\fP ()"
+.br
+.ti -1c
+.RI "void \fBBlackWhite\fP ()"
+.br
+.ti -1c
+.RI "void \fBDReshape\fP (int weight, int height)"
+.br
+.ti -1c
+.RI "void \fBDrEkeyboard\fP (unsigned char key)"
+.br
+.ti -1c
+.RI "void \fBPrintIntensity\fP ()"
+.br
+.ti -1c
+.RI "int \fBContrast\fP ()"
+.br
+.ti -1c
+.RI "int \fBBinary\fP (int Mode)"
+.br
+.ti -1c
+.RI "int \fBNoise\fP (unsigned char *\fBPicture\fP, unsigned char *OutPicture, int width, int height)"
+.br
+.ti -1c
+.RI "int \fBSwapBlocks\fP (unsigned char *\fBPicture\fP, unsigned char *OutPicture, int width, int height, \fBPERMUTE\fP *Perm, int NGridw, int NGridh, int *Sequence1, int NPartition)"
+.br
+.ti -1c
+.RI "int \fBShiftBlocks\fP (unsigned char *\fBPicture\fP, unsigned char *OutPicture, int width, int height, int *Sequence, int NGridw, int NGridh, int *Sequence1, int NPartition)"
+.br
+.ti -1c
+.RI "int \fBDiscretize\fP (unsigned char *\fBPicture\fP, unsigned char *OutPicture, int \fBImWidth\fP, int ImHeight, int WWidth, int WHeight, int Blockw, int Blokh)"
+.br
+.ti -1c
+.RI "int \fBEdges\fP (unsigned char *\fBPicture\fP, unsigned char *OutPicture, int width, int height)"
+.br
+.ti -1c
+.RI "int \fBIncreaseResolution\fP (unsigned char *\fBPicture\fP, unsigned char *OutPicture, int \fBImWidth\fP, int ImHeight, int Times)"
+.br
+.ti -1c
+.RI "int \fBBuffSize\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBNChar\fP"
+.br
+.ti -1c
+.RI "\fBMatematica\fP * \fBMat\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBMedian\fP [4]"
+.br
+.ti -1c
+.RI "unsigned char \fBQuart1\fP [4]"
+.br
+.ti -1c
+.RI "unsigned char \fBQuart3\fP [4]"
+.br
+.ti -1c
+.RI "double ** \fBHist\fP"
+.br
+.ti -1c
+.RI "double ** \fBPhi\fP"
+.br
+.ti -1c
+.RI "int ** \fBPatch\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 35 of file DrEffect\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Initialize ()"
+The numbers refers to Stephens Mora Tka'cik Bialek Thermodynamics of natural images 
+.PP
+Definition at line 3 of file DrDefinition\&.cpp\&.
+.PP
+References Matematica::Transform()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Allink from the source code\&.

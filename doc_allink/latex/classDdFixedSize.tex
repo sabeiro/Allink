@@ -1,0 +1,141 @@
+\hypertarget{classDdFixedSize}{}\subsection{Dd\+Fixed\+Size Class Reference}
+\label{classDdFixedSize}\index{Dd\+Fixed\+Size@{Dd\+Fixed\+Size}}
+
+
+Domain decomposition using arrays.  
+
+
+
+
+{\ttfamily \#include $<$Cubo.\+h$>$}
+
+Inheritance diagram for Dd\+Fixed\+Size\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDdFixedSize}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDdFixedSize_a3b9cc956e6f916c8eb675870cf403b3a}{Dd\+Fixed\+Size} (double Edge\+Ext\mbox{[}3\mbox{]}, int \hyperlink{classDomDecBasics_abdcc792391d8c5092471dff191de47f4}{N\+Part}, double \hyperlink{classDomDecBasics_af2411aba2dd63fa22b1bc279653ff7a0}{Cut\+Off})
+\begin{DoxyCompactList}\small\item\em Allocate. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_a98ae2e78109ea826eea71da14c37ce95}{Erase} ()
+\begin{DoxyCompactList}\small\item\em Erase the content of the cells. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_aa71d36872f416feaa853788a7a7a7ef8}{Clear} ()\hypertarget{classDdFixedSize_aa71d36872f416feaa853788a7a7a7ef8}{}\label{classDdFixedSize_aa71d36872f416feaa853788a7a7a7ef8}
+
+\begin{DoxyCompactList}\small\item\em Clear the pairlist. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_a16bd930c99f12ce47277234de23650ca}{Add\+Part} (int p, double $\ast$Pos)\hypertarget{classDdFixedSize_a16bd930c99f12ce47277234de23650ca}{}\label{classDdFixedSize_a16bd930c99f12ce47277234de23650ca}
+
+\begin{DoxyCompactList}\small\item\em Add a part to the cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_aa81dd095eb9134882b33685338bec68c}{Rem\+Part} (int p, double $\ast$Pos)\hypertarget{classDdFixedSize_aa81dd095eb9134882b33685338bec68c}{}\label{classDdFixedSize_aa81dd095eb9134882b33685338bec68c}
+
+\begin{DoxyCompactList}\small\item\em Remove a part from the cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_a9e2dba5688a67c185c133e7191e596b3}{Add\+Part} (int p, int c)\hypertarget{classDdFixedSize_a9e2dba5688a67c185c133e7191e596b3}{}\label{classDdFixedSize_a9e2dba5688a67c185c133e7191e596b3}
+
+\begin{DoxyCompactList}\small\item\em Add a part to the cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_ae9da2e58e698bf5bcdca4f880d5579ff}{Rem\+Part} (int p1, int c)\hypertarget{classDdFixedSize_ae9da2e58e698bf5bcdca4f880d5579ff}{}\label{classDdFixedSize_ae9da2e58e698bf5bcdca4f880d5579ff}
+
+\begin{DoxyCompactList}\small\item\em Remove a part from the cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_a02a69943ed15121906bda20d9c89cb37}{Move\+Part} (int p, double $\ast$Old\+Pos, double $\ast$New\+Pos)\hypertarget{classDdFixedSize_a02a69943ed15121906bda20d9c89cb37}{}\label{classDdFixedSize_a02a69943ed15121906bda20d9c89cb37}
+
+\begin{DoxyCompactList}\small\item\em Move a part. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_ae468af31d1a530ba0fdaef088c4b9c00}{Swap\+Part} (int p1, double $\ast$Pos1, int p2, double $\ast$Pos2)\hypertarget{classDdFixedSize_ae468af31d1a530ba0fdaef088c4b9c00}{}\label{classDdFixedSize_ae468af31d1a530ba0fdaef088c4b9c00}
+
+\begin{DoxyCompactList}\small\item\em Swap two parts. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_aadd6f477626e28e8284b9db4649e841d}{Set\+Counters} (int c)\hypertarget{classDdFixedSize_aadd6f477626e28e8284b9db4649e841d}{}\label{classDdFixedSize_aadd6f477626e28e8284b9db4649e841d}
+
+\begin{DoxyCompactList}\small\item\em Set the counters to the initial pointer. \end{DoxyCompactList}\item 
+int \hyperlink{classDdFixedSize_af49812231dd30b603631791b87eba9f9}{If\+It\+Cell} (int c)\hypertarget{classDdFixedSize_af49812231dd30b603631791b87eba9f9}{}\label{classDdFixedSize_af49812231dd30b603631791b87eba9f9}
+
+\begin{DoxyCompactList}\small\item\em End the iteration in the cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_af5859063d6fe309152f039205b16014e}{Incr\+Curr} (int c)\hypertarget{classDdFixedSize_af5859063d6fe309152f039205b16014e}{}\label{classDdFixedSize_af5859063d6fe309152f039205b16014e}
+
+\begin{DoxyCompactList}\small\item\em Increase the counters. \end{DoxyCompactList}\item 
+int \hyperlink{classDdFixedSize_a1fb1ab9e4e4c98b9860711fdb1fba3b4}{It\+Cell} (int c)\hypertarget{classDdFixedSize_a1fb1ab9e4e4c98b9860711fdb1fba3b4}{}\label{classDdFixedSize_a1fb1ab9e4e4c98b9860711fdb1fba3b4}
+
+\begin{DoxyCompactList}\small\item\em Value of the current particle in the cell c. \end{DoxyCompactList}\item 
+int \hyperlink{classDdFixedSize_afe0e4e9746cdae570f8c1efdfd04ac16}{Get\+Nei} (double $\ast$Pos, int $\ast$Nei\+List)\hypertarget{classDdFixedSize_afe0e4e9746cdae570f8c1efdfd04ac16}{}\label{classDdFixedSize_afe0e4e9746cdae570f8c1efdfd04ac16}
+
+\begin{DoxyCompactList}\small\item\em Choose among the different neighbouring lists. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_aabccb7f79ac6e104734750f00fa72b76}{Couple} (const int c, int $\ast$p1, int $\ast$p2)\hypertarget{classDdFixedSize_aabccb7f79ac6e104734750f00fa72b76}{}\label{classDdFixedSize_aabccb7f79ac6e104734750f00fa72b76}
+
+\begin{DoxyCompactList}\small\item\em Returns the pointed couple of particle. \end{DoxyCompactList}\item 
+int \hyperlink{classDdFixedSize_a3896db13faf370f18b2a70c6acd01930}{If\+It\+Couple} (const int c)\hypertarget{classDdFixedSize_a3896db13faf370f18b2a70c6acd01930}{}\label{classDdFixedSize_a3896db13faf370f18b2a70c6acd01930}
+
+\begin{DoxyCompactList}\small\item\em Tell when the loop is over. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_a0c040f6773c460a8eb46bff752c08d2d}{Incr\+Curr\+List} (const int c)\hypertarget{classDdFixedSize_a0c040f6773c460a8eb46bff752c08d2d}{}\label{classDdFixedSize_a0c040f6773c460a8eb46bff752c08d2d}
+
+\begin{DoxyCompactList}\small\item\em Increment the pointers. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_af5188eb0e6caae79f8bf349bf2345cf2}{Print\+Cell} (const int c)\hypertarget{classDdFixedSize_af5188eb0e6caae79f8bf349bf2345cf2}{}\label{classDdFixedSize_af5188eb0e6caae79f8bf349bf2345cf2}
+
+\begin{DoxyCompactList}\small\item\em Print the content of one cell. \end{DoxyCompactList}\item 
+void \hyperlink{classDdFixedSize_a1132024d8fdd721fd6a36781d4235162}{Print\+Cells} ()\hypertarget{classDdFixedSize_a1132024d8fdd721fd6a36781d4235162}{}\label{classDdFixedSize_a1132024d8fdd721fd6a36781d4235162}
+
+\begin{DoxyCompactList}\small\item\em Print the content of every cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structDdFixCell}{Dd\+Fix\+Cell} $\ast$ \hyperlink{classDdFixedSize_a02d24fa5352eb35985cb524dcee6c5a3}{Cella}\hypertarget{classDdFixedSize_a02d24fa5352eb35985cb524dcee6c5a3}{}\label{classDdFixedSize_a02d24fa5352eb35985cb524dcee6c5a3}
+
+\begin{DoxyCompactList}\small\item\em Cell structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Domain decomposition using arrays. 
+
+Definition at line 329 of file Cubo.\+h.
+
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\index{Dd\+Fixed\+Size@{Dd\+Fixed\+Size}!Dd\+Fixed\+Size@{Dd\+Fixed\+Size}}
+\index{Dd\+Fixed\+Size@{Dd\+Fixed\+Size}!Dd\+Fixed\+Size@{Dd\+Fixed\+Size}}
+\paragraph[{\texorpdfstring{Dd\+Fixed\+Size(double Edge\+Ext[3], int N\+Part, double Cut\+Off)}{DdFixedSize(double EdgeExt[3], int NPart, double CutOff)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dd\+Fixed\+Size} (
+\begin{DoxyParamCaption}
+\item[{double}]{Edge\+Ext\mbox{[}3\mbox{]}, }
+\item[{int}]{N\+Part, }
+\item[{double}]{Cut\+Off}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdFixedSize_a3b9cc956e6f916c8eb675870cf403b3a}{}\label{classDdFixedSize_a3b9cc956e6f916c8eb675870cf403b3a}
+
+
+Allocate. 
+
+Every cell contains a stl list of particle. 
+
+Definition at line 728 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+Cut\+Off, Dom\+Dec\+Basics\+::\+Edge, Dom\+Dec\+Basics\+::\+Inv\+Edge, Dom\+Dec\+Basics\+::\+Mod10, Dom\+Dec\+Basics\+::\+N\+Cell, Dom\+Dec\+Basics\+::\+N\+Part, Dom\+Dec\+Basics\+::\+N\+Sect, and Dd\+Fix\+Cell\+::\+Part.
+
+
+
+\subsubsection{Member Function Documentation}
+\index{Dd\+Fixed\+Size@{Dd\+Fixed\+Size}!Erase@{Erase}}
+\index{Erase@{Erase}!Dd\+Fixed\+Size@{Dd\+Fixed\+Size}}
+\paragraph[{\texorpdfstring{Erase()}{Erase()}}]{\setlength{\rightskip}{0pt plus 5cm}void Erase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDdFixedSize_a98ae2e78109ea826eea71da14c37ce95}{}\label{classDdFixedSize_a98ae2e78109ea826eea71da14c37ce95}
+
+
+Erase the content of the cells. 
+
+Every cell contains a stl list of particle. 
+
+Definition at line 747 of file Cubo.\+cpp.
+
+
+
+References Dom\+Dec\+Basics\+::\+N\+Cell.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Cubo.\+h\item 
+src/\+Var\+Data/Cubo.\+cpp\item 
+src/\+Var\+Data/Cubo.\+mirror.\+cpp\end{DoxyCompactItemize}

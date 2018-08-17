@@ -1,0 +1,34 @@
+.TH "features_page" 3 "Fri Aug 17 2018" "Version v0.1" "Allink" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+features_page \- Current Features 
+MolMcD is not yet a mature simulation package, but aspires to become one\&. The core of MolMcD was developed by rewriting a package named PMC that is used in our group for NVT simulations of coarse-grained bead-spring models of flexible polymer liquids\&. Both PMC and MolMcD thus far provide only the features that we have needed for these simulations\&. PMC provides several sophisticated conformation sampling MC moves for these simple models, which have not all yet been ported to MolMcD\&. Once all of the features of PMC are ported to MolMcd, further development work will focus on MolMcD\&. Features of MolMcD and PMC include: 
+.PD 0
+
+.IP "\(bu" 2
+Efficient implementations of NVE and NVT molecular dynamics, and hybrid MD/MC Markov moves\&. 
+.PP
+
+.IP "\(bu" 2
+Configuration bias conformation sampling moves for MC simulation of dense liquids of long, flexible linear polymers\&. PMC provides crankshaft, reptation, end regrowth, internal rebrigding, and re-bridging configuration bias moves\&. Thus far, only reptation and end-regrowth moves have been ported to MolMcD\&. 
+.PP
+
+.IP "\(bu" 2
+PMC implements 'alchemical' moves for semigrand-canonical simulations of homopolymer mixtures, and end-swap moves for diblock copolymers\&. Neither has yet been ported to MolMcD\&. 
+.PP
+
+.IP "\(bu" 2
+Specialized species definitions for isolated point particles, linear homopolymers, and diblock copolymers\&. 
+.PP
+
+.PP
+Thus far, the only potential energy classes provided with MolMcD are a simple LJ pair interaction and a harmonic bond potential\&. It does not yet support bending and dihedral potentials, or Coulomb interactions\&. We plan to add bond angle and dihedral potentials over the next few months, followed by Ewald and (later still) particle mesh Ewald implementations of electrostatic interactions\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBAllink\fP (Up)  
+.IP "\(bu" 2
+\fBCompilation\fP (Next)  
+.PP
+

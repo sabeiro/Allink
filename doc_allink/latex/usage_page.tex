@@ -1,0 +1,58 @@
+\hypertarget{usage_page_ElPoly_section}{}\subsection{El\+Poly}\label{usage_page_ElPoly_section}
+Create an intial system\+: edit Polymers.\+conf in the same directory and run 
+\begin{DoxyCode}
+\hyperlink{namespaceElPoly}{ElPoly} -x resume.dat
+\end{DoxyCode}
+ Study the properties of a system\+: 
+\begin{DoxyCode}
+\hyperlink{namespaceElPoly}{ElPoly} resume.dat
+\end{DoxyCode}
+ The option can be either specified in the argument list with a dash in the front 
+\begin{DoxyCode}
+\hyperlink{namespaceElPoly}{ElPoly} resume.dat -d part
+\end{DoxyCode}
+ or in the command line\+: 
+\begin{DoxyCode}
+[marelli@Hoshi]-(Examples) $ \hyperlink{namespaceElPoly}{ElPoly} resume.dat 
+------------------------------------------------------
+# NPart 7500 NType 0 NChain 511 NPCh 2410 Asymmetry 7499 Edge: [12 12 18] rho 6 chiN 30 kappaN 70 
+Nano 64 (# 4) (1.000000 1.000000 4.000000) NBlock 1 NFile 1
+\textcolor{preprocessor}{# SysType) Edge 1 Sys (Txvl 1 Xvt 0) }
+
+------------------------------------------------------
+\hyperlink{namespaceElPoly}{ElPoly}> 
+\end{DoxyCode}
+\hypertarget{usage_page_Visualizza_section}{}\subsection{Visualizza}\label{usage_page_Visualizza_section}
+Run Visualizza specifing the argument list and the config file with \char`\"{}-\/c\char`\"{} 
+\begin{DoxyCode}
+Visualizza SpectrumBilayer*.dat FittedData*.dat -c PlotDef.txt &
+\end{DoxyCode}
+\hypertarget{usage_page_UsaMatematica_section}{}\subsection{Usa\+Matematica}\label{usage_page_UsaMatematica_section}
+The same analysis tools of Visualizza can be run by Usa\+Matematica specifing a command with the double dash in the front or typing the command in the command line\+: 
+\begin{DoxyCode}
+UsaMatematica -x 1 -y 2 --exec x/6 y/35.2  DistMinSepRaw.dat -o Temp.dat
+UsaMatematica --smoothGauss Temp.dat -o DistMinSep.dat
+\end{DoxyCode}
+\hypertarget{usage_page_DrImage_section}{}\subsection{Dr\+Image}\label{usage_page_DrImage_section}
+Movie effects applied on a .png image. In the following example we run a Lennard-\/\+Jones simulation using squares of pixel as particles. 
+\begin{DoxyCode}
+DrImage Picture.png -l
+\end{DoxyCode}
+\hypertarget{usage_page_DrEffect_section}{}\subsection{Dr\+Effect}\label{usage_page_DrEffect_section}
+Load a picture to apply the different filters and picture analysis 
+\begin{DoxyCode}
+\hyperlink{classDrEffect}{DrEffect} Picture.tif
+\end{DoxyCode}
+\hypertarget{usage_page_Dinamica_section}{}\subsection{Dinamica}\label{usage_page_Dinamica_section}
+Run a simulation on a specific system with a specific integrator\+: 
+\begin{DoxyCode}
+Dinamica -c DynMC.conf -i resume.dat -d 
+\end{DoxyCode}
+ The option can be either specified in the argument list with a dash in the front or in the command line\+: \char`\"{}-\/d\char`\"{} display, \char`\"{}-\/r\char`\"{} run, \char`\"{}-\/-\/\+Tens\char`\"{} tension profile, \char`\"{}-\/-\/\+Av\+Forces\char`\"{} average forces...
+
+
+\begin{DoxyItemize}
+\item \hyperlink{compile_page}{Compilation} (Previous)  
+\item \hyperlink{index}{Allink} (Up)  
+\item \hyperlink{param_page}{Parameter File} (Next)  
+\end{DoxyItemize}

@@ -1,0 +1,100 @@
+\hypertarget{classNeiVertex}{}\subsection{Nei\+Vertex Class Reference}
+\label{classNeiVertex}\index{Nei\+Vertex@{Nei\+Vertex}}
+
+
+Connects the triangles by vertices.  
+
+
+
+
+{\ttfamily \#include $<$Cubo.\+h$>$}
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNeiVertex_acd292e575bf4ade488a69f62b2d454ad}{Nei\+Vertex} (int N\+Tria\+Ext, int Nv\+Pt\+Ext, int N\+Grid\+Ext, double $\ast$Edge\+Ext)\hypertarget{classNeiVertex_acd292e575bf4ade488a69f62b2d454ad}{}\label{classNeiVertex_acd292e575bf4ade488a69f62b2d454ad}
+
+\begin{DoxyCompactList}\small\item\em Alloc N\+Vertices. \end{DoxyCompactList}\item 
+\hyperlink{classNeiVertex_ab53f242febf6312ccd82ee9c28c2b633}{$\sim$\+Nei\+Vertex} ()\hypertarget{classNeiVertex_ab53f242febf6312ccd82ee9c28c2b633}{}\label{classNeiVertex_ab53f242febf6312ccd82ee9c28c2b633}
+
+\begin{DoxyCompactList}\small\item\em Delete the class. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_ab46ead706c925650dc870081c73da25f}{Add} (int v, int t, double $\ast$Pos)\hypertarget{classNeiVertex_ab46ead706c925650dc870081c73da25f}{}\label{classNeiVertex_ab46ead706c925650dc870081c73da25f}
+
+\begin{DoxyCompactList}\small\item\em Add the triangle t at the vertex v. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_a23175dfa70c692054cf173193a6d4d6e}{Add} (double $\ast$Pos, int t)\hypertarget{classNeiVertex_a23175dfa70c692054cf173193a6d4d6e}{}\label{classNeiVertex_a23175dfa70c692054cf173193a6d4d6e}
+
+\begin{DoxyCompactList}\small\item\em Add the triangle t in the Pos. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_a8c5cc8bfb6783d235a0b273821f5e475}{Rem} (int v, int t)\hypertarget{classNeiVertex_a8c5cc8bfb6783d235a0b273821f5e475}{}\label{classNeiVertex_a8c5cc8bfb6783d235a0b273821f5e475}
+
+\begin{DoxyCompactList}\small\item\em Remove the triangle t from the vertex v. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_a2be4fa5175ea113c1762d2a4cbc21091}{Copy\+Vert2\+To1} (\hyperlink{structVERTEX}{V\+E\+R\+T\+EX} Vert1, \hyperlink{structVERTEX}{V\+E\+R\+T\+EX} Vert2)\hypertarget{classNeiVertex_a2be4fa5175ea113c1762d2a4cbc21091}{}\label{classNeiVertex_a2be4fa5175ea113c1762d2a4cbc21091}
+
+\begin{DoxyCompactList}\small\item\em Copy two vertices. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_aa22b5926829059f1b8f5ee084497f2ab}{Swap} (int v1, int v2)\hypertarget{classNeiVertex_aa22b5926829059f1b8f5ee084497f2ab}{}\label{classNeiVertex_aa22b5926829059f1b8f5ee084497f2ab}
+
+\begin{DoxyCompactList}\small\item\em Swap to vertices. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_aeeb3068ff4b57530bda6a4f1180fe383}{Reorder} ()\hypertarget{classNeiVertex_aeeb3068ff4b57530bda6a4f1180fe383}{}\label{classNeiVertex_aeeb3068ff4b57530bda6a4f1180fe383}
+
+\begin{DoxyCompactList}\small\item\em Reorder and fill the vertices. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_a86a3208513ff31c3391998f4900f52b5}{Set\+Counters} (int v)
+\begin{DoxyCompactList}\small\item\em Set counters to zero for the point v. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_a7c3a47a119b3c06d24a0c8a370fef66c}{Set\+Counters} ()\hypertarget{classNeiVertex_a7c3a47a119b3c06d24a0c8a370fef66c}{}\label{classNeiVertex_a7c3a47a119b3c06d24a0c8a370fef66c}
+
+\begin{DoxyCompactList}\small\item\em Set all the counters to zero. \end{DoxyCompactList}\item 
+int \hyperlink{classNeiVertex_a330eb7ef3b6ff289f9428fd4994209af}{Get\+Vertex} (double $\ast$Pos)\hypertarget{classNeiVertex_a330eb7ef3b6ff289f9428fd4994209af}{}\label{classNeiVertex_a330eb7ef3b6ff289f9428fd4994209af}
+
+\begin{DoxyCompactList}\small\item\em Correspondent vertes for Pos. \end{DoxyCompactList}\item 
+int \hyperlink{classNeiVertex_adb170c151213885180aba70f23ac7452}{If\+It\+Cell} (int v)\hypertarget{classNeiVertex_adb170c151213885180aba70f23ac7452}{}\label{classNeiVertex_adb170c151213885180aba70f23ac7452}
+
+\begin{DoxyCompactList}\small\item\em End of the counters. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_afefd8d5278268d8224caba5312860e5d}{Incr\+Curr} (int v)\hypertarget{classNeiVertex_afefd8d5278268d8224caba5312860e5d}{}\label{classNeiVertex_afefd8d5278268d8224caba5312860e5d}
+
+\begin{DoxyCompactList}\small\item\em Increment the counter. \end{DoxyCompactList}\item 
+int \hyperlink{classNeiVertex_a072488de60aa6fce524b79855cb53ec5}{Vert\+Curr} (int v)\hypertarget{classNeiVertex_a072488de60aa6fce524b79855cb53ec5}{}\label{classNeiVertex_a072488de60aa6fce524b79855cb53ec5}
+
+\begin{DoxyCompactList}\small\item\em Current vertex iterator for the vertex v. \end{DoxyCompactList}\item 
+int \hyperlink{classNeiVertex_aebbce34f5213484c16fe08591fe0f8d7}{Tria\+Curr} (int v)\hypertarget{classNeiVertex_aebbce34f5213484c16fe08591fe0f8d7}{}\label{classNeiVertex_aebbce34f5213484c16fe08591fe0f8d7}
+
+\begin{DoxyCompactList}\small\item\em Current triangle for the vertex v. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_a81093b4cb48a3e1598c724287c410a9d}{Pos\+Vertex} (int v, double $\ast$Pos)\hypertarget{classNeiVertex_a81093b4cb48a3e1598c724287c410a9d}{}\label{classNeiVertex_a81093b4cb48a3e1598c724287c410a9d}
+
+\begin{DoxyCompactList}\small\item\em Position of the vertex v. \end{DoxyCompactList}\item 
+void \hyperlink{classNeiVertex_a9dcac18006ce057b8d78c847174c1362}{Print} ()\hypertarget{classNeiVertex_a9dcac18006ce057b8d78c847174c1362}{}\label{classNeiVertex_a9dcac18006ce057b8d78c847174c1362}
+
+\begin{DoxyCompactList}\small\item\em Print the entire structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Connects the triangles by vertices. 
+
+Definition at line 480 of file Cubo.\+h.
+
+
+
+\subsubsection{Member Function Documentation}
+\index{Nei\+Vertex@{Nei\+Vertex}!Set\+Counters@{Set\+Counters}}
+\index{Set\+Counters@{Set\+Counters}!Nei\+Vertex@{Nei\+Vertex}}
+\paragraph[{\texorpdfstring{Set\+Counters(int v)}{SetCounters(int v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Set\+Counters (
+\begin{DoxyParamCaption}
+\item[{int}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classNeiVertex_a86a3208513ff31c3391998f4900f52b5}{}\label{classNeiVertex_a86a3208513ff31c3391998f4900f52b5}
+
+
+Set counters to zero for the point v. 
+
+Initialize the. 
+
+Definition at line 1093 of file Cubo.\+cpp.
+
+
+
+Referenced by Var\+Data\+::\+Connect\+Line\+Chain2(), and Var\+Data\+::\+Normal\+Weight().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Cubo.\+h\item 
+src/\+Var\+Data/Cubo.\+cpp\item 
+src/\+Var\+Data/Cubo.\+mirror.\+cpp\end{DoxyCompactItemize}

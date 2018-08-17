@@ -1,0 +1,21 @@
+Mol\+McD is not yet a mature simulation package, but aspires to become one. The core of Mol\+McD was developed by rewriting a package named P\+MC that is used in our group for N\+VT simulations of coarse-\/grained bead-\/spring models of flexible polymer liquids. Both P\+MC and Mol\+McD thus far provide only the features that we have needed for these simulations. P\+MC provides several sophisticated conformation sampling MC moves for these simple models, which have not all yet been ported to Mol\+McD. Once all of the features of P\+MC are ported to Mol\+Mcd, further development work will focus on Mol\+McD. Features of Mol\+McD and P\+MC include\+: 
+\begin{DoxyItemize}
+\item Efficient implementations of N\+VE and N\+VT molecular dynamics, and hybrid M\+D/\+MC Markov moves. 
+
+
+\item Configuration bias conformation sampling moves for MC simulation of dense liquids of long, flexible linear polymers. P\+MC provides crankshaft, reptation, end regrowth, internal rebrigding, and re-\/bridging configuration bias moves. Thus far, only reptation and end-\/regrowth moves have been ported to Mol\+McD. 
+
+
+\item P\+MC implements \char`\"{}alchemical\char`\"{} moves for semigrand-\/canonical simulations of homopolymer mixtures, and end-\/swap moves for diblock copolymers. Neither has yet been ported to Mol\+McD. 
+
+
+\item Specialized species definitions for isolated point particles, linear homopolymers, and diblock copolymers. 
+
+
+\end{DoxyItemize}Thus far, the only potential energy classes provided with Mol\+McD are a simple LJ pair interaction and a harmonic bond potential. It does not yet support bending and dihedral potentials, or Coulomb interactions. We plan to add bond angle and dihedral potentials over the next few months, followed by Ewald and (later still) particle mesh Ewald implementations of electrostatic interactions.
+
+
+\begin{DoxyItemize}
+\item \hyperlink{index}{Allink} (Up)  
+\item \hyperlink{compile_page}{Compilation} (Next)  
+\end{DoxyItemize}
