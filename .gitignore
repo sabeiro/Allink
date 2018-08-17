@@ -35,4 +35,4 @@ Debug/
 *.app
 
 #doc
-*.html
+#*.html
